@@ -2,50 +2,24 @@ const settings = {
   "name": "abc-website",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://dev.abcbaltimore.org",
+      "title": "ABC Greater Baltimore",
+      "description": "Labor Organization Website"
     }
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
-      "state": {
-        "theme": {
-          "menu": [
-            [
-              "Home",
-              "/"
-            ],
-            [
-              "Nature",
-              "/category/nature/"
-            ],
-            [
-              "Travel",
-              "/category/travel/"
-            ],
-            [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
-            ]
-          ],
-          "featured": {
-            "showOnList": false,
-            "showOnPost": false
-          }
-        }
-      }
+      "name":"abc-theme"
     },
     {
       "name": "@frontity/wp-source",
       "state": {
+        "theme": {
+          "autoPrefetch": "hover"
+        },
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://dev.abcbaltimore.org",
+          "api": "https://dev.abcbaltimore.org/wp-json",
         }
       }
     },

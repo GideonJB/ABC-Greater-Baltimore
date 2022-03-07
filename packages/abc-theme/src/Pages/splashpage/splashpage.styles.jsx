@@ -1,0 +1,559 @@
+import { keyframes, styled } from "frontity"
+import Link from "@frontity/components/link"
+
+import apprenticeship from "../../assets/images/apprenticeship.jpg"
+import events from "../../assets/images/events.jpg"
+import management from "../../assets/images/management.jpg"
+import membership from "../../assets/images/membership.jpg"
+import political from "../../assets/images/political.jpg"
+import safety from "../../assets/images/safety.jpg"
+import building from "../../assets/images/building.jpg"
+
+import apprenticeshipmobile from "../../assets/images/apprenticeship_mobile.jpg"
+import eventsmobile from "../../assets/images/events_mobile.jpg"
+import managementmobile from "../../assets/images/management_mobile.jpg"
+import membershipmobile from "../../assets/images/membership_mobile.jpg"
+import politicalmobile from "../../assets/images/political_mobile.jpg"
+import safetymobile from "../../assets/images/safety_mobile.jpg"
+
+import { fullFrameDiv } from "../../styles/global-variables.styles"
+
+const itemContainerStyles = `
+  transition: .5s all;
+  transition-delay: 10ms;
+  opacity: 0;
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--colors-menuOverlay);
+  background-image:  var(--gradient-lightRight);
+  overflow: hidden;
+  pointer-events: none;
+  // z-index: 2;
+
+  @media (hover: hover){
+    &:hover{
+      opacity: 100%;
+      pointer-events: auto;
+    }
+  }
+
+  // @media screen and (max-width: 1200px){
+  //   opacity: 100%;
+  // }
+  
+
+  @media screen and (max-width: 1100px){
+    display: block;
+    overflow: auto;
+  }
+`
+
+const pulse = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+`
+export const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+ @media screen and (max-width: 1100px){
+   display: block;
+ }
+`
+
+export const SplashTitleContainer = styled.div`
+  position: absolute;
+  height: 60px;
+  top: 30%;
+  width: 100%;
+  background-image:  linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000000dc 100%);
+`
+
+export const SplashTitle = styled.h1`
+  color: white;
+  font-size: 3em;
+  line-height: 1;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+`
+
+export const Arrow = styled.div`
+  font-size: 10em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  animation: ${pulse} 5s infinite;
+`
+
+export const GridWrapper = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  @media screen and (max-width: 1100px){
+    display: block;
+  }
+  
+`
+
+export const Column = styled.div`
+  width: calc(100vw/6);
+  height: 100%;
+  overflow: visible;
+  transition: .5s all;
+
+  @media screen and (max-width: 1200px){
+    &.expanded{
+      
+    }
+  }
+  
+
+  @media screen and (max-width: 1100px){
+    width: 100vw;
+    height: calc(var(--screen-height)/4.5);
+
+    &.expanded {
+      height: 500px;
+      pointer-events: none;
+      touch-action: none;
+    }
+  }
+
+`
+
+// export const Row = styled.div`
+//   width: 40vw;
+//   height: 10vw;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+
+//   &:not(:first-of-type){
+//     margin-top: 15px;
+//   }
+
+//   @media screen and (max-width: 670px){
+//     flex-direction: column;
+//   }
+
+// `
+
+export const MenuContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: .5s all;
+  overflow: hidden;
+
+  @media (hover: hover){
+    &:hover{
+      div {
+        transition-delay: 10ms;
+        visibility: visible;
+        opacity: 100%;
+        pointer-events: auto;
+      }
+      h1{
+        margin-left: calc((100vw) / 6 + 50px);
+      }
+      .grow{
+        /* background-size: 112% */
+        transform: scale(1.02);
+      }
+    }
+  }
+  
+  
+  &.bordered{
+    border-right: 5px solid white;
+  }
+
+  @media screen and (max-width: 1200px){
+    &.expanded{
+      div{
+        margin-top: 0px;
+        visibility: visible;
+        opacity: 100%;
+        pointer-events: auto;
+      }
+       .grow{
+        /* background-size: 112% */
+        transform: scale(1.02);
+      }
+       h1{
+        margin-left: calc((100vw) / 6 + 50px);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1100px){
+
+    &.expanded{
+      div{
+        transition: .5s all;
+        visibility: visible;
+        opacity: 100%;
+        pointer-events: auto;
+        /* height: 400px !important; */
+      }
+        .grow{
+        /* background-size: 112% */
+        transform: scale(1.02);
+      }
+      h1{
+        margin-left: 5px;
+        bottom: -20%;
+      }
+      div > img{
+        
+      }
+     
+    }
+  }
+`
+export const GradientDiv = styled.div`
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:  linear-gradient(to right, hsla(0,0%,0%,0) 85%, #000000ab 100%);
+
+  @media screen and (max-width: 1100px){
+    background-image:  linear-gradient(to bottom, hsla(0,0%,0%,0) 75%, #000000ab 100%);
+  }
+`
+export const ItemTitle = styled(Link)`
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  line-height: 1.2;
+  display: inline-block;
+  
+
+  &:hover{
+      transform: scale(1.02);   
+  }
+
+  @media screen and (max-width: 1200px){
+    font-size: 1.2em;
+  }
+
+  @media screen and (max-width: 1100px){
+    font-size: 1.4em;
+  }
+`
+
+export const ItemList = styled.div`
+  width: 100%;
+  padding-top: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  overflow: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 1200px){
+    font-size: .8em;
+  }
+
+  @media screen and (max-width: 1100px){
+    font-size: 1.2em;
+  }
+  
+`
+
+export const ListGroup = styled.div`
+  @media screen and (max-width: 1100px){
+    display: flex;
+  }
+`
+
+const backgroundStyles = `
+  transition: .5s all;
+  height: var(--screen-height);
+  pointer-events: none;
+  touch-events: none;
+  overflow: hidden;
+
+`
+
+export const MembershipBackground = styled.div`
+  ${backgroundStyles};
+  background-image: url(${membership});
+  background-size: cover;
+  background-position: top right;
+
+  @media screen and (max-width: 1100px){
+    background-image: url(${membershipmobile});
+    height: 400px;
+  }
+`
+export const MembershipItemsContainer = styled.div`
+  overflow: hidden;
+  background: var(--colors-membership-overlay);
+  ${itemContainerStyles}
+`
+
+export const ApprenticeshipBackground = styled.div`
+  ${backgroundStyles};
+  background-image: url(${apprenticeship});
+  background-size: cover;
+  background-position: top right;
+
+  @media screen and (max-width: 1100px){
+    background-image: url(${apprenticeshipmobile});
+    height: 400px;
+  }
+  
+`
+export const ApprenticeshipItemsContainer = styled.div`
+  overflow: hidden;
+  background: var(--colors-apprenticeship-overlay);
+  ${itemContainerStyles}
+`
+
+export const SafetyBackground = styled.div`
+  ${backgroundStyles};
+  background-image: url(${safety});
+  background-size: cover;
+  background-position: top right;
+
+  @media screen and (max-width: 1100px){
+    background-image: url(${safetymobile});
+    background-position: bottom right;
+    height: 400px;
+    margin-top: -180px;
+  }
+  
+`
+
+export const SafetyItemsContainer = styled.div`
+  overflow: hidden;
+  background: var(--colors-safety-overlay);
+  ${itemContainerStyles}
+`
+
+export const EventsBackground = styled.div`
+  ${backgroundStyles};
+  background-image: url(${events});
+  background-size: cover;
+  background-position: top right;
+
+  @media screen and (max-width: 1100px){
+    background-image: url(${eventsmobile});
+    background-position: bottom right;
+    height: 400px;
+    margin-top: -180px;
+  }
+  
+`
+
+export const EventsItemsContainer = styled.div`
+  overflow: hidden;
+  background-color: var(--colors-events-overlay);
+  ${itemContainerStyles}
+`
+
+export const ManagementBackground = styled.div`
+  ${backgroundStyles};
+  background-image: url(${management});
+  background-size: cover;
+  background-position: top right;
+
+  @media screen and (max-width: 1100px){
+    background-image: url(${managementmobile});
+    background-position: bottom right;
+    height: 400px;
+    
+  }
+  
+`
+
+export const ManagementItemsContainer = styled.div`
+  overflow: hidden;
+  background-color: var(--colors-management-overlay);
+  ${itemContainerStyles}
+`
+
+export const PoliticalBackground = styled.div`
+  ${backgroundStyles};
+  background-image: url(${political});
+  background-size: cover;
+  background-position: top right;
+
+  @media screen and (max-width: 1100px){
+    background-image: url(${politicalmobile});
+    background-position: bottom right;
+    height: 400px;
+    margin-top: -150px;
+  }
+  
+`
+
+export const PoliticalItemsContainer = styled.div`
+  overflow: hidden;
+  background-color: var(--colors-political-overlay);
+  ${itemContainerStyles}
+`
+
+export const MembersBackground = styled.div`
+  ${backgroundStyles};
+  background-image: url(${membership});
+  background-size: cover;
+  background-position: top right;
+
+  @media screen and (max-width: 1100px){
+    background-image: url(${membershipmobile});
+    background-position: bottom right;
+    height: 400px;
+  }
+  
+`
+
+export const MembersItemsContainer = styled.div`
+  overflow: hidden;
+  background-color: var(--colors-menuGold);
+  ${itemContainerStyles}
+`
+
+
+export const CardHeading = styled.h1`
+  transition: .3s all;
+  font-size: 3em;
+  position: absolute;
+  bottom: 5%;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 6px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  margin-left: calc((100vw - 180px) / 6);
+  margin-bottom: 0px;
+
+  &::before, &::after{
+    display: none;
+  }
+  
+  
+  a{
+    color: white;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 1400px){
+    font-size: 2em;
+  }
+
+  @media screen and (max-width: 1100px){
+    bottom: 3%;
+    transform: rotate(0deg);
+    margin-left: 5px;
+    
+  }
+  
+`
+export const ListItem = styled(Link)`
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+
+  &:hover{
+    transform: scale(1.02);
+  }
+  
+  
+`
+export const HorizontalLine = styled.hr`
+  width: 90px;
+  border-width: 0;
+  height: 1px;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`
+export const Overlay = styled.svg`
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  position: absolute;
+  bottom: -250px;
+  left: -50;
+  opacity: .25;
+  /* animation: ${rotate} 500s; */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+`
+
+export const GrowContainer = styled.div`
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+`
+
+export const Break = styled.br`
+  @media screen and (max-width: 670px){
+    display: none;
+  }
+`
+export const MobileBreak = styled.br`
+  @media screen and (min-width: 1000px){
+    display: none;
+  }
+`
+
+export const MobileColumn = styled.div`
+  position: absolute;
+  /* top: 50px; */
+  height: var(--screen-height-mobile);
+  width: 100vw;
+  background-image: url(${building});
+  background-position: center bottom;
+  overflow: auto;
+  transition: .8s all;
+  visibility: hidden;
+  opacity: 0%;
+  z-index: 2;
+
+  &.visible{
+    visibility: visible;
+    opacity: 100%;
+  }
+
+  @media screen and (min-width: 1000px){
+    display: none;
+  }
+`
+
+export const MobileColumnA = styled.div`
+  height: 100vh;
+`
