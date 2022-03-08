@@ -3,7 +3,7 @@ import { styled } from "frontity"
 export const FooterContainer = styled.div`
   position: relative;
   vertical-align: botttom;
-  flex: 0 0 225px;
+  flex: 0 0 220px;
   width: 100%;
   /* height: 200px; */
   margin: 0 auto;
