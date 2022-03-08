@@ -1,6 +1,6 @@
 import { keyframes, styled } from "frontity"
 import { innerFrameDiv } from "../../styles/global-variables.styles"
-import Guy from "../../assets/images/guy.jpg"
+import Guy from "../../static/images/guy.jpg"
 
 export const Wrapper = styled.div`
   width: var(--screen-width);

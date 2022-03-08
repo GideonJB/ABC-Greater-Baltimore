@@ -1,5 +1,5 @@
 const settings = {
-  "name": "abc-website",
+  "name": "abc-frontity",
   "state": {
     "frontity": {
       "url": "https://dev.abcbaltimore.org",
@@ -9,7 +9,7 @@ const settings = {
   },
   "packages": [
     {
-      "name":"abc-theme"
+      "name": "abc-theme",
     },
     {
       "name": "@frontity/wp-source",
@@ -19,12 +19,12 @@ const settings = {
         },
         "source": {
           "url": "https://dev.abcbaltimore.org",
-          "api": "https://dev.abcbaltimore.org/wp-json",
+          "api": "https://dev.abcbaltimore.org/wp-json"
         }
       }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react"
+    "@frontity/html2react",
   ]
 };
 

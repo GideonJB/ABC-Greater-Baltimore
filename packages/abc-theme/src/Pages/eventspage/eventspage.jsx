@@ -7,7 +7,7 @@ import { myunescape } from "../../utils/utility-functions"
 
 import Page from "../../components/page/page.component"
 
-import clock from "../../assets/images/clock.png"
+import clock from "../../static/images/clock.png"
 import {FeaturedContainer,
         ImageList,
         EventsPageWrapper,

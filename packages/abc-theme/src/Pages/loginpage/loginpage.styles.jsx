@@ -2,7 +2,7 @@ import { styled } from 'frontity';
 
 import { innerFrameDiv } from "../../styles/global-variables.styles"
 
-import Guy from "../../assets/images/building.jpg"
+import Guy from "../../static/images/building.jpg"
 
 export const Wrapper = styled.div`
   width: var(--screen-width);

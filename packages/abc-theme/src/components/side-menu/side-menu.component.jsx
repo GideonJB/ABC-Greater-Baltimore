@@ -9,8 +9,8 @@ import { MenuItemContainer,
         MemberMenuContainer
       } from "./side-menu.styles"
 
-import logoImage from "../../assets/images/logo-square.png";
-import ceaLogo from "../../assets/images/cea-logo.png"
+import logoImage from "../../static/images/logo-square.png";
+import ceaLogo from "../../static/images/cea-logo.png"
 import MenuItemList from "../menu-item-list/menu-item-list.component";
 import SubmenuItemList from "../submenu-item-list/submenu-item-list-component";
 import LogoContainer from "../logo-container/logo-container.component"

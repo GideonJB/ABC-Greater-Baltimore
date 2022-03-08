@@ -7,7 +7,7 @@ import Login from "../../components/login/login.component"
 import { MemberList } from '../../components/memberlist/memberlist.component.jsx'
 import { Wrapper, InnerWrapper, LoggedOutWrapper, SearchContainer} from "./searchpage.styles"
 
-let collectionMap = require("../../assets/SampleDirectoryData2.json");
+let collectionMap = require("../../static/SampleDirectoryData2.json");
 
 const SearchPage = ({state, actions}) => {
   const [input, setInput] = useState('');

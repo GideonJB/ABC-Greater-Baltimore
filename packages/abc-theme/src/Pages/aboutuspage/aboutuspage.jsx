@@ -6,8 +6,8 @@ import Page from '../../components/page/page.component';
 import { Row, Column, Overlay, Wrapper, SectionTitle, Name, Title, Description, StaffWrap } from "./aboutuspage.styles"
 
 
-const staffList = require("../../assets/StaffMemberData.js");
-const boardList = require("../../assets/BoardMemberData.js");
+const staffList = require("../../static/StaffMemberData.js");
+const boardList = require("../../static/BoardMemberData.js");
 
 const AboutUsPage = ({state, actions}) => {
 
@@ -59,7 +59,7 @@ const AboutUsPage = ({state, actions}) => {
                     <Overlay>
                       <Name>{data.Name}</Name>
                       <Title>{data.Title}</Title>
-                      <Description>{data.Description}</Description>
+                      {/* <Description>{data.Description}</Description> */}
                     </Overlay>
                   </Column>
                   </a>

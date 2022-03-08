@@ -4,7 +4,7 @@ const staffList = [
     "Name":"Lauren Blumberg",
     "Title":"Director of Finance",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/lauren.jpg"),
+    "Image":require("../static/images/Staff/lauren.jpg"),
     "email":"lblumberg@abcbaltimore.org"
   },
   {
@@ -12,7 +12,7 @@ const staffList = [
     "Name":"Sharon Burley",
     "Title":"Programs Outreach Coordinator",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/sharon.jpg"),
+    "Image":require("../static/images/Staff/sharon.jpg"),
     "email":"sburley@abcbaltimore.org"
   },
   {
@@ -20,7 +20,7 @@ const staffList = [
     "Name":"Brittany Chaapel",
     "Title":"Director of Programs and Marketing",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/brittany.jpg"),
+    "Image":require("../static/images/Staff/brittany.jpg"),
     "email":"bchaapel@abcbaltimore.org"
   },
   {
@@ -28,7 +28,7 @@ const staffList = [
     "Name":"Gene Cobb",
     "Title":"Safety Director",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/gene.jpg"),
+    "Image":require("../static/images/Staff/gene.jpg"),
     "email":"gcobb@abcbaltimore.org"
   },
   {
@@ -36,7 +36,7 @@ const staffList = [
     "Name":"Siona Glasgow",
     "Title":"Apprenticeship Coordinator",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/siona.jpg"),
+    "Image":require("../static/images/Staff/siona.jpg"),
     "email":"sglasgow@abcbaltimore.org"
   },
   {
@@ -44,7 +44,7 @@ const staffList = [
     "Name":"Kirston Graves",
     "Title":"Administration & Compliance Manager",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/kirston.jpg"),
+    "Image":require("../static/images/Staff/kirston.jpg"),
     "email":"kgraves@abcbaltimore.org"
   },
   {
@@ -52,7 +52,7 @@ const staffList = [
     "Name":"Christopher Hadfield",
     "Title":"Vice President, Workforce Development",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/chris.jpg"),
+    "Image":require("../static/images/Staff/chris.jpg"),
     "email":"chadfield@abcbaltimore.org"
   },
   {
@@ -60,7 +60,7 @@ const staffList = [
     "Name":"Mike Henderson",
     "Title":"President",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/mike.jpg"),
+    "Image":require("../static/images/Staff/mike.jpg"),
     "email":"mhenderson@abcbaltimore.org"
   },
   {
@@ -68,7 +68,7 @@ const staffList = [
     "Name":"Rachel Hughes",
     "Title":"Member Services",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/rachel.jpg"),
+    "Image":require("../static/images/Staff/rachel.jpg"),
     "email":"rhughes@abcbaltimore.org"
   },
   {
@@ -76,7 +76,7 @@ const staffList = [
     "Name":"Erica Jablonsky",
     "Title":"Membership Director",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/erica.jpg"),
+    "Image":require("../static/images/Staff/erica.jpg"),
     "email":"ejablonsky@abcbaltimore.org"
   },
   {
@@ -84,7 +84,7 @@ const staffList = [
     "Name":"Donte Lee",
     "Title":"Director of Education",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/donte.jpg"),
+    "Image":require("../static/images/Staff/donte.jpg"),
     "email":"dlee@abcbaltimore.org"
   },    
   {
@@ -92,7 +92,7 @@ const staffList = [
     "Name":"Jimmy Stewart",
     "Title":"Director of Employer & Community",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/jimmy.jpg"),
+    "Image":require("../static/images/Staff/jimmy.jpg"),
     "email":"jstewart@abcbaltimore.org"
   },
   {
@@ -100,7 +100,7 @@ const staffList = [
     "Name":"Bruce Talbot",
     "Title":"ABC Group Insurance Marketing",
     "Description":"Lorem Ipsum",
-    "Image":require("../assets/images/Staff/bruce.jpg"),
+    "Image":require("../static/images/Staff/bruce.jpg"),
     "email":"btalbot@abcgima.org"
   }
 ]

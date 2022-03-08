@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'frontity'
 import LogoContainer from "../logo-container/logo-container.component"
 
-import logoImage from "../../assets/images/abc-logo-new.png";
-import facebookLogo from "../../assets/images/Facebook.png"
-import youtubeLogo from "../../assets/images/Youtube.png"
-import linkedinLogo from "../../assets/images/LinkedIn.png"
-import instagramLogo from "../../assets/images/Instagram.png"
-import twitterLogo from "../../assets/images/Twitter.png"
+import logoImage from "../../static/images/abc-logo-new.png";
+import facebookLogo from "../../static/images/Facebook.png"
+import youtubeLogo from "../../static/images/Youtube.png"
+import linkedinLogo from "../../static/images/LinkedIn.png"
+import instagramLogo from "../../static/images/Instagram.png"
+import twitterLogo from "../../static/images/Twitter.png"
 
 import { FooterContainer,
         FirstRow,

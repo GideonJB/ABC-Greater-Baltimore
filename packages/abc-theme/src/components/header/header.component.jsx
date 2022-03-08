@@ -2,9 +2,9 @@ import React, { useEffect } from "react"
 import { connect } from "frontity"
 import { useCurrentWidth } from "../../utils/utility-functions"
 
-import calIcon from "../../assets/images/cal-icon.png"
-import newsIcon from "../../assets/images/bullhorn.png"
-import logoImage from "../../assets/images/abc-logo-new.png"
+import calIcon from "../../static/images/cal-icon.png"
+import newsIcon from "../../static/images/bullhorn.png"
+import logoImage from "../../static/images/abc-logo-new.png"
 
 import LogoContainer from "../logo-container/logo-container.component"
 import Login from "../login/login.component"

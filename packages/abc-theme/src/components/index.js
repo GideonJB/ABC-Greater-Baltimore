@@ -41,7 +41,7 @@ import VirtualHRPage from "../Pages/virtualhrpage/virtualhrpage.jsx"
 import BestSponsorPage from "../Pages/bestsponsorpage/bestsponsorpage.jsx"
 import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
 
-import guy from "../assets/images/guy.jpg"
+import guy from "../static/images/guy.jpg"
 
 const Background = styled.div`
   ${fullFrameDiv}

@@ -1,12 +1,12 @@
 import { Global, css } from "frontity"
 
-import poppinsExtraLight from "../assets/fonts/Poppins/Poppins-ExtraLight.ttf"
-import poppinsLight from "../assets/fonts/Poppins/Poppins-Light.ttf"
-import poppinsThin from "../assets/fonts/Poppins/Poppins-Thin.ttf"
-import poppinsRegular from "../assets/fonts/Poppins/Poppins-Regular.ttf"
-import poppinsMedium from "../assets/fonts/Poppins/Poppins-Medium.ttf"
-import poppinsSemiBold from "../assets/fonts/Poppins/Poppins-SemiBold.ttf"
-import polyRegular from "../assets/fonts/Poly/Poly-Regular.ttf"
+import poppinsExtraLight from "../static/fonts/Poppins/Poppins-ExtraLight.ttf"
+import poppinsLight from "../static/fonts/Poppins/Poppins-Light.ttf"
+import poppinsThin from "../static/fonts/Poppins/Poppins-Thin.ttf"
+import poppinsRegular from "../static/fonts/Poppins/Poppins-Regular.ttf"
+import poppinsMedium from "../static/fonts/Poppins/Poppins-Medium.ttf"
+import poppinsSemiBold from "../static/fonts/Poppins/Poppins-SemiBold.ttf"
+import polyRegular from "../static/fonts/Poly/Poly-Regular.ttf"
 
 
 export const GlobalStyle = props => (

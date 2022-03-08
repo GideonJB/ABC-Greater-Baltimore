@@ -1,6 +1,6 @@
 import { styled } from "frontity"
 import { fullFrameDiv } from "../../styles/global-variables.styles"
-import Guy from "../../assets/images/guy.jpg"
+import Guy from "../../static/images/guy.jpg"
 
 export const Background = styled.div`
   ${fullFrameDiv}

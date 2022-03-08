@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 
 import { myunescape } from "../../utils/utility-functions"
 
-import clock from "../../assets/images/clock.png"
+import clock from "../../static/images/clock.png"
 
 import {
   CalendarContainer,
