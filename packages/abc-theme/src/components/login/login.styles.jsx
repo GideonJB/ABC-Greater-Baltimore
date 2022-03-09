@@ -33,7 +33,7 @@ export const LoginForm = styled.form`
 
 export const ErrorMessage = styled.p`
   padding: 2px;
-  color: red;
+  color: red !important;
 `
 
 export const SuccessMessage = styled.p`

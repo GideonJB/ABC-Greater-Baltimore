@@ -18,6 +18,7 @@ import { NewsContainer,
         VideosContainer,
         VideoTile,
         VideoTitleContainer,
+        BlogLink,
         } from "./news-bar.styles"
 
 
@@ -60,7 +61,7 @@ const NewsBar = ({state, actions}) => {
                 state.theme.blogPosts.map((items) => {
 
                   return (
-                    <a key={items.id} href={items.link}>
+                    <BlogLink key={items.id} link={`blog/${items.id}`}>
                       <BlogTile>
                         <div>
                           {items.fimg_url ?
@@ -73,7 +74,7 @@ const NewsBar = ({state, actions}) => {
                             {myunescape(items.title.rendered)}
                         </BlogTitleContainer>
                       </BlogTile>
-                    </a>
+                    </BlogLink>
                   )
                 })
                 :

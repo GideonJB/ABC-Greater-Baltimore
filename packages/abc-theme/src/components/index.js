@@ -40,6 +40,7 @@ import AboutUsPage from "../Pages/aboutuspage/aboutuspage.jsx"
 import VirtualHRPage from "../Pages/virtualhrpage/virtualhrpage.jsx"
 import BestSponsorPage from "../Pages/bestsponsorpage/bestsponsorpage.jsx"
 import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
+import Blog from "../components/blog/blog.component.jsx"
 
 import guy from "../static/images/guy.jpg"
 
@@ -227,6 +228,7 @@ const Root = ({ state, actions }) => {
                     <Switch location={item}>
                       <SplashPage when={dataitem.isHome} />
                       <LoginPage when={dataitem.isLoginPage} />
+                      <Blog when={state.router.link.includes('blog')}/>
                       <EventsPage when={dataitem.isPage && state.router.link ==='/events/'} />
                       <PdpPage when={dataitem.isPage && state.router.link ==='/pdp/'} />
                       <SearchPage when={dataitem.isPage && state.router.link ==='/find-a-contractor/'}/>

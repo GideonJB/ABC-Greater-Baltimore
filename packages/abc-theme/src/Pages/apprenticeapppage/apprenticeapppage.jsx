@@ -111,15 +111,8 @@ const ApprenticeAppPage = ({ state, actions }) => {
           <Controller control={control} name="middleName"
             rules={{ required: false }}
             render={({ field }) => (
-              <FormInput {...field} label="*Middle Name" />
+              <FormInput {...field} label="Middle Name" />
             )} />  
-
-          <Controller control={control} name="middleName"
-            rules={{ required: true }}
-            render={({ field }) => (
-              <FormInput {...field} label="*Middle Name" />
-            )} />
-          {errors.middleName?.type === 'required' && (<ErrorMessage>"Middle Name is Required"</ErrorMessage>)}
           
           <Controller control={control} name="lastName"
             rules={{ required: true }}
@@ -336,7 +329,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
           <h4>Employment Status</h4>
                     
           <InputLabel>*Are you currently with a participating Employer?</InputLabel><br />
-          <Controller control={control} name="_op1"
+          <Controller control={control} name="_op4"
             rules={{ required: true }}
             render={({ field }) => (
               <>
@@ -346,7 +339,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
                 <label htmlFor="No">No</label><br />
               </>
             )} />
-          {errors._op1?.type === 'required' && (<ErrorMessage>"Participating Employer Status is Required"</ErrorMessage>)}
+          {errors._op4?.type === 'required' && (<ErrorMessage>"Participating Employer Status is Required"</ErrorMessage>)}
 
           <Controller control={control} name="_mt1"
             rules={{ required: true }}

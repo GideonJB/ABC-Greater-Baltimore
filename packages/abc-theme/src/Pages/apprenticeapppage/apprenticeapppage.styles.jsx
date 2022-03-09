@@ -39,7 +39,7 @@ export const FormWrapper = styled.div`
 export const ErrorMessage = styled.p`
   font-size: .8em;
   margin-top: -20px;
-  color: red;
+  color: red !important;
 `
 
 export const FormFrame = styled.iframe`

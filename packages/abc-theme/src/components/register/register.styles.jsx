@@ -17,7 +17,7 @@ export const SuccessMessage = styled.p`
 
 export const ErrorMessage = styled.p`
   padding: 2px;
-  color: red;
+  color: red !important;
 `
 
 export const ForgottenButton = styled.a`

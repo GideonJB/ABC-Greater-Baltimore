@@ -15,6 +15,7 @@ import managementmobile from "../../static/images/management_mobile.jpg"
 import membershipmobile from "../../static/images/membership_mobile.jpg"
 import politicalmobile from "../../static/images/political_mobile.jpg"
 import safetymobile from "../../static/images/safety_mobile.jpg"
+import membersonlymobile from "../../static/images/membersonly_mobile.jpg"
 
 import { fullFrameDiv } from "../../styles/global-variables.styles"
 
@@ -208,7 +209,7 @@ export const MenuContainer = styled.div`
 
     &.expanded{
       div{
-        transition: .5s all;
+        transition: .45s all;
         visibility: visible;
         opacity: 100%;
         pointer-events: auto;
@@ -216,7 +217,8 @@ export const MenuContainer = styled.div`
       }
         .grow{
         /* background-size: 112% */
-        transform: scale(1.02);
+        transform-origin: top right;
+        transform: scale(1.42);
       }
       h1{
         margin-left: 5px;
@@ -311,13 +313,17 @@ export const MembershipBackground = styled.div`
 
   @media screen and (max-width: 1100px){
     background-image: url(${membershipmobile});
-    height: 400px;
+    height: 500px;
   }
 `
 export const MembershipItemsContainer = styled.div`
   overflow: hidden;
   background: var(--colors-membership-overlay);
   ${itemContainerStyles}
+
+  @media screen and (max-width: 1100px){
+    height: 500px;
+  }
 `
 
 export const ApprenticeshipBackground = styled.div`
@@ -328,7 +334,7 @@ export const ApprenticeshipBackground = styled.div`
 
   @media screen and (max-width: 1100px){
     background-image: url(${apprenticeshipmobile});
-    height: 400px;
+    height: 500px;
   }
   
 `
@@ -336,6 +342,10 @@ export const ApprenticeshipItemsContainer = styled.div`
   overflow: hidden;
   background: var(--colors-apprenticeship-overlay);
   ${itemContainerStyles}
+
+  @media screen and (max-width: 1100px){
+    height: 500px;
+  }
 `
 
 export const SafetyBackground = styled.div`
@@ -346,8 +356,8 @@ export const SafetyBackground = styled.div`
 
   @media screen and (max-width: 1100px){
     background-image: url(${safetymobile});
-    background-position: bottom right;
-    height: 400px;
+    background-position: top right;
+    height: 500px;
     margin-top: -180px;
   }
   
@@ -357,6 +367,10 @@ export const SafetyItemsContainer = styled.div`
   overflow: hidden;
   background: var(--colors-safety-overlay);
   ${itemContainerStyles}
+
+  @media screen and (max-width: 1100px){
+    height: 500px;
+  }
 `
 
 export const EventsBackground = styled.div`
@@ -367,8 +381,8 @@ export const EventsBackground = styled.div`
 
   @media screen and (max-width: 1100px){
     background-image: url(${eventsmobile});
-    background-position: bottom right;
-    height: 400px;
+    background-position: top right;
+    height: 500px;
     margin-top: -180px;
   }
   
@@ -378,6 +392,10 @@ export const EventsItemsContainer = styled.div`
   overflow: hidden;
   background-color: var(--colors-events-overlay);
   ${itemContainerStyles}
+
+  @media screen and (max-width: 1100px){
+    height: 500px;
+  }
 `
 
 export const ManagementBackground = styled.div`
@@ -388,8 +406,8 @@ export const ManagementBackground = styled.div`
 
   @media screen and (max-width: 1100px){
     background-image: url(${managementmobile});
-    background-position: bottom right;
-    height: 400px;
+    background-position: top right;
+    height: 500px;
     
   }
   
@@ -399,6 +417,10 @@ export const ManagementItemsContainer = styled.div`
   overflow: hidden;
   background-color: var(--colors-management-overlay);
   ${itemContainerStyles}
+
+  @media screen and (max-width: 1100px){
+    height: 500px;
+  }
 `
 
 export const PoliticalBackground = styled.div`
@@ -409,8 +431,8 @@ export const PoliticalBackground = styled.div`
 
   @media screen and (max-width: 1100px){
     background-image: url(${politicalmobile});
-    background-position: bottom right;
-    height: 400px;
+    background-position: top right;
+    height: 500px;
     margin-top: -150px;
   }
   
@@ -420,6 +442,10 @@ export const PoliticalItemsContainer = styled.div`
   overflow: hidden;
   background-color: var(--colors-political-overlay);
   ${itemContainerStyles}
+
+  @media screen and (max-width: 1100px){
+    height: 500px;
+  }
 `
 
 export const MembersBackground = styled.div`
@@ -429,9 +455,9 @@ export const MembersBackground = styled.div`
   background-position: top right;
 
   @media screen and (max-width: 1100px){
-    background-image: url(${membershipmobile});
-    background-position: bottom right;
-    height: 400px;
+    background-image: url(${membersonlymobile});
+    background-position: top right;
+    height: 500px;
   }
   
 `
@@ -440,6 +466,10 @@ export const MembersItemsContainer = styled.div`
   overflow: hidden;
   background-color: var(--colors-menuGold);
   ${itemContainerStyles}
+
+  @media screen and (max-width: 1100px){
+    height: 500px;
+  }
 `
 
 

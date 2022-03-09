@@ -25,7 +25,7 @@ export const PageWrapper = styled.div`
 
   @media screen and (max-width: 1100px){
     margin-left: 0px;
-    padding: 0px 20px;
+    padding: 30px 20px;
     max-width: 100vw;
     width: 100vw;
   

@@ -10,7 +10,7 @@ const staffList = [
   {
     "id":31,
     "Name":"Sharon Burley",
-    "Title":"Programs Outreach Coordinator",
+    "Title":"Assistant Manager of Workforce Development",
     "Description":"Lorem Ipsum",
     "Image":require("../static/images/Staff/sharon.jpg"),
     "email":"sburley@abcbaltimore.org"

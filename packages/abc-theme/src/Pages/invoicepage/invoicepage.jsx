@@ -11,15 +11,15 @@ import { GlassWrap, FormWrapper, Wrapper, ErrorMessage } from './invoicepage.sty
 
 const InvoicePage = ({ state, actions }) => {
 
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem("user");
-    if (loggedInUser) {
-      state.theme.token = loggedInUser;
-    }
-    else if (state.theme.token === false) {
-      actions.router.set("/register/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("user");
+  //   if (loggedInUser) {
+  //     state.theme.token = loggedInUser;
+  //   }
+  //   else if (state.theme.token === false) {
+  //     actions.router.set("/register/");
+  //   }
+  // }, []);
 
   const { control, register, handleSubmit, watch, formState: { errors } } = useForm({
     defaultValues: {

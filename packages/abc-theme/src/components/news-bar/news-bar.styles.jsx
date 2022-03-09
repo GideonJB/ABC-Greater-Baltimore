@@ -1,4 +1,5 @@
 import { styled } from "frontity";
+import Link from "@frontity/components/link"
 
 export const NewsContainer = styled.div`
   position: absolute;
@@ -160,5 +161,9 @@ export const VideoTitleContainer = styled.div`
   
   top: 0;
   right: 0;
+`
+
+export const BlogLink = styled(Link)`
+
 `
 

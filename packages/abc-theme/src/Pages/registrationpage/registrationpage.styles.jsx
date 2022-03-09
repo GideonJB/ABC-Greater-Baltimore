@@ -63,7 +63,7 @@ export const FormWrapper = styled.div`
 
 export const ErrorMessage = styled.p`
   padding: 2px;
-  color: red;
+  color: red !important;
 `
 
 export const ForgottenButton = styled.p`
