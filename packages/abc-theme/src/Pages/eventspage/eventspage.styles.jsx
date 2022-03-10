@@ -43,11 +43,20 @@ export const CalendarWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 800px){
+    width: 100vw;
+    margin-left: -20px;
+  }
 `
 
 export const EventList = styled.div`
   background-color: var(--colors-site-white);
   width: 60%;
+
+  @media screen and (max-width: 1100px) {
+    width: 85%;
+  }
 `
 
 export const EventContainer = styled.div`
@@ -57,12 +66,18 @@ export const EventContainer = styled.div`
   height: 150px;
   transition: all .1s;
   align-items: center;
+  padding: 5px 0px;
   /* white-space: nowrap; */
 
   &:hover {
     background-color: white;
     border-left: 5px solid red;
     
+  }
+
+  @media screen and (max-width: 600px){
+    height: auto;
+    min-height: 150px;
   }
   
 `
