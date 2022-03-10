@@ -123,7 +123,7 @@ export const HamburgerIcon = styled.div`
   color: var(--colors-site-mainTheme);
   z-index: 5;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1100px) {
     display: none;
   }
 `

@@ -34,7 +34,7 @@ const LogoWrapper = styled.div`
 
   
 
-  @media screen and (min-width: 1001px){
+  @media screen and (min-width: 1099px){
     &.mobile{
       display: none;
     }

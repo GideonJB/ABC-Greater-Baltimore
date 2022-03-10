@@ -4,7 +4,7 @@ import Link from "@frontity/components/link"
 export const LoginContainer = styled.div`
   height: 80%;
   width: 60%;
-  z-index: 2;
+  z-index: 99;
   padding: 40px 40px 80px 40px;
   transition: all .5s;
   background-color: white;
