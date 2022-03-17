@@ -57,6 +57,7 @@ const SideMenu = ({ state, actions, style="" }) => {
 
     if (currentMenuObject.length > 0) {
       const mainEntry = currentMenuObject[0][1].main
+
       if (cleanMenu().includes(cleanRoute)) {
         actions.theme.createSubMenuList(currentMenuObject[0][1].submenu)
         actions.theme.setActiveMenu("main", cleanRoute)
@@ -97,16 +98,19 @@ const SideMenu = ({ state, actions, style="" }) => {
       }
     } else {
       console.log("closing menu")
-      actions.theme.setActiveMenu("main", "");
-      actions.theme.setActiveMenu("sub", "");
-      actions.theme.closeSubMenu(false);
+      actions.theme.createSubMenuList(state.menu.mainMenu.workforceCareer.submenu)
+      actions.theme.setActiveMenu("main", "workforce-career");
+      actions.theme.setActiveMenu("sub", "management-education");
+      document.documentElement.style.setProperty(
+        '--colors-active',
+        state.menu.mainMenu.workforceCareer.activecolor
+      );
+      // actions.theme.closeSubMenu(false);
     }
   }
 
   const mouseEnter = () => {
-    if(state.router.link !== "/"){
-      actions.theme.openSubMenu(true);
-    }
+    
     
     const currentMenuObject = currentMenu(state.theme.hoverLink)
     actions.theme.createSubMenuList(currentMenuObject[0][1].submenu)
@@ -125,14 +129,14 @@ const SideMenu = ({ state, actions, style="" }) => {
   const mouseLeave = () => {
     if(!state.theme.menuList.includes(cleanRoute)){
       console.log("no sub")
-      actions.theme.closeSubMenu(false);
+      // actions.theme.closeSubMenu(false);
     }
     subCreate()
   }
 
   useEffect (() => {
-    if (state.theme.menuList.includes(cleanRoute)) {
-      state.theme.isSubMenuVisible = true;
+    if (state.router.link !== "/") {
+      actions.theme.openSubMenu(true);
     }
     subCreate()
   }, [state.router.link])

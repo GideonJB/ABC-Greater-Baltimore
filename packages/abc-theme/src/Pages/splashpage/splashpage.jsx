@@ -137,8 +137,6 @@ const SplashPage = ({ state, actions }) => {
                   <ItemTitle onClick={preventBubble} link="/apprenticeship">Apprenticeship</ItemTitle>
                   <HorizontalLine />
                   <ListItem onClick={preventBubble} link="/apprenticeship-application">Apprenticeship Application</ListItem><br /><br />
-                  <ListItem onClick={preventBubble} link="/task-training">Task Training</ListItem><br /><br />
-                  <ListItem onClick={preventBubble} link="/craft-courses">Craft Courses</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="http://constructioneducationacademy.org/">Daytime Trade School</ListItem><br /><br />
                 </ItemList>
               </ApprenticeshipItemsContainer>
@@ -158,13 +156,16 @@ const SplashPage = ({ state, actions }) => {
                   <ItemList>
                   <ItemTitle onClick={preventBubble} link="/management-education">Management <Break />Education</ItemTitle>
                     <HorizontalLine />
-                    <ListItem onClick={preventBubble} link="/legal-regulatory">Legal & Regulatory</ListItem><br /><br />
+                    {/* <ListItem onClick={preventBubble} link="/legal-regulatory">Legal & Regulatory</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/blueprint-reading">Blueprint Reading</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/academies">Academies</ListItem><br /><br />
-                    <ListItem onClick={preventBubble} link="/continuing-education">Continuing Education</ListItem><br /><br />
-                    <ListItem onClick={preventBubble} link="/operations">Operations</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/operations">Operations</ListItem><br /><br /> */}
+                    <ListItem onClick={preventBubble} link="/management-education">Craft Courses</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/craft-courses">Craft Courses</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/continuing-education">Continuing Education</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/pdp">Professional Development</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="http://constructioneducationacademy.org/">Daytime Trade School</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/task-training">Task Training</ListItem><br /><br />
                   </ItemList>
                 </ManagementItemsContainer>
             </MenuContainer>
