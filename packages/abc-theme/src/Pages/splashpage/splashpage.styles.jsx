@@ -475,7 +475,7 @@ export const MembersItemsContainer = styled.div`
 
 export const CardHeading = styled.h1`
   transition: .3s all;
-  font-size: 3em;
+  font-size: 2.2em;
   position: absolute;
   bottom: 5%;
   font-weight: 600;

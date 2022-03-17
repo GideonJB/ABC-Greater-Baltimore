@@ -151,10 +151,10 @@ const SplashPage = ({ state, actions }) => {
                 <ManagementBackground className="grow" />
               </GrowContainer>
               <GradientDiv />
-              <CardHeading>Management <MobileBreak/>Education</CardHeading>
+              <CardHeading>Workforce &amp; <MobileBreak/>Career</CardHeading>
                 <ManagementItemsContainer >
                   <ItemList>
-                  <ItemTitle onClick={preventBubble} link="/management-education">Management <Break />Education</ItemTitle>
+                  <ItemTitle onClick={preventBubble} link="/workforce-career">Workforce &amp;<Break />Career</ItemTitle>
                     <HorizontalLine />
                     {/* <ListItem onClick={preventBubble} link="/legal-regulatory">Legal & Regulatory</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/blueprint-reading">Blueprint Reading</ListItem><br /><br />
