@@ -56,17 +56,6 @@ const itemContainerStyles = `
   }
 `
 
-const pulse = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-`
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
@@ -94,14 +83,6 @@ export const SplashTitle = styled.h1`
   text-decoration: none;
 `
 
-export const Arrow = styled.div`
-  font-size: 10em;
-  color: white;
-  display: flex;
-  justify-content: center;
-  animation: ${pulse} 5s infinite;
-`
-
 export const GridWrapper = styled.div`
   display: flex;
   position: relative;
@@ -115,7 +96,7 @@ export const GridWrapper = styled.div`
 `
 
 export const Column = styled.div`
-  width: calc(100vw/6);
+  width: calc(100vw/4);
   height: 100%;
   overflow: visible;
   transition: .5s all;
@@ -173,7 +154,7 @@ export const MenuContainer = styled.div`
         pointer-events: auto;
       }
       h1{
-        margin-left: calc((100vw) / 6 + 50px);
+        margin-left: calc((100vw) / 4 + 20px);
       }
       .grow{
         /* background-size: 112% */
@@ -400,12 +381,12 @@ export const EventsItemsContainer = styled.div`
 
 export const ManagementBackground = styled.div`
   ${backgroundStyles};
-  background-image: url(${management});
+  background-image: url(${apprenticeship});
   background-size: cover;
   background-position: top right;
 
   @media screen and (max-width: 1100px){
-    background-image: url(${managementmobile});
+    background-image: url(${apprenticeshipmobile});
     background-position: top right;
     height: 500px;
     
@@ -487,7 +468,7 @@ export const CardHeading = styled.h1`
   transform-origin: bottom left;
   transform: rotate(-90deg);
   white-space: nowrap;
-  margin-left: calc((100vw - 180px) / 6);
+  margin-left: calc((100vw - 180px) / 4);
   margin-bottom: 0px;
 
   &::before, &::after{

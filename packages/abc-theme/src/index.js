@@ -197,47 +197,47 @@ export default {
             },
           },  
         },
-        apprenticeship: {
-          id: 22,
-          menuName: "Apprenticeship & Craft Training",
-          link: "/apprenticeship/",
-          slug: "apprenticeship",
-          color: "var(--colors-menuGray)",
-          activecolor: "var(--colors-apprenticeship)",
-          subcolor: "var(--colors-apprenticeship-dark",
-          icon: apprenticeshipicon,
-          alticon: apprenticeshipiconwhite,
-          submenu: {
-            // tradesList: {
-            //   id: 220,
-            //   menuName: "Trades List",
-            //   main: "apprenticeship",
-            //   slug: "trades-list",
-            //   link: "/trades-list/"
-            // },
-            // craftTraining: {
-            //   id: 221,
-            //   menuName: "Craft Training",
-            //   main: "apprenticeship",
-            //   slug: "craft-training",
-            //   link: "/craft-training/"
-            // },
-            apprenticeshipApplication: {
-              id: 222,
-              menuName: "Apprenticeship Application",
-              main: "apprenticeship",
-              slug: "apprenticeship-application",
-              link: "/apprenticeship-application/"
-            },
-            tradeSchool: {
-              id: 560,
-              menuName: "Daytime Trade School",
-              main: "apprenticeship",
-              slug: "trade-school",
-              link: "http://constructioneducationacademy.org/"
-            },
-          },
-        },
+        // apprenticeship: {
+        //   id: 22,
+        //   menuName: "Apprenticeship & Craft Training",
+        //   link: "/apprenticeship/",
+        //   slug: "apprenticeship",
+        //   color: "var(--colors-menuGray)",
+        //   activecolor: "var(--colors-apprenticeship)",
+        //   subcolor: "var(--colors-apprenticeship-dark",
+        //   icon: apprenticeshipicon,
+        //   alticon: apprenticeshipiconwhite,
+        //   submenu: {
+        //     // tradesList: {
+        //     //   id: 220,
+        //     //   menuName: "Trades List",
+        //     //   main: "apprenticeship",
+        //     //   slug: "trades-list",
+        //     //   link: "/trades-list/"
+        //     // },
+        //     // craftTraining: {
+        //     //   id: 221,
+        //     //   menuName: "Craft Training",
+        //     //   main: "apprenticeship",
+        //     //   slug: "craft-training",
+        //     //   link: "/craft-training/"
+        //     // },
+        //     apprenticeshipApplication: {
+        //       id: 222,
+        //       menuName: "Apprenticeship Application",
+        //       main: "apprenticeship",
+        //       slug: "apprenticeship-application",
+        //       link: "/apprenticeship-application/"
+        //     },
+        //     tradeSchool: {
+        //       id: 560,
+        //       menuName: "Daytime Trade School",
+        //       main: "apprenticeship",
+        //       slug: "trade-school",
+        //       link: "http://constructioneducationacademy.org/"
+        //     },
+        //   },
+        // },
         workforceCareer: {
           id: 55,
           menuName: "Workforce & Career",
@@ -246,9 +246,16 @@ export default {
           color: "var(--colors-menuBlue)",
           activecolor: "var(--colors-management)",
           subcolor: "var(--colors-management-dark)",
-          icon: managementicon,
-          alticon: managementiconwhite,
+          icon: apprenticeshipicon,
+          alticon: apprenticeshipiconwhite,
           submenu: {
+            apprenticeship: {
+              id: 22,
+              menuName: "Apprenticeship",
+              slug: "apprenticeship",
+              main: "workforceCareer",
+              link: "/apprenticeship/",
+            },
             managementEducation: {
               id: 558,
               menuName: "Management Education",

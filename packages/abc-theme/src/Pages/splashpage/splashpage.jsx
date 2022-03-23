@@ -11,8 +11,6 @@ import {  Wrapper,
           ItemList,
           MembershipBackground,
           MembershipItemsContainer,
-          SplashTitleContainer,
-          SplashTitle,
           ManagementBackground,
           ManagementItemsContainer,
           PoliticalBackground,
@@ -31,9 +29,6 @@ import {  Wrapper,
           GrowContainer,
           Break,
           MobileBreak,
-          MobileColumn,
-          MobileColumnA,
-          Arrow,
         } from './splashpage.styles';
 
 const SplashPage = ({ state, actions }) => {
@@ -124,7 +119,7 @@ const SplashPage = ({ state, actions }) => {
             </MenuContainer>
           </Column>
 
-          <Column onClick={() => menuExpand("apprenticeship")}
+          {/* <Column onClick={() => menuExpand("apprenticeship")}
             className={state.theme.expandedMenu === "apprenticeship" ? "expanded" : ""}>
             <MenuContainer className={state.theme.expandedMenu === "apprenticeship" ? "expanded bordered" : "bordered"}>
               <GrowContainer>
@@ -141,7 +136,7 @@ const SplashPage = ({ state, actions }) => {
                 </ItemList>
               </ApprenticeshipItemsContainer>
             </MenuContainer>
-          </Column>
+          </Column> */}
 
           <Column onClick={() => menuExpand("management")}
             className={state.theme.expandedMenu === "management" ? "expanded" : ""}>
@@ -160,7 +155,8 @@ const SplashPage = ({ state, actions }) => {
                     <ListItem onClick={preventBubble} link="/blueprint-reading">Blueprint Reading</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/academies">Academies</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/operations">Operations</ListItem><br /><br /> */}
-                    <ListItem onClick={preventBubble} link="/management-education">Craft Courses</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/apprenticeship">Apprenticeship</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/management-education">Management Education</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/craft-courses">Craft Courses</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/continuing-education">Continuing Education</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/pdp">Professional Development</ListItem><br /><br />
@@ -193,25 +189,28 @@ const SplashPage = ({ state, actions }) => {
             </MenuContainer>
           </Column>
 
-          <Column onClick={() => menuExpand("political")}
-            className={state.theme.expandedMenu === "political" ? "expanded" : ""}>
-            <MenuContainer className={state.theme.expandedMenu === "political" ? "expanded bordered" : "bordered"}>
-              <GrowContainer>
-                <PoliticalBackground className="grow"/>
-              </GrowContainer>
-              <GradientDiv />
-              <CardHeading>Political <MobileBreak/>Advocacy</CardHeading>
-                <PoliticalItemsContainer>
-                  <ItemList>
-                    <ItemTitle onClick={preventBubble} link="/political-advocacy">Political<Break /> Advocacy</ItemTitle>
-                    <HorizontalLine />   
-                  <ListItem onClick={preventBubble} link="https://www.abc.org/Politics-Policy/ABC-PAC">National PAC</ListItem><br /><br />
-                  </ItemList>
-                </PoliticalItemsContainer>
-            </MenuContainer>
-          </Column>
+          
           {state.theme.intViewportWidth < 1001
           ?
+          <>
+            <Column onClick={() => menuExpand("political")}
+              className={state.theme.expandedMenu === "political" ? "expanded" : ""}>
+              <MenuContainer className={state.theme.expandedMenu === "political" ? "expanded bordered" : "bordered"}>
+                <GrowContainer>
+                  <PoliticalBackground className="grow"/>
+                </GrowContainer>
+                <GradientDiv />
+                <CardHeading>Political <MobileBreak/>Advocacy</CardHeading>
+                  <PoliticalItemsContainer>
+                    <ItemList>
+                      <ItemTitle onClick={preventBubble} link="/political-advocacy">Political<Break /> Advocacy</ItemTitle>
+                      <HorizontalLine />   
+                    <ListItem onClick={preventBubble} link="https://www.abc.org/Politics-Policy/ABC-PAC">National PAC</ListItem><br /><br />
+                    </ItemList>
+                  </PoliticalItemsContainer>
+              </MenuContainer>
+            </Column>
+
             <Column onClick={() => menuExpand("members")}
               className={state.theme.expandedMenu === "members" ? "expanded" : ""}>
               <MenuContainer className={state.theme.expandedMenu === "members" ? "expanded bordered" : "bordered"}>
@@ -232,6 +231,7 @@ const SplashPage = ({ state, actions }) => {
                 </MembersItemsContainer>
               </MenuContainer>
             </Column>
+          </>
           :
             null
           }
