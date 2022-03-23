@@ -29,13 +29,15 @@ export const Wrapper = styled.div`
   }
 
   .active .menu-border{
-     /* border-bottom: solid 2px red; */
+     span{
+       border-bottom: solid 2px red;
+      }
   }
 
   .menu-border{
     &:hover{
       span{
-        border-bottom: solid 2px red;
+        /* border-bottom: solid 2px red; */
       }
     }
   }

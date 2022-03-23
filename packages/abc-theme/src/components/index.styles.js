@@ -75,6 +75,22 @@ export const GlobalStyle = props => (
       *::after {
         box-sizing: border-box;
       }
+      html{
+        overflow-y: scroll;
+        /* &::-webkit-scrollbar {
+          width: 11px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #154734;  
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: #f3f0dd;
+          border-radius: 6px;
+          border: 3px solid #154734;
+        } */
+      }
 
       /* Remove default margin */
       body,

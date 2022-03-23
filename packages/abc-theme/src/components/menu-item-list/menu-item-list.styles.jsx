@@ -124,24 +124,6 @@ export const IconContainer = styled.div`
 
 `
 
-export const SubListContainer = styled(Link)`
-  /* transition: .5s all; */
-  width: 100%;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: .8rem;
-  font-family: "Poppins";
-  cursor: pointer;
-  line-height: .8;
-  
-`
-
-export const SubWrapper = styled.div`
-  transition: 2s all;
-  height: 200px;
-
-  &.inactive{
-    height: 0px;
-    overflow: hidden;
-  }
+export const SpecialDiv = styled.div`
+  color: red;
 `

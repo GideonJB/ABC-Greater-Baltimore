@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from 'frontity'
 
-import SubmenuItemList from "../submenu-item-list/submenu-item-list-component"
-
-import { MenuItem, IconContainer, ListContainer, HoverWrapper, SubListContainer, SubWrapper } from './menu-item-list.styles'
+import { MenuItem, IconContainer, ListContainer, HoverWrapper, SpecialDiv } from './menu-item-list.styles'
 
 const MenuItemList = ({ state, menu, hoverEnter=null, hoverLeave=null, style="" }) => {
   //Takes in a menu object and returns a list of menu links
@@ -49,7 +47,13 @@ const MenuItemList = ({ state, menu, hoverEnter=null, hoverLeave=null, style="" 
               // key={id}
               >
                 <span >
-                  {menuName}
+                  {menuName === "Daytime Trade School" ?
+                  <SpecialDiv>{menuName}</SpecialDiv>
+                  :
+                  <>
+                    {menuName}
+                  </>
+                  }
                 </span>
             </MenuItem>
             </ListContainer>

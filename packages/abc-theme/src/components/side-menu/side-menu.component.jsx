@@ -54,6 +54,7 @@ const SideMenu = ({ state, actions, style="" }) => {
 
   const subCreate = () => {
     const currentMenuObject = currentMenu(route)
+    const managementItems = ["academies", "operations", "legal-regulatory", "blueprint-reading"]
 
     if (currentMenuObject.length > 0) {
       const mainEntry = currentMenuObject[0][1].main
@@ -96,7 +97,7 @@ const SideMenu = ({ state, actions, style="" }) => {
         actions.theme.setActiveMenu("main", state.menu.memberMenu[mainEntry].slug)
         actions.theme.setActiveMenu("sub", cleanRoute)
       }
-    } else {
+    } else if (managementItems.includes(cleanRoute)){
       console.log("closing menu")
       actions.theme.createSubMenuList(state.menu.mainMenu.workforceCareer.submenu)
       actions.theme.setActiveMenu("main", "workforce-career");
@@ -105,25 +106,32 @@ const SideMenu = ({ state, actions, style="" }) => {
         '--colors-active',
         state.menu.mainMenu.workforceCareer.activecolor
       );
-      // actions.theme.closeSubMenu(false);
+    }
+    else{
+      actions.theme.createSubMenuList([]);
+      actions.theme.setActiveMenu("main", "");
+      actions.theme.setActiveMenu("sub", "");
     }
   }
 
   const mouseEnter = () => {
-    
-    
-    const currentMenuObject = currentMenu(state.theme.hoverLink)
-    actions.theme.createSubMenuList(currentMenuObject[0][1].submenu)
-    actions.theme.setActiveMenu("main", state.theme.hoverLink.replace(/^\/|\/$/g, ''))
-    
-    document.documentElement.style.setProperty(
-      '--colors-active',
-      currentMenuObject[0][1].activecolor
-    );
-    document.documentElement.style.setProperty(
-      '--colors-sub',
-      currentMenuObject[0][1].subcolor
-    );
+    var l = 100000;
+    while (l--) clearTimeout(l)
+
+    setTimeout(()=>{
+      const currentMenuObject = currentMenu(state.theme.hoverLink)
+      actions.theme.createSubMenuList(currentMenuObject[0][1].submenu)
+      actions.theme.setActiveMenu("main", state.theme.hoverLink.replace(/^\/|\/$/g, ''))
+
+      document.documentElement.style.setProperty(
+        '--colors-active',
+        currentMenuObject[0][1].activecolor
+      );
+      document.documentElement.style.setProperty(
+        '--colors-sub',
+        currentMenuObject[0][1].subcolor
+      );
+    }, 400)
   }
 
   const mouseLeave = () => {

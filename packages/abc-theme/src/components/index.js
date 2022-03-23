@@ -172,7 +172,7 @@ const Root = ({ state, actions }) => {
 
   const transitions = useTransition(location, {
     from: { opacity: 0,},
-    enter: { opacity: 1, height: '100%' },
+    enter: { opacity: 1, height: '100%', "overflow-y": 'scroll', },
     leave: { opacity: 0, display:"none" },
     config: { duration: 500 },
     delay: 500

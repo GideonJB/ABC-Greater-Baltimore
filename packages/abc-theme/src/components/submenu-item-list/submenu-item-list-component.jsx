@@ -7,12 +7,17 @@ import { SubMenuWrapper, SubMenuLine, SubMenuItemWrapper } from "./submenu-item-
 
 const SubMenuItemList = ({ state, actions }) => {
   
+  const timeoutCancel = () => {
+    var l = 100000;
+    while (l--) clearTimeout(l)
+  }
+
   return ( 
    <>
     {state.theme.isSubMenuVisible && 
       Object.keys(state.theme.subMenuList).length !== 0
     ?
-    <SubMenuWrapper className="open">
+    <SubMenuWrapper className="open" onMouseEnter={timeoutCancel}>
       <SubMenuItemWrapper>
         {/* <SubMenuLine /> */}
         <MenuItemList menu={state.theme.subMenuList} style="sub" />

@@ -295,7 +295,7 @@ export default {
               id: 553,
               menuName: "Continuing Education",
               main: "workforceCareer",
-              slug: "continuing-Education",
+              slug: "continuing-education",
               link: "/continuing-education/"
             },
             pdp: {
