@@ -326,6 +326,13 @@ export default {
               slug: "task-training",
               link: "/task-training/"
             },
+            projectJumpstart: {
+              id: 601,
+              menuName: "Project JumpStart",
+              main: "workforceCareer",
+              slug: "project-jumpstart",
+              link: "http://projectjumpstarttraining.org/"
+            },
             tradeSchool: {
               id: 565,
               menuName: "Daytime Trade School",

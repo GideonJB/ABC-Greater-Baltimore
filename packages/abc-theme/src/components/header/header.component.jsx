@@ -23,7 +23,7 @@ import { HeaderLinkContainer,
       } from "./header.styles"
 
 
-const Header = ({ state, actions, color="" }) => {
+const Header = ({ state, actions, color="", style="" }) => {
 
   
 
@@ -93,7 +93,7 @@ const Header = ({ state, actions, color="" }) => {
           :
           null
         } */}
-        <LeftGroup>
+        <LeftGroup className={style === "inner" ? "inner" : ""}>
           {state.router.link !== "/"
           ?
             <HamburgerIcon onClick={() => handleHamburger()}>
@@ -103,17 +103,17 @@ const Header = ({ state, actions, color="" }) => {
             null
           }
           <LogoContainer link="/" source={logoImage} altText="ABC Logo"
-                          widthValue="200px" screenType="desktop"
+                          widthValue="170px" screenType="desktop"
                           heightValue="auto" />
           <LogoContainer link="/" source={logoImage} altText="ABC Logo"
             widthValue="120px" screenType="mobile"
             heightValue="auto" />
         </LeftGroup>
-        <div>
+        {/* <div>
           <Tagline>Your <strong>Success</strong> Is Our <strong>Mission</strong></Tagline>
-        </div>
+        </div> */}
         <HeaderLinkContainer className={color}>
-          {state.theme.token
+          {/* {state.theme.token
           ?
             <HeaderLink onClick={() => handleLogout()} link="/">Logout</HeaderLink>
           :
@@ -121,10 +121,10 @@ const Header = ({ state, actions, color="" }) => {
           }
           
           
-          <HeaderLink className="large-only" onClick={() => handleClick()} link="/about-us">About Us</HeaderLink>
+          <HeaderLink className="large-only" onClick={() => handleClick()} link="/about-us">About Us</HeaderLink> */}
           
           
-          <PhoneText>410-821-0351</PhoneText>
+          {/* <PhoneText>410-821-0351</PhoneText> */}
           
           <NewsLink onClick={() => toggleNews()}>News</NewsLink>
           

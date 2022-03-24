@@ -108,6 +108,10 @@ const SpacingDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 1100px) {
+    padding-top: 50px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -124,7 +128,8 @@ const ContentWrapper = styled.div`
   }
 
   @media screen and (max-width: 1100px) {
-    height: var(--screen-height-mobile);
+    
+    /* height: var(--screen-height-mobile); */
   }
 
 `
@@ -211,7 +216,7 @@ const Root = ({ state, actions }) => {
       <Global styles={css(editorBlocksTwo)} />
       <Global styles={css(frontend_blocks)} />
       <GlobalStyle />
-      <Header/>          
+      <Header style={state.router.link !== "/" ? "inner" : ""}/>          
           <ContentWrapper>
             {state.router.link !== "/" ?
             <SideMenu style=""/>

@@ -153,20 +153,13 @@ const SideMenu = ({ state, actions, style="" }) => {
   
   return (
     <SideHoverWrapper onMouseLeave={() => mouseLeave()}>
-      <Wrapper>
-        <MenuItemContainer className={style==="alt" ? "altborder" : ""}>
-          {/* Non-MemberMenu */}
-            {style === "alt" ?
-            <MenuItemList menu={state.menu.mainMenu}
-              style="alt background"
-              hoverEnter={() => mouseEnter()}
-            />
-            :
-            <MenuItemList menu={state.menu.mainMenu}
-                          style="background" 
-                          hoverEnter={() => mouseEnter()}            
-            />
-            }
+      <Wrapper className={style === "alt" ? "altborder" : ""}>
+        <MenuItemContainer>
+          {/* Non-MemberMenu */}  
+          <MenuItemList menu={state.menu.mainMenu}
+                        style="background" 
+                        hoverEnter={() => mouseEnter()}            
+          />
         </MenuItemContainer>        
         {/* Member Menu */}
         <MemberMenuContainer>

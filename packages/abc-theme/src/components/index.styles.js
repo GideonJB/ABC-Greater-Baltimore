@@ -216,7 +216,8 @@ export const GlobalStyle = props => (
         --gradient-lightRight: linear-gradient(to right, hsla(0,0%,0%,0) 85%, hsla(0, 0%, 0%, .5) 102%);    
 
         --screen-width: calc(100vw - 150px);
-        --screen-height: calc(100vh - 75px);
+        /* --screen-height: calc(100vh - 75px); */
+        --screen-height: 100vh;
         --screen-height-mobile: calc(100vh - 50px);
 
         --shadow-color: 0deg 0% 0%;

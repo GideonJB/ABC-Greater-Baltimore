@@ -2,14 +2,16 @@ import { styled } from "frontity"
 import Link from "@frontity/components/link"
 
 export const Wrapper = styled.div`
+  position: fixed;
   width: 100%;
   height: 75px;
-  background-color: var(--colors-site-white);
-  z-index: 2;
-  border-bottom: 3px solid var(--colors-site-mainTheme);
+  /* background-color: var(--colors-site-white); */
+  z-index: 5;
+  /* border-bottom: 3px solid var(--colors-site-mainTheme); */
 
   @media screen and (max-width: 1100px) {
     height: 50px;
+    background-color: var(--colors-site-white);
   }
 `
 
@@ -40,7 +42,7 @@ export const HeaderLinkContainer = styled.div`
   width: 600px;
   padding-right: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: end;
   font-size: 1.3em;
 
@@ -90,8 +92,13 @@ export const HeaderLink = styled(Link)`
 `
 
 export const NewsLink = styled.span`
-  color: var(--colors-site-mainTheme);
+  color: var(--colors-site-white);
   cursor: pointer;
+  margin-right: 25px;
+
+  @media screen and (max-width: 1100px){
+    color: var(--colors-site-mainTheme);
+  }
 `
 
 export const IconContainer = styled.div`
@@ -129,5 +136,10 @@ export const HamburgerIcon = styled.div`
 `
 
 export const LeftGroup = styled.div`
+  margin-left: 175px;
   display: flex;
+
+  &.inner {
+    margin-left: 0px;
+  }
 `

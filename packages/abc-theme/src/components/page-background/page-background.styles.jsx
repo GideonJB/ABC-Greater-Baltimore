@@ -105,7 +105,8 @@ const getPageStyle = props => {
 
 export const BackgroundOverlay = styled.div`
   position: fixed;
-  top: 75px;
+  /* top: 75px; */
+  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -120,7 +121,8 @@ export const BackgroundOverlay = styled.div`
 export const Background = styled.div`
   ${getPageStyle};
   position: fixed;
-  top: 75px;
+  /* top: 75px; */
+  top: 0;
   right: 0;
   width: var(--screen-width);
   height: var(--screen-height);

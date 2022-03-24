@@ -2,7 +2,8 @@ import { styled } from "frontity"
 
 export const SubMenuWrapper = styled.div`
   position: absolute;
-  top: 75px;
+  /* top: 75px; */
+  top: 0;
   left: 165px;
   width: 150px;
   height: var(--screen-height);

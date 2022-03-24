@@ -17,11 +17,10 @@ export const Wrapper = styled.div`
   /* -webkit-box-shadow: 4px 0px 4px -2px ; */
   /* box-shadow: 4px 0px 4px -2px hsla(0, 0%, 0%, .5); */
   z-index: 3;
-  padding-top: 50px;
+  padding-top: 100px;
 
-  .altborder{
-    width: 220px;
-    border-right: 2px solid var(--colors-menuBlue);
+  &.altborder{
+    border-right: 2px solid var(--colors-site-mainTheme);
   }
 
   @media screen and (max-width: 1100px) {
