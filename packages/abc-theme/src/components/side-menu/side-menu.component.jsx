@@ -1,12 +1,14 @@
 import React, { useEffect } from "react"
 import { connect } from "frontity"
-import Link from "@frontity/components/link"
+
 
 import { MenuItemContainer,
         SideHoverWrapper,
         Wrapper,
         CEALogoContainer,
-        MemberMenuContainer
+        MemberMenuContainer,
+        HeaderLink,
+        HeaderLinkContainer,
       } from "./side-menu.styles"
 
 import logoImage from "../../static/images/logo-square.png";
@@ -149,32 +151,58 @@ const SideMenu = ({ state, actions, style="" }) => {
     subCreate()
   }, [state.router.link])
 
+  const handleClick = () => {
+    // actions.theme.closeSubMenu(false)
+    // actions.theme.setSubMenuLink("");
+    const actives = Array.from(document.querySelectorAll('.active'));
+    actives.forEach(node => {
+      node.classList.remove('active');
+    })
+  }
+
+  const handleLogout = () => {
+    state.theme.token = false;
+    localStorage.removeItem('user');
+  }
+
   
   
   return (
-    <SideHoverWrapper onMouseLeave={() => mouseLeave()}>
-      <Wrapper className={style === "alt" ? "altborder" : ""}>
-        <MenuItemContainer>
-          {/* Non-MemberMenu */}  
-          <MenuItemList menu={state.menu.mainMenu}
-                        style="background" 
-                        hoverEnter={() => mouseEnter()}            
-          />
-        </MenuItemContainer>        
-        {/* Member Menu */}
-        <MemberMenuContainer>
-          <MenuItemList menu={state.menu.memberMenu}
-            style="member"
-            hoverEnter={() => mouseEnter()}
-          />
-        </MemberMenuContainer>
-      </Wrapper>
-      {style === "alt" ?
-      null
-      :
-      <SubmenuItemList menu={state.theme.SubmenuItemList} />
-      }
-    </SideHoverWrapper>
+    <>
+      <SideHoverWrapper onMouseLeave={() => mouseLeave()}>
+        <Wrapper className={style === "alt" ? "altborder" : ""}>
+          <MenuItemContainer>
+            {/* Non-MemberMenu */}  
+            <MenuItemList menu={state.menu.mainMenu}
+                          style="background" 
+                          hoverEnter={() => mouseEnter()}            
+            />
+          </MenuItemContainer>        
+          {/* Member Menu */}
+          <MemberMenuContainer>
+            <MenuItemList menu={state.menu.memberMenu}
+              style="member"
+              hoverEnter={() => mouseEnter()}
+            />
+          </MemberMenuContainer>
+          <HeaderLinkContainer>
+            {state.theme.token
+            ?
+              <HeaderLink onClick={() => handleLogout()} link="/">Logout</HeaderLink>
+            :
+              <HeaderLink onClick={() => handleClick()} link="/login">Member Login</HeaderLink>
+            }
+          </HeaderLinkContainer>
+        </Wrapper>
+        {style === "alt" ?
+        null
+        :
+        <SubmenuItemList menu={state.theme.SubmenuItemList} />
+        }
+        
+      </SideHoverWrapper>
+      
+    </>
   )
 }
 

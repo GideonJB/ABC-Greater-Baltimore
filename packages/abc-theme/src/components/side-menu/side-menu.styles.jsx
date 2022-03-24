@@ -1,4 +1,5 @@
 import { styled } from "frontity"
+import Link from "@frontity/components/link"
 
 export const SideHoverWrapper = styled.div`
   display: flex;
@@ -68,5 +69,17 @@ export const MemberMenuContainer = styled.div`
     color: white;
   } */
 `
+export const HeaderLinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+`
 
+export const HeaderLink = styled(Link)`
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  
+`
