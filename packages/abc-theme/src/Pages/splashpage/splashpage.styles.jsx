@@ -96,7 +96,7 @@ export const GridWrapper = styled.div`
 `
 
 export const Column = styled.div`
-  width: calc((100vw - 150px) /4);
+  width: calc((100vw - 150px) /5);
   height: 100%;
   overflow: visible;
   transition: .5s all;
@@ -154,7 +154,7 @@ export const MenuContainer = styled.div`
         pointer-events: auto;
       }
       h1{
-        margin-left: calc((100vw) / 4 + 20px);
+        margin-left: calc((100vw) / 5 + 20px);
       }
       .grow{
         /* background-size: 112% */
@@ -181,7 +181,7 @@ export const MenuContainer = styled.div`
         transform: scale(1.02);
       }
        h1{
-        margin-left: calc((100vw) / 6 + 50px);
+        margin-left: calc((100vw) / 5 + 50px);
       }
     }
   }
@@ -431,7 +431,7 @@ export const PoliticalItemsContainer = styled.div`
 
 export const MembersBackground = styled.div`
   ${backgroundStyles};
-  background-image: url(${membership});
+  background-image: url(${membersonlymobile});
   background-size: cover;
   background-position: top right;
 
@@ -468,7 +468,7 @@ export const CardHeading = styled.h1`
   transform-origin: bottom left;
   transform: rotate(-90deg);
   white-space: nowrap;
-  margin-left: calc((100vw - 180px) / 4);
+  margin-left: calc((100vw - 220px) / 5);
   margin-bottom: 0px;
 
   &::before, &::after{

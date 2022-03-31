@@ -370,6 +370,13 @@ export const GlobalStyle = props => (
         -webkit-box-shadow: 4px 4px 5px -2px #000000; 
         box-shadow: 4px 4px 5px -2px #000000;
       }
+
+      .relative{
+        position: relative;
+      }
+      .paddingTop{
+        padding-top: 20px;
+      }
       
       .glass{
         position: relative;
@@ -389,10 +396,27 @@ export const GlobalStyle = props => (
             width: 100vw;
             left: -20px;
           }
-          
-        }
+ 
+        }       
+      }
 
-       
+      .whiteContainerBackground{
+        position: relative;
+
+        &::before{
+          content:"";
+          background: var(--colors-site-white);
+          position: absolute;
+          height: 100%;
+          width: 200vw;
+          left: -100vw;
+
+          @media screen and (max-width: 800px){
+            width: 100vw;
+            left: -20px;
+          }
+ 
+        }       
       }
 
       .wp-block-media-text{

@@ -93,7 +93,7 @@ const Header = ({ state, actions, color="", style="" }) => {
           :
           null
         } */}
-        <LeftGroup className={style === "inner" ? "inner" : ""}>
+        <LeftGroup className={style === "inner" ? "inner" : "inner"}>
           {state.router.link !== "/"
           ?
             <HamburgerIcon onClick={() => handleHamburger()}>
@@ -118,10 +118,10 @@ const Header = ({ state, actions, color="", style="" }) => {
             <HeaderLink onClick={() => handleLogout()} link="/">Logout</HeaderLink>
           :
             <HeaderLink onClick={() => handleClick()} link="/login">Member Login</HeaderLink>
-          }
+          } */}
           
           
-          <HeaderLink className="large-only" onClick={() => handleClick()} link="/about-us">About Us</HeaderLink> */}
+          <HeaderLink className="large-only" onClick={() => handleClick()} link="/about-us">About Us</HeaderLink>
           
           
           {/* <PhoneText>410-821-0351</PhoneText> */}

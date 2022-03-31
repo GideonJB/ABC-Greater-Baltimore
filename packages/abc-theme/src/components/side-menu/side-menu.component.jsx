@@ -185,14 +185,14 @@ const SideMenu = ({ state, actions, style="" }) => {
               hoverEnter={() => mouseEnter()}
             />
           </MemberMenuContainer>
-          <HeaderLinkContainer>
+          {/* <HeaderLinkContainer>
             {state.theme.token
             ?
               <HeaderLink onClick={() => handleLogout()} link="/">Logout</HeaderLink>
             :
               <HeaderLink onClick={() => handleClick()} link="/login">Member Login</HeaderLink>
             }
-          </HeaderLinkContainer>
+          </HeaderLinkContainer> */}
         </Wrapper>
         {style === "alt" ?
         null

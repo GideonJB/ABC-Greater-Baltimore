@@ -57,8 +57,9 @@ export const HoverWrapper = styled.div`
 export const ListContainer = styled(Link)`
   /* transition: .5s all; */
   width: 100%;
-  margin-left: 5px;
+  /* margin-left: 5px; */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   text-decoration: none;
@@ -66,6 +67,10 @@ export const ListContainer = styled(Link)`
   font-size: .8rem;
   font-family: "Poppins";
   cursor: pointer;
+
+  &.sub{
+    flex-direction: row;
+  }
 
   &:hover{
     transform: scale(1.02);

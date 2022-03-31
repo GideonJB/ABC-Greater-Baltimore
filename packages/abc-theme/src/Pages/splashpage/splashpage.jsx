@@ -58,6 +58,11 @@ const SplashPage = ({ state, actions }) => {
     e.stopPropagation();
     state.theme.isHamburgerOpen = false;
   }
+
+  const handleLogout = () => {
+    state.theme.token = false;
+    localStorage.removeItem('user');
+  }
   
 
   return (
@@ -191,29 +196,10 @@ const SplashPage = ({ state, actions }) => {
               </SafetyItemsContainer>
             </MenuContainer>
           </Column>
-
           
-          {state.theme.intViewportWidth < 1001
+          {state.theme.intViewportWidth > 1001
           ?
           <>
-            <Column onClick={() => menuExpand("political")}
-              className={state.theme.expandedMenu === "political" ? "expanded" : ""}>
-              <MenuContainer className={state.theme.expandedMenu === "political" ? "expanded bordered" : "bordered"}>
-                <GrowContainer>
-                  <PoliticalBackground className="grow"/>
-                </GrowContainer>
-                <GradientDiv />
-                <CardHeading>Political <MobileBreak/>Advocacy</CardHeading>
-                  <PoliticalItemsContainer>
-                    <ItemList>
-                      <ItemTitle onClick={preventBubble} link="/political-advocacy">Political<Break /> Advocacy</ItemTitle>
-                      <HorizontalLine />   
-                    <ListItem onClick={preventBubble} link="https://www.abc.org/Politics-Policy/ABC-PAC">National PAC</ListItem><br /><br />
-                    </ItemList>
-                  </PoliticalItemsContainer>
-              </MenuContainer>
-            </Column>
-
             <Column onClick={() => menuExpand("members")}
               className={state.theme.expandedMenu === "members" ? "expanded" : ""}>
               <MenuContainer className={state.theme.expandedMenu === "members" ? "expanded bordered" : "bordered"}>
@@ -230,12 +216,68 @@ const SplashPage = ({ state, actions }) => {
                     <ListItem onClick={preventBubble} link="/find-a-contractor">Find a Contractor</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/pay-invoice">Pay an Invoice</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/about-us">About Us</ListItem><br /><br />
+                    {state.theme.token ?
+                      <ListItem link="#" onClick={() => handleLogout()}>Logout</ListItem>
+                    :
+                      <ListItem onClick={preventBubble} link="/login">Member Login</ListItem>
+                    }
                   </ItemList>
                 </MembersItemsContainer>
               </MenuContainer>
             </Column>
           </>
           :
+            null
+          }
+          {state.theme.intViewportWidth < 1001
+            ?
+            <>
+
+              <Column onClick={() => menuExpand("political")}
+                className={state.theme.expandedMenu === "political" ? "expanded" : ""}>
+                <MenuContainer className={state.theme.expandedMenu === "political" ? "expanded bordered" : "bordered"}>
+                  <GrowContainer>
+                    <PoliticalBackground className="grow" />
+                  </GrowContainer>
+                  <GradientDiv />
+                  <CardHeading>Political <MobileBreak />Advocacy</CardHeading>
+                  <PoliticalItemsContainer>
+                    <ItemList>
+                      <ItemTitle onClick={preventBubble} link="/political-advocacy">Political<Break /> Advocacy</ItemTitle>
+                      <HorizontalLine />
+                      <ListItem onClick={preventBubble} link="https://www.abc.org/Politics-Policy/ABC-PAC">National PAC</ListItem><br /><br />
+                    </ItemList>
+                  </PoliticalItemsContainer>
+                </MenuContainer>
+              </Column>
+
+              <Column onClick={() => menuExpand("members")}
+                className={state.theme.expandedMenu === "members" ? "expanded" : ""}>
+                <MenuContainer className={state.theme.expandedMenu === "members" ? "expanded bordered" : "bordered"}>
+                  <GrowContainer>
+                    <MembersBackground className="grow" />
+                  </GrowContainer>
+                  <GradientDiv />
+                  <CardHeading>Members Only</CardHeading>
+                  <MembersItemsContainer>
+                    <ItemList>
+                      <ItemTitle onClick={preventBubble} link="/members">Members<Break /> Only</ItemTitle>
+                      <HorizontalLine />
+                      <ListItem onClick={preventBubble} link="/virtual-hr">Virtual HR</ListItem><br /><br />
+                      <ListItem onClick={preventBubble} link="/find-a-contractor">Find a Contractor</ListItem><br /><br />
+                      <ListItem onClick={preventBubble} link="/pay-invoice">Pay an Invoice</ListItem><br /><br />
+                      <ListItem onClick={preventBubble} link="/about-us">About Us</ListItem><br /><br />
+                      {state.theme.token ?
+                        <ListItem link="#" onClick={() => handleLogout()}>Logout</ListItem>
+                        :
+                        <ListItem onClick={preventBubble} link="/login">Member Login</ListItem>
+                      }
+                    </ItemList>
+                  </MembersItemsContainer>
+                </MenuContainer>
+              </Column>
+            </>
+            :
             null
           }
         </GridWrapper>

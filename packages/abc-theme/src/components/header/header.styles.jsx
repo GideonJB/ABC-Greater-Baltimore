@@ -81,7 +81,9 @@ export const PhoneText = styled.div`
   }
 `
 export const HeaderLink = styled(Link)`
-  
+  color: var(--colors-site-white);
+  margin-right: 20px;
+
   
   @media screen and (max-width: 1100px) {
     &.large-only{
