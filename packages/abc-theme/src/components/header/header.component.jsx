@@ -4,7 +4,7 @@ import { useCurrentWidth } from "../../utils/utility-functions"
 
 import calIcon from "../../static/images/cal-icon.png"
 import newsIcon from "../../static/images/bullhorn.png"
-import logoImage from "../../static/images/abc-logo-new.png"
+import logoImage from "../../static/images/abc_logo.svg"
 
 import LogoContainer from "../logo-container/logo-container.component"
 import Login from "../login/login.component"
@@ -24,7 +24,7 @@ import { HeaderLinkContainer,
 
 
 const Header = ({ state, actions, color="", style="" }) => {
-
+  console.log(style, {style});
   
 
   // useEffect (() => {
@@ -85,7 +85,7 @@ const Header = ({ state, actions, color="", style="" }) => {
   }
 
   return(
-    <Wrapper>
+    <Wrapper className={style === "alt" ? "alt" : ""}>
       <HeaderWrapper>
         {/* {state.theme.isLoginMenuVisible === true
           ?
@@ -103,7 +103,7 @@ const Header = ({ state, actions, color="", style="" }) => {
             null
           }
           <LogoContainer link="/" source={logoImage} altText="ABC Logo"
-                          widthValue="170px" screenType="desktop"
+                          widthValue={style === "alt" ? "250px" : "150px"} screenType="desktop"
                           heightValue="auto" />
           <LogoContainer link="/" source={logoImage} altText="ABC Logo"
             widthValue="120px" screenType="mobile"
@@ -121,12 +121,12 @@ const Header = ({ state, actions, color="", style="" }) => {
           } */}
           
           
-          <HeaderLink className="large-only" onClick={() => handleClick()} link="/about-us">About Us</HeaderLink>
+          <HeaderLink className={`large-only ${color}`} onClick={() => handleClick()} link="/about-us">About Us</HeaderLink>
           
           
           {/* <PhoneText>410-821-0351</PhoneText> */}
           
-          <NewsLink onClick={() => toggleNews()}>News</NewsLink>
+          <NewsLink onClick={() => toggleNews()} className={color}>Media</NewsLink>
           
           <IconContainer>
             <CalendarIcon className={color} onClick={() => toggleCalendar()}>

@@ -177,7 +177,7 @@ const Root = ({ state, actions }) => {
 
   const transitions = useTransition(location, {
     from: { opacity: 0,},
-    enter: { opacity: 1, height: '100%', "overflow-y": 'scroll', },
+    enter: { opacity: 1, height: '100%', "overflow-y": 'scroll', "overflow-x": "hidden", },
     leave: { opacity: 0, display:"none" },
     config: { duration: 500 },
     delay: 500
@@ -216,7 +216,9 @@ const Root = ({ state, actions }) => {
       <Global styles={css(editorBlocksTwo)} />
       <Global styles={css(frontend_blocks)} />
       <GlobalStyle />
-      <Header style={state.router.link !== "/" ? "inner" : ""}/>          
+      <Header style={state.router.link !== "/" ? "inner" : "alt"}
+              color={state.router.link !== "/" ? "" : "blue"}
+      />          
           <ContentWrapper>
             {state.router.link !== "/" ?
             <SideMenu style=""/>

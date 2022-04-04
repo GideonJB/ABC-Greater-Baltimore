@@ -15,7 +15,7 @@ const LogoContainer = ({ screenType, source, altText, widthValue="100%", heightV
         { link !== null
         ?
         <Link link= {link}>
-        <img src={source} alt={altText} />
+        <img src={source} alt={altText} width={widthValue} height={heightValue} />
         </Link>
         :
         <img src={source} alt={altText} />
@@ -31,6 +31,7 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 5px;
 
   
 

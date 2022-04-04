@@ -9,6 +9,16 @@ export const Wrapper = styled.div`
   z-index: 5;
   /* border-bottom: 3px solid var(--colors-site-mainTheme); */
 
+  &.alt{
+    background-color: var(--colors-site-white);
+    height: 100px;
+    border-bottom: 2px solid var(--colors-site-mainTheme);
+
+    @media screen and (max-width: 1100px) {
+      height: 50px;
+    }
+  }
+
   @media screen and (max-width: 1100px) {
     height: 50px;
     background-color: var(--colors-site-white);
@@ -83,12 +93,19 @@ export const PhoneText = styled.div`
 export const HeaderLink = styled(Link)`
   color: var(--colors-site-white);
   margin-right: 20px;
+  filter: drop-shadow(2px 2px 2px var(--colors-site-mainTheme));
+
+  &.blue{
+    color: var(--colors-site-mainTheme);
+    filter: none;
+  }
 
   
   @media screen and (max-width: 1100px) {
     &.large-only{
       display: none;
-    }  
+    }
+    filter: none;
   }
 
 `
@@ -97,9 +114,16 @@ export const NewsLink = styled.span`
   color: var(--colors-site-white);
   cursor: pointer;
   margin-right: 25px;
+  filter: drop-shadow(2px 2px 2px var(--colors-site-mainTheme));
+
+  &.blue{
+    color: var(--colors-site-mainTheme);
+    filter: none;
+  }
 
   @media screen and (max-width: 1100px){
     color: var(--colors-site-mainTheme);
+    filter: none;
   }
 `
 
