@@ -109,9 +109,13 @@ const Header = ({ state, actions, color="", style="" }) => {
             widthValue="120px" screenType="mobile"
             heightValue="auto" />
         </LeftGroup>
-        {/* <div>
-          <Tagline>Your <strong>Success</strong> Is Our <strong>Mission</strong></Tagline>
-        </div> */}
+        {style === "inner" ?
+          null
+        :
+          <div>
+            <Tagline>Your <span><strong>Success</strong></span> Is Our <span><strong>Mission</strong></span></Tagline>
+          </div>
+        }
         <HeaderLinkContainer className={color}>
           {/* {state.theme.token
           ?
@@ -121,12 +125,12 @@ const Header = ({ state, actions, color="", style="" }) => {
           } */}
           
           
-          <HeaderLink className={`large-only ${color}`} onClick={() => handleClick()} link="/about-us">About Us</HeaderLink>
+          <HeaderLink className={`large-only ${color}`} onClick={() => handleClick()} link="/about-us">ABOUT US</HeaderLink>
           
           
           {/* <PhoneText>410-821-0351</PhoneText> */}
           
-          <NewsLink onClick={() => toggleNews()} className={color}>Media</NewsLink>
+          <NewsLink onClick={() => toggleNews()} className={color}>MEDIA</NewsLink>
           
           <IconContainer>
             <CalendarIcon className={color} onClick={() => toggleCalendar()}>

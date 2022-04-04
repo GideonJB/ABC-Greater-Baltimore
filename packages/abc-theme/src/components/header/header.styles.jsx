@@ -82,6 +82,10 @@ export const Tagline = styled.h3`
   @media screen and (max-width: 1400px) {
    display: none;
   }
+
+  span{
+    text-decoration: underline;
+  }
 `
 
 export const PhoneText = styled.div`
