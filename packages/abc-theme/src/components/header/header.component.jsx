@@ -113,7 +113,7 @@ const Header = ({ state, actions, color="", style="" }) => {
           null
         :
           <div>
-            <Tagline>Your <span><strong>Success</strong></span> Is Our <span><strong>Mission</strong></span></Tagline>
+            <Tagline>Your Success Is Our Mission</Tagline>
           </div>
         }
         <HeaderLinkContainer className={color}>

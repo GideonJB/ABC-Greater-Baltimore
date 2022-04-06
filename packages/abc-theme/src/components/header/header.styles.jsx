@@ -49,7 +49,7 @@ export const HeaderWrapper = styled.div`
 `
 
 export const HeaderLinkContainer = styled.div`
-  width: 600px;
+  width: auto;
   padding-right: 20px;
   display: flex;
   justify-content: flex-end;
@@ -79,7 +79,10 @@ export const HeaderLinkContainer = styled.div`
 `
 
 export const Tagline = styled.h3`
-  @media screen and (max-width: 1400px) {
+  margin-top: 40px;
+  font-family: sans-serif;
+
+  @media screen and (max-width: 1200px) {
    display: none;
   }
 

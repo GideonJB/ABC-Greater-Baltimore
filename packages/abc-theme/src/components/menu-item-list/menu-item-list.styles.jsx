@@ -7,7 +7,7 @@ export const HoverWrapper = styled.div`
   width: 100%;
   /* border-bottom: 2px solid var(--colors-site-mainTheme); */
   /* border-right: 2px solid var(--colors-site-mainTheme); */
-  height: 80px;
+  height: 100px;
   background-color: var(--colors-site-white);
   
   span{
@@ -35,7 +35,7 @@ export const HoverWrapper = styled.div`
     }
     
     a{
-      color: red;
+      /* color: red; */
       text-transform: uppercase;
       font-weight: 600;
     }

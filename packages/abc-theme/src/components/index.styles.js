@@ -527,7 +527,7 @@ export const GlobalStyle = props => (
         }
       }
       h2{
-        font-size: 3.1em !important;
+        font-size: 2.3em !important;
         
       }
       h3{

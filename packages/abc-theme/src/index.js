@@ -90,7 +90,7 @@ export default {
                 "safety-training", "legal-regulatory", "blueprint-reading", "academies",
                 "continuing-education", "operations", "pdp", "national-pac", "virtual-hr",
                 "find-a-contractor", "pay-invoice", "thank-you", "apprenticeship-application",
-                "members", "about-us", "login", "register", "step", "company-update"]
+                "members", "about-us", "login", "register", "step", "company-update", "personal-coaching"]
     },
     menu: {
       mainMenu: {
@@ -450,6 +450,13 @@ export default {
               main: "members",
               slug: "find-a-contractor",
               link: "/find-a-contractor/",
+            },
+            personalCoaching: {
+              id: 776,
+              menuName: "Personal Business Coaching",
+              main: "members",
+              slug: "personal-coaching",
+              link: "/personal-coaching/",
             },
             payInvoice: {
               id: 773,

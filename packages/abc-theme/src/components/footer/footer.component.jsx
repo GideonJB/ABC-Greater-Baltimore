@@ -78,7 +78,7 @@ const Footer = ({ state }) => {
           <Copyright>&copy; 2022</Copyright>
         </SecondRow>
         <FirstRow>
-          <LogoContainer source={logoImage} alt="ABC Logo" widthValue="280px" heightValue="60px" link="/" />
+          <LogoContainer source={logoImage} alt="ABC Logo" widthValue="280px" heightValue="auto" link="/" />
         </FirstRow>
       </FooterContainer>
     :
