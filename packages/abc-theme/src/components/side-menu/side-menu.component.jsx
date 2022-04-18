@@ -174,7 +174,7 @@ const SideMenu = ({ state, actions, style="" }) => {
           <MenuItemContainer>
             {/* Non-MemberMenu */}  
             <MenuItemList menu={state.menu.mainMenu}
-                          style="background" 
+                          style="background"
                           hoverEnter={() => mouseEnter()}            
             />
           </MenuItemContainer>        

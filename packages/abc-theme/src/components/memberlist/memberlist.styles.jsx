@@ -55,7 +55,7 @@ export const ContactWrapper = styled.div`
 `
 
 export const MemberHeading = styled.h2`
-  font-size: .5em;
+  font-size: 1.5em;
   font-weight: 600;
 `
 

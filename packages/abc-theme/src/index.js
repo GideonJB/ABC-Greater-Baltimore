@@ -17,6 +17,7 @@ import eventsiconwhite from "./static/images/events-icon-white.png"
 import apprenticeshipicon from "./static/images/apprenticeship-icon.png"
 import apprenticeshipiconwhite from "./static/images/apprenticeship-icon-white.png"
 import membersonlyicon from "./static/images/members-only-icon.png"
+import membersonlyiconwhite from "./static/images/members-only-icon-white.png"
 
 
 const registrationHandler = {
@@ -435,7 +436,7 @@ export default {
           activecolor: "var(--colors-menuGold)",
           subcolor: "var(--colors-menuGold-dark)",
           icon: membersonlyicon,
-          alticon: membersonlyicon,
+          alticon: membersonlyiconwhite,
           submenu: {
             virtualHr: {
               id: 771,

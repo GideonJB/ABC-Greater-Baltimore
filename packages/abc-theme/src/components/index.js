@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { connect, css, Global, styled } from "frontity"
+import { Head, connect, css, Global, styled } from "frontity"
 import Switch from "@frontity/components/switch"
 import { useTransition, animated } from "react-spring"
 
@@ -209,6 +209,36 @@ const Root = ({ state, actions }) => {
 
   return (
     <>
+      <Head>
+      <title key="title">ABC Greater Baltimore</title>
+      {/* <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta charSet="utf-8" />
+      <link rel="icon" type="image/png" href="favicon.png" /> */}
+      <meta
+        name="description"
+        content="Workforce Development and Labor Relations"
+      />
+      {/* <meta
+        name="keywords"
+        content="saragibby, sara, gibby, who runs the world"
+      /> */}
+
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=G-RP1V6H0XCH`}
+      />
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-RP1V6H0XCH');
+            `,
+        }}
+      />
+    </Head>
       <Global styles={css(gutenburgStyle)} />
       <Global styles={css(gutenburgTheme)} />
       <Global styles={css(adminWelcome)} />

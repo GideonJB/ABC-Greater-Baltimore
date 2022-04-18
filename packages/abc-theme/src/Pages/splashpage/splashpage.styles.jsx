@@ -8,6 +8,7 @@ import membership from "../../static/images/membership.jpg"
 import political from "../../static/images/political.jpg"
 import safety from "../../static/images/safety.jpg"
 import building from "../../static/images/building.jpg"
+import membersonly from "../../static/images/members-only.jpg"
 
 import apprenticeshipmobile from "../../static/images/apprenticeship_mobile.jpg"
 import eventsmobile from "../../static/images/events_mobile.jpg"
@@ -339,7 +340,7 @@ export const SafetyBackground = styled.div`
     background-image: url(${safetymobile});
     background-position: top right;
     height: 500px;
-    margin-top: -180px;
+    margin-top: -80px;
   }
   
 `
@@ -364,7 +365,7 @@ export const EventsBackground = styled.div`
     background-image: url(${eventsmobile});
     background-position: top right;
     height: 500px;
-    margin-top: -180px;
+    margin-top: -50px;
   }
   
 `
@@ -414,7 +415,7 @@ export const PoliticalBackground = styled.div`
     background-image: url(${politicalmobile});
     background-position: top right;
     height: 500px;
-    margin-top: -150px;
+    margin-top: -100px;
   }
   
 `
@@ -431,7 +432,7 @@ export const PoliticalItemsContainer = styled.div`
 
 export const MembersBackground = styled.div`
   ${backgroundStyles};
-  background-image: url(${membersonlymobile});
+  background-image: url(${membersonly});
   background-size: cover;
   background-position: top right;
 
@@ -526,6 +527,7 @@ export const Overlay = styled.svg`
 `
 
 export const GrowContainer = styled.div`
+  position: relative;
   height: 100%;
   overflow: hidden;
   pointer-events: none;
