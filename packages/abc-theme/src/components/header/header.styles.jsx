@@ -1,5 +1,12 @@
-import { styled } from "frontity"
+import { styled, keyframes } from "frontity"
 import Link from "@frontity/components/link"
+
+const fade = keyframes`
+  0% { opacity: 1 }
+  45% { opacity: 0 }
+  55% { opacity: 0 }
+  100% { opacity: 1 }
+`
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -29,12 +36,13 @@ export const HeaderWrapper = styled.div`
   /* position: absolute; */
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   top: 20px;
   right: 25px;
   /* z-index: 5; */
   height: 100%;
   width: 100%;
+  padding-bottom: 10px;
  
 
   @media screen and (max-width: 1100px) {
@@ -79,8 +87,12 @@ export const HeaderLinkContainer = styled.div`
 `
 
 export const Tagline = styled.h3`
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  line-height: 1;
   font-family: sans-serif;
+  animation: ${fade} 6s ease-in-out infinite;
+  animation-delay: 3.5s;
+  
 
   @media screen and (max-width: 1200px) {
    display: none;
@@ -100,6 +112,7 @@ export const PhoneText = styled.div`
 export const HeaderLink = styled(Link)`
   color: var(--colors-site-white);
   margin-right: 20px;
+  line-height: 1;
   filter: drop-shadow(2px 2px 2px var(--colors-site-mainTheme));
 
   &.blue{
@@ -119,6 +132,7 @@ export const HeaderLink = styled(Link)`
 
 export const NewsLink = styled.span`
   color: var(--colors-site-white);
+  line-height: 1;
   cursor: pointer;
   margin-right: 25px;
   filter: drop-shadow(2px 2px 2px var(--colors-site-mainTheme));

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { connect } from "frontity"
 import { useCurrentWidth } from "../../utils/utility-functions"
 
@@ -24,13 +24,23 @@ import { HeaderLinkContainer,
 
 
 const Header = ({ state, actions, color="", style="" }) => {
-  console.log(style, {style});
+  const [current, setCurrent] = useState(1);
+  const [tagline, setTagline] = useState("Connect to Opportunity");
+  const time = 6000;
+  const taglineArray = ["Connect to Opportunity", "Protect Your Interests", "Gain a Competetive Edge"];
+
+
+  // console.log(style, {style});
   
 
-  // useEffect (() => {
-  //   console.log("rendered")
-  //   state.theme.intViewportWidth = window.innerWidth;
-  // })
+  useEffect (() => {
+    const next = (current + 1) % taglineArray.length;
+    const id = setTimeout(() => {
+        setCurrent(next)
+        setTagline(taglineArray[current])
+    }, time);
+    return () => clearTimeout(id);
+  }, [current]);
 
   const handleHamburger = () => {
     if (state.router.link !== "/") {
@@ -103,7 +113,7 @@ const Header = ({ state, actions, color="", style="" }) => {
             null
           }
           <LogoContainer link="/" source={logoImage} altText="ABC Logo"
-                          widthValue={style === "alt" ? "250px" : "150px"} screenType="desktop"
+                          widthValue={style === "alt" ? "220px" : "150px"} screenType="desktop"
                           heightValue="auto" />
           <LogoContainer link="/" source={logoImage} altText="ABC Logo"
             widthValue="120px" screenType="mobile"
@@ -113,7 +123,7 @@ const Header = ({ state, actions, color="", style="" }) => {
           null
         :
           <div>
-            <Tagline>Your Success Is Our Mission</Tagline>
+            <Tagline>{tagline}</Tagline>
           </div>
         }
         <HeaderLinkContainer className={color}>
