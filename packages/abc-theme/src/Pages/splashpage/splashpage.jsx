@@ -214,7 +214,7 @@ const SplashPage = ({ state, actions }) => {
                     <HorizontalLine />
                     <ListItem onClick={preventBubble} link="/virtual-hr">Virtual HR</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/find-a-contractor">Find a Contractor</ListItem><br /><br />
-                    <ListItem onClick={preventBubble} link="/personal-coaching">Personal Business Coachign</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/personal-coaching">Personal Business Coaching</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/pay-invoice">Pay an Invoice</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/about-us">About Us</ListItem><br /><br />
                     {state.theme.token ?
@@ -266,6 +266,7 @@ const SplashPage = ({ state, actions }) => {
                       <HorizontalLine />
                       <ListItem onClick={preventBubble} link="/virtual-hr">Virtual HR</ListItem><br /><br />
                       <ListItem onClick={preventBubble} link="/find-a-contractor">Find a Contractor</ListItem><br /><br />
+                      <ListItem onClick={preventBubble} link="/personal-coaching">Personal Business Coaching</ListItem><br /><br />
                       <ListItem onClick={preventBubble} link="/pay-invoice">Pay an Invoice</ListItem><br /><br />
                       <ListItem onClick={preventBubble} link="/about-us">About Us</ListItem><br /><br />
                       {state.theme.token ?

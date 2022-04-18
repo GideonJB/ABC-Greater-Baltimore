@@ -37,7 +37,15 @@ export const useCurrentWidth = () => {
     return null
   }
 
-  const [width, setWidth] = useState(getWidth());
+  const [width, setWidth] = useState(() => {
+    let initialwidth
+
+    if (typeof window === 'object' && !window.__WAS_SSR) {
+      initValue = getwidth();
+    }
+
+    return initialwidth || 1002
+  });
 
   useEffect(() => {
     // timeoutID for debounce
@@ -56,6 +64,13 @@ export const useCurrentWidth = () => {
       window.removeEventListener('resize', resizeListener);
     }
   })
+
+  useEffect(()=> {
+    const storedwidth = getWidth();
+    if (storedwidth){
+      setWidth(storedwidth)
+    }
+  }, [])
 
   return width;
 }
