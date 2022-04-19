@@ -8,6 +8,30 @@ const fade = keyframes`
   100% { opacity: 1 }
 `
 
+const prismcycle = keyframes`
+  0%{
+    transform: rotateX(0deg); 
+  }
+  28.5714%{
+    transform: rotateX(0deg);
+  }
+  33.3333%{
+    transform: rotateX(120deg);
+  }
+  61.9047%{
+    transform: rotateX(120deg);
+  }
+  66.6666%{
+    transform: rotateX(240deg);
+  }
+  95.238%{
+    transform: rotateX(240deg);
+  }
+  100%{
+    transform: rotateX(360deg);
+  }
+`
+
 export const Wrapper = styled.div`
   position: fixed;
   width: 100%;
@@ -61,7 +85,7 @@ export const HeaderLinkContainer = styled.div`
   padding-right: 20px;
   display: flex;
   justify-content: flex-end;
-  align-items: end;
+  align-items: flex-end;
   font-size: 1.3em;
 
   &.white{
@@ -86,12 +110,50 @@ export const HeaderLinkContainer = styled.div`
   }
 `
 
-export const Tagline = styled.h3`
-  /* margin-top: 40px; */
+export const PrismContainer = styled.div`
+  width: 500px;
+  height: 50px;
+  position: relative;
+  perspective: 1000px;
+  margin: 0 auto;
+`
+
+export const Prism = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: ${prismcycle} 9s ease-in-out infinite;
+`
+
+export const Tagline = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 495px;
+  height: 45px;
+  text-align: center;
   line-height: 1;
+  font-size: 2.3em;
+  background: var(--colors-site-white);
+  /* margin-top: 40px; */
+  /* line-height: 1; */
   font-family: sans-serif;
-  animation: ${fade} 6s ease-in-out infinite;
-  animation-delay: 3.5s;
+  /* animation: ${fade} 6s ease-in-out infinite;
+  animation-delay: 3.5s; */
+
+  &.side-one{
+    transform: rotateX(0deg) translateZ(14px);
+  }
+
+  &.side-two{
+    transform: rotateX(120deg) translateZ(14px);
+  }
+
+  &.side-three{
+    transform: rotateX(240deg) translateZ(14px);
+  }
   
 
   @media screen and (max-width: 1200px) {

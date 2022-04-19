@@ -20,27 +20,29 @@ import { HeaderLinkContainer,
         Tagline,
         IconImage,
         Wrapper,
+        PrismContainer,
+        Prism,
       } from "./header.styles"
 
 
 const Header = ({ state, actions, color="", style="" }) => {
-  const [current, setCurrent] = useState(1);
-  const [tagline, setTagline] = useState("Connect to Opportunity");
-  const time = 6000;
-  const taglineArray = ["Connect to Opportunity", "Protect Your Interests", "Gain a Competetive Edge"];
+  // const [current, setCurrent] = useState(1);
+  // const [tagline, setTagline] = useState("Connect to Opportunity");
+  // const time = 6000;
+  // const taglineArray = ["Connect to Opportunity", "Protect Your Interests", "Gain a Competetive Edge"];
 
 
   // console.log(style, {style});
   
 
-  useEffect (() => {
-    const next = (current + 1) % taglineArray.length;
-    const id = setTimeout(() => {
-        setCurrent(next)
-        setTagline(taglineArray[current])
-    }, time);
-    return () => clearTimeout(id);
-  }, [current]);
+  // useEffect (() => {
+  //   const next = (current + 1) % taglineArray.length;
+  //   const id = setTimeout(() => {
+  //       setCurrent(next)
+  //       setTagline(taglineArray[current])
+  //   }, time);
+  //   return () => clearTimeout(id);
+  // }, [current]);
 
   const handleHamburger = () => {
     if (state.router.link !== "/") {
@@ -122,9 +124,13 @@ const Header = ({ state, actions, color="", style="" }) => {
         {style === "inner" ?
           null
         :
-          <div>
-            <Tagline>{tagline}</Tagline>
-          </div>
+          <PrismContainer>
+            <Prism>
+              <Tagline className="side-one">Connnect to Opportunity</Tagline>
+              <Tagline className="side-two">Protect Your Interests</Tagline>
+              <Tagline className="side-three">Gain a Competetive Edge</Tagline>
+            </Prism>
+          </PrismContainer>
         }
         <HeaderLinkContainer className={color}>
           {/* {state.theme.token
