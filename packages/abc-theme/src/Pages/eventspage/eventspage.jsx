@@ -59,7 +59,7 @@ const EventsPage = ({ state, actions }) => {
         }
       </ImageList>
       <CalendarWrapper>
-        <h3>Upcoming Events and Training</h3><br />
+        <h3>Upcoming Events and Training</h3>
       {state.theme.eventsCalendar.length > 0 ?
           
         state.theme.eventsCalendar.map((items) => {

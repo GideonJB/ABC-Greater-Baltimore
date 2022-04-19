@@ -171,7 +171,7 @@ export const GlobalStyle = props => (
         --colors-site-whiteOverlay: hsla(37, 70%, 94%, 70%);
         --colors-site-mainTheme: hsl(212, 57%, 15%);
         --colors-site-mainThemeOverlay: hsla(212, 57%, 15%, 70%);
-        --colors-site-lightAccent: hsl(198, 40%, 53%);
+        --colors-site-lightAccent: #53b6ed;
         --colors-site-darkAccent: hsl(211, 17%, 48%);  
         --colors-site-darkShades: hsl(240, 7%, 8%);
         --colors-site-lightAccent-transparent: hsla(198, 40%, 53%, 70%);

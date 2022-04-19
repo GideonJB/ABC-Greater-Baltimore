@@ -31,7 +31,7 @@ export const SearchContainer = styled.div`
 
 export const LoggedOutWrapper = styled.div`
   position: fixed;
-  top: 75px;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;

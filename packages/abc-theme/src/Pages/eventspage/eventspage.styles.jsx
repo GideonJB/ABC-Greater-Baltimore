@@ -37,6 +37,7 @@ export const FeaturedContainer = styled.div`
 `
 
 export const CalendarWrapper = styled.div`
+  padding-top: 40px;
   width: 100%;
   background-color: var(--colors-site-white);
   display: flex;

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { connect } from "frontity"
-import { BlogWrapper, GlassWrap } from "./blog.styles"
+import { BlogWrapper, GlassWrap, NewsTitle, LeftBar } from "./blog.styles"
+
+import { myunescape } from "../../utils/utility-functions"
 
 const Blog = ({ state, libraries }) => {
   const [blogPost, setBlogPost] = useState();
@@ -31,9 +33,12 @@ const Blog = ({ state, libraries }) => {
     <>
     {blogPost !== undefined ?
     <GlassWrap>
+      <LeftBar />
       <BlogWrapper>
-        <img src={blogPost.fimg_url} />
-        <h3>{blogPost.title.rendered}</h3>
+        
+        <NewsTitle>- INDUSTRY NEWS -</NewsTitle>
+        <img src={blogPost.fimg_url} /><br/>
+        <h3>{myunescape(blogPost.title.rendered)}</h3><br/>
         <Html2React html={blogPost.content.rendered} />
       </BlogWrapper>
     </GlassWrap>

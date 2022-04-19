@@ -7,6 +7,25 @@ export const GlassWrap = styled.div`
   -webkit-backdrop-filter: blur( 25.0px );
   backdrop-filter: blur( 25.0px );
   border: 1px solid hsla( 0, 0%, 100%, 0.18 );
+  display: flex;
+  overfliw: hidden;
+`
+
+export const LeftBar = styled.div`
+  position: fixed;
+  height: 100vh;
+  width: 150px;
+  background-color: var(--colors-site-mainTheme);
+  z-index: 5;
+  isolation: isolate;
+
+  @media screen and (max-width: 1100px){
+    display: none;
+  }
+`
+
+export const NewsTitle = styled.h1`
+  color: var(--colors-site-mainTheme);
 `
 
 export const BlogWrapper = styled.div`
@@ -16,14 +35,15 @@ export const BlogWrapper = styled.div`
   padding: 40px 10vw 40px 10vw;
   height: 100%;
   width: 75%;
-  border-left: 150px solid var(--colors-site-mainTheme);
+  margin-left: 150px;
+  
 
   @media screen and (max-width: 1100px){
     margin-left: 0px;
     padding: 0px 20px;
     max-width: 100vw;
     width: 100vw;
-    border-left: none;
+    margin-left: none;
   
   }
 `

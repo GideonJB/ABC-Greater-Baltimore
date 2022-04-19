@@ -60,13 +60,12 @@ export const HeaderWrapper = styled.div`
   /* position: absolute; */
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   top: 20px;
   right: 25px;
   /* z-index: 5; */
   height: 100%;
   width: 100%;
-  padding-bottom: 10px;
  
 
   @media screen and (max-width: 1100px) {
@@ -85,7 +84,7 @@ export const HeaderLinkContainer = styled.div`
   padding-right: 20px;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   font-size: 1.3em;
 
   &.white{
@@ -134,8 +133,9 @@ export const Tagline = styled.div`
   width: 495px;
   height: 45px;
   text-align: center;
-  line-height: 1;
-  font-size: 2.3em;
+  line-height: 0;
+  font-size: 2em;
+  color: var(--colors-site-mainTheme);
   background: var(--colors-site-white);
   /* margin-top: 40px; */
   /* line-height: 1; */
@@ -175,7 +175,7 @@ export const HeaderLink = styled(Link)`
   color: var(--colors-site-white);
   margin-right: 20px;
   line-height: 1;
-  filter: drop-shadow(2px 2px 2px var(--colors-site-mainTheme));
+  filter: drop-shadow(1px 1px 1px var(--colors-site-mainTheme));
 
   &.blue{
     color: var(--colors-site-mainTheme);
@@ -197,7 +197,7 @@ export const NewsLink = styled.span`
   line-height: 1;
   cursor: pointer;
   margin-right: 25px;
-  filter: drop-shadow(2px 2px 2px var(--colors-site-mainTheme));
+  filter: drop-shadow(1px 1px 1px var(--colors-site-mainTheme));
 
   &.blue{
     color: var(--colors-site-mainTheme);
