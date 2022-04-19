@@ -86,9 +86,17 @@ const staffList = [
     "Description":"Lorem Ipsum",
     "Image":require("../static/images/Staff/donte.jpg"),
     "email":"dlee@abcbaltimore.org"
-  },    
+  },
   {
     "id":43,
+    "Name":"Mandi Pusateri",
+    "Title":"Director of Operations",
+    "Description":"Lorem Ipsum",
+    "Image":require("../static/images/Staff/mandi.jpg"),
+    "email":"mpusateri@abcbaltimore.org"
+  },   
+  {
+    "id":44,
     "Name":"Jimmy Stewart",
     "Title":"Director of Employer & Community",
     "Description":"Lorem Ipsum",
@@ -96,7 +104,7 @@ const staffList = [
     "email":"jstewart@abcbaltimore.org"
   },
   {
-    "id":44,
+    "id":45,
     "Name":"Bruce Talbot",
     "Title":"ABC Group Insurance Marketing",
     "Description":"Lorem Ipsum",

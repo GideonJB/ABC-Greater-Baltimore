@@ -126,7 +126,7 @@ const Header = ({ state, actions, color="", style="" }) => {
         :
           <PrismContainer>
             <Prism>
-              <Tagline className="side-one">Connnect to Opportunity</Tagline>
+              <Tagline className="side-one">Connect to Opportunity</Tagline>
               <Tagline className="side-two">Protect Your Interests</Tagline>
               <Tagline className="side-three">Gain a Competetive Edge</Tagline>
             </Prism>
