@@ -232,7 +232,7 @@ const Root = ({ state, actions }) => {
           src={`https://www.googletagmanager.com/gtag/js?id=G-RP1V6H0XCH`}
         />
 
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -241,7 +241,14 @@ const Root = ({ state, actions }) => {
                 gtag('config', 'G-RP1V6H0XCH');
               `,
           }}
-        />
+        /> */}
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-RP1V6H0XCH');`}
+        </script>
       </Head>
       <Global styles={css(gutenburgStyle)} />
       <Global styles={css(gutenburgTheme)} />
