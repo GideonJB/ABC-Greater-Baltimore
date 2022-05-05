@@ -5,6 +5,7 @@ import { useCurrentWidth } from "../../utils/utility-functions"
 import calIcon from "../../static/images/cal-icon.png"
 import newsIcon from "../../static/images/bullhorn.png"
 import logoImage from "../../static/images/abc_logo.svg"
+import logoImageWhite from "../../static/images/abc_logo_white.svg"
 
 import LogoContainer from "../logo-container/logo-container.component"
 import Login from "../login/login.component"
@@ -114,10 +115,10 @@ const Header = ({ state, actions, color="", style="" }) => {
           :
             null
           }
-          <LogoContainer link="/" source={logoImage} altText="ABC Logo"
+          <LogoContainer link="/" source={style === "alt" ? logoImageWhite : logoImage} altText="ABC Logo"
                           widthValue={style === "alt" ? "220px" : "150px"} screenType="desktop"
                           heightValue="auto" />
-          <LogoContainer link="/" source={logoImage} altText="ABC Logo"
+          <LogoContainer link="/" source={style === "alt" ? logoImageWhite : logoImage} altText="ABC Logo"
             widthValue="120px" screenType="mobile"
             heightValue="auto" />
         </LeftGroup>
@@ -125,11 +126,11 @@ const Header = ({ state, actions, color="", style="" }) => {
           null
         :
           <PrismContainer>
-            <Prism>
+            {/* <Prism>
               <Tagline className="side-one">Connect to Opportunity</Tagline>
               <Tagline className="side-two">Protect Your Interests</Tagline>
               <Tagline className="side-three">Gain a Competetive Edge</Tagline>
-            </Prism>
+            </Prism> */}
           </PrismContainer>
         }
         <HeaderLinkContainer className={color}>
@@ -146,7 +147,7 @@ const Header = ({ state, actions, color="", style="" }) => {
           
           {/* <PhoneText>410-821-0351</PhoneText> */}
           
-          <NewsLink onClick={() => toggleNews()} className={color}>MEDIA</NewsLink>
+          <NewsLink onClick={() => toggleNews()} className={style === "inner" ? "inner" : ""}>MEDIA</NewsLink>
           
           <IconContainer>
             <CalendarIcon className={color} onClick={() => toggleCalendar()}>

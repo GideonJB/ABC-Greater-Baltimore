@@ -1,5 +1,8 @@
 import { connect } from 'frontity';
 import React, { useEffect } from 'react';
+import dayjs from 'dayjs';
+
+import { myunescape } from "../../utils/utility-functions"
 
 import SideMenu from "../../components/side-menu/side-menu.component"
 
@@ -30,6 +33,15 @@ import {  Wrapper,
           GrowContainer,
           Break,
           MobileBreak,
+          EventListItem,
+          TaglineContainer,
+          UpcomingTagline,
+          TagFlex,
+          TrainingContainer,
+          TrainingColumn,
+          ListMap,
+          Tagline,
+          WhiteHorizontal,
         } from './splashpage.styles';
 
 const SplashPage = ({ state, actions }) => {
@@ -63,6 +75,23 @@ const SplashPage = ({ state, actions }) => {
     state.theme.token = false;
     localStorage.removeItem('user');
   }
+
+  const mappedList = (category) => {
+    console.log('mapped list output', state.theme.eventsCalendar)
+    if(state.theme.eventsCalendar.length > 0){
+      const output = state.theme.eventsCalendar.map(event => {       
+        if (event.categories[0] && event.categories.some(cat => cat.name === category)) {
+          console.log('Safety Event Found', event)
+          return (
+            <EventListItem><a target="_blank" href={event.url}>
+              {myunescape(event.title)} - {dayjs(`${event.start_date}`).format('ddd MMM D')}
+            </a></EventListItem>
+          )
+        }
+      })
+      return output
+    }  
+  }
   
 
   return (
@@ -77,7 +106,7 @@ const SplashPage = ({ state, actions }) => {
         <MobileColumnA />
       </MobileColumn> */}
       <Wrapper>
-        <SideMenu style="alt"></SideMenu>
+        {/* <SideMenu style="alt"></SideMenu> */}
         <GridWrapper>
             {/* <Overlay width="2400" height="2400" viewBox="0 0 24 24">
               <path d="M24 13.616v-3.232l-2.869-1.02c-.198-.687-.472-1.342-.811-1.955l1.308-2.751-2.285-2.285-2.751 1.307c-.613-.339-1.269-.613-1.955-.811l-1.021-2.869h-3.232l-1.021 2.869c-.686.198-1.342.471-1.955.811l-2.751-1.308-2.285 2.285 1.308 2.752c-.339.613-.614 1.268-.811 1.955l-2.869 1.02v3.232l2.869 1.02c.197.687.472 1.342.811 1.955l-1.308 2.751 2.285 2.286 2.751-1.308c.613.339 1.269.613 1.955.811l1.021 2.869h3.232l1.021-2.869c.687-.198 1.342-.472 1.955-.811l2.751 1.308 2.285-2.286-1.308-2.751c.339-.613.613-1.268.811-1.955l2.869-1.02zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"/><path d="M24 13.616v-3.232l-2.869-1.02c-.198-.687-.472-1.342-.811-1.955l1.308-2.751-2.285-2.285-2.751 1.307c-.613-.339-1.269-.613-1.955-.811l-1.021-2.869h-3.232l-1.021 2.869c-.686.198-1.342.471-1.955.811l-2.751-1.308-2.285 2.285 1.308 2.752c-.339.613-.614 1.268-.811 1.955l-2.869 1.02v3.232l2.869 1.02c.197.687.472 1.342.811 1.955l-1.308 2.751 2.285 2.286 2.751-1.308c.613.339 1.269.613 1.955.811l1.021 2.869h3.232l1.021-2.869c.687-.198 1.342-.472 1.955-.811l2.751 1.308 2.285-2.286-1.308-2.751c.339-.613.613-1.268.811-1.955l2.869-1.02zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z" />
@@ -120,7 +149,7 @@ const SplashPage = ({ state, actions }) => {
                   <HorizontalLine />
                   <ListItem onClick={preventBubble} link="/signature-events">Signature Events</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="https://awards.abcbaltimore.org">Excellence in Construction</ListItem><br /><br />
-                  <ListItem onClick={preventBubble} link="/best-sponsorship">BEST Sponsorship</ListItem><br /><br />
+                  <ListItem onClick={preventBubble} link="/pro-sponsorship">PRO Sponsorship</ListItem><br /><br />
                 </ItemList>
               </EventsItemsContainer>
             </MenuContainer>
@@ -283,6 +312,43 @@ const SplashPage = ({ state, actions }) => {
             null
           }
         </GridWrapper>
+        {state.theme.intViewportWidth < 1001
+          ?
+            null
+          :
+            <>
+              <TaglineContainer>
+                <UpcomingTagline>Upcoming Events</UpcomingTagline>
+                <WhiteHorizontal/>
+                <TagFlex>
+                  <Tagline>Connect to Opportunity</Tagline>
+                  <Tagline>Gain a Competetive Advantage</Tagline>
+                  <Tagline>Protect Your Interests</Tagline>
+                </TagFlex>
+              </TaglineContainer>
+              <TrainingContainer>
+                <TrainingColumn className="column1">
+                    <ListMap>
+                      <h4>Networking</h4>
+                      {mappedList("Networking")}
+                    </ListMap>
+                </TrainingColumn>
+                <TrainingColumn className="column2">
+                  
+                  <ListMap>
+                    <h4>Safety Training</h4>
+                    {mappedList("Safety")}
+                  </ListMap>
+                </TrainingColumn>
+                <TrainingColumn className="column3">
+                    <ListMap>
+                      <h4>Management</h4>
+                      {mappedList("Management Training")}
+                    </ListMap>
+                </TrainingColumn>
+              </TrainingContainer>
+            </>
+      }
       </Wrapper>
     </>
   )

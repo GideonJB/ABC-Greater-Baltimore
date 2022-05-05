@@ -41,7 +41,7 @@ export const Wrapper = styled.div`
   /* border-bottom: 3px solid var(--colors-site-mainTheme); */
 
   &.alt{
-    background-color: var(--colors-site-white);
+    background-color: var(--colors-site-darkGray);
     height: 100px;
     border-bottom: 2px solid var(--colors-site-mainTheme);
 
@@ -136,7 +136,7 @@ export const Tagline = styled.div`
   line-height: 0;
   font-size: 2em;
   color: var(--colors-site-mainTheme);
-  background: var(--colors-site-white);
+  /* background: var(--colors-site-white); */
   /* margin-top: 40px; */
   /* line-height: 1; */
   font-family: sans-serif;
@@ -205,7 +205,9 @@ export const NewsLink = styled.span`
   }
 
   @media screen and (max-width: 1100px){
-    color: var(--colors-site-mainTheme);
+    &.inner{
+      color: var(--colors-site-mainTheme);
+    }
     filter: none;
   }
 `

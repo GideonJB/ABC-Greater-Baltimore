@@ -86,7 +86,7 @@ export default {
                 "save-money", "resources", "peer-groups", "general-contractors",
                 "specialty-contractors", "join-abc", "trades-list",
                 "craft-courses", "task-training", "trade-school",
-                "signature-events", "best-sponsorship", "eic", "facility-rental",
+                "signature-events", "pro-sponsorship", "eic", "facility-rental",
                 "site-inspections", "safety-peer-group", "new-hire", "step",
                 "safety-training", "legal-regulatory", "blueprint-reading", "academies",
                 "continuing-education", "operations", "pdp", "national-pac", "virtual-hr",
@@ -189,12 +189,12 @@ export default {
               slug: "eic",
               link: "https://awards.abcbaltimore.org"
             },
-            bestSponsorship: {
+            proSponsorship: {
               id: 332,
-              menuName: "BEST Sponsorship",
+              menuName: "PRO Sponsorship",
               main: "events",
-              slug: "best-sponsorship",
-              link: "/best-sponsorship/"
+              slug: "pro-sponsorship",
+              link: "/pro-sponsorship/"
             },
           },  
         },

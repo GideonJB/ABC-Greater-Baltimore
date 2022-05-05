@@ -122,6 +122,14 @@ export const GlobalStyle = props => (
         min-height: 100vh;
         text-rendering: optimizeSpeed;
         line-height: 1.5;
+        overscroll-behavior: none;
+
+        &.scrollBody {
+        display: block;
+        height: 100vh; /* 100% does not do it */
+        overflow: scroll;
+        overscroll-behavior: contain;
+        }
       }
 
       /* A elements that don't have a class get default styles */
@@ -175,6 +183,7 @@ export const GlobalStyle = props => (
         --colors-site-darkAccent: hsl(211, 17%, 48%);  
         --colors-site-darkShades: hsl(240, 7%, 8%);
         --colors-site-lightAccent-transparent: hsla(198, 40%, 53%, 70%);
+        --colors-site-darkGray: hsl(0, 0%, 15%);
         --colors-active: hsl(60,5%,96%);
         --colors-sub: hsl(60,5%,96%);
         --colors-text: hsl(0, 0%, 40%);
@@ -606,6 +615,12 @@ export const GlobalStyle = props => (
 
       .top-margin{
         margin-top: 30px;
+      }
+
+      @media screen and (max-width: 767px) {
+          _::-webkit-full-page-media, _:future, :root .safari_only {
+              padding-bottom: 65px; //resize 
+          }
       }
 
       

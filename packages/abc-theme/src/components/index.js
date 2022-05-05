@@ -217,7 +217,7 @@ const Root = ({ state, actions }) => {
         <title key="title">ABC Greater Baltimore</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="faviconabc.ico" />
         <meta
           name="description"
           content="Workforce Development and Labor Relations"
@@ -258,9 +258,9 @@ const Root = ({ state, actions }) => {
       <Global styles={css(frontend_blocks)} />
       <GlobalStyle />
       <Header style={state.router.link !== "/" ? "inner" : "alt"}
-              color={state.router.link !== "/" ? "" : "blue"}
+              color={state.router.link !== "/" ? "" : ""}
       />          
-          <ContentWrapper>
+          <ContentWrapper className="scrollbody">
             {state.router.link !== "/" ?
             <SideMenu style=""/>
             :

@@ -26,7 +26,7 @@ const Footer = ({ state }) => {
   return(
     <>
     {state.router.link !== '/' ? 
-      <FooterContainer>
+      <FooterContainer className='sfari_only'>
         <Address>
           ABC Greater Baltimore<br />
           2101 E. Biddle St. Suite 5000<br />

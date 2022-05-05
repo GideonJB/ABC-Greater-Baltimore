@@ -59,8 +59,7 @@ const itemContainerStyles = `
 
 export const Wrapper = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  
 
  @media screen and (max-width: 1100px){
    display: block;
@@ -97,10 +96,11 @@ export const GridWrapper = styled.div`
 `
 
 export const Column = styled.div`
-  width: calc((100vw - 150px) /5);
-  height: 100%;
+  width: calc((100vw) /5);
+  height: calc(100vh - 100px);
   overflow: visible;
   transition: .5s all;
+  margin-top: 100px;
 
   @media screen and (max-width: 1200px){
     &.expanded{
@@ -112,6 +112,7 @@ export const Column = styled.div`
   @media screen and (max-width: 1100px){
     width: 100vw;
     height: calc(var(--screen-height)/4.5);
+    margin-top: 0px;
 
     &.expanded {
       height: 500px;
@@ -469,7 +470,7 @@ export const CardHeading = styled.h1`
   transform-origin: bottom left;
   transform: rotate(-90deg);
   white-space: nowrap;
-  margin-left: calc((100vw - 220px) / 5);
+  margin-left: calc((100vw - 90px) / 5);
   margin-bottom: 0px;
 
   &::before, &::after{
@@ -569,4 +570,70 @@ export const MobileColumn = styled.div`
 
 export const MobileColumnA = styled.div`
   height: 100vh;
+`
+
+export const EventListItem = styled.li`
+  color: red;
+`
+
+export const TaglineContainer = styled.div`
+  background-color: var(--colors-site-darkGray);
+`
+
+export const UpcomingTagline = styled.h1`
+  margin: 0 auto;
+`
+
+export const TagFlex = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+
+  padding: 20px 0px;
+`
+
+export const Tagline = styled.div`
+  width: 100%;
+  color: var(--colors-site-white);
+  font-size: 1.4em;
+  font-weight: 600;
+  text-align: center;
+`
+
+export const WhiteHorizontal = styled.hr`
+  width: 80%;
+`
+
+export const TrainingContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`
+export const TrainingColumn = styled.div`
+  padding: 20px 10px;
+  width: 100%;
+
+  
+
+  &.column1{
+    background-color: var(--colors-site-darkAccent);
+  }
+
+  &.column2{
+    background-color: var(--colors-site-darkShades);
+  }
+
+  &.column3{
+    background-color: var(--colors-site-mainTheme);
+  }
+`
+
+export const ListMap = styled.ul`
+  h4{
+    color: var(--colors-site-white);
+    margin: 0px 0px 10px -15px;
+
+  }
+  a{
+    color: var(--colors-site-white);
+    cursor: pointer;
+  }
 `

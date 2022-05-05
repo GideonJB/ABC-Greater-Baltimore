@@ -98,7 +98,7 @@ const staffList = [
   {
     "id":44,
     "Name":"Jimmy Stewart",
-    "Title":"Director of Employer & Community",
+    "Title":"Project JumpStart, Executive Director",
     "Description":"Lorem Ipsum",
     "Image":require("../static/images/Staff/jimmy.jpg"),
     "email":"jstewart@abcbaltimore.org"
