@@ -260,7 +260,7 @@ const Root = ({ state, actions }) => {
       <Header style={state.router.link !== "/" ? "inner" : "alt"}
               color={state.router.link !== "/" ? "" : ""}
       />          
-          <ContentWrapper className="scrollbody">
+          <ContentWrapper>
             {state.router.link !== "/" ?
             <SideMenu style=""/>
             :
@@ -295,7 +295,7 @@ const Root = ({ state, actions }) => {
                       <Page when={dataitem.isPage} />
                       <ErrorPage when={dataitem.isError} />
                     </Switch>
-                    <Footer />
+                    <Footer className="scrollbody"/>
                   </SpacingDiv>
                 </animated.div>
             )})}
