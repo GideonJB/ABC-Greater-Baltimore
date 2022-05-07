@@ -10,5 +10,11 @@
         }
       ]
     }
+  ],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@frontity/now"
+    }
   ]
 }
