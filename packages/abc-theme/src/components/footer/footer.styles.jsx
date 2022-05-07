@@ -20,6 +20,12 @@ export const FooterContainer = styled.div`
     flex-direction: column;
     padding: 0;
   }
+
+  @media screen and (max-width: 767px) {
+    _::-webkit-full-page-media, _:future, :root .safari_only {
+        padding-bottom: 65px; //resize 
+    }
+  }
 `
 
 export const FirstRow = styled.div`

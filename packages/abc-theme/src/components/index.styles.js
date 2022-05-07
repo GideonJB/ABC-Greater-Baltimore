@@ -125,10 +125,10 @@ export const GlobalStyle = props => (
         overscroll-behavior: none;
 
         &.scrollBody {
-        display: block;
-        height: 100vh; /* 100% does not do it */
-        overflow: scroll;
-        overscroll-behavior: contain;
+          display: block;
+          height: 100vh; /* 100% does not do it */
+          overflow: scroll;
+          overscroll-behavior: contain;
         }
       }
 
@@ -616,14 +616,6 @@ export const GlobalStyle = props => (
       .top-margin{
         margin-top: 30px;
       }
-
-      @media screen and (max-width: 767px) {
-          _::-webkit-full-page-media, _:future, :root .safari_only {
-              padding-bottom: 65px; //resize 
-          }
-      }
-
-      
 
     `}
   />
