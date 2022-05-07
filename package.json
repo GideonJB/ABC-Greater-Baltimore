@@ -22,7 +22,6 @@
     "@frontity/html2react": "^1.7.0",
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.7",
-    "@now/build-utils": "^0.9.4",
     "abc-theme": "file:packages/abc-theme",
     "dayjs": "^1.11.2",
     "frontity": "^1.17.2",
