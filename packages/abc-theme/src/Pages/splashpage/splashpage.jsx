@@ -41,7 +41,7 @@ import {  Wrapper,
           TrainingColumn,
           ListMap,
           Tagline,
-          WhiteHorizontal,
+          UpcomingContainer,
         } from './splashpage.styles';
 
 const SplashPage = ({ state, actions }) => {
@@ -318,8 +318,9 @@ const SplashPage = ({ state, actions }) => {
           :
             <>
               <TaglineContainer>
-                <UpcomingTagline>Upcoming Events</UpcomingTagline>
-                <WhiteHorizontal/>
+                <UpcomingContainer>
+                  <UpcomingTagline>Upcoming Events</UpcomingTagline>
+                </UpcomingContainer>
                 <TagFlex>
                   <Tagline>Connect to Opportunity</Tagline>
                   <Tagline>Gain a Competetive Advantage</Tagline>

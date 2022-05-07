@@ -469,18 +469,18 @@ export const GlobalStyle = props => (
       }
 
       .ugb-main-block{
-      h1, h2, h3, h4, h5, h6, p, span, li{
-        color: var(--colors-site-white) !important;
+        h1, h2, h3, h4, h5, h6, p, span, li{
+          color: var(--colors-site-white) !important;
 
-        &.newsbutton{
+          &.newsbutton{
+            color: var(--colors-site-lightAccent) !important;
+            cursor: pointer;
+          }
+        }
+        a{
           color: var(--colors-site-lightAccent) !important;
-          cursor: pointer;
         }
       }
-      a{
-        color: var(--colors-site-lightAccent) !important;
-      }
-    }
 
       div {
         font-family: 'Poppins', sans-serif;

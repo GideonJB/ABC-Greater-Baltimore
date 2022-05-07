@@ -577,30 +577,43 @@ export const EventListItem = styled.li`
 `
 
 export const TaglineContainer = styled.div`
-  background-color: var(--colors-site-darkGray);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  background-color: var(--colors-site-white);
 `
 
-export const UpcomingTagline = styled.h1`
+export const UpcomingContainer = styled.div`
+  width: 40%;
+  background-color: var(--colors-site-darkGray);
+
+  background-image:
+    linear-gradient(45deg, transparent 90%, var(--colors-site-white) 0),
+    linear-gradient(135deg, transparent 90%, var(--colors-site-white) 0);
+  /* background-size: 100% 100%; */
+  /* background-repeat: no-repeat; */
+`
+
+export const UpcomingTagline = styled.h2`
   margin: 0 auto;
+  color: var(--colors-site-white);
 `
 
 export const TagFlex = styled.div`
+  width: 55%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 
   padding: 20px 0px;
 `
 
 export const Tagline = styled.div`
-  width: 100%;
-  color: var(--colors-site-white);
+  text-transform: uppercase;
+  color: var(--colors-site-mainTheme);
   font-size: 1.4em;
   font-weight: 600;
   text-align: center;
-`
-
-export const WhiteHorizontal = styled.hr`
-  width: 80%;
 `
 
 export const TrainingContainer = styled.div`
@@ -628,6 +641,7 @@ export const TrainingColumn = styled.div`
 
 export const ListMap = styled.ul`
   h4{
+    
     color: var(--colors-site-white);
     margin: 0px 0px 10px -15px;
 
