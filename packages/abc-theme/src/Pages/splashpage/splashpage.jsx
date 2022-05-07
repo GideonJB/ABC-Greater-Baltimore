@@ -34,6 +34,7 @@ import {  Wrapper,
           Break,
           MobileBreak,
           EventListItem,
+          Description,
           TaglineContainer,
           UpcomingTagline,
           TagFlex,
@@ -317,16 +318,23 @@ const SplashPage = ({ state, actions }) => {
             null
           :
             <>
+              <Description>
+                Associated Builders and Contractors of Greater Baltimore is the largest
+                organization in Maryland to represent the commercial construction industry.
+                Our 650  members represent the leading general contractors and specialty
+                contractors in the region.
+              </Description>
               <TaglineContainer>
-                <UpcomingContainer>
-                  <UpcomingTagline>Upcoming Events</UpcomingTagline>
-                </UpcomingContainer>
                 <TagFlex>
+                  <Tagline>ABC Membership:</Tagline>
                   <Tagline>Connect to Opportunity</Tagline>
                   <Tagline>Gain a Competetive Advantage</Tagline>
                   <Tagline>Protect Your Interests</Tagline>
                 </TagFlex>
               </TaglineContainer>
+              <UpcomingContainer>
+                <UpcomingTagline>Upcoming Events</UpcomingTagline>
+              </UpcomingContainer>
               <TrainingContainer>
                 <TrainingColumn className="column1">
                     <ListMap>

@@ -97,7 +97,7 @@ export const GridWrapper = styled.div`
 
 export const Column = styled.div`
   width: calc((100vw) /5);
-  height: calc(100vh - 100px);
+  height: calc(85vh - 100px);
   overflow: visible;
   transition: .5s all;
   margin-top: 100px;
@@ -576,6 +576,12 @@ export const EventListItem = styled.li`
   color: red;
 `
 
+export const Description = styled.h4`
+  padding: 20px 40px;
+  text-align: center;
+  margin: 0 auto;
+`
+
 export const TaglineContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -585,43 +591,63 @@ export const TaglineContainer = styled.div`
 `
 
 export const UpcomingContainer = styled.div`
+  position: relative;
   width: 40%;
   background-color: var(--colors-site-darkGray);
-
+  text-align: center;
   background-image:
     linear-gradient(45deg, transparent 90%, var(--colors-site-white) 0),
     linear-gradient(135deg, transparent 90%, var(--colors-site-white) 0);
-  /* background-size: 100% 100%; */
-  /* background-repeat: no-repeat; */
+  z-index: 2;
+  
+  &:after {
+    content: "";
+    background-image:
+    linear-gradient(135deg, transparent 90%, var(--colors-site-white) 0),
+    linear-gradient(45deg, red 90%, transparent 0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    z-index: -5;
+    mix-blend-mode: darken;
+  }
+
 `
 
 export const UpcomingTagline = styled.h2`
   margin: 0 auto;
+  text-transform: uppercase;
   color: var(--colors-site-white);
 `
 
 export const TagFlex = styled.div`
-  width: 55%;
+  width: 100%;
+  padding: 0px 20px;
   display: flex;
-  justify-content: flex-end;
-
-  padding: 20px 0px;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding-bottom: 20px;
 `
 
 export const Tagline = styled.div`
   text-transform: uppercase;
-  color: var(--colors-site-mainTheme);
+  color: red;
   font-size: 1.4em;
   font-weight: 600;
   text-align: center;
 `
 
 export const TrainingContainer = styled.div`
+  margin: 15px 20px;
   display: flex;
+  gap: 20px;
   justify-content: space-evenly;
 `
 export const TrainingColumn = styled.div`
-  padding: 20px 10px;
+  padding: 10px 30px 5px 10px;
   width: 100%;
 
   
