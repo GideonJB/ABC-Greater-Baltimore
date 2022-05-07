@@ -13,8 +13,7 @@
   ],
   "builds": [
     {
-      "src": "package.json",
-      "use": "@frontity/now"
+      "src": "package.json"
     }
   ]
 }
