@@ -18,15 +18,15 @@
   "prettier": {},
   "dependencies": {
     "@frontity/abc-theme": "./packages/abc-theme",
-    "@frontity/core": "1.14.3",
+    "@frontity/core": "1.15.1",
     "@frontity/html2react": "^1.7.0",
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.7",
     "@now/build-utils": "^0.9.4",
     "abc-theme": "file:packages/abc-theme",
-    "dayjs": "^1.10.8",
+    "dayjs": "^1.11.2",
     "frontity": "^1.17.2",
-    "react-hook-form": "^7.27.1",
-    "react-spring": "^9.4.3"
+    "react-hook-form": "^7.30.0",
+    "react-spring": "^9.4.5"
   }
 }
