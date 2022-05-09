@@ -14,7 +14,7 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "https://github.com/GideonJB/nowbuilder.git"
+      "use": "https://github.com/GideonJB/now-builder.git"
     }
   ]
 }
