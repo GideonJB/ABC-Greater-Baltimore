@@ -23,7 +23,7 @@ export const FooterContainer = styled.div`
 
   @media screen and (max-width: 767px) {
     _::-webkit-full-page-media, _:future, :root .safari_only {
-        padding-bottom: 74px; //resize 
+        padding-bottom: 75px; //resize 
     }
   }
 `
