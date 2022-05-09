@@ -10,5 +10,11 @@
         }
       ]
     }
+  ],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "https://github.com/GideonJB/now-builder.git"
+    }
   ]
 }
