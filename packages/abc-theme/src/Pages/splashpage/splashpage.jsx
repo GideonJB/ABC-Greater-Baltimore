@@ -4,7 +4,13 @@ import dayjs from 'dayjs';
 
 import { myunescape } from "../../utils/utility-functions"
 
-import SideMenu from "../../components/side-menu/side-menu.component"
+import LogoContainer from '../../components/logo-container/logo-container.component';
+import SideMenu from "../../components/side-menu/side-menu.component";
+
+import cealLogo from "../../static/images/cea_logo.svg";
+import building from "../../static/images/building.jpg";
+import safety from "../../static/images/safety_mobile.jpg"
+import networking from "../../static/images/events_mobile.jpg"
 
 import {  Wrapper,
           GridWrapper,
@@ -34,16 +40,25 @@ import {  Wrapper,
           Break,
           MobileBreak,
           EventListItem,
+          EventListDate,
+          DescriptionContainer,
           Description,
           TaglineContainer,
           UpcomingTagline,
           TagFlex,
+          TrainingWrapper,
           TrainingContainer,
           TrainingColumn,
           ListMap,
           Tagline,
           UpcomingContainer,
+          LogoWrapper,
+          Rule,
+          Banner,
+          ListContainer,
+          TitleContainer,
         } from './splashpage.styles';
+import { BlogTitleContainer } from '../../components/news-bar/news-bar.styles';
 
 const SplashPage = ({ state, actions }) => {
 
@@ -77,20 +92,32 @@ const SplashPage = ({ state, actions }) => {
     localStorage.removeItem('user');
   }
 
-  const mappedList = (category) => {
-    console.log('mapped list output', state.theme.eventsCalendar)
+  const mappedList = (category, range="") => {
     if(state.theme.eventsCalendar.length > 0){
       const output = state.theme.eventsCalendar.map(event => {       
-        if (event.categories[0] && event.categories.some(cat => cat.name === category)) {
-          console.log('Safety Event Found', event)
+        if (!range && event.categories[0] && event.categories.some(cat => cat.name.includes(category))) {  
           return (
-            <EventListItem><a target="_blank" href={event.url}>
-              {myunescape(event.title)} - {dayjs(`${event.start_date}`).format('ddd MMM D')}
-            </a></EventListItem>
+            <>
+            <EventListItem>
+                <a target="_blank" href={event.url}>
+                <EventListDate>{dayjs(`${event.start_date}`).format('M/D')} - </EventListDate>
+                {myunescape(event.title)}</a>
+            </EventListItem>
+            </>
+          )
+        } else if (range === "opposite" && event.categories.every(cat => !category.includes(cat.name)) || !event.categories[0]) {
+          return (
+            <>
+            <EventListItem>
+                <a target="_blank" href={event.url}>
+                <EventListDate>{dayjs(`${event.start_date}`).format('M/D')} - </EventListDate>
+                {myunescape(event.title)}</a>
+            </EventListItem>
+            </>
           )
         }
       })
-      return output
+      return output.filter(el => el !== undefined).slice(0,3);
     }  
   }
   
@@ -183,10 +210,10 @@ const SplashPage = ({ state, actions }) => {
                 <ManagementBackground className="grow" />
               </GrowContainer>
               <GradientDiv />
-              <CardHeading>Workforce &amp; <MobileBreak/>Career</CardHeading>
+              <CardHeading>Education</CardHeading>
                 <ManagementItemsContainer >
                   <ItemList>
-                  <ItemTitle onClick={preventBubble} link="/workforce-career">Workforce &amp;<Break />Career</ItemTitle>
+                  <ItemTitle onClick={preventBubble} link="/workforce-career">Construction <Break />Education</ItemTitle>
                     <HorizontalLine />
                     {/* <ListItem onClick={preventBubble} link="/legal-regulatory">Legal & Regulatory</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/blueprint-reading">Blueprint Reading</ListItem><br /><br />
@@ -200,6 +227,18 @@ const SplashPage = ({ state, actions }) => {
                     <ListItem onClick={preventBubble} link="/task-training">Task Training</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="http://projectjumpstarttraining.org/">Project JumpStart</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="http://constructioneducationacademy.org/">Daytime Trade School</ListItem><br /><br />
+                    {state.theme.intViewportWidth > 1001
+                    ?
+                    <LogoWrapper>
+                      <LogoContainer source={cealLogo} 
+                        altText="construction education academy logo"
+                        widthValue="125px"
+                        heightValue="auto"
+                      />
+                    </LogoWrapper>
+                    :
+                    null
+                    }
                   </ItemList>
                 </ManagementItemsContainer>
             </MenuContainer>
@@ -318,44 +357,74 @@ const SplashPage = ({ state, actions }) => {
             null
           :
             <>
-              <Description>
-                Associated Builders and Contractors of Greater Baltimore is the largest
-                organization in Maryland to represent the commercial construction industry.
-                Our 650  members represent the leading general contractors and specialty
-                contractors in the region.
-              </Description>
+              <DescriptionContainer>
+                <Description>
+                  Associated Builders and Contractors of Greater Baltimore is the largest
+                  organization in Maryland to represent the commercial construction industry.
+                  Our 650  members represent the leading general contractors and specialty
+                  contractors in the region.
+                </Description>
+              </DescriptionContainer>
               <TaglineContainer>
+                <UpcomingContainer>
+                  <UpcomingTagline>Upcoming Events</UpcomingTagline>
+                </UpcomingContainer>
                 <TagFlex>
-                  <Tagline>ABC Membership:</Tagline>
-                  <Tagline>Connect to Opportunity</Tagline>
-                  <Tagline>Gain a Competetive Advantage</Tagline>
-                  <Tagline>Protect Your Interests</Tagline>
+                <Tagline><em>Connect to Opportunity</em></Tagline>
+                <Tagline><em>Gain a Competetive Advantage</em></Tagline>
+                  <Tagline><em>Protect Your Interests</em></Tagline>
                 </TagFlex>
               </TaglineContainer>
-              <UpcomingContainer>
-                <UpcomingTagline>Upcoming Events</UpcomingTagline>
-              </UpcomingContainer>
-              <TrainingContainer>
-                <TrainingColumn className="column1">
-                    <ListMap>
+              <TrainingWrapper>
+                <TrainingContainer>
+                  <TrainingColumn className="column1">
+                    <TitleContainer>
+                      <Banner background={networking}/>
                       <h4>Networking</h4>
-                      {mappedList("Networking")}
-                    </ListMap>
-                </TrainingColumn>
-                <TrainingColumn className="column2">
-                  
-                  <ListMap>
-                    <h4>Safety Training</h4>
-                    {mappedList("Safety")}
-                  </ListMap>
-                </TrainingColumn>
-                <TrainingColumn className="column3">
-                    <ListMap>
-                      <h4>Management</h4>
-                      {mappedList("Management Training")}
-                    </ListMap>
-                </TrainingColumn>
-              </TrainingContainer>
+                    </TitleContainer>
+                    <ListContainer>
+                      <ListMap>
+                        {mappedList("Networking")}
+                      </ListMap>
+                    </ListContainer>
+                    <h4><a target="_blank"
+                        href="https://events.abcbaltimore.org/events/category/networking/">
+                          All Networking Events
+                    </a></h4>
+                  </TrainingColumn>
+                  <TrainingColumn className="column2">
+                    <TitleContainer>
+                      <Banner background={safety}/>
+                      <h4>Safety Training</h4>
+                    </TitleContainer>
+                    <ListContainer>
+                      <ListMap>
+                        {mappedList("Safety")}
+                      </ListMap>
+                    </ListContainer>
+                    <h4><a target="_blank"
+                        href="https://events.abcbaltimore.org/events/category/safety/">
+                          All Safety Classes
+                    </a></h4>
+                  </TrainingColumn>
+                  <TrainingColumn className="column3">
+                    <TitleContainer>
+                      <Banner background={building}/>
+                      <h4>Education</h4>
+                    </TitleContainer>
+                    <ListContainer>
+                      <ListMap>
+                        {mappedList(["Safety", "Networking"], "opposite")}
+                      </ListMap>
+                    </ListContainer>
+                    <h4><a target="_blank"
+                        href="https://events.abcbaltimore.org">
+                          All Education Opportunities
+                    </a></h4>
+                  </TrainingColumn>
+                </TrainingContainer>
+              </TrainingWrapper>
+              <Rule />
             </>
       }
       </Wrapper>

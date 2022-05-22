@@ -68,11 +68,11 @@ const MenuItemList = ({ state, menu, hoverEnter=null, hoverLeave=null, style="" 
               <>
               {Object.values(state.theme.activeMenu).includes(slug) ?
                 <IconContainer>
-                  <img src={alticon} width="25px" alt="icon"/>
+                  <img src={alticon} width="30px" alt="icon"/>
                 </IconContainer>
               : 
                 <IconContainer>
-                  < img className="active" src={icon} width="25px" alt="icon"/>
+                  < img className="active" src={icon} width="30px" alt="icon"/>
                 </IconContainer>
               }
               </>

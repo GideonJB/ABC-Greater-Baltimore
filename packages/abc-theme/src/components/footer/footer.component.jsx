@@ -25,7 +25,7 @@ const Footer = ({ state }) => {
 
   return(
     <>
-    {state.router.link !== '/' ? 
+    {state.router.link !== '/test' ? 
       <FooterContainer className='sfari_only'>
         <Address>
           ABC Greater Baltimore<br />
@@ -35,7 +35,7 @@ const Footer = ({ state }) => {
         </Address>
         <SecondRow>
           <Facebook>
-            <LogoContainer source={facebookLogo}
+            <LogoContainer margin="0px" source={facebookLogo}
               alt="Facebook Logo"
               widthValue="30px"
               heightValue="30px"
@@ -44,7 +44,7 @@ const Footer = ({ state }) => {
             />
           </Facebook>
           <Youtube>
-            <LogoContainer source={youtubeLogo}
+            <LogoContainer margin="0px" source={youtubeLogo}
               alt="Youtube Logo"
               widthValue="30px"
               heightValue="30px"
@@ -52,7 +52,7 @@ const Footer = ({ state }) => {
             />
           </Youtube>
           <Twitter>
-            <LogoContainer source={twitterLogo}
+            <LogoContainer margin="0px" source={twitterLogo}
               alt="Twitter Logo"
               widthValue="30px"
               heightValue="30px"
@@ -60,7 +60,7 @@ const Footer = ({ state }) => {
             />
           </Twitter>
           <Instagram>
-            <LogoContainer source={instagramLogo}
+            <LogoContainer margin="0px" source={instagramLogo}
               alt="Instagram Logo"
               widthValue="30px"
               heightValue="30px"
@@ -68,7 +68,7 @@ const Footer = ({ state }) => {
             />
           </Instagram>
           <LinkedIn>
-            <LogoContainer source={linkedinLogo}
+            <LogoContainer margin="0px" source={linkedinLogo}
               alt="LinkedIn Logo"
               widthValue="30px"
               heightValue="30px"

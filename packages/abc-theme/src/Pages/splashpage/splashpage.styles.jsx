@@ -97,7 +97,7 @@ export const GridWrapper = styled.div`
 
 export const Column = styled.div`
   width: calc((100vw) /5);
-  height: calc(85vh - 100px);
+  height: calc(100vh - 100px);
   overflow: visible;
   transition: .5s all;
   margin-top: 100px;
@@ -221,7 +221,7 @@ export const GradientDiv = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:  linear-gradient(to right, hsla(0,0%,0%,0) 85%, #000000ab 100%);
+  background-image:  linear-gradient(to right, hsla(0,0%,0%,0) 70%, #000000ab 100%);
 
   @media screen and (max-width: 1100px){
     background-image:  linear-gradient(to bottom, hsla(0,0%,0%,0) 75%, #000000ab 100%);
@@ -257,7 +257,6 @@ export const ItemList = styled.div`
   line-height: 1.2;
   text-align: center;
   overflow: hidden;
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -458,7 +457,7 @@ export const MembersItemsContainer = styled.div`
 
 export const CardHeading = styled.h1`
   transition: .3s all;
-  font-size: 2.2em;
+  font-size: 2.8em;
   position: absolute;
   bottom: 5%;
   font-weight: 600;
@@ -574,9 +573,18 @@ export const MobileColumnA = styled.div`
 
 export const EventListItem = styled.li`
   color: red;
+  margin-bottom: 5px;
+`
+
+export const DescriptionContainer = styled.div`
+  background-color: var(--colors-site-darkGray);
+  min-height: 100px;
+  margin-bottom: 20px;
 `
 
 export const Description = styled.h4`
+  color: var(--colors-site-white);
+  font-weight: 400;
   padding: 20px 40px;
   text-align: center;
   margin: 0 auto;
@@ -584,27 +592,32 @@ export const Description = styled.h4`
 
 export const TaglineContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   position: relative;
   width: 100%;
   background-color: var(--colors-site-white);
+  margin-bottom: 30px;
 `
 
 export const UpcomingContainer = styled.div`
   position: relative;
-  width: 40%;
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 60px;
   background-color: var(--colors-site-darkGray);
   text-align: center;
   background-image:
-    linear-gradient(45deg, transparent 90%, var(--colors-site-white) 0),
-    linear-gradient(135deg, transparent 90%, var(--colors-site-white) 0);
+    linear-gradient(45deg, transparent 85%, var(--colors-site-white) 0),
+    linear-gradient(135deg, transparent 85%, var(--colors-site-white) 0);
   z-index: 2;
   
   &:after {
     content: "";
     background-image:
-    linear-gradient(135deg, transparent 90%, var(--colors-site-white) 0),
-    linear-gradient(45deg, red 90%, transparent 0);
+    linear-gradient(135deg, transparent 85%, var(--colors-site-white) 0),
+    linear-gradient(45deg, red 85%, transparent 0);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -618,62 +631,102 @@ export const UpcomingContainer = styled.div`
 `
 
 export const UpcomingTagline = styled.h2`
+  font-size: 2.3em;
   margin: 0 auto;
   text-transform: uppercase;
   color: var(--colors-site-white);
+
+  @media screen and (max-width: 1300px){
+    font-size: 1.8em !important;
+  }
 `
 
 export const TagFlex = styled.div`
-  width: 100%;
+  width: 65%;
   padding: 0px 20px;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   gap: 20px;
-  padding-bottom: 20px;
 `
 
 export const Tagline = styled.div`
-  text-transform: uppercase;
-  color: red;
+  /* text-transform: uppercase; */
+  color: var(--colors-site-mainTheme);
   font-size: 1.4em;
   font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 `
 
+export const TrainingWrapper = styled.div`
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 70px;
+`
+
 export const TrainingContainer = styled.div`
-  margin: 15px 20px;
   display: flex;
-  gap: 20px;
-  justify-content: space-evenly;
+  justify-content: center;
+  width: 100%;
 `
 export const TrainingColumn = styled.div`
-  padding: 10px 30px 5px 10px;
-  width: 100%;
-
-  
-
-  &.column1{
-    background-color: var(--colors-site-darkAccent);
-  }
-
-  &.column2{
-    background-color: var(--colors-site-darkShades);
-  }
-
-  &.column3{
-    background-color: var(--colors-site-mainTheme);
+  margin-right: 20px;
+  width: 33%;
+  background-color: hsl(0, 0%, 92%);
+  padding: 15px;
+  text-align: center;
+  h4 > a{
+    color: red;
   }
 `
 
 export const ListMap = styled.ul`
-  h4{
-    
-    color: var(--colors-site-white);
-    margin: 0px 0px 10px -15px;
-
-  }
+  height: 100%;
+  padding-inline-start: 15px;
+  text-align: left;
   a{
-    color: var(--colors-site-white);
+    color: var(--colors-site-mainTheme);
     cursor: pointer;
+  }
+`
+
+export const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+`
+
+export const Rule = styled.hr`
+  border: 1px solid var(--colors-site-mainTheme);
+`
+
+export const Banner = styled.div`
+  width: 100px;
+  height: 100px;
+  background-image: url(${props => props.background});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 15px;
+`
+
+export const ListContainer = styled.div`
+  height: auto;
+  padding: 15px;
+`
+
+export const EventListDate = styled.span`
+  font-size: 1.1em;
+`
+
+export const TitleContainer =styled.div`
+  display: flex;
+  align-items: center;
+
+  h4{
+    font-size: 1.8em;
+    color: var(--colors-site-mainTheme);
   }
 `

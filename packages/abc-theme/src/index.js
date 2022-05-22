@@ -12,6 +12,8 @@ import membershipiconwhite from "./static/images/membership-icon-white.png"
 import politicalicon from "./static/images/political.png"
 import managementicon from "./static/images/mgmt-icon.png"
 import managementiconwhite from "./static/images/mgmt-icon-white.png"
+import ceaLogo from "./static/images/cea_logo.svg"
+import ceaLogoBlue from "./static/images/cea_logo_blue.svg" 
 import eventsicon from "./static/images/events-icon.png"
 import eventsiconwhite from "./static/images/events-icon-white.png"
 import apprenticeshipicon from "./static/images/apprenticeship-icon.png"
@@ -81,7 +83,7 @@ export default {
       forgotPassword: false,
       fetchToken,
       registerUser,
-      menuList: ["membership", "apprenticeship", "events", "safety", 
+      menuList: ["membership", "apprenticeship", "events", "safety", "education", 
                 "management-education", "political-advocacy", "cea",
                 "save-money", "resources", "peer-groups", "general-contractors",
                 "specialty-contractors", "join-abc", "trades-list",
@@ -239,107 +241,72 @@ export default {
         //     },
         //   },
         // },
-        workforceCareer: {
+        education: {
           id: 55,
-          menuName: "Workforce & Career",
-          slug: "workforce-career",
-          link: "/workforce-career/",
+          menuName: "Education",
+          slug: "education",
+          link: "/education/",
           color: "var(--colors-menuBlue)",
           activecolor: "var(--colors-management)",
           subcolor: "var(--colors-management-dark)",
-          icon: apprenticeshipicon,
-          alticon: apprenticeshipiconwhite,
+          icon: ceaLogoBlue,
+          alticon: ceaLogo,
           submenu: {
             apprenticeship: {
               id: 22,
               menuName: "Apprenticeship",
               slug: "apprenticeship",
-              main: "workforceCareer",
+              main: "education",
               link: "/apprenticeship/",
+            },
+            continuingEducation: {
+              id: 553,
+              menuName: "Continuing Education",
+              main: "education",
+              slug: "continuing-education",
+              link: "/continuing-education/"
+            },
+            craftCourses: {
+              id: 556,
+              menuName: "Craft Courses",
+              main: "education",
+              slug: "craft-courses",
+              link: "/craft-courses/"
+            },
+            tradeSchool: {
+              id: 565,
+              menuName: "Daytime Trade School",
+              main: "education",
+              slug: "trade-school",
+              link: "http://constructioneducationacademy.org/"
             },
             managementEducation: {
               id: 558,
               menuName: "Management Education",
               slug: "management-education",
-              main: "workforceCareer",
+              main: "education",
               link: "/management-education/",
-            },
-            // legalRegulatory: {
-            //   id: 551,
-            //   menuName: "Legal & Regulatory",
-            //   main: "workforceCareer",
-            //   slug: "legal-regulatory",
-            //   link: "/legal-regulatory/"
-            // },
-            // blueprintReading: {
-            //   id: 555,
-            //   menuName: "Blueprint Reading",
-            //   main: "workforceCareer",
-            //   slug: "blueprint-reading",
-            //   link: "/blueprint-reading/"
-            // },
-            // academies: {
-            //   id: 552,
-            //   menuName: "Academies",
-            //   main: "workforceCareer",
-            //   slug: "academies",
-            //   link: "/academies/"
-            // },
-            // operations: {
-            //   id: 554,
-            //   menuName: "Operations",
-            //   main: "workforceCareer",
-            //   slug: "operations",
-            //   link: "/operations/"
-            // },
-            craftCourses: {
-              id: 556,
-              menuName: "Craft Courses",
-              main: "workforceCareer",
-              slug: "craft-courses",
-              link: "/craft-courses/"
-            },
-            continuingEducation: {
-              id: 553,
-              menuName: "Continuing Education",
-              main: "workforceCareer",
-              slug: "continuing-education",
-              link: "/continuing-education/"
             },
             pdp: {
               id: 557,
               menuName: "Professional Development",
-              main: "workforceCareer",
+              main: "education",
               slug: "pdp",
               link: "/pdp/"
-            },
-            craftCourses: {
-              id: 559,
-              menuName: "Craft Courses",
-              main: "workforceCareer",
-              slug: "craft-courses",
-              link: "/craft-courses/"
-            },
-            taskTraining: {
-              id: 223,
-              menuName: "Task Training",
-              main: "workforceCareer",
-              slug: "task-training",
-              link: "/task-training/"
             },
             projectJumpstart: {
               id: 601,
               menuName: "Project JumpStart",
-              main: "workforceCareer",
+              main: "education",
               slug: "project-jumpstart",
               link: "http://projectjumpstarttraining.org/"
             },
-            tradeSchool: {
-              id: 565,
-              menuName: "Daytime Trade School",
-              main: "workforceCareer",
-              slug: "trade-school",
-              link: "http://constructioneducationacademy.org/"
+            taskTraining: {
+              id: 223,
+              menuName: "Task Training",
+              main: "education",
+              slug: "task-training",
+              link: "/task-training/"
             },
           }, 
         },

@@ -132,6 +132,7 @@ export const TimeContainer = styled.div`
 `
 
 export const FullSiteLink = styled.a`
+  display: block;
   margin-top: 10px;
   text-decoration: none;
   color: var(--colors-text);

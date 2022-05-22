@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from "frontity"
 import Link from "@frontity/components/link"
 
-const LogoContainer = ({ screenType, source, altText, widthValue="100%", heightValue="120px", link= null}) => {
+const LogoContainer = ({ screenType, source, altText, widthValue="100%", heightValue="120px", link= null, margin="5px"}) => {
   
   const styles = {
     width: widthValue,
@@ -11,7 +11,7 @@ const LogoContainer = ({ screenType, source, altText, widthValue="100%", heightV
   
   return (
     <>
-      <LogoWrapper className={screenType} style={styles}>
+      <LogoWrapper className={screenType} style={styles} margin={margin}>
         { link !== null
         ?
         <Link link= {link}>
@@ -31,9 +31,7 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 5px;
-
-  
+  margin-left: ${props => props.margin};
 
   @media screen and (min-width: 1099px){
     &.mobile{

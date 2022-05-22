@@ -57,7 +57,7 @@ export const Facebook = styled.div`
   position: absolute;
   left: 0;
   border-radius: 50%;
-  transition: all 1s;
+  transition: all .5s;
 
   &:hover{
     border: 1px solid hsl(220,44%,41%);
@@ -75,7 +75,7 @@ export const Youtube = styled.div`
   position: absolute;
   left: 62px;
   border-radius: 50%;
-  transition: all 1s;
+  transition: all .5s;
 
   &:hover{
     border: 1px solid crimson;
@@ -92,7 +92,8 @@ export const Twitter = styled.div`
   position: absolute;
   left: 125px;
   border-radius: 50%;
-  transition: all 1s;
+  transition: all .5s;
+  
 
   &:hover{
     border: 1px solid deepskyblue;
@@ -109,7 +110,7 @@ export const Instagram = styled.div`
   position: absolute;
   left: 189px;
   border-radius: 50%;
-  transition: all 1s;
+  transition: all .5s;
 
   &:hover{
     border: 1px solid black;
@@ -126,7 +127,7 @@ export const LinkedIn = styled.div`
   position: absolute;
   left: 250px;
   border-radius: 50%;
-  transition: all 1s;
+  transition: all .5s;
 
   &:hover{
     border: 1px solid darkcyan;
