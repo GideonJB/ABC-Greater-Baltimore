@@ -11,16 +11,18 @@ const LogoContainer = ({ screenType, source, altText, widthValue="100%", heightV
   
   return (
     <>
-      <LogoWrapper className={screenType} style={styles} margin={margin}>
-        { link !== null
-        ?
-        <Link link= {link}>
-        <img src={source} alt={altText} width={widthValue} height={heightValue} />
-        </Link>
-        :
-        <img src={source} alt={altText} />
-        }
-      </LogoWrapper>
+      <Link link={link}>
+        <LogoWrapper className={screenType} style={styles} margin={margin}>
+          { link !== null
+          ?
+          
+          <img src={source} alt={altText} width={widthValue} height={heightValue} />
+        
+          :
+          <img src={source} alt={altText} />
+          }
+        </LogoWrapper>
+      </Link>
     </>
   )
 }

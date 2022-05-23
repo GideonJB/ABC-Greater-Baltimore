@@ -573,13 +573,22 @@ export const MobileColumnA = styled.div`
 
 export const EventListItem = styled.li`
   color: red;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  list-style: none;
+
+  &:hover{
+    border-left: 3px solid red;
+    padding-left: 5px;
+    font-weight: bold;
+  }
 `
 
 export const DescriptionContainer = styled.div`
   background-color: var(--colors-site-darkGray);
   min-height: 100px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 `
 
 export const Description = styled.h4`
@@ -671,19 +680,25 @@ export const TrainingContainer = styled.div`
   width: 100%;
 `
 export const TrainingColumn = styled.div`
-  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
   width: 33%;
-  background-color: hsl(0, 0%, 92%);
-  padding: 15px;
-  text-align: center;
-  h4 > a{
+  background-color: hsl(40, 16%, 93%);
+  box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 16%);
+  padding: 45px 45px 45px 45px;
+  p > a{
     color: red;
+  }
+
+  &:last-of-type{
+    margin-right: 0px;
   }
 `
 
 export const ListMap = styled.ul`
   height: 100%;
-  padding-inline-start: 15px;
+  padding-inline-start: 0px;
   text-align: left;
   a{
     color: var(--colors-site-mainTheme);
@@ -714,7 +729,6 @@ export const Banner = styled.div`
 
 export const ListContainer = styled.div`
   height: auto;
-  padding: 15px;
 `
 
 export const EventListDate = styled.span`
@@ -726,7 +740,12 @@ export const TitleContainer =styled.div`
   align-items: center;
 
   h4{
-    font-size: 1.8em;
+    font-size: 2vw;
     color: var(--colors-site-mainTheme);
   }
+`
+
+export const EventLinkContainer = styled.div`
+  justify-self: baseline end;
+  bottom: 45px;
 `

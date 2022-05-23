@@ -44,6 +44,7 @@ export const Wrapper = styled.div`
     background-color: var(--colors-site-darkGray);
     height: 100px;
     border-bottom: 2px solid var(--colors-site-mainTheme);
+    padding-left: 8px;
 
     @media screen and (max-width: 1100px) {
       height: 50px;

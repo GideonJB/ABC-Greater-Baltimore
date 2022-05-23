@@ -27,10 +27,17 @@ const Footer = ({ state }) => {
     <>
     {state.router.link !== '/test' ? 
       <FooterContainer className='sfari_only'>
+          {state.theme.intViewportWidth < 1100 ?
+            <FirstRow>
+              <LogoContainer source={logoImage} alt="ABC Logo" widthValue="280px" heightValue="auto" link="/" />
+            </FirstRow>
+            :
+            null
+          }
         <Address>
           ABC Greater Baltimore<br />
           2101 E. Biddle St. Suite 5000<br />
-          Baltimore. MD 21213<br />
+          Baltimore, MD 21213<br />
           410-821-0351<br />
         </Address>
         <SecondRow>
@@ -77,9 +84,13 @@ const Footer = ({ state }) => {
           </LinkedIn>
           <Copyright>&copy; 2022</Copyright>
         </SecondRow>
-        <FirstRow>
-          <LogoContainer source={logoImage} alt="ABC Logo" widthValue="280px" heightValue="auto" link="/" />
-        </FirstRow>
+        {state.theme.intViewportWidth > 1100 ?
+            <FirstRow>
+              <LogoContainer source={logoImage} alt="ABC Logo" widthValue="280px" heightValue="auto" link="/" />
+            </FirstRow>
+            :
+            null
+        }
       </FooterContainer>
     :
     null

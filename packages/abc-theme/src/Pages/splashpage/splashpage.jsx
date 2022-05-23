@@ -9,8 +9,8 @@ import SideMenu from "../../components/side-menu/side-menu.component";
 
 import cealLogo from "../../static/images/cea_logo.svg";
 import building from "../../static/images/building.jpg";
-import safety from "../../static/images/safety_mobile.jpg"
-import networking from "../../static/images/events_mobile.jpg"
+import safety from "../../static/images/safety-square.jpg"
+import networking from "../../static/images/network-square.jpg"
 
 import {  Wrapper,
           GridWrapper,
@@ -57,6 +57,7 @@ import {  Wrapper,
           Banner,
           ListContainer,
           TitleContainer,
+          EventLinkContainer,
         } from './splashpage.styles';
 import { BlogTitleContainer } from '../../components/news-bar/news-bar.styles';
 
@@ -213,7 +214,7 @@ const SplashPage = ({ state, actions }) => {
               <CardHeading>Education</CardHeading>
                 <ManagementItemsContainer >
                   <ItemList>
-                  <ItemTitle onClick={preventBubble} link="/workforce-career">Construction <Break />Education</ItemTitle>
+                  <ItemTitle onClick={preventBubble} link="/education">Construction <Break />Education</ItemTitle>
                     <HorizontalLine />
                     {/* <ListItem onClick={preventBubble} link="/legal-regulatory">Legal & Regulatory</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/blueprint-reading">Blueprint Reading</ListItem><br /><br />
@@ -234,6 +235,7 @@ const SplashPage = ({ state, actions }) => {
                         altText="construction education academy logo"
                         widthValue="125px"
                         heightValue="auto"
+                        link="/education"
                       />
                     </LogoWrapper>
                     :
@@ -387,10 +389,12 @@ const SplashPage = ({ state, actions }) => {
                         {mappedList("Networking")}
                       </ListMap>
                     </ListContainer>
-                    <h4><a target="_blank"
-                        href="https://events.abcbaltimore.org/events/category/networking/">
-                          All Networking Events
-                    </a></h4>
+                    <EventLinkContainer>
+                      <p><a target="_blank"
+                          href="https://events.abcbaltimore.org/events/category/networking/">
+                            All Networking Events
+                      </a></p>
+                    </EventLinkContainer>
                   </TrainingColumn>
                   <TrainingColumn className="column2">
                     <TitleContainer>
@@ -402,10 +406,12 @@ const SplashPage = ({ state, actions }) => {
                         {mappedList("Safety")}
                       </ListMap>
                     </ListContainer>
-                    <h4><a target="_blank"
-                        href="https://events.abcbaltimore.org/events/category/safety/">
-                          All Safety Classes
-                    </a></h4>
+                    <EventLinkContainer>
+                      <p><a target="_blank"
+                          href="https://events.abcbaltimore.org/events/category/safety/">
+                            All Safety Classes
+                      </a></p>
+                    </EventLinkContainer>
                   </TrainingColumn>
                   <TrainingColumn className="column3">
                     <TitleContainer>
@@ -417,10 +423,12 @@ const SplashPage = ({ state, actions }) => {
                         {mappedList(["Safety", "Networking"], "opposite")}
                       </ListMap>
                     </ListContainer>
-                    <h4><a target="_blank"
-                        href="https://events.abcbaltimore.org">
-                          All Education Opportunities
-                    </a></h4>
+                    <EventLinkContainer>
+                      <p><a target="_blank"
+                          href="https://events.abcbaltimore.org">
+                            All Education Opportunities
+                      </a></p>
+                    </EventLinkContainer>
                   </TrainingColumn>
                 </TrainingContainer>
               </TrainingWrapper>
