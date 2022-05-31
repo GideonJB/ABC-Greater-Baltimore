@@ -9,6 +9,7 @@ import political from "../../static/images/political.jpg"
 import safety from "../../static/images/safety.jpg"
 import building from "../../static/images/building.jpg"
 import membersonly from "../../static/images/members-only.jpg"
+import aluminum from "../../static/images/2.jpg"
 
 import apprenticeshipmobile from "../../static/images/apprenticeship_mobile.jpg"
 import eventsmobile from "../../static/images/events_mobile.jpg"
@@ -58,8 +59,9 @@ const itemContainerStyles = `
 `
 
 export const Wrapper = styled.div`
-  width: 100%;
-  
+  width: 100%;  
+  background-image: url(${aluminum});
+  background-position: 50% 100vh;
 
  @media screen and (max-width: 1100px){
    display: block;
@@ -577,7 +579,7 @@ export const EventListItem = styled.li`
   list-style: none;
 
   &:hover{
-    border-left: 3px solid red;
+    /* border-left: 3px solid red; */
     padding-left: 5px;
     font-weight: bold;
   }
@@ -601,11 +603,12 @@ export const Description = styled.h4`
 
 export const TaglineContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
-  width: 100%;
-  background-color: var(--colors-site-white);
+  /* position: relative; */
+  width: 85%;
+  margin: 0 auto;
+  /* background-color: var(--colors-site-white); */
   margin-bottom: 30px;
 `
 
@@ -613,41 +616,42 @@ export const UpcomingContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  width: 30%;
+  width: 27%;
   height: 60px;
   background-color: var(--colors-site-darkGray);
   text-align: center;
-  background-image:
+  /* background-image:
     linear-gradient(45deg, transparent 85%, var(--colors-site-white) 0),
-    linear-gradient(135deg, transparent 85%, var(--colors-site-white) 0);
+    linear-gradient(135deg, transparent 85%, var(--colors-site-white) 0); */
+  clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0 100%, 0 0);
   z-index: 2;
   
-  &:after {
+  &:before {
     content: "";
-    background-image:
+    background-color: red;
+    /* background-image:
     linear-gradient(135deg, transparent 85%, var(--colors-site-white) 0),
-    linear-gradient(45deg, red 85%, transparent 0);
+    linear-gradient(45deg, red 85%, transparent 0); */
     position: absolute;
-    width: 100%;
+    width: calc(100% + 30px);
     height: 100%;
-    left: 30px;
+    right: -5px;
     top: 0;
     bottom: 0;
     z-index: -5;
-    mix-blend-mode: darken;
+    /* mix-blend-mode: darken; */
+    clip-path: polygon(88% 0, 95% 0%, 100% 50%, 95% 100%, 88% 100%, 93% 50%);
+
+
   }
 
 `
 
-export const UpcomingTagline = styled.h2`
-  font-size: 2.3em;
-  margin: 0 auto;
+export const UpcomingTagline = styled.p`
+  font-size: 2vw;
+  padding-left: 12px;
   text-transform: uppercase;
   color: var(--colors-site-white);
-
-  @media screen and (max-width: 1300px){
-    font-size: 1.8em !important;
-  }
 `
 
 export const TagFlex = styled.div`
@@ -661,7 +665,7 @@ export const TagFlex = styled.div`
 
 export const Tagline = styled.div`
   /* text-transform: uppercase; */
-  color: var(--colors-site-mainTheme);
+  color: var(--colors-site-white);
   font-size: 1.4em;
   font-weight: 600;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -684,9 +688,11 @@ export const TrainingColumn = styled.div`
   flex-direction: column;
   margin-right: 40px;
   width: 33%;
-  background-color: hsl(40, 16%, 93%);
+  background-color: hsl(0, 0%, 87%);
   box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 16%);
-  padding: 45px 45px 45px 45px;
+  /* border-radius: 10px;
+  box-shadow: 11px 15px 15px 0px rgba(0,0,0,0.1),-15px -12px 7px -10px #ffffff; */
+  padding: 15px 25px;
   p > a{
     color: red;
   }
@@ -699,6 +705,7 @@ export const TrainingColumn = styled.div`
 export const ListMap = styled.ul`
   height: 100%;
   padding-inline-start: 0px;
+  margin-block-start: 0;
   text-align: left;
   a{
     color: var(--colors-site-mainTheme);
@@ -715,16 +722,23 @@ export const LogoWrapper = styled.div`
 
 export const Rule = styled.hr`
   border: 1px solid var(--colors-site-mainTheme);
+  margin: 0px;
 `
 
 export const Banner = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background-image: url(${props => props.background});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  float: left;
   margin-right: 15px;
+
+  &.zoom{
+    background-size: 300%;
+    background-position: 28% 70%;
+  }
 `
 
 export const ListContainer = styled.div`

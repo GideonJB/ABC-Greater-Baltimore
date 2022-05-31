@@ -286,7 +286,7 @@ const Root = ({ state, actions }) => {
                       <ApprenticeAppPage when={dataitem.isPage && state.router.link ==='/apprenticeship-application/'} />
                       <JoinABCPage when={dataitem.isPage && state.router.link ==='/join-abc/'} />
                       <VirtualHRPage when={dataitem.isPage && state.router.link ==='/virtual-hr/'} />
-                      <BestSponsorPage when={dataitem.isPage && state.router.link ==='/best-sponsorship/'} />
+                      <BestSponsorPage when={dataitem.isPage && state.router.link ==='/pro-sponsorship/'} />
                       <TaskTrainingPage when={dataitem.isPage && state.router.link ==='/task-training/'} />
                       <FacilityRentalPage when={dataitem.isPage && state.router.link ==='/facility-rental/'} />
                       <CompanyUpdatePage when={dataitem.isPage && state.router.link ==='/company-update/'} />

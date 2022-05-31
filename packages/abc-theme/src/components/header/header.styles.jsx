@@ -1,43 +1,14 @@
 import { styled, keyframes } from "frontity"
 import Link from "@frontity/components/link"
 
-const fade = keyframes`
-  0% { opacity: 1 }
-  45% { opacity: 0 }
-  55% { opacity: 0 }
-  100% { opacity: 1 }
-`
 
-const prismcycle = keyframes`
-  0%{
-    transform: rotateX(0deg); 
-  }
-  28.5714%{
-    transform: rotateX(0deg);
-  }
-  33.3333%{
-    transform: rotateX(120deg);
-  }
-  61.9047%{
-    transform: rotateX(120deg);
-  }
-  66.6666%{
-    transform: rotateX(240deg);
-  }
-  95.238%{
-    transform: rotateX(240deg);
-  }
-  100%{
-    transform: rotateX(360deg);
-  }
-`
 
 export const Wrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 75px;
   /* background-color: var(--colors-site-white); */
-  z-index: 5;
+  z-index: 100;
   /* border-bottom: 3px solid var(--colors-site-mainTheme); */
 
   &.alt{
@@ -110,22 +81,6 @@ export const HeaderLinkContainer = styled.div`
   }
 `
 
-export const PrismContainer = styled.div`
-  width: 500px;
-  height: 50px;
-  position: relative;
-  perspective: 1000px;
-  margin: 0 auto;
-`
-
-export const Prism = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  animation: ${prismcycle} 9s ease-in-out infinite;
-`
-
 export const Tagline = styled.div`
   display: flex;
   align-items: center;
@@ -137,24 +92,7 @@ export const Tagline = styled.div`
   line-height: 0;
   font-size: 2em;
   color: var(--colors-site-mainTheme);
-  /* background: var(--colors-site-white); */
-  /* margin-top: 40px; */
-  /* line-height: 1; */
   font-family: sans-serif;
-  /* animation: ${fade} 6s ease-in-out infinite;
-  animation-delay: 3.5s; */
-
-  &.side-one{
-    transform: rotateX(0deg) translateZ(14px);
-  }
-
-  &.side-two{
-    transform: rotateX(120deg) translateZ(14px);
-  }
-
-  &.side-three{
-    transform: rotateX(240deg) translateZ(14px);
-  }
   
 
   @media screen and (max-width: 1200px) {
@@ -250,6 +188,7 @@ export const HamburgerIcon = styled.div`
 export const LeftGroup = styled.div`
   margin-left: 175px;
   display: flex;
+  align-items: center;
 
   &.inner {
     margin-left: 0px;

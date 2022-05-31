@@ -55,14 +55,14 @@ const boardList = [
     "Image":require("../static/images/board/mark-m.jpg"),
     "email":"mmcdaniel@nlpentinc.com"
   },
-  {
-    "id":8,
-    "Name":"David Brodie",
-    "Title":"",
-    "Description":"Wohlsen Construction",
-    "Image":require("../static/images/board/david-b.jpg"),
-    "email":"dbrodie@wohlsen.com"
-  },
+  // {
+  //   "id":8,
+  //   "Name":"David Brodie",
+  //   "Title":"",
+  //   "Description":"Wohlsen Construction",
+  //   "Image":require("../static/images/board/david-b.jpg"),
+  //   "email":"dbrodie@wohlsen.com"
+  // },
   {
     "id":9,
     "Name":"Ronnie Brouillard",

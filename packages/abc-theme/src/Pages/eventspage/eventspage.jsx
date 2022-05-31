@@ -25,7 +25,28 @@ import {FeaturedContainer,
         
       } from "./eventspage.styles"
 
+    
+
 const EventsPage = ({ state, actions }) => {
+
+  const mappedEventList = () => {
+    console.log("MAPPING")
+    const list = state.theme.eventsCalendar.map((items) => {
+      if(items.image){
+        return (
+          <div key={items.id}>
+              <FeaturedContainer >
+                <a target="_blank" href={items.url}>
+                  <img src={items.image.url} />
+                </a>
+              </FeaturedContainer>
+          </div>
+        )
+      }
+    })
+    console.log("list", list);
+    return list.filter(el => el !== undefined).slice(0, 2);
+  }
 
   return (
     <>
@@ -34,26 +55,9 @@ const EventsPage = ({ state, actions }) => {
       <EventsPageWrapper>
       <ImageList>
         {state.theme.eventsCalendar.length > 0 ?
-
-          state.theme.eventsCalendar.map((items) => {
-
-            return (
-              <div key={items.id}>
-                {items.image ?
-                <>
-                  <FeaturedContainer >
-                    <a target="_blank" href={items.url}>
-                      <img src={items.image.url} />
-                    </a>
-                  </FeaturedContainer>
-                  
-                </>
-                  :
-                  null
-                }
-              </div>
-            )
-          })
+          <>
+            {mappedEventList()}
+          </>
           :
           null
         }

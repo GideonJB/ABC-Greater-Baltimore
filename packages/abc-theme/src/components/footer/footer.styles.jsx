@@ -2,12 +2,9 @@ import { styled } from "frontity"
 
 export const FooterContainer = styled.div`
   position: relative;
-  vertical-align: botttom;
-  flex: 0 0 220px;
   width: 100%;
+  min-height: 200px;
   /* height: 200px; */
-  margin: 0 auto;
-  margin-top: auto;
   background-color: var(--colors-site-white);
   display: flex;
   /* flex-direction: column; */
@@ -16,9 +13,10 @@ export const FooterContainer = styled.div`
   padding: 0px 30px 0px 180px;
 
   @media screen and (max-width: 1000px){
-    /* height: 240px; */
+    min-height: 400px;
     flex-direction: column;
-    padding: 0;
+    padding: 0 0 10px 0;
+    flex-grow: 3;
   }
 
   @media screen and (max-width: 767px) {
@@ -36,9 +34,9 @@ export const FirstRow = styled.div`
     text-align: center;
     margin: 0;
   }
-  @media screen and (max-width: 800px){
+  /* @media screen and (max-width: 800px){
     display: none;
-  }
+  } */
 
 `
 

@@ -19,7 +19,8 @@ export const ImageList = styled.div`
 
   @media screen and (max-width: 1100px){
     width: 100%;
-    margin-left: 0px;
+    display: block;
+    margin: 0px auto;
   }
 `
 
@@ -33,6 +34,11 @@ export const FeaturedContainer = styled.div`
 
   &:hover {
     transform: scale(1.05)
+  }
+
+  @media screen and (max-width: 1100px){
+    width: 100%;
+    margin: 10px 0px;
   }
 `
 
@@ -48,6 +54,10 @@ export const CalendarWrapper = styled.div`
   @media screen and (max-width: 800px){
     width: 100vw;
     margin-left: -20px;
+
+    h3{
+      padding-left: 5px;
+    }
   }
 `
 
@@ -56,7 +66,7 @@ export const EventList = styled.div`
   width: 60%;
 
   @media screen and (max-width: 1100px) {
-    width: 85%;
+    width: 100%;
   }
 `
 

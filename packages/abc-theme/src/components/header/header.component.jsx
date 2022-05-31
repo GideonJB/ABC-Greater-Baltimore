@@ -122,17 +122,7 @@ const Header = ({ state, actions, color="", style="" }) => {
             widthValue="120px" screenType="mobile"
             heightValue="auto" />
         </LeftGroup>
-        {style === "inner" ?
-          null
-        :
-          <PrismContainer>
-            {/* <Prism>
-              <Tagline className="side-one">Connect to Opportunity</Tagline>
-              <Tagline className="side-two">Protect Your Interests</Tagline>
-              <Tagline className="side-three">Gain a Competetive Edge</Tagline>
-            </Prism> */}
-          </PrismContainer>
-        }
+        
         <HeaderLinkContainer className={color}>
           {/* {state.theme.token
           ?

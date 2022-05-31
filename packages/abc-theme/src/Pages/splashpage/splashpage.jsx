@@ -8,7 +8,7 @@ import LogoContainer from '../../components/logo-container/logo-container.compon
 import SideMenu from "../../components/side-menu/side-menu.component";
 
 import cealLogo from "../../static/images/cea_logo.svg";
-import building from "../../static/images/building.jpg";
+import education from "../../static/images/education-square.jpg";
 import safety from "../../static/images/safety-square.jpg"
 import networking from "../../static/images/network-square.jpg"
 
@@ -95,30 +95,37 @@ const SplashPage = ({ state, actions }) => {
 
   const mappedList = (category, range="") => {
     if(state.theme.eventsCalendar.length > 0){
-      const output = state.theme.eventsCalendar.map(event => {       
-        if (!range && event.categories[0] && event.categories.some(cat => cat.name.includes(category))) {  
-          return (
-            <>
-            <EventListItem>
-                <a target="_blank" href={event.url}>
-                <EventListDate>{dayjs(`${event.start_date}`).format('M/D')} - </EventListDate>
-                {myunescape(event.title)}</a>
-            </EventListItem>
-            </>
-          )
-        } else if (range === "opposite" && event.categories.every(cat => !category.includes(cat.name)) || !event.categories[0]) {
-          return (
-            <>
-            <EventListItem>
-                <a target="_blank" href={event.url}>
-                <EventListDate>{dayjs(`${event.start_date}`).format('M/D')} - </EventListDate>
-                {myunescape(event.title)}</a>
-            </EventListItem>
-            </>
-          )
-        }
-      })
-      return output.filter(el => el !== undefined).slice(0,3);
+      if (range==="opposite"){
+        const output = state.theme.eventsCalendar.map(event => { 
+          if (event.categories[0] && event.categories.every(cat => !category.includes(cat.name)) || !event.categories[0]) {
+            return (
+              <>
+                <EventListItem>
+                    <a target="_blank" href={event.url}>
+                    <EventListDate>{dayjs(`${event.start_date}`).format('M/D')} - </EventListDate>
+                    {myunescape(event.title)}</a>
+                </EventListItem>
+              </>
+            )
+          }
+        })
+        return output.filter(el => el !== undefined).slice(0, 4);
+      } else {
+        const output = state.theme.eventsCalendar.map(event => {       
+          if (event.categories[0] && event.categories.some(cat => cat.name.includes(category))) {  
+            return (
+              <>
+                <EventListItem>
+                    <a target="_blank" href={event.url}>
+                    <EventListDate>{dayjs(`${event.start_date}`).format('M/D')} - </EventListDate>
+                    {myunescape(event.title)}</a>
+                </EventListItem>
+              </>
+            )
+          }
+        })
+        return output.filter(el => el !== undefined).slice(0, 4);
+      }
     }  
   }
   
@@ -363,7 +370,7 @@ const SplashPage = ({ state, actions }) => {
                 <Description>
                   Associated Builders and Contractors of Greater Baltimore is the largest
                   organization in Maryland to represent the commercial construction industry.
-                  Our 650  members represent the leading general contractors and specialty
+                  <br/>Our 650  members represent the leading general contractors and specialty
                   contractors in the region.
                 </Description>
               </DescriptionContainer>
@@ -371,54 +378,20 @@ const SplashPage = ({ state, actions }) => {
                 <UpcomingContainer>
                   <UpcomingTagline>Upcoming Events</UpcomingTagline>
                 </UpcomingContainer>
-                <TagFlex>
-                <Tagline><em>Connect to Opportunity</em></Tagline>
-                <Tagline><em>Gain a Competetive Advantage</em></Tagline>
-                  <Tagline><em>Protect Your Interests</em></Tagline>
-                </TagFlex>
+                {/* Removed TagFlex Div */}
+                <Tagline>Connect to Opportunity</Tagline>
+                <Tagline>Gain a Competetive Advantage</Tagline>
+                <Tagline>Protect Your Interests</Tagline>
+                
               </TaglineContainer>
               <TrainingWrapper>
                 <TrainingContainer>
-                  <TrainingColumn className="column1">
-                    <TitleContainer>
-                      <Banner background={networking}/>
-                      <h4>Networking</h4>
-                    </TitleContainer>
-                    <ListContainer>
-                      <ListMap>
-                        {mappedList("Networking")}
-                      </ListMap>
-                    </ListContainer>
-                    <EventLinkContainer>
-                      <p><a target="_blank"
-                          href="https://events.abcbaltimore.org/events/category/networking/">
-                            All Networking Events
-                      </a></p>
-                    </EventLinkContainer>
-                  </TrainingColumn>
-                  <TrainingColumn className="column2">
-                    <TitleContainer>
-                      <Banner background={safety}/>
-                      <h4>Safety Training</h4>
-                    </TitleContainer>
-                    <ListContainer>
-                      <ListMap>
-                        {mappedList("Safety")}
-                      </ListMap>
-                    </ListContainer>
-                    <EventLinkContainer>
-                      <p><a target="_blank"
-                          href="https://events.abcbaltimore.org/events/category/safety/">
-                            All Safety Classes
-                      </a></p>
-                    </EventLinkContainer>
-                  </TrainingColumn>
                   <TrainingColumn className="column3">
                     <TitleContainer>
-                      <Banner background={building}/>
                       <h4>Education</h4>
                     </TitleContainer>
                     <ListContainer>
+                      <Banner background={education}/>
                       <ListMap>
                         {mappedList(["Safety", "Networking"], "opposite")}
                       </ListMap>
@@ -426,7 +399,41 @@ const SplashPage = ({ state, actions }) => {
                     <EventLinkContainer>
                       <p><a target="_blank"
                           href="https://events.abcbaltimore.org">
-                            All Education Opportunities
+                            See All Education Opportunities
+                      </a></p>
+                    </EventLinkContainer>
+                  </TrainingColumn>
+                  <TrainingColumn className="column2">
+                    <TitleContainer>
+                      <h4>Safety Training</h4>
+                    </TitleContainer>
+                    <ListContainer>
+                      <Banner background={safety}/>
+                      <ListMap>
+                        {mappedList("Safety")}
+                      </ListMap>
+                    </ListContainer>
+                    <EventLinkContainer>
+                      <p><a target="_blank"
+                          href="https://events.abcbaltimore.org/events/category/safety/">
+                            See All Safety Classes
+                      </a></p>
+                    </EventLinkContainer>
+                  </TrainingColumn>
+                  <TrainingColumn className="column1">
+                    <TitleContainer>
+                      <h4>Networking</h4>
+                    </TitleContainer>
+                    <ListContainer>
+                      <Banner background={networking}/>
+                      <ListMap>
+                        {mappedList("Networking")}
+                      </ListMap>
+                    </ListContainer>
+                    <EventLinkContainer>
+                      <p><a target="_blank"
+                          href="https://events.abcbaltimore.org/events/category/networking/">
+                            See All Networking Events
                       </a></p>
                     </EventLinkContainer>
                   </TrainingColumn>
