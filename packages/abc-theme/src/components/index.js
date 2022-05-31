@@ -57,14 +57,14 @@ const CalendarContainer = styled.div`
   ${fullFrameDiv}
   overflow: hidden;
   pointer-events: none;
-  z-index: 5;
+  z-index: 111;
 `
 
 const NewsContainer = styled.div`
   ${fullFrameDiv}
   overflow: hidden;
   pointer-events: none;
-  z-index: 5;
+  z-index: 111;
 `
 
 const OuterWrapper = styled.div`
@@ -192,7 +192,7 @@ const Root = ({ state, actions }) => {
   useEffect(() => {
     eventsFetch().then(res => actions.theme.setEventsCalendar(res))
     blogFetch().then(res => actions.theme.setBlogPosts(res))
-    // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
+    youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
       state.theme.token = loggedInUser;
@@ -257,6 +257,12 @@ const Root = ({ state, actions }) => {
       <Global styles={css(editorBlocksTwo)} />
       <Global styles={css(frontend_blocks)} />
       <GlobalStyle />
+      <CalendarContainer>
+        <EventsCalendar />
+      </CalendarContainer>
+      <NewsContainer>
+        <NewsBar />
+      </NewsContainer>
       <Header style={state.router.link !== "/" ? "inner" : "alt"}
               color={state.router.link !== "/" ? "" : ""}
       />          
@@ -314,12 +320,6 @@ const Root = ({ state, actions }) => {
         
         
       {/* </GridWrapper> */}
-      <CalendarContainer>
-        <EventsCalendar />
-      </CalendarContainer>
-      <NewsContainer>
-        <NewsBar />
-      </NewsContainer>
       <HamburgerMenu />
     </>
   )

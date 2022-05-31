@@ -62,6 +62,8 @@ export const Wrapper = styled.div`
   width: 100%;  
   background-image: url(${aluminum});
   background-position: 50% 100vh;
+  background-size: cover;
+  background-repeat: none;
 
  @media screen and (max-width: 1100px){
    display: block;
