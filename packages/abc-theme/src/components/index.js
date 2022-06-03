@@ -46,13 +46,7 @@ import BestSponsorPage from "../Pages/bestsponsorpage/bestsponsorpage.jsx"
 import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
 import Blog from "../components/blog/blog.component.jsx"
 
-import guy from "../static/images/guy.jpg"
 
-const Background = styled.div`
-  ${fullFrameDiv}
-  z-index: -2;
-  background-color: black;
-`
 const CalendarContainer = styled.div`
   ${fullFrameDiv}
   overflow: hidden;
@@ -67,28 +61,6 @@ const NewsContainer = styled.div`
   z-index: 111;
 `
 
-const OuterWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
- 
-`
-
-const GridWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  pointer-events: none;
-
-  @media screen and (max-width: 800px){
-    display: block;
-
-  }
-
-`
-
 const MainTag = styled.main`
   width: 100%;
 `
@@ -96,11 +68,7 @@ const MainTag = styled.main`
 const AnimationWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: var(--screen-height);
-  overflow-y: auto;
-  overflow-X: hidden;
-  /* pointer-events: none; */
-  /* background-color: hsl(67, 1%, 97%); */
+  height: var(--screen-height); 
 
   &.hidden{
     display: none;
@@ -122,10 +90,8 @@ const ContentWrapper = styled.div`
   display: flex;
   width: 100vw;
   height: var(--screen-height);
-  overflow: hidden;
   pointer-events: auto;
 
-  /* background-color: hsl(67, 1%, 97%);  */
 
   &.no-scroll {
     position: fixed;
@@ -138,30 +104,6 @@ const ContentWrapper = styled.div`
 
 `
 
-const BackgroundContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -5;
-  overflow: hidden;
-  pointer-events: none;
-  
-
-  img {
-    /* width: 100%; */
-    height: 100%;
-    object-fit: cover !important;
-    opacity: 1;
-  }
-  /* div {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--colors-active);
-    opacity: .4 !important;
-  } */
-`
 
 const Root = ({ state, actions }) => {
 
@@ -192,7 +134,7 @@ const Root = ({ state, actions }) => {
   useEffect(() => {
     eventsFetch().then(res => actions.theme.setEventsCalendar(res))
     blogFetch().then(res => actions.theme.setBlogPosts(res))
-    youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
+    // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
       state.theme.token = loggedInUser;
@@ -201,8 +143,8 @@ const Root = ({ state, actions }) => {
 
   //fires various functions on route change
   useEffect(() => {
-    const myDiv = document.getElementById('scrolled')
-    myDiv.scrollTop= 0;
+    // const myDiv = document.getElementById('scrolled')
+    // myDiv.scrollTop= 0;
     state.theme.isLoginMenuVisible = false;
     state.theme.isCalendarOpen = false;
     state.theme.isNewsOpen = false;
@@ -231,17 +173,6 @@ const Root = ({ state, actions }) => {
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-RP1V6H0XCH`}
         />
-
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-RP1V6H0XCH');
-              `,
-          }}
-        /> */}
         <script>
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -273,11 +204,11 @@ const Root = ({ state, actions }) => {
             null
             }
             <MainTag>
-            <AnimationWrapper id="scrolled" className="">
+            <AnimationWrapper className="">
             {transitions((props, item) => {
                 const dataitem = state.source.get(state.router.link)
                 return(
-                <animated.div style={props}>
+                <animated.div id= "scrolled" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
                   <SpacingDiv>
                     <Switch location={item}>
                       <SplashPage when={dataitem.isHome} />
@@ -317,9 +248,6 @@ const Root = ({ state, actions }) => {
             </AnimationWrapper>
             </MainTag>
           </ContentWrapper>
-        
-        
-      {/* </GridWrapper> */}
       <HamburgerMenu />
     </>
   )

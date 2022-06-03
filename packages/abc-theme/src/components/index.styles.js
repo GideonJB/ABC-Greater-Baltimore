@@ -75,22 +75,6 @@ export const GlobalStyle = props => (
       *::after {
         box-sizing: border-box;
       }
-      html{
-        overflow-y: scroll;
-        /* &::-webkit-scrollbar {
-          width: 11px;
-        }
-
-        &::-webkit-scrollbar-track {
-          background: #154734;  
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background-color: #f3f0dd;
-          border-radius: 6px;
-          border: 3px solid #154734;
-        } */
-      }
 
       /* Remove default margin */
       body,
@@ -119,16 +103,18 @@ export const GlobalStyle = props => (
 
       /* Set core body defaults */
       body {
-        min-height: 100vh;
         text-rendering: optimizeSpeed;
         line-height: 1.5;
         overscroll-behavior: none;
+        
+       
 
         &.scrollBody {
           display: block;
-          height: 100vh; /* 100% does not do it */
           overflow: scroll;
           overscroll-behavior: contain;
+
+          
         }
       }
 
@@ -252,9 +238,7 @@ export const GlobalStyle = props => (
 
       body {
         margin: 0;
-        /* background-color: lightgrey; */
         font-family: "Lato","HelveticaNeue","Helvetica Neue",sans-serif;
-        overflow: hidden;
         -webkit-overflow-scrolling: touch;
         background-color: var(--colors-site-white);
         
@@ -615,6 +599,39 @@ export const GlobalStyle = props => (
 
       .top-margin{
         margin-top: 30px;
+      }
+
+      #scrolled{
+        &::-webkit-scrollbar {
+          -webkit-appearance: none;
+          -webkit-overflow-scrolling: auto
+        }
+
+        &::-webkit-scrollbar:vertical {
+          width: 12px;
+          -webkit-overflow-scrolling: auto
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, .5);
+          border-radius: 10px;
+          border: 2px solid #ffffff;
+          -webkit-overflow-scrolling: auto
+        }
+
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;  
+          background-color: #ffffff; 
+          -webkit-overflow-scrolling: auto
+        }
+      }
+
+      .homepage{
+        margin-top: 100px;
+
+        @media screen and (max-width: 1100px){
+          margin-top: 0px;
+        }
       }
 
     `}

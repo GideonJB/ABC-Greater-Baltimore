@@ -160,7 +160,7 @@ const SplashPage = ({ state, actions }) => {
                   <ItemTitle onClick={preventBubble} link="/membership">Membership</ItemTitle>
                   <HorizontalLine />
                   <ListItem onClick={preventBubble} link="/save-money">Save Money</ListItem><br /><br />
-                  <ListItem onClick={preventBubble} link="/resource">Resources</ListItem><br /><br />
+                  <ListItem onClick={preventBubble} link="/resources">Resources</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="/peer-groups">Peer Groups</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="/general-contractors">General Contractors</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="/specialty-contractors">Specialty Contractors</ListItem><br /><br />
@@ -280,7 +280,7 @@ const SplashPage = ({ state, actions }) => {
           <>
             <Column onClick={() => menuExpand("members")}
               className={state.theme.expandedMenu === "members" ? "expanded" : ""}>
-              <MenuContainer className={state.theme.expandedMenu === "members" ? "expanded bordered" : "bordered"}>
+              <MenuContainer className={state.theme.expandedMenu === "members" ? "expanded" : ""}>
                 <GrowContainer>
                   <MembersBackground className="grow" />
                 </GrowContainer>
@@ -332,7 +332,7 @@ const SplashPage = ({ state, actions }) => {
 
               <Column onClick={() => menuExpand("members")}
                 className={state.theme.expandedMenu === "members" ? "expanded" : ""}>
-                <MenuContainer className={state.theme.expandedMenu === "members" ? "expanded bordered" : "bordered"}>
+                <MenuContainer className={state.theme.expandedMenu === "members" ? "expanded" : ""}>
                   <GrowContainer>
                     <MembersBackground className="grow" />
                   </GrowContainer>

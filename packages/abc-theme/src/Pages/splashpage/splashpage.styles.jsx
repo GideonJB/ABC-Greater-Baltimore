@@ -104,7 +104,7 @@ export const Column = styled.div`
   height: calc(100vh - 100px);
   overflow: visible;
   transition: .5s all;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 
   @media screen and (max-width: 1200px){
     &.expanded{
@@ -160,7 +160,7 @@ export const MenuContainer = styled.div`
         pointer-events: auto;
       }
       h1{
-        margin-left: calc((100vw) / 5 + 20px);
+        margin-left: calc((100vw) / 5 + 40px);
       }
       .grow{
         /* background-size: 112% */

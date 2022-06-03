@@ -1,15 +1,10 @@
 import { styled } from "frontity"
 
 export const Wrapper = styled.div`
-  /* height: 100vh; */
   width: var(--screen-width);
-  /* height: var(--screen-height); */
-  /* position: relative; */
   @media screen and (max-width: 1100px){
     width: 100vw;
   }
-
-  /* overflow-x: hidden; */
 `
 
 export const StaffWrap = styled.div`
