@@ -407,7 +407,7 @@ const SplashPage = ({ state, actions }) => {
                 <Description>
                   Associated Builders and Contractors of Greater Baltimore is the largest
                   organization in Maryland to represent the commercial construction industry.
-                  <br/>Our 650  members represent the leading general contractors and specialty
+                  Our 650  members represent the leading general contractors and specialty
                   contractors in the region.
                 </Description>
               </DescriptionContainer>
