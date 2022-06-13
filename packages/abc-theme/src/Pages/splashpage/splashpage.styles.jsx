@@ -588,7 +588,7 @@ export const EventListItem = styled.li`
 `
 
 export const DescriptionContainer = styled.div`
-  background-color: var(--colors-site-darkGray);
+  background-color: var(--colors-site-white);
   min-height: 100px;
   margin-bottom: 20px;
   display: flex;
@@ -596,7 +596,7 @@ export const DescriptionContainer = styled.div`
 `
 
 export const Description = styled.h4`
-  color: var(--colors-site-white);
+  color: var(--colors-site-mainTheme);
   font-weight: 400;
   padding: 20px 40px;
   text-align: center;
@@ -604,7 +604,8 @@ export const Description = styled.h4`
 `
 
 export const TaglineContainer = styled.div`
-  display: flex;
+  display: none;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   /* position: relative; */
@@ -675,13 +676,15 @@ export const Tagline = styled.div`
 `
 
 export const TrainingWrapper = styled.div`
+  display: none;
   width: 85%;
   margin: 0 auto;
   margin-bottom: 70px;
 `
 
 export const TrainingContainer = styled.div`
-  display: flex;
+  display: none;
+  /* display: flex; */
   justify-content: center;
   width: 100%;
 `
@@ -764,4 +767,10 @@ export const TitleContainer =styled.div`
 export const EventLinkContainer = styled.div`
   justify-self: baseline end;
   bottom: 45px;
+`
+
+export const InfographicContainer = styled.div`
+  width: 100%;
+  height: 500px;
+  background-color: var(--colors-site-white);
 `

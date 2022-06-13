@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'frontity'
+import dayjs from 'dayjs'
+
 import LogoContainer from "../logo-container/logo-container.component"
 
 import logoImage from "../../static/images/abc-logo-new.png";
@@ -82,7 +84,7 @@ const Footer = ({ state }) => {
               link="https://www.linkedin.com/company/associated-builders-and-contractors-baltimore-metro-chapter/"
             />
           </LinkedIn>
-          <Copyright>&copy; 2022</Copyright>
+          <Copyright>&copy; {dayjs().year()}</Copyright>
         </SecondRow>
         {state.theme.intViewportWidth > 1100 ?
             <FirstRow>

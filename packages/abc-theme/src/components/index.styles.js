@@ -161,7 +161,8 @@ export const GlobalStyle = props => (
         text-rendering: optimizeLegibility; */
         
         --colors-site-overlay: hsla(34, 62%, 5%, 50%);
-        --colors-site-white: hsl(40, 100%, 98%);
+        --colors-site-white: white;
+        /* --colors-site-white: hsl(40, 100%, 98%); */
         --colors-site-whiteOverlay: hsla(37, 70%, 94%, 70%);
         --colors-site-mainTheme: hsl(212, 57%, 15%);
         --colors-site-mainThemeOverlay: hsla(212, 57%, 15%, 70%);

@@ -159,15 +159,15 @@ const Root = ({ state, actions }) => {
         <title key="title">ABC Greater Baltimore</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
-        <link rel="icon" type="image/x-icon" href="faviconabc.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Workforce Development and Labor Relations"
         />
-        {/* <meta
+        <meta
           name="keywords"
-          content="saragibby, sara, gibby, who runs the world"
-        /> */}
+          content="construction, workforce, education, jobs, training, apprenticeship"
+        />
 
         <script
           async
@@ -208,7 +208,7 @@ const Root = ({ state, actions }) => {
             {transitions((props, item) => {
                 const dataitem = state.source.get(state.router.link)
                 return(
-                <animated.div id= "scrolled" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
+                <animated.div id= "" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
                   <SpacingDiv>
                     <Switch location={item}>
                       <SplashPage when={dataitem.isHome} />

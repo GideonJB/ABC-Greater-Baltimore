@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import { myunescape } from "../../utils/utility-functions"
 
 import LogoContainer from '../../components/logo-container/logo-container.component';
-import SideMenu from "../../components/side-menu/side-menu.component";
+import QuoteCarousel from "../../components/quote-carousel/quote-carousel.component"
 
 import cealLogo from "../../static/images/cea_logo.svg";
 import education from "../../static/images/education-square.jpg";
@@ -58,8 +58,39 @@ import {  Wrapper,
           ListContainer,
           TitleContainer,
           EventLinkContainer,
+          InfographicContainer,
         } from './splashpage.styles';
-import { BlogTitleContainer } from '../../components/news-bar/news-bar.styles';
+
+const quotes = [
+  {
+    quote: "ABC Baltimore is a tremendous resource. All you have to do is call. They are a great resource and knowledge bank for insurance, legal. training, political issues, future projects, networking, safety support just to name a few.",
+    caption: "- Frank Murphy, TEl Electrical Solutions"
+  },
+  {
+    quote: "Southway Builders has been a proud member of ABC for over a decade, and we consider our membership to be one of the most valuable of all trade groups with which we belong.ABC is the BEST, and we are honored to be a part of such an excellent organization.",
+    caption: "-  Willy Moore with Southway Builders"
+  },
+  {
+    quote: "Since we joined not even a month ago, I’ve enjoyed the relationships that I’ve already developed with ABC personnel as well as the connections that ABC has provided me. And the webinars that I’ve attended have been very timely, informative and collaborative.",
+    caption: "- Joseph P. Gross with EnviroVantage"
+  },
+  {
+    quote: "The academy is just the living, breathing construction industry. The staff is very knowledgeable, friendly and willing to form a close bond with the student. They teach you the things you're looking to learn to grow.It makes the job that I'm doing now as, an assistant project manager, ten times more fun than it was before I took the Academy.",
+    caption: "- David Toth with Oak Contracting on the Project Manager/Estimator Academy"
+  },
+  {
+    quote: "Southway Builders has been a proud member of ABC for over a decade, and we consider our membership to be one of the most valuable of all trade group with which we belong. From steep member discounts to our liability insurance, to their providing safety inspections at all of our project sites, or providing connections with a broad array of top notch subcontractors, and their legislative advocacy on behalf of our industry. ABC is the BEST, and we are honored to be a part of such an excellent organization.",
+    caption: "- Willy Moore with Southway Builders"
+  },
+  {
+    quote: "ABC provides its General Contractor members many essential resources including general industry knowledge and awareness, updates on new laws and regulations, apprenticeship training construction industry education for employees, safety training and networking. All of these tools help my company stay competitive in an ever-changing industry.",
+    caption: "- Ken Wingate with North Point Builders"
+  },
+  {
+    quote: "ABC Baltimore is a tremendous resource. All you have to do is call. They are a great resource and knowledge bank for insurance, legal, training, political issues, future projects, networking, safety support just to name a few.",
+    caption: "- Frank Murphy, TEl Electrical Solutions"
+  },
+]
 
 const SplashPage = ({ state, actions }) => {
 
@@ -127,8 +158,7 @@ const SplashPage = ({ state, actions }) => {
         return output.filter(el => el !== undefined).slice(0, 4);
       }
     }  
-  }
-  
+  }  
 
   return (
     <>
@@ -374,6 +404,11 @@ const SplashPage = ({ state, actions }) => {
                   contractors in the region.
                 </Description>
               </DescriptionContainer>
+              <QuoteCarousel quoteArray={quotes} heading="What the Industry is Saying About ABC Baltimore" />
+              <InfographicContainer>
+                <div>I"M ALSO HERE</div>
+                <div>AND ME TOO</div>
+              </InfographicContainer>
               <TaglineContainer>
                 <UpcomingContainer>
                   <UpcomingTagline>Upcoming Events</UpcomingTagline>
