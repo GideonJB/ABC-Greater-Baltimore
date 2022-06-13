@@ -5,12 +5,15 @@ import dayjs from 'dayjs';
 import { myunescape } from "../../utils/utility-functions"
 
 import LogoContainer from '../../components/logo-container/logo-container.component';
-import QuoteCarousel from "../../components/quote-carousel/quote-carousel.component"
+import QuoteCarousel from "../../components/quote-carousel/quote-carousel.component";
 
 import cealLogo from "../../static/images/cea_logo.svg";
 import education from "../../static/images/education-square.jpg";
 import safety from "../../static/images/safety-square.jpg"
-import networking from "../../static/images/network-square.jpg"
+import networking from "../../static/images/network-square.jpg";
+import info1 from "../../static/images/IG1.gif";
+import info2 from "../../static/images/IG2.gif";
+import info3 from "../../static/images/IG3.gif";
 
 import {  Wrapper,
           GridWrapper,
@@ -58,7 +61,11 @@ import {  Wrapper,
           ListContainer,
           TitleContainer,
           EventLinkContainer,
+          QuoteContainer,
+          QuoteBlurContainer,
           InfographicContainer,
+          InfoColumnLeft,
+          InfoColumnRight,
         } from './splashpage.styles';
 
 const quotes = [
@@ -404,10 +411,21 @@ const SplashPage = ({ state, actions }) => {
                   contractors in the region.
                 </Description>
               </DescriptionContainer>
-              <QuoteCarousel quoteArray={quotes} heading="What the Industry is Saying About ABC Baltimore" />
+              <QuoteContainer>
+                <QuoteBlurContainer>
+                  <QuoteCarousel quoteArray={quotes} heading="What the Industry is Saying About ABC Baltimore" />
+                </QuoteBlurContainer>
+              </QuoteContainer>
               <InfographicContainer>
-                <div>I"M ALSO HERE</div>
-                <div>AND ME TOO</div>
+                <InfoColumnLeft>
+                  <h2>ABC by the Numbers</h2>
+                  <img src={info1} alt="ABC member total 640" width="375px" />
+                </InfoColumnLeft>
+                <InfoColumnRight>
+                  <img src={info2} alt="ABC member total 640" width="700px" />
+
+                  <img src={info3} alt="ABC member total 640" width="700px" />
+                </InfoColumnRight>
               </InfographicContainer>
               <TaglineContainer>
                 <UpcomingContainer>

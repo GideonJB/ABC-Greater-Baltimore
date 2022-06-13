@@ -590,7 +590,7 @@ export const EventListItem = styled.li`
 export const DescriptionContainer = styled.div`
   background-color: var(--colors-site-white);
   min-height: 100px;
-  margin-bottom: 20px;
+  padding: 10px 0px 20px 0px;
   display: flex;
   align-items: center;
 `
@@ -769,8 +769,53 @@ export const EventLinkContainer = styled.div`
   bottom: 45px;
 `
 
-export const InfographicContainer = styled.div`
+export const QuoteContainer = styled.div`
+  height: 40vh;
+  min-height: 600px;
+  background-image: url(${building});
+  background-position: 50% 90%;
+  
+`
+
+export const QuoteBlurContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+`
+
+export const InfographicContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 750px;
   background-color: var(--colors-site-white);
+  padding: 20px 0px;
+
+  img{
+    padding: 20px;
+  }
+`
+
+export const InfoColumnLeft = styled.div`
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+
+  h2{
+    text-align: center;
+  }
+`
+
+export const InfoColumnRight = styled.div`
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 `
