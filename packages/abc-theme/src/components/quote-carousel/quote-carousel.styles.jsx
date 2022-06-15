@@ -12,7 +12,7 @@ export const Carousel = styled.div`
 `
 
 export const InnerDiv = styled.div`
-  transition: transform 0.5s ease;
+  transition: transform 1s ease-in-out;
   white-space: nowrap;
 `
 
@@ -46,7 +46,10 @@ export const Caption = styled.h4`
 export const QuoteIcon = styled.svg`
   width: 30px;
   height: auto;
-  transform: scaleX(-1);
+  
+  &.reverse{
+    transform: scaleX(-1);
+  }
 `
 
 export const QuoteText = styled.h4`

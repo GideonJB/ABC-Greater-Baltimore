@@ -63,6 +63,7 @@ import {  Wrapper,
           EventLinkContainer,
           QuoteContainer,
           QuoteBlurContainer,
+          InfoWrapper,
           InfographicContainer,
           InfoColumnLeft,
           InfoColumnRight,
@@ -405,28 +406,31 @@ const SplashPage = ({ state, actions }) => {
             <>
               <DescriptionContainer>
                 <Description>
-                  Associated Builders and Contractors of Greater Baltimore is the largest
-                  organization in Maryland to represent the commercial construction industry.
-                  Our 650  members represent the leading general contractors and specialty
+                  Associated Builders and Contractors of Greater Baltimore is the <strong>largest
+                  organization in Maryland</strong> to represent the commercial construction industry.
+                  Our 640  members represent the leading general contractors and specialty
                   contractors in the region.
                 </Description>
+                <Rule className="red short" />
               </DescriptionContainer>
               <QuoteContainer>
                 <QuoteBlurContainer>
                   <QuoteCarousel quoteArray={quotes} heading="What the Industry is Saying About ABC Baltimore" />
                 </QuoteBlurContainer>
               </QuoteContainer>
-              <InfographicContainer>
-                <InfoColumnLeft>
-                  <h2>ABC by the Numbers</h2>
-                  <img src={info1} alt="ABC member total 640" width="375px" />
-                </InfoColumnLeft>
-                <InfoColumnRight>
-                  <img src={info2} alt="ABC member total 640" width="700px" />
+              <InfoWrapper>
+                <h2>ABC by the Numbers</h2>
+                <InfographicContainer>
+                  <InfoColumnLeft>
+                    <img src={info1} alt="ABC member total 640" width="80%" />
+                  </InfoColumnLeft>
+                  <InfoColumnRight>
+                    <img src={info2} alt="ABC member total 640" width="80%" />
 
-                  <img src={info3} alt="ABC member total 640" width="700px" />
-                </InfoColumnRight>
-              </InfographicContainer>
+                    <img src={info3} alt="ABC member total 640" width="80%" />
+                  </InfoColumnRight>
+                </InfographicContainer>
+              </InfoWrapper>
               <TaglineContainer>
                 <UpcomingContainer>
                   <UpcomingTagline>Upcoming Events</UpcomingTagline>

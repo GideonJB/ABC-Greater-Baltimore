@@ -60,7 +60,7 @@ const itemContainerStyles = `
 
 export const Wrapper = styled.div`
   width: 100%;  
-  background-image: url(${aluminum});
+  /* background-image: url(${aluminum}); */
   background-position: 50% 100vh;
   background-size: cover;
   background-repeat: none;
@@ -589,9 +589,11 @@ export const EventListItem = styled.li`
 
 export const DescriptionContainer = styled.div`
   background-color: var(--colors-site-white);
-  min-height: 100px;
-  padding: 10px 0px 20px 0px;
+  min-height: 200px;
+  padding: 30px 0px 50px 0px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 `
 
@@ -728,6 +730,15 @@ export const LogoWrapper = styled.div`
 export const Rule = styled.hr`
   border: 1px solid var(--colors-site-mainTheme);
   margin: 0px;
+
+  &.red {
+    border: 1px solid red;
+  }
+
+  &.short{
+    width: 25%;
+    margin-top: 10px;
+  }
 `
 
 export const Banner = styled.div`
@@ -782,8 +793,18 @@ export const QuoteBlurContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 10vh;
   backdrop-filter: blur(20px);
+`
+
+export const InfoWrapper = styled.div`
+  padding: 20px;
+  text-align: center;
+
+  h2{
+    padding-top: 80px;
+    margin-bottom: 10px;
+  }
 `
 
 export const InfographicContainer = styled.div`
@@ -791,9 +812,6 @@ export const InfographicContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: 750px;
-  background-color: var(--colors-site-white);
-  padding: 20px 0px;
 
   img{
     padding: 20px;

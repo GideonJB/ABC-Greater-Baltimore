@@ -197,7 +197,7 @@ const Root = ({ state, actions }) => {
       <Header style={state.router.link !== "/" ? "inner" : "alt"}
               color={state.router.link !== "/" ? "" : ""}
       />          
-          <ContentWrapper className="scrollbody">
+          <ContentWrapper className="">
             {state.router.link !== "/" ?
             <SideMenu style=""/>
             :
