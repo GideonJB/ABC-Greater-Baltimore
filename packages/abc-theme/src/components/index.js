@@ -137,7 +137,7 @@ const Root = ({ state, actions }) => {
   useEffect(() => {
     eventsFetch().then(res => actions.theme.setEventsCalendar(res))
     blogFetch().then(res => actions.theme.setBlogPosts(res))
-    // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
+    youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
       state.theme.token = loggedInUser;

@@ -3,6 +3,8 @@ import { connect, fetch } from "frontity"
 
 import { myunescape } from "../../utils/utility-functions"
 
+import awards2022 from "../../static/images/awards_mag_thumb.jpg"
+
 import { NewsContainer,
         CloseButton,
         NewsTabs,
@@ -88,7 +90,7 @@ const NewsBar = ({state, actions}) => {
             
             <MagazineContainer>
               <a target="_blank" href="https://mydigitalpublication.com/publication/?i=750888">
-                <MagazineTile src="https://cdn.coverstand.com/14697/750888/smalljpg/6e5a461bc3fc19d35b55a9b3b5f3307424a3a748.jpg" />
+                <MagazineTile src={awards2022} />
               </a>
               <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=742435&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/742435/iphonejpg/320/a14c97e7b7f62102f633cf55f0dd9bfae3bcf641.jpg" />
