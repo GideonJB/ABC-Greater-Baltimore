@@ -45,8 +45,8 @@ export const ContactWrapper = styled.div`
   overflow-wrap: break-word;
   padding-bottom: 10px;
 
-  h3{
-    font-size: 1.5em;
+  h4{
+    font-size: 1.2em;
   }
 
   @media screen and (max-width: 800px) {
@@ -55,7 +55,7 @@ export const ContactWrapper = styled.div`
 `
 
 export const MemberHeading = styled.h2`
-  font-size: 1.5em;
+  font-size: 1.5em !important;
   font-weight: 600;
 `
 
