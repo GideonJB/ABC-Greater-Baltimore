@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   /* border-bottom: 3px solid var(--colors-site-mainTheme); */
 
   &.alt{
+    position: static;
     background-color: var(--colors-site-darkGray);
     height: 100px;
     border-bottom: 2px solid var(--colors-site-mainTheme);

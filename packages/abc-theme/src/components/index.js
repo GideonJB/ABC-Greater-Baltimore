@@ -46,6 +46,9 @@ import BestSponsorPage from "../Pages/bestsponsorpage/bestsponsorpage.jsx"
 import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
 import Blog from "../components/blog/blog.component.jsx"
 
+const Parent = styled.div`
+  overflow: hidden;
+`
 
 const CalendarContainer = styled.div`
   ${fullFrameDiv}
@@ -154,7 +157,7 @@ const Root = ({ state, actions }) => {
   
 
   return (
-    <>
+    <Parent>
       <Head>
         <title key="title">ABC Greater Baltimore</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -194,9 +197,14 @@ const Root = ({ state, actions }) => {
       <NewsContainer>
         <NewsBar />
       </NewsContainer>
-      <Header style={state.router.link !== "/" ? "inner" : "alt"}
+      {state.router.link !== "/" ?
+      <Header style="inner"/>
+      :
+      null
+      }
+      {/* <Header style={state.router.link !== "/" ? "inner" : "alt"}
               color={state.router.link !== "/" ? "" : ""}
-      />          
+      />           */}
           <ContentWrapper className="">
             {state.router.link !== "/" ?
             <SideMenu style=""/>
@@ -249,7 +257,7 @@ const Root = ({ state, actions }) => {
             </MainTag>
           </ContentWrapper>
       <HamburgerMenu />
-    </>
+    </Parent>
   )
 }
 

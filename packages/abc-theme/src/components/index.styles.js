@@ -521,7 +521,7 @@ export const GlobalStyle = props => (
         }
       }
       h2{
-        font-size: 2.3em !important;
+        font-size: 2.5em !important;
         
       }
       h3{
@@ -628,7 +628,7 @@ export const GlobalStyle = props => (
       }
 
       .homepage{
-        margin-top: 100px;
+        /* margin-top: 100px; */
 
         @media screen and (max-width: 1100px){
           margin-top: 0px;
