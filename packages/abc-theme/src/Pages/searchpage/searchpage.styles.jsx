@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
 `
 
 export const SearchContainer = styled.div`
-  
   width: 80%;
   padding-left: 50px;
 
@@ -20,6 +19,13 @@ export const SearchContainer = styled.div`
   @media screen and (max-width: 1100px){
     width: 100%;
     margin-left: 0px;
+  }
+
+  @media screen and (max-width: 800px){
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   a {

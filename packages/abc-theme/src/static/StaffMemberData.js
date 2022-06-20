@@ -40,14 +40,6 @@ const staffList = [
     "email":"sglasgow@abcbaltimore.org"
   },
   {
-    "id":36,
-    "Name":"Kirston Graves",
-    "Title":"Administration & Compliance Manager",
-    "Description":"Lorem Ipsum",
-    "Image":require("../static/images/Staff/kirston.jpg"),
-    "email":"kgraves@abcbaltimore.org"
-  },
-  {
     "id":38,
     "Name":"Christopher Hadfield",
     "Title":"Vice President, Workforce Development",

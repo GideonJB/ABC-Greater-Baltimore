@@ -93,7 +93,8 @@ export default {
                 "safety-training", "legal-regulatory", "blueprint-reading", "academies",
                 "continuing-education", "operations", "pdp", "national-pac", "virtual-hr",
                 "find-a-contractor", "pay-invoice", "thank-you", "apprenticeship-application",
-                "members", "about-us", "login", "register", "step", "company-update", "personal-coaching"]
+                "members", "about-us", "login", "register", "step", "company-update", "personal-coaching",
+                "prevailing-wage"]
     },
     menu: {
       mainMenu: {

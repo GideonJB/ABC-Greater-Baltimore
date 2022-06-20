@@ -17,9 +17,9 @@ export const SearchWrapper = styled.div`
   justify-content: space-between;
 
   @media screen and (max-width: 800px) {
-    display: inherit;
-    justify-content: inherit;
-    align-items: center;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
     padding: 0 5px 0 5px;
   }
 `

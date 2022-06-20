@@ -526,6 +526,9 @@ export const GlobalStyle = props => (
       }
       h3{
         font-size: 2.3em;
+        @media screen and (max-width: 699px){
+          font-size: 2em;
+        }
       }
 
       h4, h6 {
@@ -540,6 +543,7 @@ export const GlobalStyle = props => (
         font-family: "Poppins", sans-serif;
         font-weight: 500;
         font-size: 3em;
+
       }
 
       p{
@@ -560,6 +564,10 @@ export const GlobalStyle = props => (
           background-color: var(--colors-site-white);
           color: var(--colors-site-mainTheme);
         }
+      }
+
+      select{
+        max-width: 300px;
       }
 
       @media screen and (max-width: 1100px){
@@ -632,6 +640,19 @@ export const GlobalStyle = props => (
 
         @media screen and (max-width: 1100px){
           margin-top: 0px;
+        }
+      }
+
+      .wp-block-buttons>.wp-block-button.wp-block-button__width-50{
+        @media screen and (max-width: 700px){
+          width: 100%;
+          margin-right: 0px;
+        }
+      }
+
+      .wp-block-button__link{
+        @media screen and (max-width: 700px){
+          padding: 20px;
         }
       }
 

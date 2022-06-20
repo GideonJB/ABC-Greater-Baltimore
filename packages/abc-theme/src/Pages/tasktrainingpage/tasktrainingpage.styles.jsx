@@ -54,5 +54,9 @@ export const InputLabel = styled.label`
   p{
     font-size: .8em;
   }
+
+  @media screen and (max-wdth: 700px){
+    width: 80%;
+  }
 `
 

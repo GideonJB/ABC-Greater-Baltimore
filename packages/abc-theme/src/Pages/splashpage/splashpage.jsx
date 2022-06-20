@@ -267,13 +267,13 @@ const SplashPage = ({ state, actions }) => {
                     <ListItem onClick={preventBubble} link="/academies">Academies</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/operations">Operations</ListItem><br /><br /> */}
                     <ListItem onClick={preventBubble} link="/apprenticeship">Apprenticeship</ListItem><br /><br />
-                    <ListItem onClick={preventBubble} link="/management-education">Management Education</ListItem><br /><br />
-                    <ListItem onClick={preventBubble} link="/craft-courses">Craft Courses</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/continuing-education">Continuing Education</ListItem><br /><br />
-                    <ListItem onClick={preventBubble} link="/pdp">Professional Development</ListItem><br /><br />
-                    <ListItem onClick={preventBubble} link="/task-training">Task Training</ListItem><br /><br />
-                    <ListItem onClick={preventBubble} link="http://projectjumpstarttraining.org/">Project JumpStart</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/craft-courses">Craft Courses</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="http://constructioneducationacademy.org/">Daytime Trade School</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/management-education">Management Education</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/pdp">Professional Development</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="http://projectjumpstarttraining.org/">Project JumpStart</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/task-training">Task Training</ListItem><br /><br />
                     {state.theme.intViewportWidth > 1001
                     ?
                     <LogoWrapper>
@@ -428,7 +428,7 @@ const SplashPage = ({ state, actions }) => {
                   <InfoColumnRight>
                     <img src={info2} alt="ABC member total 640" width="75%" />
 
-                    <img src={info3} alt="ABC member total 640" width="75%" />
+                    <img src={info3} alt="ABC member total 640" width="85%" />
                   </InfoColumnRight>
                 </InfographicContainer>
               </InfoWrapper>

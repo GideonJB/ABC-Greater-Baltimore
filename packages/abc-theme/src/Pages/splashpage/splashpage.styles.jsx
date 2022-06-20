@@ -822,7 +822,7 @@ export const InfoColumnLeft = styled.div`
   width: 38%;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
 
   h2{

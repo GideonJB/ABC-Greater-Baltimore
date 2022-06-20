@@ -86,6 +86,10 @@ const SpacingDiv = styled.div`
 
   @media screen and (max-width: 1100px) {
     padding-top: 50px;
+
+    &.homepage{
+      padding-top: 0px;
+    }
   }
 `
 
@@ -120,9 +124,9 @@ const Root = ({ state, actions }) => {
   const apprenticeshipIDS = []
   const eventsIDS = [203, 208, 1264, 1290]
   const safetyIDS = [210, 212, 187, 566, 2065]
-  const managementIDS = [213, 1303, 1299, 1297, 1301, 1295, 1330, 1544, 1546, 1635, 1633, 1656, 1668, 1640, 2156, 1100, 206, 207, 217, 1255, 1393, 1635, 1661]
+  const managementIDS = [213, 1303, 1299, 1297, 1301, 1295, 1330, 1544, 1546, 1635, 1633, 1656, 1668, 1640, 2156, 1100, 206, 207, 217, 1255, 1393, 1635, 1661, 2316]
   const politicalIDS = [204, 1305, 1209, 1307, 1206]
-  const membersIDS = [1741, 222, 932, 199, 2125, 2275]
+  const membersIDS = [1741, 222, 932, 199, 2125, 2275, 2306]
 
   const transitions = useTransition(location, {
     from: { opacity: 0,},
@@ -137,7 +141,7 @@ const Root = ({ state, actions }) => {
   useEffect(() => {
     eventsFetch().then(res => actions.theme.setEventsCalendar(res))
     blogFetch().then(res => actions.theme.setBlogPosts(res))
-    youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
+    // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
       state.theme.token = loggedInUser;
@@ -217,7 +221,7 @@ const Root = ({ state, actions }) => {
                 const dataitem = state.source.get(state.router.link)
                 return(
                 <animated.div id= "" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
-                  <SpacingDiv>
+                  <SpacingDiv className={state.router.link !== "/" ? "" : "homepage"}>
                     <Switch location={item}>
                       <SplashPage when={dataitem.isHome} />
                       <LoginPage when={dataitem.isLoginPage} />
