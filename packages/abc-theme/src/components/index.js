@@ -122,7 +122,7 @@ const Root = ({ state, actions }) => {
 
   const membershipIDS = [198, 991, 201, 221, 1133, 200, 1312, 1314, 1451, 435]
   const apprenticeshipIDS = []
-  const eventsIDS = [203, 208, 1264, 1290]
+  const eventsIDS = [203, 208, 1264, 1290, 2348]
   const safetyIDS = [210, 212, 187, 566, 2065]
   const managementIDS = [213, 1303, 1299, 1297, 1301, 1295, 1330, 1544, 1546, 1635, 1633, 1656, 1668, 1640, 2156, 1100, 206, 207, 217, 1255, 1393, 1635, 1661, 2316]
   const politicalIDS = [204, 1305, 1209, 1307, 1206]
@@ -240,7 +240,6 @@ const Root = ({ state, actions }) => {
                       <FacilityRentalPage when={dataitem.isPage && state.router.link ==='/facility-rental/'} />
                       <CompanyUpdatePage when={dataitem.isPage && state.router.link ==='/company-update/'} />
                       <RegistrationPage when={dataitem.isRegistrationPage}/>
-                      
                       <Page when={dataitem.isPage} />
                       <ErrorPage when={dataitem.isError} />
                     </Switch>

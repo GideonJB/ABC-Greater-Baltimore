@@ -513,7 +513,7 @@ export const GlobalStyle = props => (
             top: 12px;
           }
         }
-        @media screen and (max-width: 1100px){
+        @media screen and (max-width: 1115px){
           font-size: 2.5em;
           &::before, &::after{
             display: none;
@@ -653,6 +653,20 @@ export const GlobalStyle = props => (
       .wp-block-button__link{
         @media screen and (max-width: 700px){
           padding: 20px;
+        }
+      }
+
+      .column-200-parent{
+       
+      }
+
+      .column-200{
+        width: 200px;
+
+        img{
+          width: 180px;
+          max-height: 100px;
+          margin: 5px;
         }
       }
 

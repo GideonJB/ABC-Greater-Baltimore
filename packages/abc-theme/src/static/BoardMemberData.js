@@ -51,7 +51,7 @@ const boardList = [
     "id":7,
     "Name":"Mark McDaniel",
     "Title":"Past Chair",
-    "Description":"NLP Enterprisez, Inc.",
+    "Description":"NLP Enterprises, Inc.",
     "Image":require("../static/images/board/mark-m.jpg"),
     "email":"mmcdaniel@nlpentinc.com"
   },

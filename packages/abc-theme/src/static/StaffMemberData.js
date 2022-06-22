@@ -18,7 +18,7 @@ const staffList = [
   {
     "id":33,
     "Name":"Brittany Chaapel",
-    "Title":"Director of Programs and Marketing",
+    "Title":"Director of Programs",
     "Description":"Lorem Ipsum",
     "Image":require("../static/images/Staff/brittany.jpg"),
     "email":"bchaapel@abcbaltimore.org"

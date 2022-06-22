@@ -94,7 +94,7 @@ export default {
                 "continuing-education", "operations", "pdp", "national-pac", "virtual-hr",
                 "find-a-contractor", "pay-invoice", "thank-you", "apprenticeship-application",
                 "members", "about-us", "login", "register", "step", "company-update", "personal-coaching",
-                "prevailing-wage"]
+                "prevailing-wage", "excellence-in-construction"]
     },
     menu: {
       mainMenu: {
@@ -186,14 +186,14 @@ export default {
               link: "/signature-events/"
             },
             eic: {
-              id: 333,
+              id: 332,
               menuName: "Excellence in Construction",
               main: "events",
-              slug: "eic",
-              link: "https://awards.abcbaltimore.org"
+              slug: "excellence-in-construction",
+              link: "/excellence-in-construction"
             },
             proSponsorship: {
-              id: 332,
+              id: 333,
               menuName: "PRO Sponsorship",
               main: "events",
               slug: "pro-sponsorship",

@@ -77,7 +77,7 @@ const JoinABCPage = ({ state, actions }) => {
         <SuccessMessage>Thank you for your Submission. Someone will contact you soon with memebership details.</SuccessMessage>
         :
         <FormWrapper>
-          <h3>ABC Membership Application Form</h3>
+          <h3>ABC Membership Interest Form</h3>
           {/* <FormFrame src="https://dev.abcbaltimore.org/pdp-form/"></FormFrame> */}
           <form id="joinABCform" onSubmit={handleSubmit(onSubmit)} action="https://dev.abcbaltimore.org/wp-json/gf/v2/forms/4/submissions" method="post">
             <Controller control={control} name="input_8"

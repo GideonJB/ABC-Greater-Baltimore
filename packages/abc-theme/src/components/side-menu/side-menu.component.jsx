@@ -62,6 +62,7 @@ const SideMenu = ({ state, actions, style="" }) => {
       const mainEntry = currentMenuObject[0][1].main
 
       if (cleanMenu().includes(cleanRoute)) {
+        console.log("option 1");
         actions.theme.createSubMenuList(currentMenuObject[0][1].submenu)
         actions.theme.setActiveMenu("main", cleanRoute)
         actions.theme.setActiveMenu("sub", "")
@@ -74,6 +75,7 @@ const SideMenu = ({ state, actions, style="" }) => {
           currentMenuObject[0][1].subcolor
         );
       } else if (state.menu.mainMenu[mainEntry]) {
+        console.log("option 2")
         actions.theme.createSubMenuList(state.menu.mainMenu[mainEntry].submenu)
         actions.theme.setActiveMenu("main", state.menu.mainMenu[mainEntry].slug)
         actions.theme.setActiveMenu("sub", cleanRoute)
@@ -87,6 +89,7 @@ const SideMenu = ({ state, actions, style="" }) => {
         );
 
       } else if (state.menu.memberMenu[mainEntry]) {
+        console.log("option3")
         actions.theme.createSubMenuList(state.menu.memberMenu[mainEntry].submenu)
         document.documentElement.style.setProperty(
           '--colors-active',
@@ -100,13 +103,14 @@ const SideMenu = ({ state, actions, style="" }) => {
         actions.theme.setActiveMenu("sub", cleanRoute)
       }
     } else if (managementItems.includes(cleanRoute)){
+      console.log("option4")
       console.log("closing menu")
-      actions.theme.createSubMenuList(state.menu.mainMenu.workforceCareer.submenu)
-      actions.theme.setActiveMenu("main", "workforce-career");
+      actions.theme.createSubMenuList(state.menu.mainMenu.education.submenu)
+      actions.theme.setActiveMenu("main", "education");
       actions.theme.setActiveMenu("sub", "management-education");
       document.documentElement.style.setProperty(
         '--colors-active',
-        state.menu.mainMenu.workforceCareer.activecolor
+        state.menu.mainMenu.education.activecolor
       );
     }
     else{

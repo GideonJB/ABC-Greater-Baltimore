@@ -72,6 +72,7 @@ const TaskTrainingPage = ({ state, actions }) => {
         :
         <FormWrapper>
           <h3>Training Request Form</h3>
+          <p>All training requests must have 5 or more participating trainees.</p>
           <form id="tasktrainingform" onSubmit={handleSubmit(onSubmit)} action="https://dev.abcbaltimore.org/wp-json/gf/v2/forms/14/submissions" method="post">
             <Controller control={control} name="input_12"
               rules={{ required: true }}

@@ -223,7 +223,7 @@ const SplashPage = ({ state, actions }) => {
                   <ItemTitle onClick={preventBubble} link="/events">Events</ItemTitle>
                   <HorizontalLine />
                   <ListItem onClick={preventBubble} link="/signature-events">Signature Events</ListItem><br /><br />
-                  <ListItem onClick={preventBubble} link="https://awards.abcbaltimore.org">Excellence in Construction</ListItem><br /><br />
+                  <ListItem onClick={preventBubble} link="/excellence-in-construction">Excellence in Construction</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="/pro-sponsorship">PRO Sponsorship</ListItem><br /><br />
                 </ItemList>
               </EventsItemsContainer>

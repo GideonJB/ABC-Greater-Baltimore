@@ -14,6 +14,10 @@ export const GlassWrap = styled.div`
 
 export const FormWrapper = styled.div`
 
+  p{
+    color: var(--colors-site-white);
+  }
+
   h3, label{
     color: var(--colors-site-white);
   }
@@ -53,10 +57,6 @@ export const InputLabel = styled.label`
 
   p{
     font-size: .8em;
-  }
-
-  @media screen and (max-wdth: 700px){
-    width: 80%;
   }
 `
 
