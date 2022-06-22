@@ -38,11 +38,14 @@ const SideMenu = ({ state, actions, style="" }) => {
     const currentMenuEntry = []
     Object.entries(state.menu).forEach((menu) => {
       Object.entries(menu[1]).forEach((item) => {
+        // console.log("item links", item[1].link)
         if (item[1].link === menuRoute) {
           currentMenuEntry.push(item)
           return
         } else {
           Object.entries(item[1].submenu).forEach((sub) => {
+            // console.log("sub link", sub[1].link);
+            // console.log("menu route", menuRoute);
             if (sub[1].link === menuRoute) {
               currentMenuEntry.push(sub)
               return
@@ -56,13 +59,15 @@ const SideMenu = ({ state, actions, style="" }) => {
 
   const subCreate = () => {
     const currentMenuObject = currentMenu(route)
+    // console.log("route", route)
+    // console.log("currentMenuObject", currentMenuObject);
     const managementItems = ["academies", "operations", "legal-regulatory", "blueprint-reading"]
 
     if (currentMenuObject.length > 0) {
       const mainEntry = currentMenuObject[0][1].main
 
       if (cleanMenu().includes(cleanRoute)) {
-        console.log("option 1");
+        // console.log("option 1");
         actions.theme.createSubMenuList(currentMenuObject[0][1].submenu)
         actions.theme.setActiveMenu("main", cleanRoute)
         actions.theme.setActiveMenu("sub", "")
@@ -75,7 +80,7 @@ const SideMenu = ({ state, actions, style="" }) => {
           currentMenuObject[0][1].subcolor
         );
       } else if (state.menu.mainMenu[mainEntry]) {
-        console.log("option 2")
+        // console.log("option 2")
         actions.theme.createSubMenuList(state.menu.mainMenu[mainEntry].submenu)
         actions.theme.setActiveMenu("main", state.menu.mainMenu[mainEntry].slug)
         actions.theme.setActiveMenu("sub", cleanRoute)
@@ -89,7 +94,7 @@ const SideMenu = ({ state, actions, style="" }) => {
         );
 
       } else if (state.menu.memberMenu[mainEntry]) {
-        console.log("option3")
+        // console.log("option3")
         actions.theme.createSubMenuList(state.menu.memberMenu[mainEntry].submenu)
         document.documentElement.style.setProperty(
           '--colors-active',
@@ -103,8 +108,8 @@ const SideMenu = ({ state, actions, style="" }) => {
         actions.theme.setActiveMenu("sub", cleanRoute)
       }
     } else if (managementItems.includes(cleanRoute)){
-      console.log("option4")
-      console.log("closing menu")
+      // console.log("option4")
+      // console.log("closing menu")
       actions.theme.createSubMenuList(state.menu.mainMenu.education.submenu)
       actions.theme.setActiveMenu("main", "education");
       actions.theme.setActiveMenu("sub", "management-education");
@@ -142,8 +147,10 @@ const SideMenu = ({ state, actions, style="" }) => {
 
   const mouseLeave = () => {
     if(!state.theme.menuList.includes(cleanRoute)){
-      console.log("no sub")
+      // console.log("no sub");
       // actions.theme.closeSubMenu(false);
+    }else{
+      // console.log("creating sub");
     }
     subCreate()
   }

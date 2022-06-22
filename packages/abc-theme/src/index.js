@@ -190,7 +190,7 @@ export default {
               menuName: "Excellence in Construction",
               main: "events",
               slug: "excellence-in-construction",
-              link: "/excellence-in-construction"
+              link: "/excellence-in-construction/"
             },
             proSponsorship: {
               id: 333,
