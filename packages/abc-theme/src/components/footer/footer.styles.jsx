@@ -1,5 +1,18 @@
 import { styled } from "frontity"
 
+export const ScrollTopContainer = styled.div`
+  background-color: var(--colors-site-white);
+
+  div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 25px 30px;
+    cursor: pointer;
+    line-height: .8;
+  }
+`
+
 export const FooterContainer = styled.div`
   position: relative;
   width: 100%;

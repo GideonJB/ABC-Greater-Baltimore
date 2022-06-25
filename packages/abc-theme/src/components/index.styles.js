@@ -109,13 +109,13 @@ export const GlobalStyle = props => (
         
        
 
-        &.scrollBody {
+        /* &.scrollBody {
           display: block;
           overflow: scroll;
           overscroll-behavior: contain;
 
           
-        }
+        } */
       }
 
       /* A elements that don't have a class get default styles */

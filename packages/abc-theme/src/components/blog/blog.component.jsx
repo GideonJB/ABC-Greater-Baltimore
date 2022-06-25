@@ -26,14 +26,14 @@ const Blog = ({ state, libraries }) => {
 
       console.log("blog Post", blogPost)
     }
-  }, [state.theme.blogposts])
+  }, [state.theme.blogPosts])
   
 
   return (
     <>
+    <LeftBar />
     {blogPost !== undefined ?
     <GlassWrap>
-      <LeftBar />
       <BlogWrapper>
         
         <NewsTitle>- INDUSTRY NEWS -</NewsTitle>

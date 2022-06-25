@@ -8,16 +8,14 @@ export const GlassWrap = styled.div`
   backdrop-filter: blur( 25.0px );
   border: 1px solid hsla( 0, 0%, 100%, 0.18 );
   display: flex;
-  overfliw: hidden;
 `
 
 export const LeftBar = styled.div`
-  position: fixed;
+  position: absolute;
   height: 100vh;
   width: 150px;
   background-color: var(--colors-site-mainTheme);
   z-index: 5;
-  isolation: isolate;
 
   @media screen and (max-width: 1100px){
     display: none;

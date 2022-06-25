@@ -121,7 +121,7 @@ const Root = ({ state, actions }) => {
   const location = state.router.link
 
   const membershipIDS = [198, 991, 201, 221, 1133, 200, 1312, 1314, 1451, 435]
-  const apprenticeshipIDS = []
+  const apprenticeshipIDS = [2391]
   const eventsIDS = [203, 208, 1264, 1290, 2348]
   const safetyIDS = [210, 212, 187, 566, 2065]
   const managementIDS = [213, 1303, 1299, 1297, 1301, 1295, 1330, 1544, 1546, 1635, 1633, 1656, 1668, 1640, 2156, 1100, 206, 207, 217, 1255, 1393, 1635, 1661, 2316]
@@ -220,7 +220,7 @@ const Root = ({ state, actions }) => {
             {transitions((props, item) => {
                 const dataitem = state.source.get(state.router.link)
                 return(
-                <animated.div id= "" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
+                <animated.div id= "scrollBody" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
                   <SpacingDiv className={state.router.link !== "/" ? "" : "homepage"}>
                     <Switch location={item}>
                       <SplashPage when={dataitem.isHome} />

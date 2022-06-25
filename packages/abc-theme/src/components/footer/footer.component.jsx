@@ -12,6 +12,7 @@ import instagramLogo from "../../static/images/Instagram.png"
 import twitterLogo from "../../static/images/Twitter.png"
 
 import { FooterContainer,
+        ScrollTopContainer,
         FirstRow,
         SecondRow,
         Facebook,
@@ -25,9 +26,20 @@ import { FooterContainer,
 
 const Footer = ({ state }) => {
 
+  const scrollClick = () => {
+    console.log("scroll clicked")
+    const body = document.getElementById("scrollBody")
+    console.log("body", body);
+    body.scrollTo({top:0 , behavior: "smooth"});
+  }
+
   return(
     <>
     {state.router.link !== '/test' ? 
+      <>
+      <ScrollTopContainer>
+            <div onClick={scrollClick}>^<br/>Back to Top</div>
+      </ScrollTopContainer>
       <FooterContainer className='sfari_only'>
           {state.theme.intViewportWidth < 1100 ?
             <FirstRow>
@@ -94,6 +106,8 @@ const Footer = ({ state }) => {
             null
         }
       </FooterContainer>
+     
+      </>
     :
     null
     }
