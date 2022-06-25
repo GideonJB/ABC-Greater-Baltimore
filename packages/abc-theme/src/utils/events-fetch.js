@@ -21,7 +21,7 @@ export const eventsFetch = () => {
 export const blogFetch = () => {
 
   const fetchFromAPI = async () => {
-    const response = await fetch("https://www.abcbaltimore.org/wp-json/wp/v2/posts?_embed?page=1&per_page=100");
+    const response = await fetch("https://secure.abcbaltimore.org/wp-json/wp/v2/posts?_embed?page=1&per_page=100");
     const body = await response.json();
     return body;
   };
