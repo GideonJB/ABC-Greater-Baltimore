@@ -3,6 +3,10 @@ import { styled } from "frontity"
 export const FooterWrapper = styled.div`
   width: 100%;
   padding-left: 150px;
+
+  @media screen and (max-width: 1000px){
+    padding-left: 0px;
+  }
 `
 
 export const ScrollTopContainer = styled.div`
