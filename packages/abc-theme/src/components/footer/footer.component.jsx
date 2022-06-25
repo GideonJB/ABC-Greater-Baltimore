@@ -11,7 +11,8 @@ import linkedinLogo from "../../static/images/LinkedIn.png"
 import instagramLogo from "../../static/images/Instagram.png"
 import twitterLogo from "../../static/images/Twitter.png"
 
-import { FooterContainer,
+import { FooterWrapper,
+        FooterContainer,
         ScrollTopContainer,
         FirstRow,
         SecondRow,
@@ -34,13 +35,13 @@ const Footer = ({ state }) => {
   }
 
   return(
-    <>
+    <FooterWrapper>
     {state.router.link !== '/test' ? 
       <>
       <ScrollTopContainer>
             <div onClick={scrollClick}>^<br/>Back to Top</div>
       </ScrollTopContainer>
-      <FooterContainer className='sfari_only'>
+      <FooterContainer className='safari_only'>
           {state.theme.intViewportWidth < 1100 ?
             <FirstRow>
               <LogoContainer source={logoImage} alt="ABC Logo" widthValue="280px" heightValue="auto" link="/" />
@@ -111,7 +112,7 @@ const Footer = ({ state }) => {
     :
     null
     }
-    </>
+    </FooterWrapper>
   )
 }
 

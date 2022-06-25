@@ -1,13 +1,20 @@
 import { styled } from "frontity"
 
+export const FooterWrapper = styled.div`
+  width: 100%;
+  padding-left: 150px;
+`
+
 export const ScrollTopContainer = styled.div`
   background-color: var(--colors-site-white);
+  width: 100%;
 
   div{
+    width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 25px 30px;
+    padding: 25px 0px 25px 0px;
     cursor: pointer;
     line-height: .8;
   }
@@ -23,7 +30,7 @@ export const FooterContainer = styled.div`
   /* flex-direction: column; */
   justify-content: space-evenly;
   align-items: center;
-  padding: 0px 30px 0px 180px;
+  padding-left: 40px;
 
   @media screen and (max-width: 1000px){
     min-height: 400px;
