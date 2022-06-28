@@ -28,9 +28,9 @@ import { FooterWrapper,
 const Footer = ({ state }) => {
 
   const scrollClick = () => {
-    console.log("scroll clicked")
+    // console.log("scroll clicked")
     const body = document.getElementById("scrollBody")
-    console.log("body", body);
+    // console.log("body", body);
     body.scrollTo({top:0 , behavior: "smooth"});
   }
 

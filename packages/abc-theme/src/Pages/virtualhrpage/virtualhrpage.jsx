@@ -13,7 +13,7 @@ const VirtualHRPage = ({ state, actions }) => {
     if (loggedInUser) {
       state.theme.token = loggedInUser;
     } else{
-      console.log(state.theme.token);
+      // console.log(state.theme.token);
     }
   }, []);
 

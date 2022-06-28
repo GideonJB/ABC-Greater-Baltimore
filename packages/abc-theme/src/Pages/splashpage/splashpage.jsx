@@ -116,11 +116,11 @@ const SplashPage = ({ state, actions }) => {
   }
 
   const menuExpand = (name) => {
-    console.log("click!");
+    // console.log("click!");
     state.theme.expandedMenu !== name ? 
     actions.theme.menuExpansion(name) :
     actions.theme.menuExpansion("");
-    console.log(state.theme.expandedMenu);
+    // console.log(state.theme.expandedMenu);
   }
 
   const preventBubble = (e) => {

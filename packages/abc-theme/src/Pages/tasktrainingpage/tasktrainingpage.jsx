@@ -38,7 +38,7 @@ const TaskTrainingPage = ({ state, actions }) => {
       formData = new FormData(formElement);
 
     for (var value of formData.entries()) {
-      console.log(value);
+      // console.log(value);
     }
 
     const options = {
@@ -50,7 +50,7 @@ const TaskTrainingPage = ({ state, actions }) => {
       .then((response) => response.json())
       .then((response) => {
         setProcessing(false)
-        console.log(response)
+        // console.log(response)
 
         if (!response.is_valid) {
           setSuccess(false)

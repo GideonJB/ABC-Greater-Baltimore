@@ -87,8 +87,10 @@ const NewsBar = ({state, actions}) => {
             null
           }
           {state.theme.newsItem === "magazine" ?
-            
             <MagazineContainer>
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=751589">
+                <MagazineTile src="https://cdn.coverstand.com/14697/751589/iphonejpg/320/68fef550eb252e13039dc2cc9b484d2a90baef53.jpg" />
+              </a>
               <a target="_blank" href="https://mydigitalpublication.com/publication/?i=750888">
                 <MagazineTile src={awards2022} />
               </a>
@@ -140,7 +142,7 @@ const NewsBar = ({state, actions}) => {
           }
           {state.theme.newsItem === "videos" ? 
             <VideosContainer>
-              {state.theme.youTubePosts ?
+              {state.theme.youTubePosts && state.theme.youTubePosts.length > 0 ?
 
                 state.theme.youTubePosts.items.map((items) => {
 
@@ -158,7 +160,7 @@ const NewsBar = ({state, actions}) => {
                   )
                 })
                 :
-                null
+                <h4>YouTube currently Unavailable</h4>
               }
             </VideosContainer>
           :

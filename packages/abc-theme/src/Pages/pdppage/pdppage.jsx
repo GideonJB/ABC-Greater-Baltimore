@@ -29,7 +29,7 @@ const PdpPage = ({ state, actions }) => {
 
     //store file for conversion
     const files = event.target.files
-    console.log(files[0])
+    // console.log(files[0])
     setFileTest(files[0])
 
     //this conversion turned out to be unnecessary, but was useful to have
@@ -101,7 +101,7 @@ const PdpPage = ({ state, actions }) => {
       formData.append("input_17", fileTest)
     
     for (var value of formData.entries()) {
-      console.log(value);
+      // console.log(value);
     }
 
     const options = {
@@ -114,7 +114,7 @@ const PdpPage = ({ state, actions }) => {
       .then((response) => response.json())
       .then((response) => {
         setProcessing(false)
-        console.log(response)
+        // console.log(response)
         // actions.router.set("/");
         
         if (!response.is_valid) {

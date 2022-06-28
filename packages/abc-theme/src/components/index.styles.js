@@ -670,6 +670,10 @@ export const GlobalStyle = props => (
         }
       }
 
+      .stk-highlight{
+        padding: 0px 5px;
+      }
+
     `}
   />
 )

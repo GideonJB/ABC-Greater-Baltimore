@@ -3,14 +3,14 @@ import { styled } from "frontity"
 export const FooterWrapper = styled.div`
   width: 100%;
   padding-left: 150px;
-
+  background-color: var(--colors-site-white);
   @media screen and (max-width: 1000px){
     padding-left: 0px;
   }
 `
 
 export const ScrollTopContainer = styled.div`
-  background-color: var(--colors-site-white);
+  
   width: 100%;
 
   div{

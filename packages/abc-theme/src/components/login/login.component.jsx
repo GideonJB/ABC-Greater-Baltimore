@@ -36,7 +36,7 @@ const Login = ({ state, actions }) => {
     const passwordUrl = `${state.source.api}/wp/v2/users/lost-password`
     let userName = state.theme.userName
     let x = await forgottenPassword(passwordUrl, userName)
-    console.log(x)
+    // console.log(x)
     if(x === true){ 
       setRecovered(true)
       setForgotten(false)

@@ -10,7 +10,7 @@ export const NewsContainer = styled.div`
   border-radius: 10px 0px 0px 0px;
   transition: all .5s;
   z-index: 1;
-  overflow: auto;
+  overflow: hidden;
   padding: 0px 0px 30px 0px;
   width: 350px;
   pointer-events: auto;
@@ -35,7 +35,8 @@ export const NewsContainer = styled.div`
 `
 
 export const SectionWrapper = styled.div`
-
+  overflow: scroll;
+  height: calc(100% - 45px);
 `
 
 export const CloseButton = styled.div`

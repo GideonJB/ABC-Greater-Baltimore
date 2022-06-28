@@ -59,7 +59,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
       formData = new FormData(formElement);
 
     for (var value of formData.entries()) {
-      console.log(value);
+      // console.log(value);
     }
 
     const options = {
@@ -82,8 +82,8 @@ const ApprenticeAppPage = ({ state, actions }) => {
   }
 
   const handleSSN = (event) => {
-    console.log("hi")
-    console.log(event);
+    // console.log("hi")
+    // console.log(event);
     if (event.value) {
 
       // event.value = util.printx("999-99-9999", event.value);

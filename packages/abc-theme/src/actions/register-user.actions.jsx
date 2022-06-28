@@ -15,7 +15,7 @@ const registerUser = async ({ state }) => {
   });
   
   const body = await res.json();
-  console.log("body", body);
+  // console.log("body", body);
   
   if (body.code === 200) {
     state.theme.registrationSuccess = true;

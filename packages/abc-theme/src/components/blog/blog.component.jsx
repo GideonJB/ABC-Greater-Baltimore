@@ -10,21 +10,21 @@ const Blog = ({ state, libraries }) => {
   const Html2React = libraries.html2react.Component
 
   const blogID = (state.router.link.split('/')[2]);
-  console.log("blog ID", blogID)
+  // console.log("blog ID", blogID)
 
   useEffect (() => {
     if(state.theme.blogPosts.length > 0){
-      console.log(state.theme.blogPosts);
+      // console.log(state.theme.blogPosts);
       
       state.theme.blogPosts.map((el) => {
-        console.log(el.id)
+        // console.log(el.id)
         if (el.id.toString() === blogID){
-          console.log("ELEMENT", el)
+          // console.log("ELEMENT", el)
           setBlogPost(el)
         }
       })
 
-      console.log("blog Post", blogPost)
+      // console.log("blog Post", blogPost)
     }
   }, [state.theme.blogPosts])
   

@@ -35,31 +35,31 @@ const LogicScholarshipPage = ({ state, actions }) => {
       case 'cover' :
         //remove error for requirement
         setCoverSubmission(false);
-        console.log(files[0]);
+        // console.log(files[0]);
         setCoverDoc(files[0]);
         break;
       case 'resume':
         //remove error for requirement
         setResumeSubmission(false);
-        console.log(files[0]);
+        // console.log(files[0]);
         setResumeDoc(files[0]);
         break;
       case 'essay':
         //remove error for requirement
         setEssaySubmission(false);
-        console.log(files[0]);
+        // console.log(files[0]);
         setEssayDoc(files[0]);
         break;
       case 'letter':
         //remove error for requirement
         setLetterSubmission(false);
-        console.log(files[0]);
+        // console.log(files[0]);
         setLetterDoc(files[0]);
         break;
       case 'transcript':
         //remove error for requirement
         setTranscriptSubmission(false);
-        console.log(files[0]);
+        // console.log(files[0]);
         setTranscriptDoc(files[0]);
         break;
     }
@@ -99,7 +99,7 @@ const LogicScholarshipPage = ({ state, actions }) => {
     formData.set("input_25", transcriptDoc)
 
     for (var value of formData.entries()) {
-      console.log(value);
+      // console.log(value);
     }
 
     const options = {
@@ -111,7 +111,7 @@ const LogicScholarshipPage = ({ state, actions }) => {
       .then((response) => response.json())
       .then((response) => {
         setProcessing(false)
-        console.log(response)
+        // console.log(response)
 
         if (!response.is_valid) {
           setSuccess(false)

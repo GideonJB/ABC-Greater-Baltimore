@@ -14,8 +14,8 @@ const SubMenuItemList = ({ state, actions }) => {
 
   return ( 
    <>
-    {state.theme.isSubMenuVisible && 
-      Object.keys(state.theme.subMenuList).length !== 0
+    {state.theme.isSubMenuVisible  
+      //&& Object.keys(state.theme.subMenuList).length !== 0
     ?
     <SubMenuWrapper className="open" onMouseEnter={timeoutCancel}>
       <SubMenuItemWrapper>

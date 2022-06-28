@@ -14,7 +14,7 @@ const forgottenPassword = async( url, userName ) => {
   });
 
   const body = await res.json();
-  console.log(body);
+  // console.log(body);
 
   if (body.code === 200) {
     return true    

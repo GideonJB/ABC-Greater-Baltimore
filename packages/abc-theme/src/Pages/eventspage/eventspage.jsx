@@ -30,7 +30,7 @@ import {FeaturedContainer,
 const EventsPage = ({ state, actions }) => {
 
   const mappedEventList = () => {
-    console.log("MAPPING")
+    // console.log("MAPPING")
     const list = state.theme.eventsCalendar.map((items) => {
       if(items.image){
         return (
@@ -44,7 +44,7 @@ const EventsPage = ({ state, actions }) => {
         )
       }
     })
-    console.log("list", list);
+    // console.log("list", list);
     return list.filter(el => el !== undefined).slice(0, 2);
   }
 
