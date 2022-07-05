@@ -43,7 +43,7 @@ const InvoicePage = ({ state, actions }) => {
       <GlassWrap className='glass-form'>
       <FormWrapper>
         <h3>ABC Member Invoice Form</h3>
-        <form id="invoicepayment" onSubmit={handleSubmit(onSubmit)} action="https://www.abcbaltimore.org/payment/txpmid.php" method="post" target="_blank">
+        <form id="invoicepayment" onSubmit={handleSubmit(onSubmit)} action="https://secure.abcbaltimore.org/payment/txpmid.php" method="post" target="_blank">
           <p>Transaction Type:</p>
           <select name="RecurringType">
             <option value="N">One-time Payment</option>

@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { connect, fetch } from 'frontity'
 import { useForm, Controller } from 'react-hook-form'
 
-
-import Page from "../../components/page/page.component"
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
+import Spinner from '../../components/spinner/spinner.component';
 
 import { Wrapper, FormWrapper, ErrorMessage, InputLabel, TextArea, GlassWrap } from './apprenticeapppage.styles'
 
 const ApprenticeAppPage = ({ state, actions }) => {
 
   const [ssn, setSsn] = useState();
+  const [processing, setProcessing] = useState(false);
+  const [success, setSuccess] = useState();
 
-  const { control, register, handleSubmit, watch, formState: { errors } } = useForm({
+  const { control, register, handleSubmit, watch, formState: { errors, isSubmitted, isSubmitSuccessful } } = useForm({
     defaultValues: {
       firstName:"",
       middleName:"",
@@ -48,18 +49,21 @@ const ApprenticeAppPage = ({ state, actions }) => {
       _st2:"",
       _st16:"",
       _dt2:"",
-      applicationGuid:"60e88e9d-87f8-4562-9c76-008afdc3743d",
+      applicationGuid: "60e88e9d-87f8-4562-9c76-008afdc3743d",
     }
   });
 
   const onSubmit = (data) => {
-   
+    console.log("SUBMITTING")
+    setSuccess()
+    setProcessing(true)
     const formElement = document.forms["apprenticeshipform"],
       { action, method } = formElement,
       formData = new FormData(formElement);
+      formData.append("applicationGuid", "60e88e9d-87f8-4562-9c76-008afdc3743d")
 
     for (var value of formData.entries()) {
-      // console.log(value);
+      console.log(value);
     }
 
     const options = {
@@ -67,19 +71,23 @@ const ApprenticeAppPage = ({ state, actions }) => {
       body: formData,
     }
 
-    // fetch(action, options)
-    //   .then((response) => response.json())
-    //   .then((response) => {
-    //     console.log(response)
-    //     // actions.router.set("/");
+    fetch(action, options)
+      .then((response) => response.json())
+      .then((response) => {
+        setProcessing(false)
+        console.log(response)
+        // actions.router.set("/");
 
-    //     if (isFormSubmissionError(response)) {
+        if (!response.is_valid) {
+          setSuccess(false)
 
-    //     }
-    //   }).catch((error) => {
+        } else {
+          setSuccess(true)
+        }
+      }).catch((error) => {
 
-    //   })
-  }
+      })
+  } 
 
   const handleSSN = (event) => {
     // console.log("hi")
@@ -97,6 +105,9 @@ const ApprenticeAppPage = ({ state, actions }) => {
     <Wrapper>
       {/* <Page /> */}
       <GlassWrap className="glass-form">
+      {success ?
+      <SuccessMessage>Thank you for your Submission. Someone will contact you soon.</SuccessMessage>
+      :
       <FormWrapper>
         <h3>Apprenticeship Application</h3>
         <form id="apprenticeshipform" onSubmit={handleSubmit(onSubmit)} action="https://workforce.flashpoint.xyz/Api/EducationApi/SubmitApplication" method="post">
@@ -129,6 +140,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
           
           <InputLabel>Date of Birth</InputLabel><br />
           <input {...register("dateOfBirth", { required: true })} type="date" /><br />
+          <br/>
           {errors.dateOfBirth?.type === 'required' && (<ErrorMessage>"Date of Birth is Required"</ErrorMessage>)}
           
            <Controller control={control} name="ssn"
@@ -177,7 +189,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
                 <input {...field} id="False" type="radio" value="False" />
                 <label htmlFor="False">No</label><br />
               </>
-            )} /><br /><br />
+            )} /><br />
           {errors.veteran?.type === 'required' && (<ErrorMessage>Veteran Identification is Required</ErrorMessage>)}
 
           <h4>Address</h4>
@@ -191,7 +203,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
           <Controller control={control} name="street2"
             rules={{ required: false }}
             render={({ field }) => (
-              <FormInput {...field} label="*Street 2" />
+              <FormInput {...field} label="Street 2" />
             )} />
           
           <Controller control={control} name="city"
@@ -276,7 +288,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
             render={({ field }) => (
               <FormInput {...field} label="*Phone Number" />
             )} />
-          {errors.phone1?.type === 'required' && (<ErrorMessage>"City is Required"</ErrorMessage>)}
+          {errors.phone1?.type === 'required' && (<ErrorMessage>"Phone Number is Required"</ErrorMessage>)}
           
           <Controller control={control} name="email"
             rules={{
@@ -339,23 +351,24 @@ const ApprenticeAppPage = ({ state, actions }) => {
                 <label htmlFor="No">No</label><br />
               </>
             )} />
+            <br/>
           {errors._op4?.type === 'required' && (<ErrorMessage>"Participating Employer Status is Required"</ErrorMessage>)}
 
           <Controller control={control} name="_mt1"
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => (
-              <FormInput {...field} label="*Employer's Name" />
+              <FormInput {...field} label="Employer's Name" />
             )} />
-          {errors._mt1?.type === 'required' && (<ErrorMessage>"Employer's Name is Required"</ErrorMessage>)}
+          {/* {errors._mt1?.type === 'required' && (<ErrorMessage>"Employer's Name is Required"</ErrorMessage>)} */}
           
           <Controller control={control} name="_st4"
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => (
               <FormInput {...field} label="Work Phone" />
             )} />
           
           <Controller control={control} name="_mt12"
-            rules={{ required: true }}
+            rules={{ required: false }}
             render={({ field }) => (
               <FormInput {...field} label="Supervisor's Name" />
             )} />
@@ -406,6 +419,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
                 <label htmlFor="No">No</label><br />
               </>
             )} />
+            <br/>
           {errors._op5?.type === 'required' && (<ErrorMessage>"Participating Employer Status is Required"</ErrorMessage>)}
           
           <Controller control={control} name="_st15"
@@ -437,11 +451,18 @@ const ApprenticeAppPage = ({ state, actions }) => {
           
           <InputLabel>Today's Date</InputLabel><br />
           <input {...register("_dt2", { required: true })} type="date" /><br />
+          <br/>
           {errors._dt2?.type === 'required' && (<ErrorMessage>"Date of Birth is Required"</ErrorMessage>)}
          
-          <CustomButton>Submit Application</CustomButton>
+          <CustomButton type="submit">Submit Application</CustomButton>
+          <br/>
+          {isSubmitted && isSubmitSuccessful === false ? <ErrorMessage>Please check the form for errors</ErrorMessage> : null}
         </form>
+        {processing ? <Spinner /> : null}
+        <br/>
+        {success === false ? <ErrorMessage>There was an error processing your information. Please try again or contact ABC for help.</ErrorMessage> : null}
       </FormWrapper>
+      }
       </GlassWrap>
     </Wrapper>
   )
