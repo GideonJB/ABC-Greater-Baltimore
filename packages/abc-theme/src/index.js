@@ -94,7 +94,7 @@ export default {
                 "continuing-education", "operations", "pdp", "national-pac", "virtual-hr",
                 "find-a-contractor", "pay-invoice", "thank-you", "apprenticeship-application",
                 "members", "about-us", "login", "register", "step", "company-update", "personal-coaching",
-                "prevailing-wage", "excellence-in-construction"]
+                "prevailing-wage", "excellence-in-construction", "other-resources"]
     },
     menu: {
       mainMenu: {
@@ -433,6 +433,13 @@ export default {
               main: "members",
               slug: "pay-invoice",
               link: "/pay-invoice/",
+            },
+            otherResources: {
+              id: 777,
+              menuName: "Other Resources",
+              main: "members",
+              slug: "other-resources",
+              link: "/other-resources/",
             },
             login: {
               id: 774,

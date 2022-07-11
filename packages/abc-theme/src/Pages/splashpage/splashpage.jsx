@@ -333,6 +333,7 @@ const SplashPage = ({ state, actions }) => {
                     <ListItem onClick={preventBubble} link="/find-a-contractor">Find a Contractor</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/personal-coaching">Personal Business Coaching</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/pay-invoice">Pay an Invoice</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/other-resources">Other Member Resource</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/about-us">About Us</ListItem><br /><br />
                     {state.theme.token ?
                       <ListItem link="#" onClick={() => handleLogout()}>Logout</ListItem>
@@ -385,6 +386,7 @@ const SplashPage = ({ state, actions }) => {
                       <ListItem onClick={preventBubble} link="/find-a-contractor">Find a Contractor</ListItem><br /><br />
                       <ListItem onClick={preventBubble} link="/personal-coaching">Personal Business Coaching</ListItem><br /><br />
                       <ListItem onClick={preventBubble} link="/pay-invoice">Pay an Invoice</ListItem><br /><br />
+                      <ListItem onClick={preventBubble} link="/other-resources">Other Member Resource</ListItem><br /><br />
                       <ListItem onClick={preventBubble} link="/about-us">About Us</ListItem><br /><br />
                       {state.theme.token ?
                         <ListItem link="#" onClick={() => handleLogout()}>Logout</ListItem>

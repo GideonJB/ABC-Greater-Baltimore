@@ -42,6 +42,7 @@ export const youTubeFetch = () => {
     const response = await fetch("https://www.googleapis.com/youtube/v3/search?key=AIzaSyBZjbZUUsNaaG_29vjZpW7I51ITBHPrIyM&channelId=UC1HN8StFmyDwnMN3Qzk6X8A&part=snippet,id&order=date&maxResults=20");
                                                                                     
     const body = await response.json();
+    console.log(body);
     return body;
   };
 
