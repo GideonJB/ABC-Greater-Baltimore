@@ -86,15 +86,16 @@ export const Tagline = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   width: 495px;
   height: 45px;
   text-align: center;
-  line-height: 0;
-  font-size: 2em;
-  color: var(--colors-site-mainTheme);
+  line-height: 1;
+  font-size: 1.5em; 
   font-family: sans-serif;
   
+  a{
+    color: var(--colors-site-white) !important;
+  }
 
   @media screen and (max-width: 1200px) {
    display: none;

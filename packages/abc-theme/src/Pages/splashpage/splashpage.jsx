@@ -274,6 +274,7 @@ const SplashPage = ({ state, actions }) => {
                     <ListItem onClick={preventBubble} link="/pdp">Professional Development</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="http://projectjumpstarttraining.org/">Project JumpStart</ListItem><br /><br />
                     <ListItem onClick={preventBubble} link="/task-training">Task Training</ListItem><br /><br />
+                    <ListItem onClick={preventBubble} link="/blog/28493">MD NEW Electric Law</ListItem><br /><br />
                     {state.theme.intViewportWidth > 1001
                     ?
                     <LogoWrapper>
@@ -306,7 +307,7 @@ const SplashPage = ({ state, actions }) => {
                   <HorizontalLine />
                   <ListItem onClick={preventBubble} link="/site-inspections">Site Inspections</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="/safety-peer-group">Safety Peer Group</ListItem><br /><br />
-                  <ListItem onClick={preventBubble} link="/new-hire">New Hire Orientation</ListItem><br /><br />
+                  <ListItem onClick={preventBubble} link="/new-hire">New Hire Safety Orientation</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="http://www.abcstep.org">STEP</ListItem><br /><br />
                   <ListItem onClick={preventBubble} link="https://events.abcbaltimore.org/events/category/safety/">Safety Training</ListItem><br /><br />
                 </ItemList>

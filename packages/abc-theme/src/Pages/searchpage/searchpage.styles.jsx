@@ -33,6 +33,33 @@ export const SearchContainer = styled.div`
   cursor:pointer;
   color: var(--colors-text);
   }
+  label{
+    padding: 2px;
+    color: var(--colors-site-white);
+  }
+
+  button{
+    margin: 5px;
+    color: var(--colors-site-white);
+    background-color: var(--colors-site-mainTheme);
+    border: none;
+    border-radius: 8px;
+    min-width: 150px;
+    width: auto;
+    height: 50px;
+    padding: 0 35px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+    }
+  }
 `
 
 export const LoggedOutWrapper = styled.div`

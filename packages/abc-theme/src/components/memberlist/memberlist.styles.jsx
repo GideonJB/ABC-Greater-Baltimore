@@ -67,11 +67,29 @@ export const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0px 0px;
-  
-  padding-bottom: 20px;
+  line-height: 1.3;
 
   @media screen and (max-width: 800px) {
     display: block;
     padding-bottom: 0;
   }
+
+  a{
+    text-decoration: underline;
+  }
+`
+
+export const AwardWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  img{
+    object-fit: contain;
+    
+  }
+`
+
+export const StepHeading = styled.h4`
+  text-align: center;
 `

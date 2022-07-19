@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { connect } from "frontity"
+import Link from "@frontity/components/link"
 import { useCurrentWidth } from "../../utils/utility-functions"
+
+import { youTubeFetch } from "../../utils/events-fetch"
 
 import calIcon from "../../static/images/cal-icon.png"
 import newsIcon from "../../static/images/bullhorn.png"
@@ -86,6 +89,12 @@ const Header = ({ state, actions, color="", style="" }) => {
   }
 
   const toggleNews = () => {
+    if(state.theme.youTubePosts !== null){
+      console.log("no fecth needed")
+    }else{
+      console.log("fetching youtube")
+      youTubeFetch().then(res => actions.theme.setYouTubePosts(res));
+    }
     if (state.theme.isNewsOpen === true) {
       actions.theme.toggleNews(false)
     } else {
@@ -122,7 +131,7 @@ const Header = ({ state, actions, color="", style="" }) => {
             widthValue="120px" screenType="mobile"
             heightValue="auto" />
         </LeftGroup>
-        
+        {state.router.link ==="/" && <Tagline><Link link="/apprenticeship">Apprentice Classes Start Sept. 8 <br />Click for more info</Link></Tagline>}
         <HeaderLinkContainer className={color}>
           {/* {state.theme.token
           ?

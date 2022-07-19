@@ -482,13 +482,17 @@ export const GlobalStyle = props => (
         text-align: center;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
-        font-size: 3.3em;
+        font-size: 3.1em;
         text-transform: uppercase;
         margin-bottom: 40px;
 
+        &.heading-blue{
+          color: var(--colors-site-mainTheme);
+        }
+
         &::after{
           content:"";
-          position: absolute;
+          /* position: absolute; */
           width: 80px;
           height: 20px;
           border-bottom: 2px solid var(--colors-site-white);
@@ -498,7 +502,7 @@ export const GlobalStyle = props => (
         }
         &::before{
           content:"";
-          position: absolute;
+          /* position: absolute; */
           width: 80px;
           height: 20px;
           border-bottom: 2px solid var(--colors-site-white);
@@ -521,7 +525,7 @@ export const GlobalStyle = props => (
         }
       }
       h2{
-        font-size: 3em !important;
+        font-size: 2.6em !important;
         
       }
       h3{
@@ -558,11 +562,17 @@ export const GlobalStyle = props => (
       }
       .wp-block-button__link{
         transition: .2s all;
-        background-color: var(--colors-site-mainTheme);
+        background-color: var(--colors-site-mainTheme);       
 
         &:hover{
           background-color: var(--colors-site-white);
           color: var(--colors-site-mainTheme);
+        }
+      }
+
+      .red-button{
+        a{
+          background-color: hsl(356,99%,49%);
         }
       }
 
@@ -672,6 +682,10 @@ export const GlobalStyle = props => (
 
       .stk-highlight{
         padding: 0px 5px;
+      }
+
+      .text-blue{
+        color: var(--colors-site-mainTheme) !important;
       }
 
     `}

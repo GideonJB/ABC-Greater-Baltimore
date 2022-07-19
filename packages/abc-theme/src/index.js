@@ -94,7 +94,7 @@ export default {
                 "continuing-education", "operations", "pdp", "national-pac", "virtual-hr",
                 "find-a-contractor", "pay-invoice", "thank-you", "apprenticeship-application",
                 "members", "about-us", "login", "register", "step", "company-update", "personal-coaching",
-                "prevailing-wage", "excellence-in-construction", "other-resources"]
+                "prevailing-wage", "excellence-in-construction", "other-resources", "blog28493"]
     },
     menu: {
       mainMenu: {
@@ -309,6 +309,13 @@ export default {
               slug: "task-training",
               link: "/task-training/"
             },
+            electricLaw: {
+              id: 559,
+              menuName: "MD New Electric Law",
+              main: "education",
+              slug: "blog28493",
+              link: "/blog/28493/"
+            },
           }, 
         },
         safety: {
@@ -338,7 +345,7 @@ export default {
             },
             newHire: {
               id: 443,
-              menuName: "New Hire Orientation",
+              menuName: "New Hire Safety Orientation",
               main: "safety",
               slug: "new-hire",
               link: "/new-hire/"

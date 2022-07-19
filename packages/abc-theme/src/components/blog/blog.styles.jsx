@@ -35,6 +35,9 @@ export const BlogWrapper = styled.div`
   width: 75%;
   margin-left: 150px;
   
+  a{
+    color: var(--colors-site-lightAccent)
+  }
 
   @media screen and (max-width: 1100px){
     margin-left: 0px;

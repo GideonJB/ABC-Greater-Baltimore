@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from "frontity";
+import CsvDownload from 'react-json-to-csv'
 
 import Page from "../../components/page/page.component"
 import SearchBar from "../../components/searchbar/searchbar.component.jsx" 
@@ -7,7 +8,7 @@ import Login from "../../components/login/login.component"
 import { MemberList } from '../../components/memberlist/memberlist.component.jsx'
 import { Wrapper, InnerWrapper, LoggedOutWrapper, SearchContainer} from "./searchpage.styles"
 
-let collectionMap = require("../../static/SampleDirectoryData2.json");
+let collectionMap = require("../../static/ABC_Members_2022_07.json");
 
 const SearchPage = ({state, actions}) => {
   const [input, setInput] = useState('');
@@ -15,7 +16,12 @@ const SearchPage = ({state, actions}) => {
   const [memberList, setMemberList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const [mWBECheck, setmWBECheck] = useState(false);
   // const collectionRef = firestore.collection('members').orderBy("Company");
+
+  const toggleMWBE = () => {
+    setmWBECheck(!mWBECheck);
+  }
   
   
   const setPage = (currentPage) => {
@@ -38,9 +44,12 @@ const SearchPage = ({state, actions}) => {
     const updateView = (list) =>{
     setFilteredList(list.filter((item, idx) => (pageNumber-1)*10 <= idx && idx <= ((pageNumber-1)*10)+9));
     }
-
-    updateView(memberList);
-  }, [pageNumber, memberList])
+    if(mWBECheck){
+      updateView(memberList.filter(item => item.mWBE === 'TRUE'));
+    }else {
+      updateView(memberList);
+    }
+  }, [pageNumber, memberList, mWBECheck])
   
 
   const updateInput = async (input) => {
@@ -92,6 +101,7 @@ const SearchPage = ({state, actions}) => {
         ['TradeDesc 22']: TradeDesc22,
         ['TradeDesc 23']: TradeDesc23,
         ['TradeDesc 24']: TradeDesc24,
+        mWBE,
         ...partialObject } = member;
       const subset = {
         Company,
@@ -138,14 +148,15 @@ const SearchPage = ({state, actions}) => {
         TradeDesc21,
         TradeDesc22,
         TradeDesc23,
-        TradeDesc24, }
+        TradeDesc24,
+        mWBE, }
       const values = Object.values(subset);
       const includesMultiDimension = (arr, str) =>
         JSON.stringify(arr).toLowerCase().includes(str.toLowerCase());
       return includesMultiDimension(values, input);      
-     })
-     setInput(input);
-     setMemberList(filtered);
+    })
+    setInput(input);
+    setMemberList(filtered);
     //  updateView(filtered);
   }
 
@@ -156,6 +167,9 @@ const SearchPage = ({state, actions}) => {
     <Wrapper>
       <Page />
       <SearchContainer>
+        <input type="checkbox" id="mWBE"onChange={toggleMWBE}/>
+        <label htmlFor="mWBE">M/WBE</label>
+        {/* <CsvDownload data={filteredList} /> */}
         <SearchBar 
           input={input} 
           onChange={updateInput}

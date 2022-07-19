@@ -1,5 +1,15 @@
 import React from 'react';
-import { CodeWrapper, CompanyNameWrapper, ContactWrapper, GridWrapper, ListWrapper, MemberHeading } from './memberlist.styles'
+import { CodeWrapper,
+      CompanyNameWrapper,
+      ContactWrapper,
+      GridWrapper,
+      ListWrapper,
+      MemberHeading,
+      AwardWrapper,
+      StepHeading } from './memberlist.styles'
+
+import steplogo from "../../static/images/abc-step-new.png"
+import eiclogo from "../../static/images/eic-winner-icon.png"
 
 export const MemberList = ({ memberList = [] }) => {
 
@@ -30,7 +40,7 @@ export const MemberList = ({ memberList = [] }) => {
                   <p>{data.CoPhone}</p>
                 </CompanyNameWrapper>
                 <ContactWrapper>
-                  {data.Title !== "" ? <h4>{data.Title}:</h4> : null}
+                  {data.Title !== "" ? <h4>{data.NameTitle}:</h4> : null}
                   <p>{data.FullName}</p>
                   {data.IndEmailAddress ? 
                     <a href={`mailto:${data.IndEmailAddress}`} target="_blank" rel="noreferrer">
@@ -42,8 +52,19 @@ export const MemberList = ({ memberList = [] }) => {
                   
                   <p>{data['Mail-Address1']} &nbsp;&nbsp; {data['Mail-Address2']}</p>
                   <p>{data['Mail-City']}, {data['Mail-State']} {data['Mail-Zip']}</p>
+                  <br/>
+                  {data.mWBE === "TRUE" && <p><strong>M/WBE</strong></p>}
                 </ContactWrapper>
               </GridWrapper>
+              <AwardWrapper>
+                {data.STEP && data.STEP.includes("PLATINUM") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>PLATINUM</StepHeading></div>}
+                {data.STEP && data.STEP.includes("DIAMOND") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>DIAMOND</StepHeading></div>}
+                {data.STEP && data.STEP.includes("GOLD") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>GOLD</StepHeading></div>}
+                {data.STEP && data.STEP.includes("SILVER") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>SILVER</StepHeading></div>}
+                {data.STEP && data.STEP.includes("BRONZE") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>BRONZE</StepHeading></div>}
+                <br />
+                {data['2022 ABC Construction Award Winner'] && <img src={eiclogo} width="150px" height="auto" />}
+              </AwardWrapper>
               <div>
                 {data.WorkDesc !== "" ? <p>{data.WorkDesc}</p> : null}
               </div>
@@ -73,6 +94,7 @@ export const MemberList = ({ memberList = [] }) => {
                 {data['TradeCode 23'] ? <p>&bull; <strong>{data['TradeCode 23']}&nbsp;</strong>  {data['TradeDesc 23']}&nbsp;</p> : null}
                 {data['TradeCode 24'] ? <p>&bull; <strong>{data['TradeCode 24']}&nbsp;</strong>  {data['TradeDesc 24']}&nbsp;</p> : null}
               </CodeWrapper>
+              
             </ListWrapper>
           )
         }

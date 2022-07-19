@@ -1,4 +1,30 @@
 import { fetch } from "frontity"
+import { get } from "react-hook-form";
+
+export const generalFetch = (url) => {
+
+  const fetchFromAPI = async () => {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authentication': Buffer.toString("")
+      }
+    });
+    const body = await response.json();
+    return body;
+  };
+
+  const getPromise = () => {
+    return Promise.resolve(fetchFromAPI())
+  }
+
+  const data = getPromise().then((fetchedData) => {
+      return fetchedData.events
+  }) 
+  return data
+};
 
 export const eventsFetch = () => {
 
