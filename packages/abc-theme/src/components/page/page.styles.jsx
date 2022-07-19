@@ -23,6 +23,11 @@ const getPageStyle = props => {
 export const PageWrapper = styled.div`
   padding: 60px 14vw 40px 14vw;
 
+  a{
+    color: var(--colors-site-lightAccent);
+    text-decoration: underline;
+  }
+
   @media screen and (max-width: 1100px){
     margin-left: 0px;
     padding: 30px 20px;
