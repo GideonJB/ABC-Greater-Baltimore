@@ -29,6 +29,13 @@ const registrationHandler = {
   }
 }
 
+const registrationTestHandler = {
+  pattern: "/register-test/",
+  func: ({ state }) => {
+    state.source.data['/register-test/'].isRegistrationpageTest = true;
+  }
+}
+
 const loginPageHandler = {
   pattern: "/login/",
   func: ({ state }) => {
@@ -474,6 +481,7 @@ export default {
       libraries.source.handlers.push(
         registrationHandler,
         loginPageHandler,
+        registrationTestHandler,
         // invoicePageHandler,
         // aboutUsPageHandler,
         );

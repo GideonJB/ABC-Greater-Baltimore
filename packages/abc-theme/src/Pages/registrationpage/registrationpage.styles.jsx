@@ -59,6 +59,9 @@ export const FormWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding-top: 20px;
+
+  min-width: 150px;
+  min-height: 150px;
 `
 
 export const ErrorMessage = styled.p`

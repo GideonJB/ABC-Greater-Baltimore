@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { connect } from "frontity";
-import Link from "@frontity/components/link"
 
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
@@ -53,7 +52,7 @@ const Register = ({state, actions}) => {
         <h3>Register</h3>
         <p>Please note: All registrations will remain pending until
             approved by ABC staff. You will receive an email confirmation
-            when your registration is approved.
+            when your registration is approved. 
         </p>
         {state.theme.registrationSuccess === true 
         ?
