@@ -4,6 +4,8 @@ import { connect } from "frontity";
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 
+import forgottenPassword from "../../actions/forgotten-password.actions";
+
 import { LoginContainer, ErrorMessage, ForgottenButton, SuccessMessage, } from "./register.styles";
 
 const Register = ({state, actions}) => {
@@ -60,7 +62,7 @@ const Register = ({state, actions}) => {
         :
           <form onSubmit={handleSubmit}>
             {recovered ? <SuccessMessage>Please Check Your Email for Password Reset Instructions</SuccessMessage> : null}
-            <FormInput className={state.theme.registrationError.includes('Email')
+            <FormInput className={state.theme.registrationError.includes('username')
               ?
               "error"
               :
@@ -76,9 +78,9 @@ const Register = ({state, actions}) => {
               label="email"
               required
             />
-            {state.theme.registrationError.includes('Email')
+            {state.theme.registrationError.includes('username')
               ?
-              <ErrorMessage>{state.theme.registrationError}</ErrorMessage>
+              <ErrorMessage>Sorry, that Email already exists.</ErrorMessage>
               :
               null
             }
@@ -102,6 +104,30 @@ const Register = ({state, actions}) => {
             :
               null
             }
+            <FormInput
+              name="first_name"
+              type="text"
+              value={state.theme.userFirst}
+              handleChange={(e) => actions.theme.updateField("userFirst", e.target.value)}
+              label="first name"
+              required
+            />
+            <FormInput
+              name="last_name"
+              type="text"
+              value={state.theme.userLast}
+              handleChange={(e) => actions.theme.updateField("userLast", e.target.value)}
+              label="last name"
+              required
+            />
+            <FormInput 
+              name="company"
+              type="text"
+              value={state.theme.userCompany}
+              handleChange={(e) => actions.theme.updateField("userCompany", e.target.value)}
+              label="company name"
+              required
+            />
             <CustomButton type='submit'>Register</CustomButton>
             <br/>
             <br/>

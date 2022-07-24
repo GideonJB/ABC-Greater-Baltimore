@@ -90,9 +90,9 @@ const Header = ({ state, actions, color="", style="" }) => {
 
   const toggleNews = () => {
     if(state.theme.youTubePosts !== null){
-      console.log("no fecth needed")
+      // console.log("no fetch needed")
     }else{
-      console.log("fetching youtube")
+      // console.log("fetching youtube")
       youTubeFetch().then(res => actions.theme.setYouTubePosts(res));
     }
     if (state.theme.isNewsOpen === true) {

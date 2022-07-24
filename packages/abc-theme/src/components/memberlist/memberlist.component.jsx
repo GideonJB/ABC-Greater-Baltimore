@@ -41,7 +41,7 @@ export const MemberList = ({ memberList = [] }) => {
                 </CompanyNameWrapper>
                 <ContactWrapper>
                   {data.Title !== "" ? <h4>{data.NameTitle}:</h4> : null}
-                  <p>{data.FullName}</p>
+                  <p>{data.NameFull}</p>
                   {data.IndEmailAddress ? 
                     <a href={`mailto:${data.IndEmailAddress}`} target="_blank" rel="noreferrer">
                       <p>{data.IndEmailAddress}</p>

@@ -5,9 +5,6 @@ import { Background, ErrorContainer, HeadlineWrapper } from '../errorpage/errorp
 
 const ErrorPage = ({ state, actions }) => {
 
-  const handleClick = () => {
-    console.log(state.theme.myVariable)
-  }
   return (
     <>
       <Background />
@@ -15,7 +12,6 @@ const ErrorPage = ({ state, actions }) => {
         <HeadlineWrapper>
           <h4>Looks like we haven't built this page yet.<br/>
             Try a different one.
-          <button onClick={handleClick}>THIS BUTTON</button>
           </h4>
         </HeadlineWrapper>
       </ErrorContainer>

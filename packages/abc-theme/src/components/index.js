@@ -46,7 +46,6 @@ import BestSponsorPage from "../Pages/bestsponsorpage/bestsponsorpage.jsx"
 import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
 import SchoolDataPage from "../Pages/schooldatapage/schooldatapage.jsx"
 import Blog from "../components/blog/blog.component.jsx"
-import RegistrationPageTest from "../Pages/registrationpage/registrationpagetest.jsx"
 
 const Parent = styled.div`
   overflow: hidden;
@@ -132,7 +131,7 @@ const Root = ({ state, actions }) => {
 
   const transitions = useTransition(location, {
     from: { opacity: 0,},
-    enter: { opacity: 1, height: '100%', "overflow-y": 'scroll', "overflow-x": "hidden", },
+    enter: { opacity: 1, height: '100%', "overflowY": 'scroll', "overflowX": "hidden", },
     leave: { opacity: 0, display:"none" },
     config: { duration: 500 },
     delay: 500
@@ -226,7 +225,7 @@ const Root = ({ state, actions }) => {
                   <SpacingDiv className={state.router.link !== "/" ? "" : "homepage"}>
                     <Switch location={item}>
                       <SplashPage when={dataitem.isHome} />
-                      <LoginPage when={dataitem.isLoginPage} />
+                      <LoginPage when={state.router.link ==='/login/'} />
                       <Blog when={state.router.link.includes('blog')}/>
                       <EventsPage when={dataitem.isPage && state.router.link ==='/events/'} />
                       <PdpPage when={dataitem.isPage && state.router.link ==='/pdp/'} />
@@ -243,8 +242,7 @@ const Root = ({ state, actions }) => {
                       <FacilityRentalPage when={dataitem.isPage && state.router.link ==='/facility-rental/'} />
                       <CompanyUpdatePage when={dataitem.isPage && state.router.link ==='/company-update/'} />
                       <SchoolDataPage when={dataitem.isPage && state.router.link ==='/school-data/'} />
-                      <RegistrationPage when={dataitem.isRegistrationPage}/>
-                      <RegistrationPageTest when={dataitem.isRegistrationPageTest}/>
+                      <RegistrationPage when={state.router.link ==='/register/'}/>
                       <Page when={dataitem.isPage} />
                       <ErrorPage when={dataitem.isError} />
                     </Switch>
