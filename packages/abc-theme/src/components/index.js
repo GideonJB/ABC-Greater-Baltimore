@@ -46,7 +46,7 @@ import BestSponsorPage from "../Pages/bestsponsorpage/bestsponsorpage.jsx"
 import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
 import SchoolDataPage from "../Pages/schooldatapage/schooldatapage.jsx"
 import Blog from "../components/blog/blog.component.jsx"
-import RegistrationpageTest from "../Pages/registrationpage/registrationpagetest.jsx"
+import RegistrationPageTest from "../Pages/registrationpage/registrationpagetest.jsx"
 
 const Parent = styled.div`
   overflow: hidden;
@@ -244,7 +244,7 @@ const Root = ({ state, actions }) => {
                       <CompanyUpdatePage when={dataitem.isPage && state.router.link ==='/company-update/'} />
                       <SchoolDataPage when={dataitem.isPage && state.router.link ==='/school-data/'} />
                       <RegistrationPage when={dataitem.isRegistrationPage}/>
-                      <RegistrationpageTest when={dataitem.isRegistrationpageTest}/>
+                      <RegistrationPageTest when={dataitem.isRegistrationPageTest}/>
                       <Page when={dataitem.isPage} />
                       <ErrorPage when={dataitem.isError} />
                     </Switch>

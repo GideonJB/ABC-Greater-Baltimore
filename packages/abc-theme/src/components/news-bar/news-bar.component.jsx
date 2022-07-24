@@ -27,7 +27,7 @@ import { NewsContainer,
 const NewsBar = ({state, actions}) => {
 
   useEffect( () => {
-  }, [state.theme.newsItem])
+  }, [state.theme.newsItem, state.theme.youTubePosts])
   
   const handleClick = () => {
     state.theme.isNewsOpen = false;
@@ -142,7 +142,7 @@ const NewsBar = ({state, actions}) => {
           }
           {state.theme.newsItem === "videos" ? 
             <VideosContainer>
-              {state.theme.youTubePosts && state.theme.youTubePosts.length > 0 ?
+              {state.theme.youTubePosts && state.theme.youTubePosts.items.length > 0 ?
 
                 state.theme.youTubePosts.items.map((items) => {
 

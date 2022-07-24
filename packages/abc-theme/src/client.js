@@ -32,7 +32,7 @@ const registrationHandler = {
 const registrationTestHandler = {
   pattern: "/register-test/",
   func: ({ state }) => {
-    state.source.data['/register-test/'].isRegistrationpageTest = true;
+    state.source.data['/register-test/'].isRegistrationPageTest = true;
   }
 }
 

@@ -1,11 +1,13 @@
 import { connect } from 'frontity';
-import Link from "@frontity/components/link"
 import React from 'react';
 
 import { Background, ErrorContainer, HeadlineWrapper } from '../errorpage/errorpage.styles';
 
-const ErrorPage = () => {
+const ErrorPage = ({ state, actions }) => {
 
+  const handleClick = () => {
+    console.log(state.theme.myVariable)
+  }
   return (
     <>
       <Background />
@@ -13,6 +15,7 @@ const ErrorPage = () => {
         <HeadlineWrapper>
           <h4>Looks like we haven't built this page yet.<br/>
             Try a different one.
+          <button onClick={handleClick}>THIS BUTTON</button>
           </h4>
         </HeadlineWrapper>
       </ErrorContainer>
@@ -20,4 +23,4 @@ const ErrorPage = () => {
   );
 }
 
-export default ErrorPage;
+export default connect(ErrorPage);

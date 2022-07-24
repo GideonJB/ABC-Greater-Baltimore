@@ -4,11 +4,10 @@ import Register from "../../components/register/register.component"
 import CustomButton from '../../components/custom-button/custom-button.component'
 
 import { Wrapper, 
-        Background,
         FormWrapper,
       } from "./registrationpage.styles"
 
-const RegistrationpageTest = ({ state, actions }) => {
+const RegistrationPageTest = ({ state, actions }) => {
 
   const handleTest = () => {
     console.log(process.env.REACT_APP_TEST_VARIABLE)
@@ -16,7 +15,6 @@ const RegistrationpageTest = ({ state, actions }) => {
 
   return (
     <Wrapper>
-      {/* <Background /> */}
       <FormWrapper>
         <Register />
       </FormWrapper>
@@ -27,4 +25,4 @@ const RegistrationpageTest = ({ state, actions }) => {
   );
 }
 
-export default connect(RegistrationpageTest);
+export default connect(RegistrationPageTest);
