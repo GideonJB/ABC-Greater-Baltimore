@@ -202,19 +202,19 @@ const Root = ({ state, actions }) => {
       <NewsContainer>
         <NewsBar />
       </NewsContainer>
-      {state.router.link !== "/" ?
-      <Header style="inner"/>
-      :
+      {state.source.get(state.router.link).isHome ?
       null
+      :
+      <Header style="inner"/>
       }
       {/* <Header style={state.router.link !== "/" ? "inner" : "alt"}
               color={state.router.link !== "/" ? "" : ""}
       />           */}
           <ContentWrapper className="">
-            {state.router.link !== "/" ?
-            <SideMenu style=""/>
-            :
+            {state.source.get(state.router.link).isHome ?
             null
+            :
+            <SideMenu style=""/>
             }
             <MainTag>
             <AnimationWrapper className="">
