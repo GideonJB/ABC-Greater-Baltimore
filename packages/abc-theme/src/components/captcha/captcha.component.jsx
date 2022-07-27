@@ -11,7 +11,7 @@ const CaptchaButton = ({ state, onVerifyCaptcha }) => {
 
   const handleReCaptchaVerify = useCallback (async () => {
     if (!executeRecaptcha) {
-      console.log("not executing")
+      console.log("not executing");
       return;
     }
 
