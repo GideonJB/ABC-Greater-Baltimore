@@ -5,6 +5,7 @@ import { useForm, Controller } from 'react-hook-form'
 import Page from '../../components/page/page.component';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
+import Captcha from '../../components/captcha/captcha.component';
 
 import { GlassWrap, FormWrapper, Wrapper, ErrorMessage } from './invoicepage.styles'
 
@@ -21,7 +22,7 @@ const InvoicePage = ({ state, actions }) => {
   //   }
   // }, []);
 
-  const { control, register, handleSubmit, watch, formState: { errors } } = useForm({
+  const { control, register, handleSubmit, setValue, watch, formState: { errors } } = useForm({
     defaultValues: {
       FullName: "",
       CustRefID: "",
@@ -33,9 +34,17 @@ const InvoicePage = ({ state, actions }) => {
     }
   });
 
+  const onVerifyCaptcha = (token) => {
+    setValue('captchaToken', token);
+  };
+
   const onSubmit = (data) => {
     document.forms["invoicepayment"].submit();
-  }  
+  }
+  
+  useEffect(() => {
+    register('captchaToken', { required: true });
+  });
    
   return(
     <Wrapper>
@@ -108,6 +117,15 @@ const InvoicePage = ({ state, actions }) => {
               <FormInput {...field} label="Notes" />
             )} />
           
+          <Controller control={control} name="Captcha"
+            rules={{
+              required: true,
+            }}
+            render={({ field }) => (
+              <Captcha onVerifyCaptcha={onVerifyCaptcha} />
+            )} />
+          {errors.Captcha?.type === 'required' && (<ErrorMessage>"Captcha is required"</ErrorMessage>)}
+          <br/>
           <CustomButton>Pay Invoice</CustomButton>
           </form>
       </FormWrapper>

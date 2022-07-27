@@ -23,6 +23,7 @@
     "dayjs": "^1.11.2",
     "dotenv": "^8.6.0",
     "frontity": "^1.17.2",
+    "react-google-recaptcha-v3": "^1.10.0",
     "react-hook-form": "^7.30.0",
     "react-json-to-csv": "^1.0.4",
     "react-spring": "^9.4.5",
