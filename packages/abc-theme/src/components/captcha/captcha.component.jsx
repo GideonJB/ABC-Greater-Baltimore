@@ -16,6 +16,7 @@ const CaptchaButton = ({ state, onVerifyCaptcha }) => {
     }
 
     const token = await executeRecaptcha('contact');
+    console.log(token);
     onVerifyCaptcha(token);
   }, [executeRecaptcha]);
 

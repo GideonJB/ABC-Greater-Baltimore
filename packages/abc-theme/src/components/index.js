@@ -6,7 +6,6 @@ if (typeof window === 'object'){
 import { Head, connect, css, Global, styled } from "frontity"
 import Switch from "@frontity/components/switch"
 import { useTransition, animated } from "react-spring"
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import { eventsFetch, blogFetch, youTubeFetch } from "../utils/events-fetch.js"
 import { useCurrentWidth } from '../utils/utility-functions'
@@ -163,110 +162,108 @@ const Root = ({ state, actions }) => {
   
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={state.theme.captchaSite}>
-      <Parent>
-        <Head>
-          <title key="title">ABC Greater Baltimore</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta charSet="utf-8" />
-          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-          <meta
-            name="description"
-            content="Workforce Development and Labor Relations"
-          />
-          <meta
-            name="keywords"
-            content="construction, workforce, education, jobs, training, apprenticeship"
-          />
+    <Parent>
+      <Head>
+        <title key="title">ABC Greater Baltimore</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Workforce Development and Labor Relations"
+        />
+        <meta
+          name="keywords"
+          content="construction, workforce, education, jobs, training, apprenticeship"
+        />
 
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=G-RP1V6H0XCH`}
-          />
-          <script>
-            {`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-RP1V6H0XCH`}
+        />
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-            gtag('config', 'G-RP1V6H0XCH');`}
-          </script>
-        </Head>
-        <Global styles={css(gutenburgStyle)} />
-        <Global styles={css(gutenburgTheme)} />
-        <Global styles={css(adminWelcome)} />
-        <Global styles={css(editorBlocks)} />
-        <Global styles={css(editorBlocksTwo)} />
-        <Global styles={css(frontend_blocks)} />
-        <GlobalStyle />
-        <CalendarContainer>
-          <EventsCalendar />
-        </CalendarContainer>
-        <NewsContainer>
-          <NewsBar />
-        </NewsContainer>
-        {state.source.get(state.router.link).isHome ?
-        null
-        :
-        <Header style="inner"/>
-        }
-        {/* <Header style={state.router.link !== "/" ? "inner" : "alt"}
-                color={state.router.link !== "/" ? "" : ""}
-        />           */}
-            <ContentWrapper className="">
-              {state.source.get(state.router.link).isHome ?
-              null
-              :
-              <SideMenu style=""/>
-              }
-              <MainTag>
-              <AnimationWrapper className="">
-              {transitions((props, item) => {
-                  const dataitem = state.source.get(state.router.link)
-                  return(
-                  <animated.div id= "scrollBody" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
-                    <SpacingDiv className={state.router.link !== "/" ? "" : "homepage"}>
-                      <Switch location={item}>
-                        <SplashPage when={dataitem.isHome} />
-                        <LoginPage when={state.router.link ==='/login/'} />
-                        <Blog when={state.router.link.includes('blog')}/>
-                        <EventsPage when={dataitem.isPage && state.router.link ==='/events/'} />
-                        <PdpPage when={dataitem.isPage && state.router.link ==='/pdp/'} />
-                        <SearchPage when={dataitem.isPage && state.router.link ==='/find-a-contractor/'}/>
-                        <InvoicePage when={dataitem.isPage && state.router.link ==='/pay-invoice/'} />
-                        <AboutUsPage when={dataitem.isPage && state.router.link ==='/about-us/'}/>
-                        <LogicScholarshipPage when={dataitem.isPage && state.router.link ==='/logic-scholarship/'} />
-                        <ApprenticeAppPage when={dataitem.isPage && state.router.link ==='/apprenticeship-application/'} />
-                        <JoinABCPage when={dataitem.isPage && state.router.link ==='/join-abc/'} />
-                        <VirtualHRPage when={dataitem.isPage && state.router.link ==='/virtual-hr/'} />
-                        <VirtualHRPage when={dataitem.isPage && state.router.link ==='/other-resources/'} />
-                        <BestSponsorPage when={dataitem.isPage && state.router.link ==='/pro-sponsorship/'} />
-                        <TaskTrainingPage when={dataitem.isPage && state.router.link ==='/task-training/'} />
-                        <FacilityRentalPage when={dataitem.isPage && state.router.link ==='/facility-rental/'} />
-                        <CompanyUpdatePage when={dataitem.isPage && state.router.link ==='/company-update/'} />
-                        <SchoolDataPage when={dataitem.isPage && state.router.link ==='/school-data/'} />
-                        <RegistrationPage when={state.router.link ==='/register/'}/>
-                        <Page when={dataitem.isPage} />
-                        <ErrorPage when={dataitem.isError} />
-                      </Switch>
-                      <Footer />
-                    </SpacingDiv>
-                  </animated.div>
-              )})}
-              <Switch>
-                <PageBackground when={data.isPage && membershipIDS.includes(data.id) } membership/>
-                <PageBackground when={data.isPage && apprenticeshipIDS.includes(data.id) } apprenticeship/>
-                <PageBackground when={data.isPage && eventsIDS.includes(data.id) } events/>
-                <PageBackground when={data.isPage && safetyIDS.includes(data.id) } safety/>
-                <PageBackground when={data.isPage && managementIDS.includes(data.id) } management/>
-                <PageBackground when={data.isPage && politicalIDS.includes(data.id) } political/>
-                <PageBackground when={data.isPage && membersIDS.includes(data.id) } members/>
-              </Switch>
-              </AnimationWrapper>
-              </MainTag>
-            </ContentWrapper>
-        <HamburgerMenu />
-      </Parent>
-    </GoogleReCaptchaProvider>
+          gtag('config', 'G-RP1V6H0XCH');`}
+        </script>
+      </Head>
+      <Global styles={css(gutenburgStyle)} />
+      <Global styles={css(gutenburgTheme)} />
+      <Global styles={css(adminWelcome)} />
+      <Global styles={css(editorBlocks)} />
+      <Global styles={css(editorBlocksTwo)} />
+      <Global styles={css(frontend_blocks)} />
+      <GlobalStyle />
+      <CalendarContainer>
+        <EventsCalendar />
+      </CalendarContainer>
+      <NewsContainer>
+        <NewsBar />
+      </NewsContainer>
+      {state.source.get(state.router.link).isHome ?
+      null
+      :
+      <Header style="inner"/>
+      }
+      {/* <Header style={state.router.link !== "/" ? "inner" : "alt"}
+              color={state.router.link !== "/" ? "" : ""}
+      />           */}
+          <ContentWrapper className="">
+            {state.source.get(state.router.link).isHome ?
+            null
+            :
+            <SideMenu style=""/>
+            }
+            <MainTag>
+            <AnimationWrapper className="">
+            {transitions((props, item) => {
+                const dataitem = state.source.get(state.router.link)
+                return(
+                <animated.div id= "scrollBody" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
+                  <SpacingDiv className={state.router.link !== "/" ? "" : "homepage"}>
+                    <Switch location={item}>
+                      <SplashPage when={dataitem.isHome} />
+                      <LoginPage when={state.router.link ==='/login/'} />
+                      <Blog when={state.router.link.includes('blog')}/>
+                      <EventsPage when={dataitem.isPage && state.router.link ==='/events/'} />
+                      <PdpPage when={dataitem.isPage && state.router.link ==='/pdp/'} />
+                      <SearchPage when={dataitem.isPage && state.router.link ==='/find-a-contractor/'}/>
+                      <InvoicePage when={dataitem.isPage && state.router.link ==='/pay-invoice/'} />
+                      <AboutUsPage when={dataitem.isPage && state.router.link ==='/about-us/'}/>
+                      <LogicScholarshipPage when={dataitem.isPage && state.router.link ==='/logic-scholarship/'} />
+                      <ApprenticeAppPage when={dataitem.isPage && state.router.link ==='/apprenticeship-application/'} />
+                      <JoinABCPage when={dataitem.isPage && state.router.link ==='/join-abc/'} />
+                      <VirtualHRPage when={dataitem.isPage && state.router.link ==='/virtual-hr/'} />
+                      <VirtualHRPage when={dataitem.isPage && state.router.link ==='/other-resources/'} />
+                      <BestSponsorPage when={dataitem.isPage && state.router.link ==='/pro-sponsorship/'} />
+                      <TaskTrainingPage when={dataitem.isPage && state.router.link ==='/task-training/'} />
+                      <FacilityRentalPage when={dataitem.isPage && state.router.link ==='/facility-rental/'} />
+                      <CompanyUpdatePage when={dataitem.isPage && state.router.link ==='/company-update/'} />
+                      <SchoolDataPage when={dataitem.isPage && state.router.link ==='/school-data/'} />
+                      <RegistrationPage when={state.router.link ==='/register/'}/>
+                      <Page when={dataitem.isPage} />
+                      <ErrorPage when={dataitem.isError} />
+                    </Switch>
+                    <Footer />
+                  </SpacingDiv>
+                </animated.div>
+            )})}
+            <Switch>
+              <PageBackground when={data.isPage && membershipIDS.includes(data.id) } membership/>
+              <PageBackground when={data.isPage && apprenticeshipIDS.includes(data.id) } apprenticeship/>
+              <PageBackground when={data.isPage && eventsIDS.includes(data.id) } events/>
+              <PageBackground when={data.isPage && safetyIDS.includes(data.id) } safety/>
+              <PageBackground when={data.isPage && managementIDS.includes(data.id) } management/>
+              <PageBackground when={data.isPage && politicalIDS.includes(data.id) } political/>
+              <PageBackground when={data.isPage && membersIDS.includes(data.id) } members/>
+            </Switch>
+            </AnimationWrapper>
+            </MainTag>
+          </ContentWrapper>
+      <HamburgerMenu />
+    </Parent>
   )
 }
 
