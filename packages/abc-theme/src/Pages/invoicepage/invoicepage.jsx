@@ -43,11 +43,15 @@ const InvoicePage = ({ state, actions }) => {
   };
 
   const onSubmit = (data) => {
-    document.forms["invoicepayment"].submit();
+    if (document.getElementById("a_pass").value.length > 0){
+      return  
+    }else{
+      document.forms["invoicepayment"].submit();
+    }
   }
   
   useEffect(() => {
-    register('captchaToken', { required: true });
+    // register('captchaToken', { required: true });
   });
    
   return(
@@ -56,7 +60,7 @@ const InvoicePage = ({ state, actions }) => {
       <GlassWrap className='glass-form'>
       <FormWrapper>
         <h3>ABC Member Invoice Form</h3>
-        <form id="invoicepayment" onSubmit={handleSubmit(onSubmit)} action="https://secure.abcbaltimore.org/payment/txpmid.php" method="post" target="_blank">
+          <form id="invoicepayment" onSubmit={handleSubmit(onSubmit)} action="https://hosted.transactionexpress.com/Transaction/Transaction/Index" method="post" target="_blank">
           <p>Transaction Type:</p>
           <select name="RecurringType">
             <option value="N">One-time Payment</option>
@@ -121,11 +125,26 @@ const InvoicePage = ({ state, actions }) => {
               <FormInput {...field} label="Notes" />
             )} />
           
-         <Captcha onVerifyCaptcha={onVerifyCaptcha} />
-         {errors.captchaToken?.type === 'required' && (<ErrorMessage>"Captcha is required"</ErrorMessage>)}
+         {/* <Captcha onVerifyCaptcha={onVerifyCaptcha} />
+         {errors.captchaToken?.type === 'required' && (<ErrorMessage>"Captcha is required"</ErrorMessage>)} */}
           <br/>
           <CustomButton>Pay Invoice</CustomButton>
-          </form>
+          <input type="text" id="a_pass" name="a_password" style={{display: "none"}} tabIndex="-1" autoComplete="off" />
+          <input type="hidden" name="HostedKey" id="HostedKey" value="1e7d250e-a7e3-4b10-93fa-8e0fce72cce1" />
+          <input type="hidden" name="Gateway_ID" id="Gateway_ID" value="9251490268" />
+          <input type="hidden" name="IndustryCode" id="IndustryCode" value="2" />
+          <input type="hidden" name="Amount" id="Amount" value="" />
+          <input type="hidden" name="RecurringType" id="RecurringType" value="N" />
+          <input type="hidden" name="RecurringAmount" id="RecurringAmount" value="" />
+          <input type="hidden" name="RURL" id="RURL" value="https://www.abcbaltimore.org" />
+          <input type="hidden" name="CURL" id="CURL" value="https://www.abcbaltimore.org" />
+          <input type="hidden" name="AVSRequired" id="AVSRequired" value="N" />
+          <input type="hidden" name="CVV2Required" id="CVV2Required" value="Y" />
+          <input type="hidden" name="EmailRequired" id="EmailRequired" value="Y" />
+          <input type="hidden" name="PostRspMsg" id="PostRspMsg" value="N" />
+          <input type="hidden" name="SECCode" id="SECCode" value="2" />
+          <input type="hidden" name="Descriptor" id="Descriptor" value="ABC Pay" />
+        </form>
       </FormWrapper>
       </GlassWrap>
     </Wrapper>
