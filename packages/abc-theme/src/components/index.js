@@ -163,7 +163,7 @@ const Root = ({ state, actions }) => {
   
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={state.theme.captchaSecret}>
+    <GoogleReCaptchaProvider reCaptchaKey={state.theme.captchaSite}>
       <Parent>
         <Head>
           <title key="title">ABC Greater Baltimore</title>

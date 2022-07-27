@@ -31,7 +31,7 @@ const CaptchaButton = ({ state, onVerifyCaptcha }) => {
 };
 
 const Captcha = ({ state, onVerifyCaptcha }) => (
-  <GoogleReCaptchaProvider reCaptchaKey={state.theme.captchaSecret}>
+  <GoogleReCaptchaProvider reCaptchaKey={state.theme.captchaSite}>
     <CaptchaButton onVerifyCaptcha={onVerifyCaptcha} />
   </GoogleReCaptchaProvider>
 );
