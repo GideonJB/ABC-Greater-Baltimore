@@ -1,5 +1,4 @@
 import { fetch } from "frontity"
-import { get } from "react-hook-form";
 
 export const generalFetch = (url) => {
 

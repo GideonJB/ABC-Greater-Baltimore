@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { connect, fetch } from 'frontity'
 import { useForm, Controller } from 'react-hook-form'
 
+import recaptchaFetch from '../../utils/recaptcha-fetch';
+
 import Page from '../../components/page/page.component';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
@@ -36,6 +38,8 @@ const InvoicePage = ({ state, actions }) => {
 
   const onVerifyCaptcha = (token) => {
     setValue('captchaToken', token);
+    recaptchaFetch(state.theme.captchaSecret, token);
+
   };
 
   const onSubmit = (data) => {
@@ -117,14 +121,8 @@ const InvoicePage = ({ state, actions }) => {
               <FormInput {...field} label="Notes" />
             )} />
           
-          <Controller control={control} name="Captcha"
-            rules={{
-              required: true,
-            }}
-            render={({ field }) => (
-              <Captcha onVerifyCaptcha={onVerifyCaptcha} />
-            )} />
-          {errors.Captcha?.type === 'required' && (<ErrorMessage>"Captcha is required"</ErrorMessage>)}
+         <Captcha onVerifyCaptcha={onVerifyCaptcha} />
+         {errors.captchaToken?.type === 'required' && (<ErrorMessage>"Captcha is required"</ErrorMessage>)}
           <br/>
           <CustomButton>Pay Invoice</CustomButton>
           </form>

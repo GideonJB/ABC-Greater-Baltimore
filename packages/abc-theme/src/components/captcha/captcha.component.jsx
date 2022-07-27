@@ -11,18 +11,16 @@ const CaptchaButton = ({ state, onVerifyCaptcha }) => {
 
   const handleReCaptchaVerify = useCallback (async () => {
     if (!executeRecaptcha) {
-      console.log("not executing");
       return;
     }
 
     const token = await executeRecaptcha('contact');
-    console.log(token);
     onVerifyCaptcha(token);
   }, [executeRecaptcha]);
 
-  useEffect(() => {
-    handleReCaptchaVerify();
-  }, [handleReCaptchaVerify]);
+  // useEffect(() => {
+  //   handleReCaptchaVerify();
+  // }, [handleReCaptchaVerify]);
 
   return (
     <CustomButton type="button" onClick={handleReCaptchaVerify}>
