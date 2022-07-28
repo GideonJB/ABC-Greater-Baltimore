@@ -17,17 +17,17 @@ const SearchPage = ({state, actions}) => {
   const [filteredList, setFilteredList] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [mWBECheck, setmWBECheck] = useState(false);
+  const [downloadList, setDownloadList] = useState([]);
   // const collectionRef = firestore.collection('members').orderBy("Company");
 
   const toggleMWBE = () => {
     setmWBECheck(!mWBECheck);
   }
   
-  
   const setPage = (currentPage) => {
     setPageNumber(currentPage);
-    // updateView(memberList);
   }
+
   useEffect(() => {
     setMemberList(collectionMap)
     setMemberListDefault(collectionMap)
@@ -42,14 +42,29 @@ const SearchPage = ({state, actions}) => {
 
   useEffect(() => {
     const updateView = (list) =>{
-    setFilteredList(list.filter((item, idx) => (pageNumber-1)*10 <= idx && idx <= ((pageNumber-1)*10)+9));
+      setFilteredList(list.filter((item, idx) => (pageNumber-1)*10 <= idx && idx <= ((pageNumber-1)*10)+9));
     }
     if(mWBECheck){
+      if (!input) {
+        populateDownload(memberList);
+      }
       updateView(memberList.filter(item => item.mWBE === 'TRUE'));
     }else {
       updateView(memberList);
     }
-  }, [pageNumber, memberList, mWBECheck])
+
+    
+
+  }, [pageNumber, memberList, mWBECheck]);
+
+  const populateDownload = (list) => {
+    const filteredDownloadList = list.map(item => ({ Company: item.Company, Website: item.CoWebsite, Phone: item.CoPhone, Contact: item.NameFull, Contact_Email: item.IndEmailAddress, Address: item['Mail-Address1'], City: item['Mail-City'], State: item['Mail-State'], Zipcode: item['Mail-Zip'], mWBE: item.mWBE }));
+    if(mWBECheck){
+      setDownloadList(filteredDownloadList.filter(item => item.mWBE === 'TRUE'));
+    }else{
+      setDownloadList(filteredDownloadList);
+    }
+  }
   
 
   const updateInput = async (input) => {
@@ -157,7 +172,7 @@ const SearchPage = ({state, actions}) => {
     })
     setInput(input);
     setMemberList(filtered);
-    //  updateView(filtered);
+    populateDownload(filtered);
   }
 
   
@@ -169,14 +184,14 @@ const SearchPage = ({state, actions}) => {
       <SearchContainer>
         <input type="checkbox" id="mWBE"onChange={toggleMWBE}/>
         <label htmlFor="mWBE">M/WBE</label>
-        {/* <CsvDownload data={filteredList} /> */}
+        <CsvDownload data={downloadList} />
         <SearchBar 
           input={input} 
           onChange={updateInput}
           pageNumber={pageNumber}
           onClick={setPage}
           data={filteredList.length}
-          total={memberList.length}
+          total={mWBECheck ? downloadList.length : memberList.length}
         />
         <MemberList memberList={filteredList}/>
         <br/>
