@@ -78,7 +78,6 @@ const JoinABCPage = ({ state, actions }) => {
         :
         <FormWrapper>
           <h3>ABC Membership Interest Form</h3>
-          {/* <FormFrame src="https://dev.abcbaltimore.org/pdp-form/"></FormFrame> */}
           <form id="joinABCform" onSubmit={handleSubmit(onSubmit)} action="https://dev.abcbaltimore.org/wp-json/gf/v2/forms/4/submissions" method="post">
             <Controller control={control} name="input_8"
               rules={{ required: true }}
@@ -149,7 +148,7 @@ const JoinABCPage = ({ state, actions }) => {
                 pattern: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
               }}
               render={({ field }) => (
-                <FormInput {...field} label="Company Phone Number" />
+                <FormInput {...field} label="*Company Phone Number" />
               )} />
             {errors.input_13?.type === 'required' && (<ErrorMessage>"Phone Number is required"</ErrorMessage>)}
             {errors.input_13?.type === 'pattern' && (<ErrorMessage>"Phone Number Not Valid"</ErrorMessage>)}
@@ -160,7 +159,7 @@ const JoinABCPage = ({ state, actions }) => {
                 pattern: /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
               }}
               render={({ field }) => (
-                <FormInput {...field} label="Company Website (begin with https://)" />
+                <FormInput {...field} label="*Company Website (begin with https://)" />
               )} />
             {errors.input_14?.type === 'required' && (<ErrorMessage>"Website is required"</ErrorMessage>)}
             {errors.input_14?.type === 'pattern' && (<ErrorMessage>"Please Enter a vlaid website eg. https://www.mywebsite.com"</ErrorMessage>)}
