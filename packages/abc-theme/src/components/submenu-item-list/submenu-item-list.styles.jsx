@@ -53,8 +53,9 @@ export const SubMenuWrapper = styled.div`
 `
 
 export const SubMenuItemWrapper = styled.div`
-  height: 800 px;
-  padding-bottom: 100px;
+  height: 800px;
+  max-height: 100vh;
+  /* overflow-y: scroll; */
 `
 
 export const SubMenuLine = styled.div`

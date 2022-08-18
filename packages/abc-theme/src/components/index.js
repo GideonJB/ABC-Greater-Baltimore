@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 if (typeof window === 'object'){
   window.__WAS_SSR = true
 };
+
 import { Head, connect, css, Global, styled } from "frontity"
 import Switch from "@frontity/components/switch"
 import { useTransition, animated } from "react-spring"
