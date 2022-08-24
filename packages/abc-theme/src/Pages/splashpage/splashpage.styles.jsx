@@ -38,19 +38,13 @@ const itemContainerStyles = `
   background-image:  var(--gradient-lightRight);
   overflow: hidden;
   pointer-events: none;
-  // z-index: 2;
 
-  @media (hover: hover){
+  @media (any-hover: hover){
     &:hover{
       opacity: 100%;
       pointer-events: auto;
     }
-  }
-
-  // @media screen and (max-width: 1200px){
-  //   opacity: 100%;
-  // }
-  
+  }  
 
   @media screen and (max-width: 1100px){
     display: block;
@@ -104,14 +98,7 @@ export const Column = styled.div`
   height: calc(100vh - 100px);
   overflow: visible;
   transition: .5s all;
-  /* margin-top: 100px; */
-
-  @media screen and (max-width: 1200px){
-    &.expanded{
-      
-    }
-  }
-  
+  /* margin-top: 100px; */  
 
   @media screen and (max-width: 1100px){
     width: 100vw;
@@ -151,7 +138,7 @@ export const MenuContainer = styled.div`
   transition: .5s all;
   overflow: hidden;
 
-  @media (hover: hover){
+  @media (any-hover: hover){
     &:hover{
       div {
         transition-delay: 10ms;
@@ -183,7 +170,6 @@ export const MenuContainer = styled.div`
         pointer-events: auto;
       }
        .grow{
-        /* background-size: 112% */
         transform: scale(1.02);
       }
        h1{
