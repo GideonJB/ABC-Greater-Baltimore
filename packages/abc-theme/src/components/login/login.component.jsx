@@ -38,6 +38,8 @@ const Login = ({ state, actions }) => {
     let x = await forgottenPassword(passwordUrl, userName)
     // console.log(x)
     if(x === true){ 
+      state.theme.userName = "";
+      state.theme.includes = "";
       setRecovered(true)
       setForgotten(false)
       setErrorMessage()
