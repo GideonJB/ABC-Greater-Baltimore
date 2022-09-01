@@ -101,7 +101,7 @@ const staffList = [
     "Title":"ABC Group Insurance Marketing",
     "Description":"Lorem Ipsum",
     "Image":require("../static/images/Staff/bruce.jpg"),
-    "email":"btalbot@abcgima.org"
+    "email":"bruce@abcgima.org"
   }
 ]
 

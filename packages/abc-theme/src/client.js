@@ -97,7 +97,7 @@ export default {
                 "continuing-education", "operations", "pdp", "national-pac", "virtual-hr",
                 "find-a-contractor", "pay-invoice", "thank-you", "apprenticeship-application",
                 "members", "about-us", "login", "register", "step", "company-update", "personal-coaching",
-                "prevailing-wage", "excellence-in-construction", "other-resources", "blog28493"]
+                "prevailing-wage", "excellence-in-construction", "other-resources", "blog28493", "resume"]
     },
     menu: {
       mainMenu: {

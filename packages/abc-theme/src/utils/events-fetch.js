@@ -81,4 +81,22 @@ export const youTubeFetch = () => {
   return data
 };
 
+export const resumeFetch = () => {
+
+  const fetchFromAPI = async () => {
+    const response = await fetch("http://dev.abcbaltimore.org/wp-json/gf/v2/forms/4?api_key=d9cf16e66ee9df8");
+    const body = await response.json();
+    return body;
+  };
+
+  const getPromise = () => {
+    return Promise.resolve(fetchFromAPI())
+  }
+
+  const data = getPromise().then((fetchedData) => {
+    return fetchedData
+  }) 
+  return data
+};
+
 

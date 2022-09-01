@@ -43,6 +43,7 @@ import TaskTrainingPage from "../Pages/tasktrainingpage/tasktrainingpage.jsx"
 import FacilityRentalPage from "../Pages/facilityrentalpage/facilityrentalpage.jsx"
 import AboutUsPage from "../Pages/aboutuspage/aboutuspage.jsx"
 import VirtualHRPage from "../Pages/virtualhrpage/virtualhrpage.jsx"
+import ResumePage from "../Pages/resumepage/resumepage.jsx"
 import BestSponsorPage from "../Pages/bestsponsorpage/bestsponsorpage.jsx"
 import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
 import SchoolDataPage from "../Pages/schooldatapage/schooldatapage.jsx"
@@ -236,6 +237,7 @@ const Root = ({ state, actions }) => {
                       <LogicScholarshipPage when={dataitem.isPage && state.router.link ==='/logic-scholarship/'} />
                       <ApprenticeAppPage when={dataitem.isPage && state.router.link ==='/apprenticeship-application/'} />
                       <JoinABCPage when={dataitem.isPage && state.router.link ==='/join-abc/'} />
+                      <ResumePage when={state.router.link ==='/resume/'} />
                       <VirtualHRPage when={dataitem.isPage && state.router.link ==='/virtual-hr/'} />
                       <VirtualHRPage when={dataitem.isPage && state.router.link ==='/other-resources/'} />
                       <BestSponsorPage when={dataitem.isPage && state.router.link ==='/pro-sponsorship/'} />
