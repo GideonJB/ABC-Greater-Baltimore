@@ -55,12 +55,16 @@ export const ContactWrapper = styled.div`
 `
 
 export const MemberHeading = styled.h2`
-  font-size: 1.5em !important;
+  font-size: 1.3em !important;
   font-weight: 600;
 `
 
 export const CodeWrapper = styled.div`
   overflow-wrap: normal;
+`
+
+export const SmallText = styled.p`
+  font-size: .9em;
 `
 
 export const GridWrapper = styled.div`

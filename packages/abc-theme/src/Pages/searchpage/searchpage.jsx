@@ -182,8 +182,7 @@ const SearchPage = ({state, actions}) => {
     <Wrapper>
       <Page />
       <SearchContainer>
-        <input type="checkbox" id="mWBE"onChange={toggleMWBE}/>
-        <label htmlFor="mWBE">M/WBE</label>
+        <label htmlFor="mWBE"><input type="checkbox" id="mWBE" onChange={toggleMWBE} />M/WBE</label>
         <CsvDownload data={downloadList} />
         <SearchBar 
           input={input} 
