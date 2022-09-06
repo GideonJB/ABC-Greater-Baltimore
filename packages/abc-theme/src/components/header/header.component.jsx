@@ -131,7 +131,7 @@ const Header = ({ state, actions, color="", style="" }) => {
             widthValue="120px" screenType="mobile"
             heightValue="auto" />
         </LeftGroup>
-        {state.router.link ==="/" && <Tagline><Link link="/apprenticeship">Apprentice Classes Start Sept. 8 <br />Click for more info</Link></Tagline>}
+        {/* {state.router.link ==="/" && <Tagline><Link link="/apprenticeship">Apprentice Classes Start Sept. 8 <br />Click for more info</Link></Tagline>} */}
         <HeaderLinkContainer className={color}>
           {/* {state.theme.token
           ?
