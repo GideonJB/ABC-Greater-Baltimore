@@ -134,7 +134,7 @@ const SplashPage = ({ state, actions }) => {
   }
 
   const mappedList = (category, range="") => {
-    if(state.theme.eventsCalendar.length > 0){
+    if(state.theme.eventsCalendar && state.theme.eventsCalendar.length > 0){
       if (range==="opposite"){
         const output = state.theme.eventsCalendar.map(event => { 
           if (event.categories[0] && event.categories.every(cat => !category.includes(cat.name)) || !event.categories[0]) {
@@ -166,7 +166,10 @@ const SplashPage = ({ state, actions }) => {
         })
         return output.filter(el => el !== undefined).slice(0, 4);
       }
-    }  
+    } else {
+
+      return null
+    }
   }  
 
   return (

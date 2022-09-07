@@ -54,7 +54,7 @@ const EventsPage = ({ state, actions }) => {
       <Page />
       <EventsPageWrapper>
       <ImageList>
-        {state.theme.eventsCalendar.length > 0 ?
+        {state.theme.eventsCalendar && state.theme.eventsCalendar.length > 0 ?
           <>
             {mappedEventList()}
           </>
@@ -64,7 +64,7 @@ const EventsPage = ({ state, actions }) => {
       </ImageList>
       <CalendarWrapper>
         <h3>Upcoming Events and Training</h3>
-      {state.theme.eventsCalendar.length > 0 ?
+      {state.theme.eventsCalendar && state.theme.eventsCalendar.length > 0 ?
           
         state.theme.eventsCalendar.map((items) => {
           // {items.categories[0]? console.log("NAME", items.categories[0].name): null }

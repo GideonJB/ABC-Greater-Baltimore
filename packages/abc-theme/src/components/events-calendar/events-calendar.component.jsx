@@ -36,7 +36,7 @@ const EventsCalendar = ({ state, actions }) => {
       <CalendarContainer className={state.theme.isCalendarOpen ? "open" : "close"}>
         <CloseButton onClick={() => handleClick()}>&#x2716;</CloseButton>
         <CalendarTitle>&nbsp;Events & Training Calendar</CalendarTitle>
-        {state.theme.eventsCalendar.length > 0 ?
+        {state.theme.eventsCalendar && state.theme.eventsCalendar.length > 0 ?
           
           state.theme.eventsCalendar.map((items) => {
 
