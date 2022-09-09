@@ -88,6 +88,9 @@ const NewsBar = ({state, actions}) => {
           }
           {state.theme.newsItem === "magazine" ?
             <MagazineContainer>
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=759755">
+                <MagazineTile src="https://cdn.coverstand.com/14697/759755/iphonejpg/320/99eb95c8b746cb5953e93e16da714f9f90e77ee0.jpg" />
+              </a>
               <a target="_blank" href="https://mydigitalpublication.com/publication/?i=751589">
                 <MagazineTile src="https://cdn.coverstand.com/14697/751589/iphonejpg/320/68fef550eb252e13039dc2cc9b484d2a90baef53.jpg" />
               </a>
