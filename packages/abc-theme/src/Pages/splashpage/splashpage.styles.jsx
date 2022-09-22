@@ -39,7 +39,7 @@ const itemContainerStyles = `
   overflow: hidden;
   pointer-events: none;
 
-  @media (any-hover: hover){
+  @media (hover: hover){
     &:hover{
       opacity: 100%;
       pointer-events: auto;
@@ -138,7 +138,7 @@ export const MenuContainer = styled.div`
   transition: .5s all;
   overflow: hidden;
 
-  @media (any-hover: hover){
+  @media (hover: hover){
     &:hover{
       div {
         transition-delay: 10ms;
