@@ -39,6 +39,11 @@ const itemContainerStyles = `
   overflow: hidden;
   pointer-events: none;
 
+  &:hover{
+      opacity: 100%;
+      pointer-events: auto;
+    }
+
   @media (hover: hover){
     &:hover{
       opacity: 100%;
@@ -137,6 +142,22 @@ export const MenuContainer = styled.div`
   height: 100%;
   transition: .5s all;
   overflow: hidden;
+
+  &:hover{
+      div {
+        transition-delay: 10ms;
+        visibility: visible;
+        opacity: 100%;
+        pointer-events: auto;
+      }
+      h1{
+        margin-left: calc((100vw) / 5 + 40px);
+      }
+      .grow{
+        /* background-size: 112% */
+        transform: scale(1.02);
+      }
+    }
 
   @media (hover: hover){
     &:hover{
