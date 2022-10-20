@@ -92,7 +92,7 @@ const LogicScholarshipPage = ({ state, actions }) => {
     const formElement = document.forms["logicscholarshipform"],
       { action, method } = formElement,
       formData = new FormData(formElement)
-    formData.set("input_17", coverDoc)
+    // formData.set("input_17", coverDoc)
     formData.set("input_18", resumeDoc)
     formData.set("input_19", essayDoc)
     formData.set("input_24", letterDoc)
@@ -266,9 +266,9 @@ const LogicScholarshipPage = ({ state, actions }) => {
 
             <h4>Attachments</h4>
 
-            <InputLabel htmlFor="input_17">*Application Cover Letter</InputLabel><br/>
+            {/* <InputLabel htmlFor="input_17">*Application Cover Letter</InputLabel><br/>
             <input {...register("input_17", { required: coverSubmitted })} type="file" onChange={(e) => {fileChange(e, "cover")}} /><br /><br />
-            {errors.input_99?.type === 'required' && (<ErrorMessage>"Document is Required. If your document won't submit, try saving as a pdf or txt file."</ErrorMessage>)}
+            {errors.input_99?.type === 'required' && (<ErrorMessage>"Document is Required. If your document won't submit, try saving as a pdf or txt file."</ErrorMessage>)} */}
 
             <InputLabel htmlFor="input_18">*Resum&eacute;</InputLabel><br />
             <input {...register("input_18", { required: resumeSubmitted })} type="file" onChange={(e) => {fileChange(e, "resume")}} /><br /><br />
