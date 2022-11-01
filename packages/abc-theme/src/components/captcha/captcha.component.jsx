@@ -1,38 +1,38 @@
-import {
-  GoogleReCaptchaProvider,
-  useGoogleReCaptcha
-} from 'react-google-recaptcha-v3';
-import CustomButton from '../custom-button/custom-button.component';
-import React, { useCallback, useEffect } from 'react';
-import { connect } from 'frontity';
+// import {
+//   GoogleReCaptchaProvider,
+//   useGoogleReCaptcha
+// } from 'react-google-recaptcha-v3';
+// import CustomButton from '../custom-button/custom-button.component';
+// import React, { useCallback, useEffect } from 'react';
+// import { connect } from 'frontity';
 
-const CaptchaButton = ({ state, onVerifyCaptcha }) => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+// const CaptchaButton = ({ state, onVerifyCaptcha }) => {
+//   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleReCaptchaVerify = useCallback (async () => {
-    if (!executeRecaptcha) {
-      return;
-    }
+//   const handleReCaptchaVerify = useCallback (async () => {
+//     if (!executeRecaptcha) {
+//       return;
+//     }
 
-    const token = await executeRecaptcha('contact');
-    onVerifyCaptcha(token);
-  }, [executeRecaptcha]);
+//     const token = await executeRecaptcha('contact');
+//     onVerifyCaptcha(token);
+//   }, [executeRecaptcha]);
 
-  // useEffect(() => {
-  //   handleReCaptchaVerify();
-  // }, [handleReCaptchaVerify]);
+//   // useEffect(() => {
+//   //   handleReCaptchaVerify();
+//   // }, [handleReCaptchaVerify]);
 
-  return (
-    <CustomButton type="button" onClick={handleReCaptchaVerify}>
-      Please validate you are a human.
-    </CustomButton>
-  );
-};
+//   return (
+//     <CustomButton type="button" onClick={handleReCaptchaVerify}>
+//       Please validate you are a human.
+//     </CustomButton>
+//   );
+// };
 
-const Captcha = ({ state, onVerifyCaptcha }) => (
-  <GoogleReCaptchaProvider reCaptchaKey={state.theme.captchaSite}>
-    <CaptchaButton onVerifyCaptcha={onVerifyCaptcha} />
-  </GoogleReCaptchaProvider>
-);
+// const Captcha = ({ state, onVerifyCaptcha }) => (
+//   <GoogleReCaptchaProvider reCaptchaKey={state.theme.captchaSite}>
+//     <CaptchaButton onVerifyCaptcha={onVerifyCaptcha} />
+//   </GoogleReCaptchaProvider>
+// );
 
-export default connect(Captcha);
+// export default connect(Captcha);
