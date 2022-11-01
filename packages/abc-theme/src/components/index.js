@@ -6,7 +6,7 @@ if (typeof window === 'object'){
 
 import { Head, connect, css, Global, styled } from "frontity"
 import Switch from "@frontity/components/switch"
-import { useTransition, animated } from "react-spring"
+import { useTransition, animated } from "@react-spring/web"
 
 import { eventsFetch, blogFetch, youTubeFetch } from "../utils/events-fetch.js"
 import { useCurrentWidth } from '../utils/utility-functions'

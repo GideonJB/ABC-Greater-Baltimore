@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useTransition, animated, config } from "react-spring"
+import { useTransition, animated, config } from "@react-spring/web"
 
 import {Heading,
       Carousel,
