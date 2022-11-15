@@ -688,6 +688,15 @@ export const GlobalStyle = props => (
         color: var(--colors-site-mainTheme) !important;
       }
 
+      .wp-block-image {
+        height: 100%;
+        width: 100%;
+
+        img{
+          object-fit: contain;
+        }
+      }
+
     `}
   />
 )

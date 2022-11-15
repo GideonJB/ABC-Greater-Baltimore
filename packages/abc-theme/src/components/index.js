@@ -123,7 +123,7 @@ const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link)
   const location = state.router.link
 
-  const membershipIDS = [198, 991, 201, 221, 1133, 200, 1312, 1314, 1451, 435]
+  const membershipIDS = [198, 991, 201, 221, 1133, 200, 1312, 1314, 1451, 435, 2601]
   const apprenticeshipIDS = [2391, 2453]
   const eventsIDS = [203, 208, 1264, 1290, 2348]
   const safetyIDS = [210, 212, 187, 566, 2065]
