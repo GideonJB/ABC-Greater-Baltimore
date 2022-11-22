@@ -691,6 +691,7 @@ export const GlobalStyle = props => (
       .wp-block-image {
         /* height: 100%; */
         width: 100%;
+        
 
         img{
           object-fit: contain;
