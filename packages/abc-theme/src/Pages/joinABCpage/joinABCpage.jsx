@@ -27,7 +27,7 @@ const JoinABCPage = ({ state, actions }) => {
       input_11: "",
       input_12: "",
       input_13: "",
-      input_14: "",
+      input_20: "",
       input_19: "",
       input_16: "",
       input_17: "",
@@ -41,9 +41,10 @@ const JoinABCPage = ({ state, actions }) => {
     const formElement = document.forms["joinABCform"],
       { action, method } = formElement,
       formData = new FormData(formElement);
+      
 
     for (var value of formData.entries()) {
-      // console.log(value);
+      console.log(value);
     }
 
     const options = {
@@ -153,16 +154,14 @@ const JoinABCPage = ({ state, actions }) => {
             {errors.input_13?.type === 'required' && (<ErrorMessage>"Phone Number is required"</ErrorMessage>)}
             {errors.input_13?.type === 'pattern' && (<ErrorMessage>"Phone Number Not Valid"</ErrorMessage>)}
             
-            <Controller control={control} name="input_14"
+            <Controller control={control} name="input_20"
               rules={{
                 required: true,
-                pattern: /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/
               }}
               render={({ field }) => (
-                <FormInput {...field} label="*Company Website (begin with https://)" />
+                <FormInput {...field} label="*Company Website" />
               )} />
-            {errors.input_14?.type === 'required' && (<ErrorMessage>"Website is required"</ErrorMessage>)}
-            {errors.input_14?.type === 'pattern' && (<ErrorMessage>"Please Enter a vlaid website eg. https://www.mywebsite.com"</ErrorMessage>)}
+            {errors.input_20?.type === 'required' && (<ErrorMessage>"Website is required"</ErrorMessage>)}
 
             
             <br />
