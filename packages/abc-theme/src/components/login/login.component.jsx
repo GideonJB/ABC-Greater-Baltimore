@@ -68,6 +68,7 @@ const Login = ({ state, actions }) => {
                     :
                     ""
                     }
+          id="loginEmail"
           name="email"
           type="userName"
           value={state.theme.userName}
@@ -85,6 +86,8 @@ const Login = ({ state, actions }) => {
                     :
                     ""
                     }
+          id="loginPassword"
+          style="eye"
           name="password"
           type="password"
           value={state.theme.userPass}

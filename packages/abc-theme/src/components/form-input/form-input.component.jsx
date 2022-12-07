@@ -1,9 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { FormInputContainer, FormInputLabel, GroupContainer } from './form-input.styles';
+import { FormInputContainer, FormInputLabel, GroupContainer, Eye } from './form-input.styles';
 
-const FormInput = React.forwardRef(({ handleChange, label, ...otherProps }, ref) => {
+const FormInput = React.forwardRef(({ handleChange, label, style, ...otherProps }, ref) => {
+  const [show, setShow] = useState("show")
   
+  const handleShow = () => {
+    const showButton = document.getElementById("loginPassword");
+    if (showButton.type === "password") {
+      showButton.type = "text";
+      setShow("hide");
+    } else {
+      showButton.type = "password";
+      setShow("show");
+    }
+  }
 
   useEffect (() => {
   
@@ -21,6 +32,7 @@ const FormInput = React.forwardRef(({ handleChange, label, ...otherProps }, ref)
         {label}
       </FormInputLabel>
     ) : null}
+    {style ? <Eye onClick={handleShow}>{show}</Eye>: null}
   </GroupContainer>
   )
 })

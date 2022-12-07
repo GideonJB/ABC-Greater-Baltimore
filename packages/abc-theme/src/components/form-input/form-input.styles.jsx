@@ -15,6 +15,7 @@ export const GroupContainer = styled.div`
   position: relative;
   margin-top: 20px;
   margin-bottom: 30px;
+  max-width: 600px;
 
   input[type='password'] {
     letter-spacing: 0.3em;
@@ -62,4 +63,13 @@ export const FormInputLabel = styled.label`
     ${shrinkLabelStyles}
   }
 `;
+
+export const Eye = styled.p`
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  float: right;
+`
 
