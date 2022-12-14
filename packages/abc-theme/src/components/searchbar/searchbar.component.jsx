@@ -24,7 +24,7 @@ const SearchBar = ({ input:keyword, onChange:setKeyword, pageNumber, onClick:cha
         <BarStyling {...props}
           key="random1"
           value={keyword}
-          placeholder={"search members by name or by trade code"}
+          placeholder={"search members by name, trade, or code"}
           onChange={(e) => setKeyword(e.target.value)}
         />
         <PageNumberWrapper>
