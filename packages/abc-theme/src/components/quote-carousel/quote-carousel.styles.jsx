@@ -5,6 +5,7 @@ export const Heading = styled.h2`
   text-align: center;
   color: var(--colors-site-white);
   padding-top: 10px;
+  padding-bottom: 20px;
 `
 export const Carousel = styled.div`
   overflow: hidden;
@@ -56,4 +57,18 @@ export const QuoteText = styled.h4`
   @media screen and (max-width: 1000px){
     font-size: 1em;
   }
+`
+
+export const ArrowRight = styled.h1`
+  cursor: pointer;
+  position: absolute;
+  left : 20px;
+  top: 250px;
+`
+
+export const ArrowLeft = styled.h1`
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 250px;
 `

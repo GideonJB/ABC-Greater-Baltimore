@@ -788,8 +788,8 @@ export const EventLinkContainer = styled.div`
 `
 
 export const QuoteContainer = styled.div`
-  height: 40vh;
-  min-height: 600px;
+  height: auto;
+  /* min-height: 600px; */
   background-image: url(${building});
   background-position: 50% 90%;
   
@@ -797,10 +797,11 @@ export const QuoteContainer = styled.div`
 
 export const QuoteBlurContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
-  padding-top: 10vh;
+  padding-top: 5vh;
   backdrop-filter: blur(20px);
 `
 
