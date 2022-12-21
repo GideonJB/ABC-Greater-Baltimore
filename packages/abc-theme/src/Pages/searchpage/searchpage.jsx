@@ -8,7 +8,7 @@ import Login from "../../components/login/login.component"
 import { MemberList } from '../../components/memberlist/memberlist.component.jsx'
 import { Wrapper, InnerWrapper, LoggedOutWrapper, SearchContainer} from "./searchpage.styles"
 
-let collectionMap = require("../../static/ABC_Members_2022_07.json");
+let collectionMap = require("../../static/2023_Directory_Listings_JSON.json");
 
 const SearchPage = ({state, actions}) => {
   const [input, setInput] = useState('');
@@ -48,7 +48,7 @@ const SearchPage = ({state, actions}) => {
       if (!input) {
         populateDownload(memberList);
       }
-      updateView(memberList.filter(item => item.mWBE === 'TRUE'));
+      updateView(memberList.filter(item => item.mWBE === 'M/WBE'));
     }else {
       updateView(memberList);
     }

@@ -30,34 +30,34 @@ export const MemberList = ({ memberList = [] }) => {
             <ListWrapper className="" key={data.Company}>
               <GridWrapper>
                 <CompanyNameWrapper>
-                  {data.CoWebsite ? 
-                    <a href={`http://${data.CoWebsite}`} target="_blank" rel="noreferrer">
+                  {data.Website ? 
+                    <a href={`http://${data.Website}`} target="_blank" rel="noreferrer">
                       <MemberHeading>{data.Company}</MemberHeading>
-                      <SmallText>{data.CoWebsite}</SmallText>
+                      <SmallText>{data.Website}</SmallText>
                     </a> 
                     :
                     <MemberHeading>{data.Company}</MemberHeading>
                   }
-                  <SmallText>{data.CoPhone}</SmallText>
+                  <SmallText>{data.Phone}</SmallText>
                 </CompanyNameWrapper>
                 <ContactWrapper>
-                  {data.Title !== "" ? <h4>{data.NameTitle}:</h4> : null}
-                  <p>{data.NameFull}</p>
-                  {data.IndEmailAddress ? 
-                    <a href={`mailto:${data.IndEmailAddress}`} target="_blank" rel="noreferrer">
-                      <SmallText>{data.IndEmailAddress}</SmallText>
+                  {data.Title !== "" ? <h4>{data.Title}:</h4> : null}
+                  <p>{data.Name}</p>
+                  {data.Email ? 
+                    <a href={`mailto:${data.Email}`} target="_blank" rel="noreferrer">
+                      <SmallText>{data.Email}</SmallText>
                     </a>
                   :
-                    <SmallText>{data.IndEmailAddress}</SmallText>
+                    <SmallText>{data.Email}</SmallText>
                   }
                   
                   <SmallText>{data['Mail-Address1']} &nbsp;&nbsp; {data['Mail-Address2']}</SmallText>
                   <SmallText>{data['Mail-City']}, {data['Mail-State']} {data['Mail-Zip']}</SmallText>
                   <br/>
-                  {data.mWBE === "TRUE" && <p><strong>M/WBE</strong></p>}
+                  {data.mWBE === "M/WBE" && <p><strong>M/WBE</strong></p>}
                 </ContactWrapper>
               </GridWrapper>
-              {data.STEP || data['2022 ABC Construction Award Winner'] ?
+              {data.STEP || data['Awards Winner'] ?
                 <AwardWrapper>
                   {data.STEP && data.STEP.includes("PLATINUM") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>PLATINUM</StepHeading></div>}
                   {data.STEP && data.STEP.includes("DIAMOND") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>DIAMOND</StepHeading></div>}
@@ -65,13 +65,13 @@ export const MemberList = ({ memberList = [] }) => {
                   {data.STEP && data.STEP.includes("SILVER") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>SILVER</StepHeading></div>}
                   {data.STEP && data.STEP.includes("BRONZE") && <div><img src={steplogo} width="150px" height="auto" /><StepHeading>BRONZE</StepHeading></div>}
                   <br />
-                  {data['2022 ABC Construction Award Winner'] && <img src={eiclogo} width="150px" height="auto" />}
+                  {data['Awards Winner'] && <img src={eiclogo} width="150px" height="auto" />}
                 </AwardWrapper>
               :
                 null
               }
               <div>
-                {data.WorkDesc !== "" ? <SmallText>{data.WorkDesc}</SmallText> : null}
+                {data.Description !== "" ? <SmallText>{data.Description}</SmallText> : null}
               </div>
               <br />
               <CodeWrapper>
