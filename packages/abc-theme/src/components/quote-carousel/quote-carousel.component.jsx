@@ -15,7 +15,7 @@ import {Heading,
 
 const QuoteCarousel = ({ quoteArray, time=8000, heading="" }) => {
   const [current, setCurrent] = useState(0);
-  const [previous, setPrevious] = useState(14);
+  const [previous, setPrevious] = useState(quoteArray.length-1);
   const [direction, setDirection] = useState('right');
 
   const getTransitionConfig = (direction) => {

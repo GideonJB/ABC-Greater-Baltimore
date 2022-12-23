@@ -16,10 +16,6 @@ const quotes = [
     caption: "- David Toth with Oak Contracting on the Project Manager/Estimator Academy"
   },
   {
-    quote: "Southway Builders has been a proud member of ABC for over a decade, and we consider our membership to be one of the most valuable of all trade group with which we belong. From steep member discounts to our liability insurance, to their providing safety inspections at all of our project sites, or providing connections with a broad array of top notch subcontractors, and their legislative advocacy on behalf of our industry. ABC is the BEST, and we are honored to be a part of such an excellent organization.",
-    caption: "- Willy Moore with Southway Builders"
-  },
-  {
     quote: "ABC provides its General Contractor members many essential resources including general industry knowledge and awareness, updates on new laws and regulations, apprenticeship training construction industry education for employees, safety training and networking. All of these tools help my company stay competitive in an ever-changing industry.",
     caption: "- Ken Wingate with North Point Builders"
   },
