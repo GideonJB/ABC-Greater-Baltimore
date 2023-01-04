@@ -77,7 +77,7 @@ const boardList = [
     "Title":"",
     "Description":"RE Management Solutions",
     "Image":require("../static/images/board/ellen-c.jpg"),
-    "email":"ecascio@pcbuilds.com"
+    "email":"ecascio@gorems.com"
   },
   {
     "id":12,
@@ -117,7 +117,7 @@ const boardList = [
     "Title":"",
     "Description":"Anchor Mechanical",
     "Image":require("../static/images/board/Mark-Huntley.jpg"),
-    "email":""
+    "email":"mhuntley@anchormech.com"
   },
   {
     "id":24,
@@ -125,7 +125,7 @@ const boardList = [
     "Title":"",
     "Description":"IronShore Contracting",
     "Image":require("../static/images/board/Gregory-Malcolm.jpg"),
-    "email":""
+    "email":"gmalcolm2@ironshoregrp.com"
   },
   {
     "id":15,
