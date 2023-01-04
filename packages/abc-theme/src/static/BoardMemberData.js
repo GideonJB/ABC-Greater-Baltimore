@@ -1,24 +1,16 @@
 const boardList = [
   {
-    "id":1,
-    "Name":"Ted Jasinski",
-    "Title":"Chair",
-    "Description":"CORE Design Group",
-    "Image":require("../static/images/board/ted-j.jpg"),
-    "email":"tjasinski@core-designgroup.com"
-  },
-  {
     "id":2,
     "Name":"Larry Lopez",
-    "Title":"Vice Chair",
-    "Description":"Green JobWorks, Inc.",
+    "Title":"Chair",
+    "Description":"Workbridge, LLC",
     "Image":require("../static/images/board/larry-l.jpg"),
     "email":"llopez@greenjobworks.com"
   },
   {
     "id":3,
     "Name":"Frank Murphy",
-    "Title":"2nd Vice Chair",
+    "Title":"Vice Chair",
     "Description":"TEI Electrical Solutions",
     "Image":require("../static/images/board/frank-m.jpg"),
     "email":"Frank.Murphy@teiconst.com"
@@ -26,10 +18,18 @@ const boardList = [
   {
     "id":4,
     "Name":"John Diehl",
-    "Title":"Secretary",
+    "Title":"2nd Vice Chair",
     "Description":"Southway Builders, Inc.",
     "Image":require("../static/images/board/john-d.jpg"),
     "email":"john@southwaybuilders.com"
+  },
+   {
+    "id":18,
+    "Name":"Brandon Proescher",
+    "Title":"Secretary",
+    "Description":"Live Green Landscape Associates, LLC",
+    "Image":require("../static/images/board/brandon-p.jpg"),
+    "email":"bproescher@livegreenlandscapes.com"
   },
   {
     "id":5,
@@ -48,29 +48,21 @@ const boardList = [
     "email":"kate@lawrencelawllc.com"
   },
   {
-    "id":7,
-    "Name":"Mark McDaniel",
+    "id":1,
+    "Name":"Ted Jasinski",
     "Title":"Past Chair",
-    "Description":"NLP Enterprises, Inc.",
-    "Image":require("../static/images/board/mark-m.jpg"),
-    "email":"mmcdaniel@nlpentinc.com"
+    "Description":"CORE Design Group",
+    "Image":require("../static/images/board/ted-j.jpg"),
+    "email":"tjasinski@core-designgroup.com"
   },
   // {
-  //   "id":8,
-  //   "Name":"David Brodie",
+  //   "id":9,
+  //   "Name":"Ronnie Brouillard",
   //   "Title":"",
-  //   "Description":"Wohlsen Construction",
-  //   "Image":require("../static/images/board/david-b.jpg"),
-  //   "email":"dbrodie@wohlsen.com"
+  //   "Description":"Chesapeake Contracting Group",
+  //   "Image":require("../static/images/board/ronnie-b.jpg"),
+  //   "email":"RBrouillard@ccgmd.com"
   // },
-  {
-    "id":9,
-    "Name":"Ronnie Brouillard",
-    "Title":"",
-    "Description":"Chesapeake Contracting Group",
-    "Image":require("../static/images/board/ronnie-b.jpg"),
-    "email":"RBrouillard@ccgmd.com"
-  },
   {
     "id":10,
     "Name":"Barnett Carroll",
@@ -81,9 +73,9 @@ const boardList = [
   },
   {
     "id":11,
-    "Name":"Ellen Cascio",
+    "Name":"Ellie Cascio",
     "Title":"",
-    "Description":"Plano-Coudon Construction",
+    "Description":"RE Management Solutions",
     "Image":require("../static/images/board/ellen-c.jpg"),
     "email":"ecascio@pcbuilds.com"
   },
@@ -94,6 +86,14 @@ const boardList = [
     "Description":"Kinsley Construction",
     "Image":require("../static/images/board/doug-c.jpg"),
     "email":"dcopp@kinsleyconstruction.com"
+  },
+  {
+    "id":22,
+    "Name":"Kelly Ennis",
+    "Title":"",
+    "Description":"The Verve Partnership",
+    "Image":require("../static/images/board/Kelly-Ennis.jpg"),
+    "email":"kennis@thevervepartnership.com"
   },
   {
     "id":13,
@@ -110,6 +110,22 @@ const boardList = [
     "Description":"Turner Construction Company",
     "Image":require("../static/images/board/patrick-h.jpg"),
     "email":"phuang@tcco.com"
+  },
+  {
+    "id":23,
+    "Name":"Mark Huntley",
+    "Title":"",
+    "Description":"Anchor Mechanical",
+    "Image":require("../static/images/board/Mark-Huntley.jpg"),
+    "email":""
+  },
+  {
+    "id":24,
+    "Name":"Gregory Malcolm",
+    "Title":"",
+    "Description":"IronShore Contracting",
+    "Image":require("../static/images/board/Gregory-Malcolm.jpg"),
+    "email":""
   },
   {
     "id":15,
@@ -134,14 +150,6 @@ const boardList = [
     "Description":"DSM Contracting",
     "Image":require("../static/images/board/debra-m.jpg"),
     "email":"debra@dsm-contracting.com"
-  },
-  {
-    "id":18,
-    "Name":"Brandon Proescher",
-    "Title":"",
-    "Description":"Live Green Landscape Associates, LLC",
-    "Image":require("../static/images/board/brandon-p.jpg"),
-    "email":"bproescher@livegreenlandscapes.com"
   },
   {
     "id":19,
