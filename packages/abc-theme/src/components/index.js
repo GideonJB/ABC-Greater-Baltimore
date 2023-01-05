@@ -29,7 +29,7 @@ import EventsCalendar from "./events-calendar/events-calendar.component.jsx"
 import NewsBar from "./news-bar/news-bar.component.jsx"
 import Footer from "./footer/footer.component.jsx"
 import SearchPage from "../Pages/searchpage/searchpage.jsx"
-import SplashPage from "../Pages/splashpage/splashpage.jsx"
+import HomePage from "../Pages/homepage/homepage.jsx"
 import RegistrationPage from "../Pages/registrationpage/registrationpage.jsx"
 import EventsPage from "../Pages/eventspage/eventspage.jsx"
 import ErrorPage from "../Pages/errorpage/errorpage.jsx"
@@ -209,9 +209,6 @@ const Root = ({ state, actions }) => {
       :
       <Header style="inner"/>
       }
-      {/* <Header style={state.router.link !== "/" ? "inner" : "alt"}
-              color={state.router.link !== "/" ? "" : ""}
-      />           */}
           <ContentWrapper className="">
             {state.source.get(state.router.link).isHome ?
             null
@@ -226,7 +223,7 @@ const Root = ({ state, actions }) => {
                 <animated.div id= "scrollBody" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
                   <SpacingDiv className={state.router.link !== "/" ? "" : "homepage"}>
                     <Switch location={item}>
-                      <SplashPage when={dataitem.isHome} />
+                      <HomePage when={dataitem.isHome} />
                       <LoginPage when={state.router.link ==='/login/'} />
                       <Blog when={state.router.link.includes('blog')}/>
                       <EventsPage when={dataitem.isPage && state.router.link ==='/events/'} />

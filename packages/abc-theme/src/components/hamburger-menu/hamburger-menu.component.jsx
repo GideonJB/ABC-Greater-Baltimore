@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react"
 import { connect } from "frontity"
 
 import MenuItemList from "../menu-item-list/menu-item-list.component";
-import SplashPage from "../../Pages/splashpage/splashpage"
+import HomePage from "../../Pages/homepage/homepage"
 
 import { Wrapper,
         MenuContainer,
@@ -20,7 +20,7 @@ const HamburgerMenu = ({ state, actions }) => {
     <>
       <Wrapper className={state.theme.isHamburgerOpen && state.router.link !== "/" ? "open" : ""}>
         <MenuContainer>
-          <SplashPage />
+          <HomePage />
         </MenuContainer>
       </Wrapper>
     </>

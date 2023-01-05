@@ -1,9 +1,8 @@
-import { keyframes, styled } from "frontity"
+import { styled } from "frontity"
 import Link from "@frontity/components/link"
 
 import apprenticeship from "../../static/images/apprenticeship.jpg"
 import events from "../../static/images/events.jpg"
-import management from "../../static/images/management.jpg"
 import membership from "../../static/images/membership.jpg"
 import political from "../../static/images/political.jpg"
 import safety from "../../static/images/safety.jpg"
@@ -13,13 +12,11 @@ import aluminum from "../../static/images/2.jpg"
 
 import apprenticeshipmobile from "../../static/images/apprenticeship_mobile.jpg"
 import eventsmobile from "../../static/images/events_mobile.jpg"
-import managementmobile from "../../static/images/management_mobile.jpg"
 import membershipmobile from "../../static/images/membership_mobile.jpg"
 import politicalmobile from "../../static/images/political_mobile.jpg"
 import safetymobile from "../../static/images/safety_mobile.jpg"
 import membersonlymobile from "../../static/images/membersonly_mobile.jpg"
 
-import { fullFrameDiv } from "../../styles/global-variables.styles"
 
 const itemContainerStyles = `
   transition: .5s all;
@@ -87,6 +84,7 @@ export const SplashTitle = styled.h1`
 `
 
 export const GridWrapper = styled.div`
+  padding: 15px;
   display: flex;
   position: relative;
   width: 100%;
@@ -94,6 +92,7 @@ export const GridWrapper = styled.div`
 
   @media screen and (max-width: 1100px){
     display: block;
+    padding: 0px;
   }
   
 `
@@ -114,27 +113,14 @@ export const Column = styled.div`
       height: 500px;
       pointer-events: none;
       touch-action: none;
+
+      &.large {
+
+      }
     }
   }
 
 `
-
-// export const Row = styled.div`
-//   width: 40vw;
-//   height: 10vw;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-
-//   &:not(:first-of-type){
-//     margin-top: 15px;
-//   }
-
-//   @media screen and (max-width: 670px){
-//     flex-direction: column;
-//   }
-
-// `
 
 export const MenuContainer = styled.div`
   position: relative;
@@ -142,22 +128,9 @@ export const MenuContainer = styled.div`
   height: 100%;
   transition: .5s all;
   overflow: hidden;
+  /* pointer-events: none; */
 
-  &:hover{
-      div {
-        transition-delay: 10ms;
-        visibility: visible;
-        opacity: 100%;
-        pointer-events: auto;
-      }
-      h1{
-        margin-left: calc((100vw) / 5 + 40px);
-      }
-      .grow{
-        /* background-size: 112% */
-        transform: scale(1.02);
-      }
-    }
+  
 
   @media (hover: hover){
     &:hover{
@@ -184,6 +157,8 @@ export const MenuContainer = styled.div`
 
   @media screen and (max-width: 1200px){
     &.expanded{
+      pointer-events: auto;
+      
       div{
         margin-top: 0px;
         visibility: visible;
@@ -202,6 +177,8 @@ export const MenuContainer = styled.div`
   @media screen and (max-width: 1100px){
 
     &.expanded{
+      pointer-events: auto;
+
       div{
         transition: .45s all;
         visibility: visible;
@@ -525,17 +502,6 @@ export const HorizontalLine = styled.hr`
   margin-top: 20px;
   margin-bottom: 20px;
 `
-export const Overlay = styled.svg`
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  position: absolute;
-  bottom: -250px;
-  left: -50;
-  opacity: .25;
-  /* animation: ${rotate} 500s; */
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-`
 
 export const GrowContainer = styled.div`
   position: relative;
@@ -553,33 +519,6 @@ export const MobileBreak = styled.br`
   @media screen and (min-width: 1000px){
     display: none;
   }
-`
-
-export const MobileColumn = styled.div`
-  position: absolute;
-  /* top: 50px; */
-  height: var(--screen-height-mobile);
-  width: 100vw;
-  background-image: url(${building});
-  background-position: center bottom;
-  overflow: auto;
-  transition: .8s all;
-  visibility: hidden;
-  opacity: 0%;
-  z-index: 2;
-
-  &.visible{
-    visibility: visible;
-    opacity: 100%;
-  }
-
-  @media screen and (min-width: 1000px){
-    display: none;
-  }
-`
-
-export const MobileColumnA = styled.div`
-  height: 100vh;
 `
 
 export const EventListItem = styled.li`
@@ -610,18 +549,6 @@ export const Description = styled.h4`
   padding: 20px 40px;
   text-align: center;
   margin: 0 auto;
-`
-
-export const TaglineContainer = styled.div`
-  display: none;
-  /* display: flex; */
-  justify-content: space-between;
-  align-items: center;
-  /* position: relative; */
-  width: 85%;
-  margin: 0 auto;
-  /* background-color: var(--colors-site-white); */
-  margin-bottom: 30px;
 `
 
 export const UpcomingContainer = styled.div`
@@ -659,74 +586,6 @@ export const UpcomingContainer = styled.div`
 
 `
 
-export const UpcomingTagline = styled.p`
-  font-size: 2vw;
-  padding-left: 12px;
-  text-transform: uppercase;
-  color: var(--colors-site-white);
-`
-
-export const TagFlex = styled.div`
-  width: 65%;
-  padding: 0px 20px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 20px;
-`
-
-export const Tagline = styled.div`
-  /* text-transform: uppercase; */
-  color: var(--colors-site-white);
-  font-size: 1.4em;
-  font-weight: 600;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: center;
-`
-
-export const TrainingWrapper = styled.div`
-  display: none;
-  width: 85%;
-  margin: 0 auto;
-  margin-bottom: 70px;
-`
-
-export const TrainingContainer = styled.div`
-  display: none;
-  /* display: flex; */
-  justify-content: center;
-  width: 100%;
-`
-export const TrainingColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 40px;
-  width: 33%;
-  background-color: hsl(0, 0%, 87%);
-  box-shadow: 10px 10px 10px hsla(0, 0%, 0%, 16%);
-  /* border-radius: 10px;
-  box-shadow: 11px 15px 15px 0px rgba(0,0,0,0.1),-15px -12px 7px -10px #ffffff; */
-  padding: 15px 25px;
-  p > a{
-    color: red;
-  }
-
-  &:last-of-type{
-    margin-right: 0px;
-  }
-`
-
-export const ListMap = styled.ul`
-  height: 100%;
-  padding-inline-start: 0px;
-  margin-block-start: 0;
-  text-align: left;
-  a{
-    color: var(--colors-site-mainTheme);
-    cursor: pointer;
-  }
-`
-
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -748,43 +607,8 @@ export const Rule = styled.hr`
   }
 `
 
-export const Banner = styled.div`
-  width: 120px;
-  height: 120px;
-  background-image: url(${props => props.background});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  float: left;
-  margin-right: 15px;
-
-  &.zoom{
-    background-size: 300%;
-    background-position: 28% 70%;
-  }
-`
-
-export const ListContainer = styled.div`
-  height: auto;
-`
-
 export const EventListDate = styled.span`
   font-size: 1.1em;
-`
-
-export const TitleContainer =styled.div`
-  display: flex;
-  align-items: center;
-
-  h4{
-    font-size: 2vw;
-    color: var(--colors-site-mainTheme);
-  }
-`
-
-export const EventLinkContainer = styled.div`
-  justify-self: baseline end;
-  bottom: 45px;
 `
 
 export const QuoteContainer = styled.div`
