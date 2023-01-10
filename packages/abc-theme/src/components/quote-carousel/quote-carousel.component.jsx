@@ -19,7 +19,6 @@ const QuoteCarousel = ({ quoteArray, time=8000, heading="" }) => {
   const [direction, setDirection] = useState('right');
 
   const getTransitionConfig = (direction) => {
-    console.log(direction);
     if (direction === 'right') {
       return [
       {
@@ -59,7 +58,7 @@ const QuoteCarousel = ({ quoteArray, time=8000, heading="" }) => {
 
   const transitionConfig = useMemo(() => ({
     ...getTransitionConfig(direction)
-  }), [direction, getTransitionConfig]);
+  }), [direction]);
 
   const transitions = useTransition(current, transitionConfig[0]);
 
