@@ -35,7 +35,7 @@ const LogoWrapper = styled.div`
   justify-content: center;
   margin-left: ${props => props.margin};
 
-  @media screen and (min-width: 1099px){
+  @media screen and (min-width: 1100px){
     &.mobile{
       display: none;
     }

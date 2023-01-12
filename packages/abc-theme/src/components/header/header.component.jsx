@@ -109,12 +109,6 @@ const Header = ({ state, actions, color="", style="" }) => {
   return(
     <Wrapper className={style === "alt" ? "alt" : ""}>
       <HeaderWrapper>
-        {/* {state.theme.isLoginMenuVisible === true
-          ?
-          <Login />
-          :
-          null
-        } */}
         <LeftGroup className={style === "inner" ? "inner" : "inner"}>
           {state.router.link !== "/"
           ?
@@ -124,7 +118,7 @@ const Header = ({ state, actions, color="", style="" }) => {
           :
             null
           }
-          <LogoContainer link="/" source={style === "alt" ? logoImageWhite : logoImage} altText="ABC Logo"
+          <LogoContainer link="/" source={logoImage} altText="ABC Logo"
                           widthValue={style === "alt" ? "220px" : "150px"} screenType="desktop"
                           heightValue="auto" />
           <LogoContainer link="/" source={style === "alt" ? logoImageWhite : logoImage} altText="ABC Logo"
@@ -132,22 +126,9 @@ const Header = ({ state, actions, color="", style="" }) => {
             heightValue="auto" />
         </LeftGroup>
         {/* {state.router.link ==="/" && <Tagline><Link link="/apprenticeship">Apprentice Classes Start Sept. 8 <br />Click for more info</Link></Tagline>} */}
-        <HeaderLinkContainer className={color}>
-          {/* {state.theme.token
-          ?
-            <HeaderLink onClick={() => handleLogout()} link="/">Logout</HeaderLink>
-          :
-            <HeaderLink onClick={() => handleClick()} link="/login">Member Login</HeaderLink>
-          } */}
-          
-          
+        <HeaderLinkContainer className={style === "alt" ? "alt" : color}>
           <HeaderLink className={`large-only ${color}`} onClick={() => handleClick()} link="/about-us">ABOUT US</HeaderLink>
-          
-          
-          {/* <PhoneText>410-821-0351</PhoneText> */}
-          
           <NewsLink onClick={() => toggleNews()} className={style === "inner" ? "inner" : ""}>MEDIA</NewsLink>
-          
           <IconContainer>
             <CalendarIcon className={color} onClick={() => toggleCalendar()}>
               <IconImage src={calIcon} alt="ABC Events Calendar"/>

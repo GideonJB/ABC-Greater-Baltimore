@@ -37,6 +37,7 @@ import LoginPage from "../Pages/loginpage/loginpage.jsx"
 import InvoicePage from "../Pages/invoicepage/invoicepage.jsx"
 import PdpPage from "../Pages/pdppage/pdppage.jsx"
 import ApprenticeAppPage from "../Pages/apprenticeapppage/apprenticeapppage.jsx"
+import ApprenticeResumePage from "../Pages/apprenticeresumepage/apprenticeresumepage.jsx"
 import LogicScholarshipPage from "../Pages/logicscholarshippage/logicscholarshippage.jsx"
 import JoinABCPage from "../Pages/joinABCpage/joinABCpage.jsx"
 import TaskTrainingPage from "../Pages/tasktrainingpage/tasktrainingpage.jsx"
@@ -124,7 +125,7 @@ const Root = ({ state, actions }) => {
   const location = state.router.link
 
   const membershipIDS = [198, 991, 221, 1133, 200, 1312, 1314, 1451, 435, 2601]
-  const apprenticeshipIDS = [2391, 2453]
+  const apprenticeshipIDS = [2391, 2453, 2654]
   const eventsIDS = [203, 208, 1264, 1290, 2348]
   const safetyIDS = [210, 212, 187, 566, 2065]
   const managementIDS = [213, 1303, 1299, 1297, 1301, 1295, 1330, 1544, 1546, 1635, 1633, 1656, 1668, 1640, 2156, 1100, 206, 207, 217, 1255, 1393, 1635, 1661, 2316]
@@ -234,6 +235,7 @@ const Root = ({ state, actions }) => {
                       <LogicScholarshipPage when={dataitem.isPage && state.router.link ==='/logic-scholarship/'} />
                       <ApprenticeAppPage when={dataitem.isPage && state.router.link ==='/apprenticeship-application/'} />
                       <JoinABCPage when={dataitem.isPage && state.router.link ==='/join-abc/'} />
+                      <ApprenticeResumePage when={dataitem.isPage && state.router.link ==='/apprentice-resume/'} />
                       <ResumePage when={state.router.link ==='/resume/'} />
                       <VirtualHRPage when={dataitem.isPage && state.router.link ==='/virtual-hr/'} />
                       <VirtualHRPage when={dataitem.isPage && state.router.link ==='/other-resources/'} />

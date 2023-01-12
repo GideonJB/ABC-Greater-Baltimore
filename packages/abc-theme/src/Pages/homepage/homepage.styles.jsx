@@ -85,6 +85,7 @@ export const SplashTitle = styled.h1`
 
 export const GridWrapper = styled.div`
   padding: 15px;
+  padding-top: 5px;
   display: flex;
   position: relative;
   width: 100%;
@@ -99,7 +100,7 @@ export const GridWrapper = styled.div`
 
 export const Column = styled.div`
   width: calc((100vw) /5);
-  height: calc(100vh - 100px);
+  height: calc(85vh - 200px);
   overflow: visible;
   transition: .5s all;
   /* margin-top: 100px; */  
@@ -216,7 +217,7 @@ export const GradientDiv = styled.div`
   }
 `
 export const ItemTitle = styled(Link)`
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 600;
   text-align: center;
   color: white;
@@ -228,10 +229,6 @@ export const ItemTitle = styled(Link)`
       transform: scale(1.02);   
   }
 
-  @media screen and (max-width: 1200px){
-    font-size: 1.2em;
-  }
-
   @media screen and (max-width: 1100px){
     font-size: 1.4em;
   }
@@ -240,19 +237,15 @@ export const ItemTitle = styled(Link)`
 export const ItemList = styled.div`
   width: 100%;
   padding-top: 10px;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1;
   text-align: center;
   overflow: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  @media screen and (max-width: 1200px){
-    font-size: .8em;
-  }
 
   @media screen and (max-width: 1100px){
     font-size: 1.2em;
@@ -590,7 +583,7 @@ export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 15px;
 `
 
 export const Rule = styled.hr`
@@ -668,4 +661,48 @@ export const InfoColumnRight = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: start;
+`
+
+export const LinkBar = styled.div`
+  height: 75px;
+  margin: 0px 15px;
+  /* width: calc(100vw - 30px); */
+  background-color: var(--colors-site-mainTheme);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  font-size: 1.2em;
+  color: var(--colors-site-white);
+
+  @media screen and (max-width: 1100px){
+    display: none;
+  }
+`
+
+export const LinkBarLink = styled(Link)`
+  color: var(--colors-site-white);
+`
+
+export const IconContainer = styled.div`
+  margin-top: -5px;
+  cursor: pointer;
+`
+
+export const CalendarIcon = styled.div`
+  transition: all .4s;
+  &.white{
+    filter: invert(1%) sepia(0%) saturate(0%) hue-rotate(1deg) brightness(1000%) contrast(100%);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`
+
+export const IconImage = styled.img`
+  width: 40px;
+  @media screen and (max-width: 1100px) {
+    width: 30px;
+  }
 `

@@ -13,13 +13,13 @@ export const Wrapper = styled.div`
 
   &.alt{
     position: static;
-    background-color: var(--colors-site-darkGray);
     height: 100px;
-    border-bottom: 2px solid var(--colors-site-mainTheme);
     padding-left: 8px;
 
     @media screen and (max-width: 1100px) {
       height: 50px;
+      background-color: var(--colors-site-darkGray);
+      border-bottom: 2px solid var(--colors-site-mainTheme);
     }
   }
 
@@ -67,6 +67,13 @@ export const HeaderLinkContainer = styled.div`
   p, div, span, a{
     font-family: "Poppins";
     font-weight: 500;
+  }
+
+  @media screen and (min-width: 1101px){
+    &.alt{
+    display: none;
+  }
+
   }
   @media screen and (max-width: 1100px) {
     font-size: 1em;

@@ -3,11 +3,13 @@ import React, { useEffect } from 'react';
 import dayjs from 'dayjs';
 
 import { myunescape } from "../../utils/utility-functions"
+import { youTubeFetch } from "../../utils/events-fetch"
 
 import LogoContainer from '../../components/logo-container/logo-container.component';
 import QuoteCarousel from "../../components/quote-carousel/quote-carousel.component";
 import Header from "../../components/header/header.component";
 
+import calIcon from "../../static/images/cal-icon.png"
 import cealLogo from "../../static/images/cea_logo.svg";
 import info1 from "../../static/images/IG1.gif";
 import info2 from "../../static/images/IG2.gif";
@@ -15,6 +17,7 @@ import info3 from "../../static/images/IG3.gif";
 import quotes from "./homepageQuotes";
 
 import {  Break,
+          CalendarIcon,
           CardHeading,
           Column,
           DescriptionContainer,
@@ -27,12 +30,16 @@ import {  Break,
           GridWrapper,
           GrowContainer,
           HorizontalLine,
+          IconContainer,
+          IconImage,
           InfoColumnLeft,
           InfoColumnRight,
           InfographicContainer,
           InfoWrapper,
           ItemList,
           ItemTitle,
+          LinkBar,
+          LinkBarLink,
           ListItem,
           LogoWrapper,
           ManagementBackground,
@@ -79,6 +86,38 @@ const HomePage = ({ state, actions }) => {
   const handleLogout = () => {
     state.theme.token = false;
     localStorage.removeItem('user');
+  }
+
+  const toggleNews = () => {
+    console.log('clicked')
+    if(state.theme.youTubePosts !== null){
+      // console.log("no fetch needed")
+    }else{
+      // console.log("fetching youtube")
+      youTubeFetch().then(res => actions.theme.setYouTubePosts(res));
+    }
+    if (state.theme.isNewsOpen === true) {
+      actions.theme.toggleNews(false)
+    } else {
+      actions.theme.toggleNews(true)
+      actions.theme.toggleCalendar(false)
+      if (state.router.link !== "/") {
+        actions.theme.toggleHamburger(false)
+      }
+    }
+  }
+
+  const toggleCalendar = () => {
+    if (state.theme.isCalendarOpen === true) {
+      actions.theme.toggleCalendar(false)
+    }else { 
+      actions.theme.toggleCalendar(true)
+      actions.theme.toggleNews(false)
+    if (state.router.link !== "/"){
+      actions.theme.toggleHamburger(false)
+    }
+
+    }
   }
 
   const mappedList = (category, range="") => {
@@ -199,7 +238,7 @@ const HomePage = ({ state, actions }) => {
                     <LogoWrapper>
                       <LogoContainer source={cealLogo} 
                         altText="construction education academy logo"
-                        widthValue="125px"
+                        widthValue="75px"
                         heightValue="auto"
                         link="/education"
                       />
@@ -295,6 +334,16 @@ const HomePage = ({ state, actions }) => {
       {state.theme.isHamburgerOpen ? null : <Header style="alt"/>}
       {state.theme.intViewportWidth > 1001 ?
         <>
+          <LinkBar>
+            <LinkBarLink link="/about-us">About Us</LinkBarLink>
+            <LinkBarLink link="/find-a-contractor">Find a Contractor</LinkBarLink>
+            <span onClick={() => toggleNews()}>Media</span>
+            <IconContainer>
+              <CalendarIcon onClick={() => toggleCalendar()}>
+                <IconImage src={calIcon} alt="ABC Events Calendar"/>
+              </CalendarIcon>
+            </IconContainer> 
+          </LinkBar>
           <GridWrapper>
             {handleColumn('membership')}
             {handleColumn('events')}

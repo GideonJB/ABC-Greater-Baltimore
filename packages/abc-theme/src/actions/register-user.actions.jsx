@@ -15,7 +15,7 @@ const registerUser = async ({ state }) => {
   });
 
   const token = await tokenFetch.json();
-  console.log(token.token);
+  // console.log(token.token);
   
   
   const res = await fetch(`${state.source.api}/wp/v2/users`, {
