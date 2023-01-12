@@ -100,7 +100,7 @@ export const GridWrapper = styled.div`
 
 export const Column = styled.div`
   width: calc((100vw) /5);
-  height: calc(85vh - 200px);
+  height: calc(100vh - 200px);
   overflow: visible;
   transition: .5s all;
   /* margin-top: 100px; */  
