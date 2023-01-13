@@ -100,7 +100,7 @@ export const GridWrapper = styled.div`
 
 export const Column = styled.div`
   width: calc((100vw) /5);
-  height: calc(100vh - 200px);
+  height: calc(100vh - 80px);
   overflow: visible;
   transition: .5s all;
   /* margin-top: 100px; */  
@@ -665,23 +665,27 @@ export const InfoColumnRight = styled.div`
 
 export const LinkBar = styled.div`
   height: 75px;
-  margin: 0px 15px;
-  /* width: calc(100vw - 30px); */
-  background-color: var(--colors-site-mainTheme);
+  width: calc(100vw - 30px);
+  margin: 5px 0px 0px 15px;
+  background-color: var(--colors-site-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 50px;
+  padding: 0px 20px 0px 50px;
   font-size: 1.2em;
-  color: var(--colors-site-white);
+  color: var(--colors-site-mainTheme);
 
   @media screen and (max-width: 1100px){
     display: none;
   }
+
+  span{
+    cursor: pointer;
+  }
 `
 
 export const LinkBarLink = styled(Link)`
-  color: var(--colors-site-white);
+  color: var(--colors-site-mainTheme);
 `
 
 export const IconContainer = styled.div`

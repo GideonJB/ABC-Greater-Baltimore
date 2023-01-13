@@ -9,6 +9,8 @@ import LogoContainer from '../../components/logo-container/logo-container.compon
 import QuoteCarousel from "../../components/quote-carousel/quote-carousel.component";
 import Header from "../../components/header/header.component";
 
+import logoImage from "../../static/images/abc_logo.svg"
+import logoImageWhite from "../../static/images/abc_logo_white.svg"
 import calIcon from "../../static/images/cal-icon.png"
 import cealLogo from "../../static/images/cea_logo.svg";
 import info1 from "../../static/images/IG1.gif";
@@ -331,13 +333,13 @@ const HomePage = ({ state, actions }) => {
 
   return (
     <Wrapper>
-      {state.theme.isHamburgerOpen ? null : <Header style="alt"/>}
-      {state.theme.intViewportWidth > 1001 ?
+      {state.theme.intViewportWidth > 1100 ?
         <>
           <LinkBar>
-            <LinkBarLink link="/about-us">About Us</LinkBarLink>
-            <LinkBarLink link="/find-a-contractor">Find a Contractor</LinkBarLink>
-            <span onClick={() => toggleNews()}>Media</span>
+            <LogoContainer link="/" source={logoImage} widthValue="200px" heightValue="auto"/>
+            <LinkBarLink link="/about-us">ABOUT US</LinkBarLink>
+            <LinkBarLink link="/find-a-contractor">FIND A CONTRACTOR</LinkBarLink>
+            <span onClick={() => toggleNews()}>MEDIA</span>
             <IconContainer>
               <CalendarIcon onClick={() => toggleCalendar()}>
                 <IconImage src={calIcon} alt="ABC Events Calendar"/>
@@ -354,8 +356,8 @@ const HomePage = ({ state, actions }) => {
           <DescriptionContainer>
             <Description>
               Associated Builders and Contractors of Greater Baltimore is the <strong>largest
-              organization in Maryland</strong> to represent the commercial construction industry.
-              Our 640  members represent the leading general contractors and specialty
+              organization in Maryland</strong> to represent the commercial construction industry.<br/>
+              Our 650  members represent the leading general contractors and specialty
               contractors in the region.
             </Description>
             <Rule className="red short" />
@@ -381,15 +383,17 @@ const HomePage = ({ state, actions }) => {
           <Rule />
         </>
       :
-        <GridWrapper>
-          {handleColumn('membership')}
-          {handleColumn('events')}
-          {handleColumn('management')}
-          {handleColumn('safety')}
-          {handleColumn('political')}
-          {handleColumn('members')}
-        </GridWrapper>
-    
+        <>
+          {state.theme.isHamburgerOpen ? null : <Header style="alt"/>}
+          <GridWrapper>
+            {handleColumn('membership')}
+            {handleColumn('events')}
+            {handleColumn('management')}
+            {handleColumn('safety')}
+            {handleColumn('political')}
+            {handleColumn('members')}
+          </GridWrapper>
+        </>
       }
     </Wrapper>
   )
