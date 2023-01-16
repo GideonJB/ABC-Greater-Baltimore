@@ -133,7 +133,7 @@ export const MenuContainer = styled.div`
 
   
 
-  @media (hover: hover){
+  @media (any-hover: hover){
     &:hover{
       div {
         transition-delay: 10ms;
@@ -156,7 +156,7 @@ export const MenuContainer = styled.div`
     border-right: 5px solid white;
   }
 
-  @media screen and (max-width: 1200px){
+  /* @media screen and (max-width: 1200px){
     &.expanded{
       pointer-events: auto;
       
@@ -173,7 +173,7 @@ export const MenuContainer = styled.div`
         margin-left: calc((100vw) / 5 + 50px);
       }
     }
-  }
+  } */
 
   @media screen and (max-width: 1100px){
 
