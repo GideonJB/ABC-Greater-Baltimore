@@ -100,7 +100,7 @@ export const GridWrapper = styled.div`
 
 export const Column = styled.div`
   width: calc((100vw) /5);
-  height: calc(100vh - 80px);
+  height: calc(100vh - 100px);
   overflow: visible;
   transition: .5s all;
   /* margin-top: 100px; */  
@@ -681,11 +681,13 @@ export const LinkBar = styled.div`
 
   span{
     cursor: pointer;
+    font-weight: 600;
   }
 `
 
 export const LinkBarLink = styled(Link)`
   color: var(--colors-site-mainTheme);
+  font-weight: 600;
 `
 
 export const IconContainer = styled.div`
