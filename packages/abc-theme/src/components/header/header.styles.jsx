@@ -125,7 +125,7 @@ export const HeaderLink = styled(Link)`
   line-height: 1;
   filter: drop-shadow(1px 1px 1px var(--colors-site-mainTheme));
 
-  &.blue{
+  &.inner{
     color: var(--colors-site-mainTheme);
     filter: none;
   }
@@ -156,6 +156,11 @@ export const NewsLink = styled.span`
     &.inner{
       color: var(--colors-site-mainTheme);
     }
+
+    &.large-only{
+      display: none;
+    }
+
     filter: none;
   }
 `

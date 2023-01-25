@@ -56,6 +56,7 @@ import {  Break,
           PoliticalItemsContainer,
           QuoteBlurContainer,
           QuoteContainer,
+          RightLinks,
           Rule,
           SafetyBackground,
           SafetyItemsContainer,
@@ -337,14 +338,16 @@ const HomePage = ({ state, actions }) => {
         <>
           <LinkBar>
             <LogoContainer link="/" source={logoImage} widthValue="200px" heightValue="auto"/>
-            <LinkBarLink link="/about-us">ABOUT US</LinkBarLink>
-            <LinkBarLink link="/find-a-contractor">FIND A CONTRACTOR</LinkBarLink>
-            <span onClick={() => toggleNews()}>MEDIA</span>
-            <IconContainer>
-              <CalendarIcon onClick={() => toggleCalendar()}>
-                <IconImage src={calIcon} alt="ABC Events Calendar"/>
-              </CalendarIcon>
-            </IconContainer> 
+            <RightLinks>  
+              <LinkBarLink link="/about-us">ABOUT US</LinkBarLink>
+              <LinkBarLink link="/find-a-contractor">FIND A CONTRACTOR</LinkBarLink>
+              <span onClick={() => toggleNews()}>MEDIA</span>
+              <IconContainer>
+                <CalendarIcon onClick={() => toggleCalendar()}>
+                  <IconImage src={calIcon} alt="ABC Events Calendar"/>
+                </CalendarIcon>
+              </IconContainer> 
+            </RightLinks>
           </LinkBar>
           <GridWrapper>
             {handleColumn('membership')}

@@ -712,3 +712,12 @@ export const IconImage = styled.img`
     width: 30px;
   }
 `
+
+export const RightLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 30vw;
+  min-width: 600px;
+`

@@ -127,8 +127,8 @@ const Header = ({ state, actions, color="", style="" }) => {
         </LeftGroup>
         {/* {state.router.link ==="/" && <Tagline><Link link="/apprenticeship">Apprentice Classes Start Sept. 8 <br />Click for more info</Link></Tagline>} */}
         <HeaderLinkContainer className={style === "alt" ? "alt" : color}>
-          <HeaderLink className={`large-only ${color}`} onClick={() => handleClick()} link="/about-us">ABOUT US</HeaderLink>
-          <NewsLink onClick={() => toggleNews()} className={style === "inner" ? "inner" : ""}>MEDIA</NewsLink>
+          <HeaderLink className={style === "inner" ? "inner" : ""} onClick={() => handleClick()} link="/about-us">ABOUT US</HeaderLink>
+          <NewsLink onClick={() => toggleNews()} className={style === "inner" ? "inner large-only" : "large-only"}>MEDIA</NewsLink>
           <IconContainer>
             <CalendarIcon className={color} onClick={() => toggleCalendar()}>
               <IconImage src={calIcon} alt="ABC Events Calendar"/>
