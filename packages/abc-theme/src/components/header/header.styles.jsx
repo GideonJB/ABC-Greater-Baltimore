@@ -125,15 +125,15 @@ export const HeaderLink = styled(Link)`
   line-height: 1;
   filter: drop-shadow(1px 1px 1px var(--colors-site-mainTheme));
 
-  &.inner{
-    color: var(--colors-site-mainTheme);
-    filter: none;
-  }
+  
 
   
   @media screen and (max-width: 1100px) {
     &.large-only{
       display: none;
+    }
+    &.inner{
+    color: var(--colors-site-mainTheme);
     }
     filter: none;
   }

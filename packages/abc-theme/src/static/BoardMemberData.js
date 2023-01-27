@@ -172,7 +172,7 @@ const boardList = [
     "Name":"Vic Victoriano (ex officio)",
     "Title":"",
     "Description":"Skillforce, Inc.",
-    "Image":require("../static/images/board/vic-v.jpg"),
+    "Image":require("../static/images/board/vic-v-bw.jpg"),
     "email":"vic@skillforce.com"
   }
 ]
