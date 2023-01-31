@@ -102,6 +102,14 @@ const staffList = [
     "Description":"Lorem Ipsum",
     "Image":require("../static/images/Staff/bruce.jpg"),
     "email":"bruce@abcgima.org"
+  },
+  {
+    "id":46,
+    "Name":"Sarah Zeigler",
+    "Title":"",
+    "Description":"Lorem Ipsum",
+    "Image":"",
+    "email":"szeigler@abcbaltimore.org"
   }
 ]
 
