@@ -36,6 +36,9 @@ const EventsCalendar = ({ state, actions }) => {
       <CalendarContainer className={state.theme.isCalendarOpen ? "open" : "close"}>
         <CloseButton onClick={() => handleClick()}>&#x2716;</CloseButton>
         <CalendarTitle>&nbsp;Events & Training Calendar</CalendarTitle>
+        <FullSiteLink target="_blank" href="https://events.abcbaltimore.org">
+          FULL CALENDAR
+        </FullSiteLink>
         {state.theme.eventsCalendar && state.theme.eventsCalendar.length > 0 ?
           
           state.theme.eventsCalendar.map((items) => {
@@ -89,7 +92,7 @@ const EventsCalendar = ({ state, actions }) => {
         null
         }
         <FullSiteLink target="_blank" href="https://events.abcbaltimore.org">
-          FULL EVENTS CALENDAR
+          FULL CALENDAR
         </FullSiteLink>
       </CalendarContainer>
     </>
