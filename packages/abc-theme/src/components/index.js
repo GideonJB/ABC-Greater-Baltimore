@@ -160,8 +160,8 @@ const Root = ({ state, actions }) => {
 
   //Grabs user from local state to have persistence of login
   useEffect(() => {
-    // eventsFetch().then(res => actions.theme.setEventsCalendar(res))
-    // blogFetch().then(res => actions.theme.setBlogPosts(res))
+    eventsFetch().then(res => actions.theme.setEventsCalendar(res))
+    blogFetch().then(res => actions.theme.setBlogPosts(res))
     // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
