@@ -183,7 +183,8 @@ const SearchPage = ({state, actions}) => {
       <Page />
       <SearchContainer>
         <label htmlFor="mWBE"><input type="checkbox" id="mWBE" onChange={toggleMWBE} />M/WBE</label>
-        <CsvDownload data={downloadList} />
+        <CsvDownload data={downloadList}>Download Data</CsvDownload>
+        <p className='white-text'>*Data only available for download after search</p><br/>
         <SearchBar 
           input={input} 
           onChange={updateInput}

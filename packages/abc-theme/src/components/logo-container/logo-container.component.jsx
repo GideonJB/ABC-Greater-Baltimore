@@ -16,7 +16,7 @@ const LogoContainer = ({ screenType, source, altText, widthValue="100%", heightV
           { link !== null
           ?
           
-          <img src={source} alt={altText} width={widthValue} height={heightValue} />
+          <img className="link" src={source} alt={altText} width={widthValue} height={heightValue} />
         
           :
           <img src={source} alt={altText} />
@@ -34,6 +34,12 @@ const LogoWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: ${props => props.margin};
+
+  img{
+    &.link{
+      cursor: pointer;
+    }
+  }
 
   @media screen and (min-width: 1100px){
     &.mobile{

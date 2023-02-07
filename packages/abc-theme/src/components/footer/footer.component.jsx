@@ -94,7 +94,7 @@ const Footer = ({ state }) => {
               alt="LinkedIn Logo"
               widthValue="30px"
               heightValue="30px"
-              link="https://www.linkedin.com/company/associated-builders-and-contractors-baltimore-metro-chapter/"
+              link="https://www.linkedin.com/company/abcgreaterbaltimore "
             />
           </LinkedIn>
           <Copyright>&copy; {dayjs().year()}</Copyright>

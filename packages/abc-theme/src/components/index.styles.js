@@ -153,6 +153,18 @@ export const GlobalStyle = props => (
           scroll-behavior: auto !important;
         }
       }
+
+      @media print {
+        html, body {
+            width: 8.5in;
+            height: 11in;
+        }
+
+        @page{
+          size: letter;
+        }
+      }
+
       html {
         /* font-family: sans-serif;
         -ms-text-size-adjust: 100%;
@@ -696,6 +708,10 @@ export const GlobalStyle = props => (
         img{
           object-fit: contain;
         }
+      }
+
+      .white-text{
+        color: var(--colors-site-white);
       }
 
     `}

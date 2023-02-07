@@ -36,6 +36,13 @@ const loginPageHandler = {
   }
 }
 
+const resumePrintPageHandler = {
+  pattern: "/resume-print/",
+  func: ({ state }) => {
+    state.souerce.data['/resume-print/'].isResumePrint = true;
+  }
+}
+
 // const invoicePageHandler = {
 //   pattern: "/pay-invoice/",
 //   func: ({ state }) => {
@@ -65,6 +72,7 @@ export default {
       isHamburgerOpen: false,
       isCalendarOpen: false,
       isNewsOpen: false,
+      isVisible: "visible",
       expandedMenu: "",
       newsItem: "blog",
       subMenuList: {},
@@ -477,6 +485,7 @@ export default {
       libraries.source.handlers.push(
         registrationHandler,
         loginPageHandler,
+        resumePrintPageHandler,
         // invoicePageHandler,
         // aboutUsPageHandler,
         );

@@ -9,6 +9,7 @@ import LogoContainer from '../../components/logo-container/logo-container.compon
 import QuoteCarousel from "../../components/quote-carousel/quote-carousel.component";
 import Header from "../../components/header/header.component";
 
+import galaimage from "../../static/images/GALA-LOGO-2023_just-text.png"
 import logoImage from "../../static/images/abc_logo.svg"
 import logoImageWhite from "../../static/images/abc_logo_white.svg"
 import calIcon from "../../static/images/cal-icon.png"
@@ -338,6 +339,7 @@ const HomePage = ({ state, actions }) => {
         <>
           <LinkBar>
             <LogoContainer link="/" source={logoImage} widthValue="200px" heightValue="auto"/>
+            <LogoContainer link="https://secure.abcbaltimore.org/buildbaltimoregala" source={galaimage} widthValue="300px" heightValue="auto"/>
             <RightLinks>  
               <LinkBarLink link="/about-us">ABOUT US</LinkBarLink>
               <LinkBarLink link="/find-a-contractor">FIND A CONTRACTOR</LinkBarLink>

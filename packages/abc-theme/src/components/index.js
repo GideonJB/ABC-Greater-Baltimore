@@ -38,6 +38,7 @@ import InvoicePage from "../Pages/invoicepage/invoicepage.jsx"
 import PdpPage from "../Pages/pdppage/pdppage.jsx"
 import ApprenticeAppPage from "../Pages/apprenticeapppage/apprenticeapppage.jsx"
 import ApprenticeResumePage from "../Pages/apprenticeresumepage/apprenticeresumepage.jsx"
+import ResumePrint from "../Pages/apprenticeresumeprintpage/apprenticeresumeprintpage.jsx"
 import LogicScholarshipPage from "../Pages/logicscholarshippage/logicscholarshippage.jsx"
 import JoinABCPage from "../Pages/joinABCpage/joinABCpage.jsx"
 import TaskTrainingPage from "../Pages/tasktrainingpage/tasktrainingpage.jsx"
@@ -52,6 +53,22 @@ import Blog from "../components/blog/blog.component.jsx"
 
 const Parent = styled.div`
   overflow: hidden;
+
+  // @media print{
+  //   visibility: hidden;
+  // }
+
+  .printable{
+    @media print{
+      visibility: visible;
+    }
+  }
+  .not-printable{
+    @media print{
+      display: none;
+    }
+  }
+  
 `
 
 const CalendarContainer = styled.div`
@@ -143,8 +160,8 @@ const Root = ({ state, actions }) => {
 
   //Grabs user from local state to have persistence of login
   useEffect(() => {
-    eventsFetch().then(res => actions.theme.setEventsCalendar(res))
-    blogFetch().then(res => actions.theme.setBlogPosts(res))
+    // eventsFetch().then(res => actions.theme.setEventsCalendar(res))
+    // blogFetch().then(res => actions.theme.setBlogPosts(res))
     // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
@@ -165,7 +182,7 @@ const Root = ({ state, actions }) => {
   
 
   return (
-    <Parent>
+    <Parent id="print-parent" style={{visibility: state.theme.isVisible}}>
       <Head>
         <title key="title">ABC Greater Baltimore</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -245,6 +262,7 @@ const Root = ({ state, actions }) => {
                       <CompanyUpdatePage when={dataitem.isPage && state.router.link ==='/company-update/'} />
                       <SchoolDataPage when={dataitem.isPage && state.router.link ==='/school-data/'} />
                       <RegistrationPage when={state.router.link ==='/register/'}/>
+                      <ResumePrint when={state.router.link === '/resume-print/'}/>
                       <Page when={dataitem.isPage} />
                       <ErrorPage when={dataitem.isError} />
                     </Switch>

@@ -719,5 +719,5 @@ export const RightLinks = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 30vw;
-  min-width: 600px;
+  min-width: 500px;
 `

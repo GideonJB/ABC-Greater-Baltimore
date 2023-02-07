@@ -106,7 +106,7 @@ const staffList = [
   {
     "id":46,
     "Name":"Sarah Zeigler",
-    "Title":"",
+    "Title":"Programs Assistant",
     "Description":"Lorem Ipsum",
     "Image":"",
     "email":"szeigler@abcbaltimore.org"
