@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect, fetch } from 'frontity'
 
 import Page from "../../components/page/page.component"
@@ -25,6 +25,10 @@ import { set } from 'react-hook-form';
 //
 
 const ResumePrint = ({state, actions}) => {
+
+    useEffect( () => {
+        console.log("RESUME DATA", state.theme.resumeData);
+    }, [])
 
     const printFormat = () => {
         state.theme.isVisible === "visible" ?  state.theme.isVisible = "hidden" : state.theme.isVisible = "visible";
@@ -54,9 +58,9 @@ const ResumePrint = ({state, actions}) => {
             <CustomButton className='not-printable' onClick={() => printFormat()}>
                 {state.theme.isVisible === "visible" ? <span>Click Here to Format Page for Printing</span> : <span>Return to Site</span>}
             </CustomButton><br/>
-            <p className='not-printable'>For best results when printing, disable headers and enable background graphics (if desired)ß</p><br/>
+            <p className='not-printable'>For best results when printing, disable headers and enable background graphics (if desired)</p><br/>
             <NameBanner>
-                <Name>{dummyData.input_1}</Name>
+                <Name>{state.theme.resumeData.input_1}</Name>
                 <Rule />
             </NameBanner>
             <ResumeMain>
@@ -64,50 +68,50 @@ const ResumePrint = ({state, actions}) => {
                     <Category>
                         <CategoryTitle>CONTACT</CategoryTitle>
                         <CategoryItems>
-                            <p><strong>Address: </strong>{dummyData.input_5_1} {dummyData.input_5_3}, {dummyData.input_5_4} {dummyData.input_5_5}</p>
-                            <p><strong>Phone: </strong>{dummyData.input_3}</p>
-                            <p><strong>Email: </strong>{dummyData.input_4}</p>
+                            <p><strong>Address: </strong>{state.theme.resumeData.input_5_1} {state.theme.resumeData.input_5_3}, {state.theme.resumeData.input_5_4} {state.theme.resumeData.input_5_5}</p>
+                            <p><strong>Phone: </strong>{state.theme.resumeData.input_3}</p>
+                            <p><strong>Email: </strong>{state.theme.resumeData.input_4}</p>
                         </CategoryItems>
                     </Category>
                     <Category>
                         <CategoryTitle>SKILLS</CategoryTitle>
                         <CategoryItems>
                             <ul>
-                                {dummyData.input_6 === "Yes" ? <li><strong>Have Access to a Vehicle</strong></li> : ""}
-                                {dummyData.input_26_1 ? <li>{dummyData.input_26_1}</li> : ""}
-                                {dummyData.input_26_2 ? <li>{dummyData.input_26_2}</li> : ""}
-                                {dummyData.input_26_3 ? <li>{dummyData.input_26_3}</li> : ""}
-                                {dummyData.input_26_4 ? <li>{dummyData.input_26_4}</li> : ""}
-                                {dummyData.input_26_5 ? <li>{dummyData.input_26_5}</li> : ""}
-                                {dummyData.input_26_6 ? <li>{dummyData.input_26_6}</li> : ""}
-                                {dummyData.input_26_7 ? <li>{dummyData.input_26_7}</li> : ""}
-                                {dummyData.input_26_8 ? <li>{dummyData.input_26_8}</li> : ""}
-                                {dummyData.input_26_9 ? <li>{dummyData.input_26_9}</li> : ""}
-                                {dummyData.input_26_10 ? <li>{dummyData.input_26_10}</li> : ""}
-                                {dummyData.input_26_11 ? <li>{dummyData.input_26_11}</li> : ""}
-                                {dummyData.input_26_12 ? <li>{dummyData.input_26_12}</li> : ""}
-                                {dummyData.input_26_13 ? <li>{dummyData.input_26_13}</li> : ""}
-                                {dummyData.input_26_14 ? <li>{dummyData.input_26_14}</li> : ""}
-                                {dummyData.input_26_15 ? <li>{dummyData.input_26_15}</li> : ""}
-                                {dummyData.input_26_16 ? <li>{dummyData.input_26_16}</li> : ""}
-                                {dummyData.input_26_17 ? <li>{dummyData.input_26_17}</li> : ""}
-                                {dummyData.input_26_18 ? <li>{dummyData.input_26_18}</li> : ""}
-                                {dummyData.input_26_19 ? <li>{dummyData.input_26_19}</li> : ""}
-                                {dummyData.input_26_20 ? <li>{dummyData.input_26_20}</li> : ""}
-                                {dummyData.input_26_21 ? <li>{dummyData.input_26_21}</li> : ""}
-                                {dummyData.input_26_22 ? <li>{dummyData.input_26_22}</li> : ""}
-                                {dummyData.input_26_23 ? <li>{dummyData.input_26_23}</li> : ""}
-                                {dummyData.input_26_24 ? <li>{dummyData.input_26_24}</li> : ""}
-                                {dummyData.input_13 ? <li><strong>{dummyData.input_13}</strong></li> : ""}
+                                {state.theme.resumeData.input_6 === "Yes" ? <li><strong>Have Access to a Vehicle</strong></li> : ""}
+                                {state.theme.resumeData.input_26_1 ? <li>{state.theme.resumeData.input_26_1}</li> : ""}
+                                {state.theme.resumeData.input_26_2 ? <li>{state.theme.resumeData.input_26_2}</li> : ""}
+                                {state.theme.resumeData.input_26_3 ? <li>{state.theme.resumeData.input_26_3}</li> : ""}
+                                {state.theme.resumeData.input_26_4 ? <li>{state.theme.resumeData.input_26_4}</li> : ""}
+                                {state.theme.resumeData.input_26_5 ? <li>{state.theme.resumeData.input_26_5}</li> : ""}
+                                {state.theme.resumeData.input_26_6 ? <li>{state.theme.resumeData.input_26_6}</li> : ""}
+                                {state.theme.resumeData.input_26_7 ? <li>{state.theme.resumeData.input_26_7}</li> : ""}
+                                {state.theme.resumeData.input_26_8 ? <li>{state.theme.resumeData.input_26_8}</li> : ""}
+                                {state.theme.resumeData.input_26_9 ? <li>{state.theme.resumeData.input_26_9}</li> : ""}
+                                {state.theme.resumeData.input_26_10 ? <li>{state.theme.resumeData.input_26_10}</li> : ""}
+                                {state.theme.resumeData.input_26_11 ? <li>{state.theme.resumeData.input_26_11}</li> : ""}
+                                {state.theme.resumeData.input_26_12 ? <li>{state.theme.resumeData.input_26_12}</li> : ""}
+                                {state.theme.resumeData.input_26_13 ? <li>{state.theme.resumeData.input_26_13}</li> : ""}
+                                {state.theme.resumeData.input_26_14 ? <li>{state.theme.resumeData.input_26_14}</li> : ""}
+                                {state.theme.resumeData.input_26_15 ? <li>{state.theme.resumeData.input_26_15}</li> : ""}
+                                {state.theme.resumeData.input_26_16 ? <li>{state.theme.resumeData.input_26_16}</li> : ""}
+                                {state.theme.resumeData.input_26_17 ? <li>{state.theme.resumeData.input_26_17}</li> : ""}
+                                {state.theme.resumeData.input_26_18 ? <li>{state.theme.resumeData.input_26_18}</li> : ""}
+                                {state.theme.resumeData.input_26_19 ? <li>{state.theme.resumeData.input_26_19}</li> : ""}
+                                {state.theme.resumeData.input_26_20 ? <li>{state.theme.resumeData.input_26_20}</li> : ""}
+                                {state.theme.resumeData.input_26_21 ? <li>{state.theme.resumeData.input_26_21}</li> : ""}
+                                {state.theme.resumeData.input_26_22 ? <li>{state.theme.resumeData.input_26_22}</li> : ""}
+                                {state.theme.resumeData.input_26_23 ? <li>{state.theme.resumeData.input_26_23}</li> : ""}
+                                {state.theme.resumeData.input_26_24 ? <li>{state.theme.resumeData.input_26_24}</li> : ""}
+                                {state.theme.resumeData.input_13 ? <li><strong>{state.theme.resumeData.input_13}</strong></li> : ""}
                             </ul>
                         </CategoryItems>
                     </Category>
                     <Category>
                         <CategoryTitle>EDUCATION</CategoryTitle>
                         <CategoryItems>
-                            <p><strong>{dummyData.input_10}</strong><br/>
-                                <strong>{dummyData.input_12}</strong><br/>
-                                {dummyData.input_11}</p>
+                            <p><strong>{state.theme.resumeData.input_10}</strong><br/>
+                                <strong>{state.theme.resumeData.input_12}</strong><br/>
+                                {state.theme.resumeData.input_11}</p>
                         </CategoryItems>
                     </Category>
                 </LeftColumn>
@@ -115,25 +119,25 @@ const ResumePrint = ({state, actions}) => {
                     <Category>
                         <CategoryTitle>PROFESSIONAL SUMMARY</CategoryTitle>
                         <CategoryItems>
-                            <p>{dummyData.input_7}</p>
+                            <p>{state.theme.resumeData.input_7}</p>
                         </CategoryItems>
                     </Category>
                         <CategoryTitle>WORK HISTORY</CategoryTitle>
                         <CategoryItems>
                             <p>
-                                <strong>{dummyData.input_18} </strong>{dummyData.input_16} to {dummyData.input_17}<br/>
-                                <strong>{dummyData.input_15}</strong>
+                                <strong>{state.theme.resumeData.input_18} </strong>{state.theme.resumeData.input_16} to {state.theme.resumeData.input_17}<br/>
+                                <strong>{state.theme.resumeData.input_15}</strong>
                             </p>
                             <ul>
-                                <li>{dummyData.input_19}</li>
+                                <li>{state.theme.resumeData.input_19}</li>
                             </ul>
                             <br/><br/>
                             <p>
-                                <strong>{dummyData.input_23} </strong>{dummyData.input_21} to {dummyData.input_22}<br/>
-                                <strong>{dummyData.input_20}</strong>
+                                <strong>{state.theme.resumeData.input_23} </strong>{state.theme.resumeData.input_21} to {state.theme.resumeData.input_22}<br/>
+                                <strong>{state.theme.resumeData.input_20}</strong>
                             </p>
                             <ul>
-                                <li>{dummyData.input_24}</li>
+                                <li>{state.theme.resumeData.input_24}</li>
                             </ul>
                         </CategoryItems>
                 </RightColumn>

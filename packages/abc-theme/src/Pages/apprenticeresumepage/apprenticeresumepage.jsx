@@ -46,10 +46,15 @@ const ApprenticeResumePage = ({ state, actions }) => {
     const formElement = document.forms["apprenticeresumeform"],
       { action, method } = formElement,
       formData = new FormData(formElement)
+      state.theme.resumeData = formData.entries();
 
     for (var value of formData.entries()) {
       console.log(value);
     }
+
+    formData.forEach((value, key) => {
+      state.theme.resumeData[key] = value;
+    })
 
     const options = {
       method,
@@ -68,6 +73,7 @@ const ApprenticeResumePage = ({ state, actions }) => {
 
         } else {
           setSuccess(true)
+          actions.router.set("/resume-print/");
         }
       }).catch((error) => {
 
@@ -243,7 +249,7 @@ const ApprenticeResumePage = ({ state, actions }) => {
             <Controller control={control} name="input_20"
               rules={{ required: false }}
               render={({ field }) => (
-                <FormInput {...field} label="*Former Place of Work" />
+                <FormInput {...field} label="Former Place of Work" />
               )} />
             
             <InputLabel htmlFor="input_21">Start Date</InputLabel><br/>
@@ -255,10 +261,10 @@ const ApprenticeResumePage = ({ state, actions }) => {
             <Controller control={control} name="input_23"
               rules={{ required: false }}
               render={({ field }) => (
-                <FormInput {...field} label="*Job Title" />
+                <FormInput {...field} label="Job Title" />
               )} />
             
-            <InputLabel htmlFor="input_24">*Job Description</InputLabel>
+            <InputLabel htmlFor="input_24">Job Description</InputLabel>
             <TextArea {...register("input_24", { required: false, maxLength: 500 })} />
             <br />
 

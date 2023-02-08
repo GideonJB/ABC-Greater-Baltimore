@@ -61,13 +61,13 @@ const SideMenu = ({ state, actions, style="" }) => {
     const currentMenuObject = currentMenu(route)
     // console.log("route", route)
     // console.log("currentMenuObject", currentMenuObject);
-    const managementItems = ["academies", "operations", "legal-regulatory", "blueprint-reading"]
+    const managementItems = ["academies", "operations", "legal-regulatory", "blueprint-reading"];
+    const apprenticeshipItems = ["apprentice-resume", "resume-print"];
 
     if (currentMenuObject.length > 0) {
       const mainEntry = currentMenuObject[0][1].main
 
       if (cleanMenu().includes(cleanRoute)) {
-        // console.log("option 1");
         actions.theme.createSubMenuList(currentMenuObject[0][1].submenu)
         actions.theme.setActiveMenu("main", cleanRoute)
         actions.theme.setActiveMenu("sub", "")
@@ -80,7 +80,6 @@ const SideMenu = ({ state, actions, style="" }) => {
           currentMenuObject[0][1].subcolor
         );
       } else if (state.menu.mainMenu[mainEntry]) {
-        // console.log("option 2")
         actions.theme.createSubMenuList(state.menu.mainMenu[mainEntry].submenu)
         actions.theme.setActiveMenu("main", state.menu.mainMenu[mainEntry].slug)
         actions.theme.setActiveMenu("sub", cleanRoute)
@@ -94,7 +93,6 @@ const SideMenu = ({ state, actions, style="" }) => {
         );
 
       } else if (state.menu.memberMenu[mainEntry]) {
-        // console.log("option3")
         actions.theme.createSubMenuList(state.menu.memberMenu[mainEntry].submenu)
         document.documentElement.style.setProperty(
           '--colors-active',
@@ -108,11 +106,17 @@ const SideMenu = ({ state, actions, style="" }) => {
         actions.theme.setActiveMenu("sub", cleanRoute)
       }
     } else if (managementItems.includes(cleanRoute)){
-      // console.log("option4")
-      // console.log("closing menu")
       actions.theme.createSubMenuList(state.menu.mainMenu.education.submenu)
       actions.theme.setActiveMenu("main", "education");
       actions.theme.setActiveMenu("sub", "management-education");
+      document.documentElement.style.setProperty(
+        '--colors-active',
+        state.menu.mainMenu.education.activecolor
+      );
+    } else if (apprenticeshipItems.includes(cleanRoute)){     
+      actions.theme.createSubMenuList(state.menu.mainMenu.education.submenu)
+      actions.theme.setActiveMenu("main", "education");
+      actions.theme.setActiveMenu("sub", "apprenticeship");
       document.documentElement.style.setProperty(
         '--colors-active',
         state.menu.mainMenu.education.activecolor
