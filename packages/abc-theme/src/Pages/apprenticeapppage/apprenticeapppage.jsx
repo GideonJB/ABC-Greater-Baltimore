@@ -293,7 +293,7 @@ const ApprenticeAppPage = ({ state, actions }) => {
           <Controller control={control} name="email"
             rules={{
               required: true,
-              pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+              pattern: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
             }}
             render={({ field }) => (
               <FormInput {...field} label="*Email Address" />

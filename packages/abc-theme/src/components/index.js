@@ -8,7 +8,7 @@ import { Head, connect, css, Global, styled } from "frontity"
 import Switch from "@frontity/components/switch"
 import { useTransition, animated } from "@react-spring/web"
 
-import { eventsFetch, blogFetch, youTubeFetch } from "../utils/events-fetch.js"
+import { eventsFetch, blogFetch, caresFetch, youTubeFetch } from "../utils/events-fetch.js"
 import { useCurrentWidth } from '../utils/utility-functions'
 
 import gutenburgStyle from "../styles/gutenburg/style.css"
@@ -50,6 +50,7 @@ import BestSponsorPage from "../Pages/bestsponsorpage/bestsponsorpage.jsx"
 import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
 import SchoolDataPage from "../Pages/schooldatapage/schooldatapage.jsx"
 import Blog from "../components/blog/blog.component.jsx"
+import CaresBlog from "../components/blog/caresBlog.component.jsx"
 
 const Parent = styled.div`
   overflow: hidden;
@@ -162,6 +163,7 @@ const Root = ({ state, actions }) => {
   useEffect(() => {
     eventsFetch().then(res => actions.theme.setEventsCalendar(res))
     blogFetch().then(res => actions.theme.setBlogPosts(res))
+    caresFetch().then(res => actions.theme.setCaresPosts(res))
     // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
@@ -243,6 +245,7 @@ const Root = ({ state, actions }) => {
                     <Switch location={item}>
                       <HomePage when={dataitem.isHome} />
                       <LoginPage when={state.router.link ==='/login/'} />
+                      <CaresBlog when={state.router.link.includes('cares-blog')}/>
                       <Blog when={state.router.link.includes('blog')}/>
                       <EventsPage when={dataitem.isPage && state.router.link ==='/events/'} />
                       <PdpPage when={dataitem.isPage && state.router.link ==='/pdp/'} />

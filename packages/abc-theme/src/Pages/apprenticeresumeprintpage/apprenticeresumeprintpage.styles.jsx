@@ -25,7 +25,7 @@ export const CategoryTitle = styled.p`
 export const LeftColumn = styled.div`
     padding: 40px 30px 100px 30px;
     background-color: hsl(0 0% 70%);
-    width: 30%;
+    width: 35%;
 
     @media screen and (max-width: 1100px){
         width: 100%;

@@ -12,14 +12,14 @@ export const NewsContainer = styled.div`
   z-index: 1;
   overflow: hidden;
   padding: 0px 0px 30px 0px;
-  width: 350px;
+  width: 450px;
   pointer-events: auto;
   -webkit-box-shadow: -5px 0px 13px 3px rgba(0,0,0,0.30);
   box-shadow: -5px 0px 13px 3px rgba(0,0,0,0.30);
   text-align: center;
 
   &.close {
-    margin-right: -360px;
+    margin-right: -450px;
   }
   &.open {
     margin-right: 0px;
@@ -130,8 +130,8 @@ export const MagazineContainer = styled.div`
 `
 
 export const MagazineTile = styled.img`
-  width: 360px;
-  height: 473px;
+  width: 450px;
+  height: auto;
   margin-bottom: 10px;
 
   &:hover{

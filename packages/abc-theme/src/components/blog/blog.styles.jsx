@@ -48,3 +48,8 @@ export const BlogWrapper = styled.div`
   
   }
 `
+
+export const LogoWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`

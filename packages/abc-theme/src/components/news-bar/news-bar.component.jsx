@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
-import { connect, fetch } from "frontity"
+import React, { useEffect } from 'react';
+import { connect, fetch } from "frontity";
 
-import { myunescape } from "../../utils/utility-functions"
+import LogoContainer from "../logo-container/logo-container.component";
+import { myunescape } from "../../utils/utility-functions";
 
-import awards2022 from "../../static/images/awards_mag_thumb.jpg"
+import abcCares from "../../static/images/abc_cares.png";
+import awards2022 from "../../static/images/awards_mag_thumb.jpg";
 
 import { NewsContainer,
         CloseButton,
@@ -27,6 +29,7 @@ import { NewsContainer,
 const NewsBar = ({state, actions}) => {
 
   useEffect( () => {
+    // console.log("caresPosts", state.theme.caresPosts);
   }, [state.theme.newsItem, state.theme.youTubePosts])
   
   const handleClick = () => {
@@ -54,6 +57,10 @@ const NewsBar = ({state, actions}) => {
                   className={state.theme.newsItem === "videos" ? "active" : ""}>
             Videos
           </Videos>
+          <Blog onClick={() => handleTab("cares")}
+                className={state.theme.newsItem === "cares" ? "active" : ""}>
+            ABC Cares
+          </Blog>
         </NewsTabs>
         <SectionWrapper>
           {state.theme.newsItem === "blog" ?
@@ -89,7 +96,7 @@ const NewsBar = ({state, actions}) => {
           {state.theme.newsItem === "magazine" ?
             <MagazineContainer>
               <a target="_blank" href="https://mydigitalpublication.com/publication/?i=768267">
-                <MagazineTile src="https://cdn.coverstand.com/14697/768267/smalljpg/30f8df3431bceb272e69733897ddc4c8d619d06a.jpg" />
+                <MagazineTile src="https://cdn.coverstand.com/14697/768267/iphonejpg/320/30f8df3431bceb272e69733897ddc4c8d619d06a.jpg" />
               </a>
               <a target="_blank" href="https://mydigitalpublication.com/publication/?i=759755">
                 <MagazineTile src="https://cdn.coverstand.com/14697/759755/iphonejpg/320/99eb95c8b746cb5953e93e16da714f9f90e77ee0.jpg" />
@@ -171,6 +178,37 @@ const NewsBar = ({state, actions}) => {
             </VideosContainer>
           :
           null
+          }
+          {state.theme.newsItem === "cares" ?
+            <BlogContainer className={state.theme.newsItem === "cares" ? "active" : ""}>
+              <LogoContainer source={abcCares} alt="ABC Cares logo" widthValue="450px" heightValue="auto" link="/" />
+              {state.theme.caresPosts.length > 0 ?
+
+                state.theme.caresPosts.map((items) => {
+
+                  return (
+                    <BlogLink key={items.id} link={`cares-blog/${items.id}`}>
+                      <BlogTile>
+                        <div>
+                          {items.featured_image_urls ?
+                           <img src={items.featured_image_urls.large[0]} alt="" />
+                          :
+                           null
+                          }
+                        </div>
+                        <BlogTitleContainer>
+                            {myunescape(items.title.rendered)}
+                        </BlogTitleContainer>
+                      </BlogTile>
+                    </BlogLink>
+                  )
+                })
+                :
+                null
+              }
+            </BlogContainer>
+          :
+            null
           }
         </SectionWrapper>
       </NewsContainer>

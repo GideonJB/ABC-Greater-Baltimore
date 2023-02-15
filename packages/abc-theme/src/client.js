@@ -66,6 +66,7 @@ export default {
     theme: {
       activeMenu: {main: "", sub: ""},
       blogPosts: {},
+      caresPosts: {},
       eventsCalendar: {},
       expandedMenu: "",
       forgotPassword: false,
@@ -526,6 +527,9 @@ export default {
       },
       setBlogPosts: ({ state }) => value => {
         state.theme.blogPosts = value
+      },
+      setCaresPosts: ({ state }) => value => {
+        state.theme.caresPosts = value
       },
       setYouTubePosts: ({ state }) => value => {
         state.theme.youTubePosts = value

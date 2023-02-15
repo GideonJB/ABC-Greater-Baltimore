@@ -61,6 +61,24 @@ export const blogFetch = () => {
   return data
 };
 
+export const caresFetch = () => {
+
+  const fetchFromAPI = async () => {
+    const response = await fetch("https://dev.abcbaltimore.org/wp-json/wp/v2/posts?_embed?page=1&per_page=100");
+    const body = await response.json();
+    return body;
+  };
+
+  const getPromise = () => {
+    return Promise.resolve(fetchFromAPI())
+  }
+
+  const data = getPromise().then((fetchedData) => {
+    return fetchedData
+  }) 
+  return data
+};
+
 export const youTubeFetch = () => {
 
   const fetchFromAPI = async () => {
