@@ -9,7 +9,7 @@ import LogoContainer from '../../components/logo-container/logo-container.compon
 import QuoteCarousel from "../../components/quote-carousel/quote-carousel.component";
 import Header from "../../components/header/header.component";
 
-import galaimage from "../../static/images/GALA-LOGO-2023_smaller.png"
+import galaimage from "../../static/images/gala_logo_date.png"
 import logoImage from "../../static/images/abc_logo.svg"
 import logoImageWhite from "../../static/images/abc_logo_white.svg"
 import calIcon from "../../static/images/cal-icon.png"
