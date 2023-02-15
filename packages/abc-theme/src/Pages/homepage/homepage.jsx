@@ -338,7 +338,7 @@ const HomePage = ({ state, actions }) => {
         <>
           <LinkBar>
             <LogoContainer link="/" source={logoImage} widthValue="200px" heightValue="auto"/>
-            <LogoContainer link="https://secure.abcbaltimore.org/buildbaltimoregala" source={galaimage} widthValue="300px" heightValue="auto"/>
+            <LogoContainer link="https://secure.abcbaltimore.org/buildbaltimoregala" source={galaimage} widthValue="315px" heightValue="auto"/>
             <RightLinks>  
               <LinkBarLink link="/about-us">ABOUT US</LinkBarLink>
               <LinkBarLink link="/find-a-contractor">FIND A CONTRACTOR</LinkBarLink>
