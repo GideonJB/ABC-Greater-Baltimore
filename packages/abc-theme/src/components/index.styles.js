@@ -706,7 +706,7 @@ export const GlobalStyle = props => (
         
 
         img{
-          object-fit: contain;
+          object-fit: cover;
         }
       }
 
