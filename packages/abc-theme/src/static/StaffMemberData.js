@@ -108,7 +108,7 @@ const staffList = [
     "Name":"Sarah Zeigler",
     "Title":"Programs Assistant",
     "Description":"Lorem Ipsum",
-    "Image":"",
+    "Image":require("../static/images/Staff/sarah.jpg"),
     "email":"szeigler@abcbaltimore.org"
   }
 ]
