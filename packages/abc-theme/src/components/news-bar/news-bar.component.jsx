@@ -181,7 +181,7 @@ const NewsBar = ({state, actions}) => {
           }
           {state.theme.newsItem === "cares" ?
             <BlogContainer className={state.theme.newsItem === "cares" ? "active" : ""}>
-              <LogoContainer source={abcCares} alt="ABC Cares logo" widthValue="450px" heightValue="auto" link="/" />
+              <LogoContainer source={abcCares} alt="ABC Cares logo" widthValue="450px" heightValue="auto" link="#" />
               {state.theme.caresPosts.length > 0 ?
 
                 state.theme.caresPosts.map((items) => {
