@@ -94,62 +94,64 @@ const NewsBar = ({state, actions}) => {
             null
           }
           {state.theme.newsItem === "magazine" ?
+            <a href="https://mydigitalpublication.com/publication/?m=14697&l=1&view=issuelistBrowser" target="_blank">
             <MagazineContainer>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=768267">
                 <MagazineTile src="https://cdn.coverstand.com/14697/768267/iphonejpg/320/30f8df3431bceb272e69733897ddc4c8d619d06a.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=768267">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=759755">
                 <MagazineTile src="https://cdn.coverstand.com/14697/759755/iphonejpg/320/99eb95c8b746cb5953e93e16da714f9f90e77ee0.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=759755">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=751589">
                 <MagazineTile src="https://cdn.coverstand.com/14697/751589/iphonejpg/320/68fef550eb252e13039dc2cc9b484d2a90baef53.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=751589">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=750888">
                 <MagazineTile src={awards2022} />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=750888">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=742435&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/742435/iphonejpg/320/a14c97e7b7f62102f633cf55f0dd9bfae3bcf641.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=742435&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=727570&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/727570/iphonejpg/320/58f2eb1215e062b91220d69f4e6c286da5297661.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=727570&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=716694&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/716694/iphonejpg/320/9b49859d577c45c90a26835f19fd9f86d42512c3.jpg"/>
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=716694&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=710012&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/710012/iphonejpg/320/8a2cb18e10169efa3f8bc95ebd1fe3d52cbbc20e.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=710012&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=701311&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/701311/iphonejpg/320/21d9f24ccd16b9d292cfcda1d98d268d4dd329be.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=701311&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=690289&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/690289/iphonejpg/320/78e4eaa0c5024b4920d7b946cfc8645c0b8f8b8c.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=690289&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=678914&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/678914/iphonejpg/320/3f97ce9360dd1e44a0548f6a5f2c446e4a492a8c.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=678914&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=667100&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/667100/iphonejpg/320/0a4df31a4ad3e2c84bc2c65079708305edde8d99.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=667100&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=660242&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/660242/iphonejpg/320/1ffcf352c4eb37bd734341237cfc78d15c768c32.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=660242&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=634263&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/634263/iphonejpg/320/7130fedb869ac8b459cd8afe58d4c500c42e7a2d.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=634263&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=614104&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/614104/iphonejpg/320/16182bfdb9d242c9964e917e758e4bdf979bcc6a.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=614104&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=596986&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/596986/iphonejpg/320/61f615749bd2272c5b497b6e43ab0f614586f422.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=596986&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=583013&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/583013/iphonejpg/320/f201fec3c62108daf23fa72bbeea2fcb3881ec6a.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=583013&p=1&ver=html5">
               </a>
-              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=574117&p=1&ver=html5">
                 <MagazineTile src="https://cdn.coverstand.com/14697/574117/iphonejpg/320/09ef9490e681681cd28ef2d5bc74bec7bfb0fabb.jpg"/>
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?m=14697&i=574117&p=1&ver=html5">
               </a>
             </MagazineContainer>
+            </a>
           :
           null
           }
