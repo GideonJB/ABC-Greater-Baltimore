@@ -2,6 +2,7 @@ import { styled } from "frontity"
 
 export const CallToAction = styled.p`
   margin: 0 auto;
+  
   width: 60%;
   a{
     color: var(--colors-site-lightAccent);
