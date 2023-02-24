@@ -22,7 +22,7 @@
     "@frontity/html2react": "^1.7.0",
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.7",
-    "@react-spring/web": "^9.5.5",
+    "@react-spring/web": "9.0",
     "abc-theme": "file:packages/abc-theme",
     "dayjs": "^1.11.6",
     "dotenv": "^8.6.0",
