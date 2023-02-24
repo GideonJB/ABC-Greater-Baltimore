@@ -93,7 +93,7 @@ const Header = ({ state, actions, color="", style="" }) => {
       // console.log("no fetch needed")
     }else{
       // console.log("fetching youtube")
-      // youTubeFetch().then(res => actions.theme.setYouTubePosts(res));
+      youTubeFetch().then(res => actions.theme.setYouTubePosts(res));
     }
     if (state.theme.isNewsOpen === true) {
       actions.theme.toggleNews(false)
