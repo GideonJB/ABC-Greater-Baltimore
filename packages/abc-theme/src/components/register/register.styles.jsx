@@ -8,6 +8,10 @@ export const LoginContainer = styled.div`
   padding: 40px 40px 80px 40px;
   transition: all .5s;
   background-color: white;
+
+  @media screen and (max-width: 1100px){
+    width: 90%;
+  }
   
 `
 export const SuccessMessage = styled.p`

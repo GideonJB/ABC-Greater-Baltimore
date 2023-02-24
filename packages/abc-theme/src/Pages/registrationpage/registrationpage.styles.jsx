@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   width: var(--screen-width);
   height: var(--screen-height);
   position: relative;
+  padding-bottom: 40px;
 
   @media screen and (max-width: 1100px){
     width: 100vw;

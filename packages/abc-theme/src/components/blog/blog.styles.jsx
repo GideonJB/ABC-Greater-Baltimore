@@ -47,9 +47,17 @@ export const BlogWrapper = styled.div`
     margin-left: none;
   
   }
+  img{
+    margin-top: 20px;
+    max-height: 500px;
+  }
 `
 
 export const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
+
+  a{
+    cursor: pointer;
+  }
 `

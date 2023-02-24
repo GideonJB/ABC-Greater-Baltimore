@@ -51,6 +51,7 @@ import CompanyUpdatePage from "../Pages/companyupdatepage/companyupdatepage.jsx"
 import SchoolDataPage from "../Pages/schooldatapage/schooldatapage.jsx"
 import Blog from "../components/blog/blog.component.jsx"
 import CaresBlog from "../components/blog/caresBlog.component.jsx"
+import ABCCaresPage from "../Pages/abccarespage/abccarespage.jsx"
 
 const Parent = styled.div`
   overflow: hidden;
@@ -161,8 +162,8 @@ const Root = ({ state, actions }) => {
 
   //Grabs user from local state to have persistence of login
   useEffect(() => {
-    eventsFetch().then(res => actions.theme.setEventsCalendar(res))
-    blogFetch().then(res => actions.theme.setBlogPosts(res))
+    // eventsFetch().then(res => actions.theme.setEventsCalendar(res))
+    // blogFetch().then(res => actions.theme.setBlogPosts(res))
     caresFetch().then(res => actions.theme.setCaresPosts(res))
     // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
@@ -242,7 +243,7 @@ const Root = ({ state, actions }) => {
                 return(
                 <animated.div id= "scrollBody" className={state.router.link !== "/" ? "" : "homepage"} style={props}>
                   <SpacingDiv className={state.router.link !== "/" ? "" : "homepage"}>
-                    <Switch location={item}>
+                    <Switch location={item}>                      
                       <HomePage when={dataitem.isHome} />
                       <LoginPage when={state.router.link ==='/login/'} />
                       <CaresBlog when={state.router.link.includes('cares-blog')}/>
@@ -266,6 +267,7 @@ const Root = ({ state, actions }) => {
                       <SchoolDataPage when={dataitem.isPage && state.router.link ==='/school-data/'} />
                       <RegistrationPage when={state.router.link ==='/register/'}/>
                       <ResumePrint when={state.router.link === '/resume-print/'}/>
+                      <ABCCaresPage when={state.router.link === '/abc-cares/'}/>
                       <Page when={dataitem.isPage} />
                       <ErrorPage when={dataitem.isError} />
                     </Switch>

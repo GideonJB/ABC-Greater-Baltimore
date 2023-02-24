@@ -4,7 +4,7 @@ import { connect, fetch } from "frontity";
 import LogoContainer from "../logo-container/logo-container.component";
 import { myunescape } from "../../utils/utility-functions";
 
-import abcCares from "../../static/images/abc_cares.png";
+import abcCares from "../../static/images/ABC_Cares_Crop.png";
 import awards2022 from "../../static/images/awards_mag_thumb.jpg";
 
 import { NewsContainer,
@@ -96,6 +96,9 @@ const NewsBar = ({state, actions}) => {
           {state.theme.newsItem === "magazine" ?
             <a href="https://mydigitalpublication.com/publication/?m=14697&l=1&view=issuelistBrowser" target="_blank">
             <MagazineContainer>
+                <MagazineTile src="https://cdn.coverstand.com/14697/784244/iphonejpg/320/fc0385e98029b7a8825399a8714b9072f95cd8f9.jpg" />
+              <a target="_blank" href="https://mydigitalpublication.com/publication/?i=784244">
+              </a>
                 <MagazineTile src="https://cdn.coverstand.com/14697/768267/iphonejpg/320/30f8df3431bceb272e69733897ddc4c8d619d06a.jpg" />
               <a target="_blank" href="https://mydigitalpublication.com/publication/?i=768267">
               </a>
@@ -183,7 +186,7 @@ const NewsBar = ({state, actions}) => {
           }
           {state.theme.newsItem === "cares" ?
             <BlogContainer className={state.theme.newsItem === "cares" ? "active" : ""}>
-              <LogoContainer source={abcCares} alt="ABC Cares logo" widthValue="450px" heightValue="auto" link="#" />
+              <LogoContainer source={abcCares} alt="ABC Cares logo" widthValue="450px" heightValue="auto" link="/abc-cares/" margin="0" />
               {state.theme.caresPosts.length > 0 ?
 
                 state.theme.caresPosts.map((items) => {

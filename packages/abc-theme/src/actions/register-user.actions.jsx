@@ -44,7 +44,7 @@ const registerUser = async ({ state }) => {
   else {
     state.theme.registrationError = body.message
   }
-  console.log("REG ERROR", state.theme.registrationError);
+  // console.log("REG ERROR", state.theme.registrationError);
 };
 
 export default registerUser;
