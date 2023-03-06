@@ -80,20 +80,20 @@ const staffList = [
     email: "dlee@abcbaltimore.org",
   },
   {
-    id: 42,
-    Name: "Donte Lee",
-    Title: "Director of Education",
-    Description: "Lorem Ipsum",
-    Image: require("../static/images/Staff/donte.jpg"),
-    email: "dlee@abcbaltimore.org",
-  },
-  {
     id: 47,
     Name: "Faith Malashuk",
     Title: "Compliance and Administration Supervisor",
     Description: "Lorem Ipsum",
     Image: require("../static/images/Staff/faith.jpg"),
     email: "fmalashuk@abcbaltimore.org",
+  },
+  {
+    id: 47,
+    Name: "Mandi Pusateri",
+    Title: "Director of Operations",
+    Description: "Lorem Ipsum",
+    Image: require("../static/images/Staff/mandi.jpg"),
+    email: "mpusateri@abcbaltimore.org",
   },
   {
     id: 44,
