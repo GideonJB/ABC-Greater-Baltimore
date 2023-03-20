@@ -151,7 +151,7 @@ const Header = ({ state, actions, color = "", style = "" }) => {
           </IconContainer>
         </HeaderLinkContainer>
       </HeaderWrapper>
-      {state.router.link === "/" ? (
+      {/* {state.router.link === "/" ? (
         <a href="https://secure.abcbaltimore.org/buildbaltimoregala/">
           <GalaContainer>
             <LogoContainer
@@ -166,7 +166,7 @@ const Header = ({ state, actions, color = "", style = "" }) => {
             <h4>Parking Instructions</h4>
           </GalaContainer>
         </a>
-      ) : null}
+      ) : null} */}
     </Wrapper>
   );
 };

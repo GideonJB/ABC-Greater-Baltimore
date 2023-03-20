@@ -574,12 +574,12 @@ const HomePage = ({ state, actions }) => {
               widthValue="200px"
               heightValue="auto"
             />
-            <LogoContainer
+            {/* <LogoContainer
               link="https://secure.abcbaltimore.org/buildbaltimoregala"
               source={galaimage}
               widthValue="315px"
               heightValue="auto"
-            />
+            /> */}
             <RightLinks>
               <LinkBarLink link="/about-us">ABOUT US</LinkBarLink>
               <LinkBarLink link="/find-a-contractor">
