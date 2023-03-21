@@ -313,7 +313,10 @@ const HomePage = ({ state, actions }) => {
               <CardHeading>Education</CardHeading>
               <ManagementItemsContainer>
                 <ItemList>
-                  <ItemTitle onClick={preventBubble} link="/education">
+                  <ItemTitle
+                    onClick={preventBubble}
+                    link="/construction-education"
+                  >
                     Construction <Break />
                     Education
                   </ItemTitle>
