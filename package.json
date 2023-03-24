@@ -27,7 +27,7 @@
     "dayjs": "^1.11.7",
     "dotenv": "^8.6.0",
     "frontity": "^1.17.2",
-    "react-hook-form": "^7.43.5",
+    "react-hook-form": "^7.43.7",
     "react-json-to-csv": "^1.2.0",
     "vercel": "^24.2.5"
   },

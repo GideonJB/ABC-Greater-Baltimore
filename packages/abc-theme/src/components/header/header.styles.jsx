@@ -5,9 +5,8 @@ export const Wrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 75px;
-  /* background-color: var(--colors-site-white); */
+  padding-top: 5px;
   z-index: 100;
-  /* border-bottom: 3px solid var(--colors-site-mainTheme); */
 
   &.alt {
     position: static;

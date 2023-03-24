@@ -57,6 +57,7 @@ import SchoolDataPage from "../Pages/schooldatapage/schooldatapage.jsx";
 import Blog from "../components/blog/blog.component.jsx";
 import CaresBlog from "../components/blog/caresBlog.component.jsx";
 import ABCCaresPage from "../Pages/abccarespage/abccarespage.jsx";
+import BenefitBookPage from "../Pages/benefitbookpage/benefitbookpage.jsx";
 
 const Parent = styled.div`
   overflow: hidden;
@@ -150,7 +151,7 @@ const Root = ({ state, actions }) => {
     1640, 2156, 1100, 206, 207, 217, 1255, 1393, 1635, 1661, 2316, 2133,
   ];
   const politicalIDS = [204, 1305, 1209, 1307, 1206];
-  const membersIDS = [1741, 222, 932, 199, 2125, 2275, 2306, 2436];
+  const membersIDS = [1741, 222, 932, 199, 2125, 2275, 2306, 2436, 2785];
 
   const transitions = useTransition(location, {
     from: { opacity: 0 },
@@ -167,9 +168,9 @@ const Root = ({ state, actions }) => {
 
   //Grabs user from local state to have persistence of login
   useEffect(() => {
-    eventsFetch().then((res) => actions.theme.setEventsCalendar(res));
-    blogFetch().then((res) => actions.theme.setBlogPosts(res));
-    caresFetch().then((res) => actions.theme.setCaresPosts(res));
+    // eventsFetch().then((res) => actions.theme.setEventsCalendar(res));
+    // blogFetch().then((res) => actions.theme.setBlogPosts(res));
+    // caresFetch().then((res) => actions.theme.setCaresPosts(res));
     // youTubeFetch().then(res => actions.theme.setYouTubePosts(res))
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
@@ -316,6 +317,12 @@ const Root = ({ state, actions }) => {
                         when={
                           dataitem.isPage &&
                           state.router.link === "/other-resources/"
+                        }
+                      />
+                      <BenefitBookPage
+                        when={
+                          dataitem.isPage &&
+                          state.router.link === "/benefit-book"
                         }
                       />
                       <BestSponsorPage
