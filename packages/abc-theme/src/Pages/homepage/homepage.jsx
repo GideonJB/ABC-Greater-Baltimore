@@ -66,12 +66,12 @@ import {
 } from "./homepage.styles";
 
 const HomePage = ({ state, actions }) => {
-  useEffect(() => {
-    if (state.router.link === "/") {
-      actions.theme.closeSubMenu(false);
-      actions.theme.menuExpansion("");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (state.router.link === "/") {
+  //     actions.theme.closeSubMenu(false);
+  //     actions.theme.menuExpansion("");
+  //   }
+  // }, []);
 
   const menuExpand = (name) => {
     // console.log("click!");
