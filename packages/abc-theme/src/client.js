@@ -147,6 +147,7 @@ export default {
         "other-resources",
         "blog28493",
         "resume",
+        "electricals",
       ],
     },
     menu: {
@@ -364,10 +365,10 @@ export default {
             },
             electricLaw: {
               id: 559,
-              menuName: "MD New Electric Law",
+              menuName: "For Electricals Only",
               main: "education",
-              slug: "blog28493",
-              link: "/blog/28493/",
+              slug: "electricals",
+              link: "/electricals/",
             },
           },
         },

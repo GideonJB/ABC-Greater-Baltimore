@@ -373,8 +373,8 @@ const HomePage = ({ state, actions }) => {
                   </ListItem>
                   <br />
                   <br />
-                  <ListItem onClick={preventBubble} link="/blog/28493">
-                    MD NEW Electric Law
+                  <ListItem onClick={preventBubble} link="/electricals">
+                    For Electricals Only
                   </ListItem>
                   <br />
                   <br />

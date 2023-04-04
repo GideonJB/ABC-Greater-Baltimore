@@ -47,6 +47,10 @@ const itemContainerStyles = `
     }
   }  
 
+  @media (hover: none){
+    pointer-events: auto;
+  }
+
   @media screen and (max-width: 1100px){
     display: block;
     overflow: auto;

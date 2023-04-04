@@ -21,7 +21,6 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 1100px) {
-    height: 50px;
     background-color: var(--colors-site-white);
   }
 `;
