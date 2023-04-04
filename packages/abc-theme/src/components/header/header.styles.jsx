@@ -10,11 +10,11 @@ export const Wrapper = styled.div`
 
   &.alt {
     position: static;
-    height: 100px;
+    // height: 100px;
     padding-left: 8px;
 
     @media screen and (max-width: 1100px) {
-      height: 100px;
+      // height: 100px;
       background-color: var(--colors-site-darkGray);
       border-bottom: 2px solid var(--colors-site-mainTheme);
     }

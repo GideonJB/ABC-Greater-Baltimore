@@ -233,8 +233,8 @@ const HomePage = ({ state, actions }) => {
                   </ListItem>
                   <br />
                   <br />
-                  <ListItem onClick={preventBubble} link="/join-abc">
-                    Join ABC
+                  <ListItem onClick={preventBubble} link="/membership-interest">
+                    Membership Interest
                   </ListItem>
                   <br />
                   <br />
