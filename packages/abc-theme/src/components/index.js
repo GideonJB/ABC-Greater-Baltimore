@@ -297,7 +297,8 @@ const Root = ({ state, actions }) => {
                       />
                       <JoinABCPage
                         when={
-                          dataitem.isPage && state.router.link === "/join-abc/"
+                          dataitem.isPage &&
+                          state.router.link === "/membership-interest/"
                         }
                       />
                       <ApprenticeResumePage
