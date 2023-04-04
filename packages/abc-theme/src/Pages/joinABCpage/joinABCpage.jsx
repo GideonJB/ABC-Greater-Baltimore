@@ -51,6 +51,17 @@ const JoinABCPage = ({ state, actions }) => {
     },
   });
 
+  const interestChoices = {
+    input_23_1: "Networking",
+    input_23_2: "Safety Services",
+    input_23_3: "Apprenticeship",
+    input_23_4: "Peer Groups",
+    input_23_5: "Craft Training",
+    input_23_6: "Jobsite Supervisory Education",
+    input_23_7: "Insurance",
+    input_23_8: "Other",
+  };
+
   const onSubmit = (data) => {
     setSuccess();
     setProcessing(true);
@@ -170,7 +181,7 @@ const JoinABCPage = ({ state, actions }) => {
               {errors.input_21?.type === "pattern" && (
                 <ErrorMessage>"Mobile Number Not Valid"</ErrorMessage>
               )}
-              <br />
+              {/* <br />
               <InputLabel>
                 What is your main area of interest in ABC?
               </InputLabel>
@@ -198,6 +209,31 @@ const JoinABCPage = ({ state, actions }) => {
                   </DropDown>
                 )}
               />
+              <br /> */}
+              <br />
+              <p>What are your main areas of interest?</p>
+              {Object.entries(interestChoices).map(([key, value]) => {
+                return (
+                  <Controller
+                    key={key}
+                    control={control}
+                    name={key}
+                    render={({ field }) => (
+                      <>
+                        <input
+                          {...field}
+                          id={key}
+                          type="checkbox"
+                          value={value}
+                        />
+                        <label htmlFor={key}>{value}</label>
+                        <br />
+                      </>
+                    )}
+                  />
+                );
+              })}
+
               <br />
               <Controller
                 control={control}
