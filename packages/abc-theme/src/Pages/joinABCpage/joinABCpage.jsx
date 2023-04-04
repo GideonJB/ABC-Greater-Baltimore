@@ -52,14 +52,14 @@ const JoinABCPage = ({ state, actions }) => {
   });
 
   const interestChoices = {
-    input_23_1: "Networking",
-    input_23_2: "Safety Services",
-    input_23_3: "Apprenticeship",
-    input_23_4: "Peer Groups",
-    input_23_5: "Craft Training",
-    input_23_6: "Jobsite Supervisory Education",
-    input_23_7: "Insurance",
-    input_23_8: "Other",
+    input_22_1: "Networking",
+    input_22_2: "Safety Services",
+    input_22_3: "Apprenticeship",
+    input_22_4: "Peer Groups",
+    input_22_5: "Craft Training",
+    input_22_6: "Jobsite Supervisory Education",
+    input_22_7: "Insurance",
+    input_22_8: "Other",
   };
 
   const onSubmit = (data) => {
