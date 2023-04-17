@@ -738,6 +738,10 @@ export const GlobalStyle = (props) => (
 
       .white-text {
         color: var(--colors-site-white);
+
+        a {
+          color: var(--colors-lightAccent) !important;
+        }
       }
     `}
   />

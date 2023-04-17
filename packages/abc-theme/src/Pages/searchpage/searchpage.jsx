@@ -204,8 +204,8 @@ const SearchPage = ({ state, actions }) => {
         <CsvDownload data={downloadList}>Download Data</CsvDownload>
         <p className="white-text">
           *Data only available for download after search. This will provide you
-          a.cvs file, which will need to be imported into either excel or google
-          sheets.
+          a .csv file, which will need to be imported into either excel or
+          google sheets.
           <br />
           <a
             target="_blank"
