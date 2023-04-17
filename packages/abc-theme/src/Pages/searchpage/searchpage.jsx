@@ -213,6 +213,7 @@ const SearchPage = ({ state, actions }) => {
           >
             Google Sheets Instructions
           </a>
+          <br />
           <a
             target="_blank"
             href="https://www.copytrans.net/support/how-to-open-a-csv-file-in-excel/"
