@@ -203,7 +203,22 @@ const SearchPage = ({ state, actions }) => {
         </label>
         <CsvDownload data={downloadList}>Download Data</CsvDownload>
         <p className="white-text">
-          *Data only available for download after search
+          *Data only available for download after search. This will provide you
+          a.cvs file, which will need to be imported into either excel or google
+          sheets.
+          <br />
+          <a
+            target="_blank"
+            href="https://coefficient.io/import-csv-into-google-sheets#:~:text=You%20can%20also%20import%20CSVs%20into%20Google%20Sheets%20directly%20from,upload%20one%20from%20your%20device."
+          >
+            Google Sheets Instructions
+          </a>
+          <a
+            target="_blank"
+            href="https://www.copytrans.net/support/how-to-open-a-csv-file-in-excel/"
+          >
+            Excel Instructions
+          </a>
         </p>
         <br />
         <SearchBar
