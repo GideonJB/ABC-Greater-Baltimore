@@ -740,7 +740,7 @@ export const GlobalStyle = (props) => (
         color: var(--colors-site-white);
 
         a {
-          color: var(--colors-lightAccent) !important;
+          color: var(--colors-site-lightAccent) !important;
         }
       }
     `}
