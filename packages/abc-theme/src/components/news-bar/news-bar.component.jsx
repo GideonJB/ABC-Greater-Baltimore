@@ -100,6 +100,11 @@ const NewsBar = ({ state, actions }) => {
               target="_blank"
             >
               <MagazineContainer>
+                <MagazineTile src="https://img.coverstand.com/14697/790159/iphonejpg/320/54d783d343709d4052c5b8c2b24b0bb20b8894b9.jpg" />
+                <a
+                  target="_blank"
+                  href="https://mydigitalpublication.com/publication/?i=790159"
+                ></a>
                 <MagazineTile src="https://cdn.coverstand.com/14697/784244/iphonejpg/320/fc0385e98029b7a8825399a8714b9072f95cd8f9.jpg" />
                 <a
                   target="_blank"
